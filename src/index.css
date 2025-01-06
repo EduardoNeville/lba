@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* General body styling */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  font-size: 16px;
+  color: #444;
+}
+
+/* Container styles */
+.landing-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  min-height: 100vh;
+  background: linear-gradient(to bottom right, #002b5b, #00a8cc);
+  color: #fff;
+}
+
+/* Content styles */
+.landing-content {
+  text-align: center;
+  max-width: 500px;
+}
+
+.landing-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.landing-subtitle {
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-bottom: 15px;
+}
+
+.landing-description {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: #f0f0f0;
+}
+
+/* Button styles */
+.landing-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.landing-button {
+  font-size: 1rem;
+  padding: 10px 20px;
+  background-color: #0277bd; /* Blue button */
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.landing-button:hover {
+  background-color: #01579b;
+  transform: scale(1.05);
+}
+
+/* Responsive design for smaller screens */
+@media screen and (max-width: 768px) {
+  .landing-title {
+    font-size: 2rem;
+  }
+
+  .landing-subtitle {
+    font-size: 1.25rem;
+  }
+
+  .landing-description {
+    font-size: 0.95rem;
+  }
+}

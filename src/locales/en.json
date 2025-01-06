@@ -1,0 +1,145 @@
+{
+  "lang" : "en",
+  "navbar": {
+    "b1": "Home",
+    "b2": "Buy",
+    "b3": "Sell",
+    "b4": "Invest",
+    "b5": "About Us",
+    "b6": "Contact Us"
+  },
+  "landingPage": {
+    "title": "Welcome to Legal Boutique Advisers",
+    "subtitle": "Draw Your Dream Home",
+    "content": "With our extensive listings and experienced agents, your perfect property is just a search away.",
+    "contactUsButton": "Contact Us",
+    "learnMoreButton": "Learn more"
+  },
+  "main": {
+    "section1": {
+      "sectionTitle": "Expertise",
+      "description": "Our firm is a law and tax boutique that specializes in the real estate sector and offers you expert advice and representation as your investor, promoter and/or professional intermediate in real estate transactions, without the language being an obstacle."
+    },
+    "section2": {
+      "sectionTitle": "Interested in buying?",
+      "description": "We're your Marbella house-hunting experts. With our local knowledge and an array of listings, we'll help you find your dream home effortlessly. From consultation to closing, we make buying in Marbella a breeze.",
+      "button": "Buy With Us"
+    },
+    "section3": {
+      "sectionTitle": "Time to make a listing?",
+      "description": "We're your Marbella selling experts. From pricing to marketing, we've got you covered for a seamless selling experience. Trust us to maximize your property's value and secure the best deal possible. With our extensive expertise and range of listings, we'll make finding your dream home effortless. From consultation to closing, we make buying in Marbella feel like a summer breeze.",
+      "button": "Market With Us"
+    },
+    "section4": {
+      "sectionTitle": "Culture and Artistry",
+      "description": "At Legal Boutique Advisers we hold a profound appreciation for art in all its forms, considering it an essential facet of daily life's harmony. We are dedicated to fostering and promoting culture in all its expressions, actively supporting contemporary artists by providing a platform to showcase their creativity and talent on our website."
+    },
+    "section5": {
+      "sectionTitle": "Patronage",
+      "description": "The Musical Outreach Center of the Mediterranean was founded in Marbella in 2004. Since then he has developed different activities related to classical music. Also known as Música con Encanto, this project has carried out since its foundation a season of concerts, musical documentary cinema, courses and workshops for adults, musical trips and the administrative and artistic management of the Little Mediterranean Orchestra, children's orchestra and youth string."
+    },
+    "section6": {
+      "sectionTitle": "Investing in the future",
+      "description": "We're your Marbella investment specialists, offering local insights and opportunities to simplify your journey. From property selection to financial guidance, we're here to ensure your Marbella investments thrive.",
+      "button": "Start Investing Now"
+    }
+  },
+  "buy": {
+    "section1": {
+      "sectionTitle": "Why buy with us?",
+      "description": "At Legal Boutique Advisers, we're committed to making this journey an extraordinary one for you. Our dedication to finding your dream property goes beyond just bricks and mortar – it's about helping you discover your ideal lifestyle."
+    },
+    "section2": {
+      "sectionTitle": "Our expertise",
+      "description": "Having extensive experience in market research, we have developed a deep understanding of the real estate industry and the factors that influence market trends. Our skills collecting and analyzing data show us able to translate complex research findings into actionable insights for our clients."
+    },
+    "section3": {
+      "sectionTitle": "Knowledge comes with experience",
+      "description": "With an extensive portfolio of properties and a team of experienced, local experts, we offer unparalleled insights into the real estate market. Whether you're a first-time buyer or a seasoned investor, we provide personalized guidance every step of the way, ensuring your home-buying experience is smooth, transparent, and rewarding."
+    },
+    "section4": {
+      "sectionTitle": "Your Vision, Our Mission",
+      "description": "At Legal Boutique Advisers, your vision of home becomes our mission, and we're here to turn it into reality. Discover your perfect property with us and embark on a journey that promises not just a house, but a place you'll truly call home."
+    },
+    "section5": {
+      "sectionTitle": "Expert Legal Support: Golden Visa",
+      "description": "The Golden Visa residence permit is designed to cater to non-European Union citizens seeking to make investments that grant them the privilege of residing and moving seamlessly within European nations. Our legal services are dedicated to furnishing you with comprehensive assistance and counsel throughout the requisite procedures for securing a Golden Visa. This coveted permit can be acquired either through a real estate investment or various other forms of investment."
+    }
+  },
+  "sell": {
+    "section1": {
+      "sectionTitle": "Find your perfect match",
+      "description": "With our vast network, industry expertise, and unwavering commitment, we're not just selling properties; we're finding your perfect match. Our dedicated team works tirelessly to showcase your property in the best light, reaching the right audience and ensuring a seamless selling process."
+    },
+    "section2": {
+      "sectionTitle": "Sell with Confidence",
+      "description": "Explore the possibilities, discover the potential, and embark on a seamless selling experience with us. Whether you're a seasoned seller or a first-time lister, our comprehensive resources, and expert guidance will empower you to make the most of your property."
+    },
+    "section3": {
+      "sectionTitle": "Tax Advice",
+      "description": "Tax advice is the compass that guides you through the complex landscape of financial decisions. It's about maximizing your savings while staying compliant with ever-changing tax laws. We help you navigate the intricacies of tax planning, ensuring your financial goals are met efficiently and legally. Let us be your trusted partner in making smart tax decisions."
+    }
+  },
+  "invest": {
+    "section1": {
+      "title": "Why choose Marbella?",
+      "body": "Investing in Marbella is a smart move for its stunning location, strong rental potential, and stable economy. This coastal gem on the Costa del Sol offers a diverse range of properties and favorable tax incentives, making it an attractive destination for both lifestyle and financial gains."
+    },
+    "section2": {
+      "title": "A long term commitment to a bright future",
+      "body": "Investing in Marbella is a pledge to a brilliant future. With its enduring sunshine, economic vitality, and enviable lifestyle, Marbella offers a long-term commitment to both financial security and a high-quality life."
+    },
+    "section3": {
+      "title": "Marbella's Luxurious Lifestyle",
+      "body": "Marbella's lifestyle is a harmonious blend of luxury, leisure, and year-round outdoor enjoyment. With pristine beaches, gourmet dining, high-end shopping, and a vibrant cultural scene, it's a place where every day feels like a vacation."
+    },
+    "section4": {
+      "title": "Securing Your Legacy",
+      "body": "Inheritance is more than assets; it's a legacy of security and values. Effective estate planning and the thoughtful distribution of assets can help minimize tax liabilities and legal complexities, allowing your loved ones to inherit your legacy with ease. It's an essential aspect of financial planning that offers peace of mind and a lasting impact on generations to come."
+    },
+    "section5": {
+      "title": "The Art of Investment",
+      "body": "Journey into the world of culture, aesthetics, and potential growth. Art not only has the potential to appreciate in value over time but also offers the unique opportunity to surround yourself with beauty and creativity. Blend financial potential with cultural enrichment and diversify your portfolio and add a touch of sophistication to your wealth management."
+    }
+  },
+  "about": {
+    "section1": {
+      "sectionTitle": "Who are we?",
+      "description": "With a wealth of expertise and an extensive understanding of the real estate landscape, we are a team adept at crafting meticulous comparative assessments. We are committed to proactively identify and mitigate potential challenges that might emerge, all while delivering comprehensive legal and tax guidance."
+    },
+    "section2": {
+      "sectionTitle": "An attentive relation",
+      "description": "We are a law and tax firm who offers legal advice, at national and international level, without the language being an obstacle."
+    },
+    "section3": {
+      "sectionTitle": "Providing trust",
+      "description": "The security of having an expert lawyer in real estate and taxes, in situ, allows us to propose a real service of accompaniment to companies and individuals, that best suits your needs, without wasting time, that allows you to reduce the cost of your acquisition."
+    },
+    "section4": {
+      "sectionTitle": "The Team",
+      "description": "We recognize the individuality of our clients, which is why our advisory services are meticulously tailored to align with their distinctive needs."
+    },
+    "marisela" : {
+      "name": "Marisela Castro Abad",
+      "title": "Lawyer", 
+      "description": "A graduate in law from the University of Malaga, I have specialized in European law and hold degrees in tax law and accounting. With a diverse professional background, I have worked with the European Commission , and Spanish Bar Delegation in Brussels, and esteemed law firms across Spain. \n As a member of the Malaga Bar Association and a certified \"Avocat Mandataire in Transactions Immobilières\" by the AAMTI Association in Paris, I bring a wealth of experience. Additionally, I am associated with the \"Chambre Franco-Espagnole de Commerce et d' Industrie\" and have furthered my expertise through specialized training such as \"Tax in the Arts\" at the University Panthéon-Assas Paris 2. My approach revolves around meticulously analyzing each client's unique circumstances, providing tailored advice, and executing decisions that yield optimal solutions. My mission is to offer tax-efficient strategies that enhance your investments across various domains, including real estate, the arts market, and more, even facilitating financing when needed. An ardent enthusiast of opera and art, I am devoted to engaging and fostering artistic pursuits."
+    }
+  },
+  "contact": {
+    "title": "We are here to help you in any way.",
+    "description": "Investing in Marbella is a smart move for its stunning location, strong rental potential, and stable economy. This coastal gem on the Costa del Sol offers a diverse range of properties and favorable tax incentives, making it an attractive destination for both lifestyle and financial gains.",
+    "email": "Your email",
+    "email-placeholder": "name@email.com",
+    "subject": "Subject",
+    "subject-placeholder": "Let us konw how we can help you",
+    "message": "Your message",
+    "message-body" : "Leave us a comment",
+    "submit": "Submit"
+  },
+  "callToAction": {
+    "title": "Do not hesitate to contact us",
+    "body": "Having extensive experience in market research, we have developed a deep understanding of the real estate industry and the factors that influence market trends. Our skills collecting and analyzing data show us able to translate complex research findings into actionable insights for our clients.",
+    "contactUsButton": "Contact Us",
+    "learnMoreButton": "Learn more"
+  }
+}

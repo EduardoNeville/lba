@@ -1,0 +1,145 @@
+{
+  "lang": "fr",
+  "navbar": {
+    "b1": "Accueil",
+    "b2": "Acheter",
+    "b3": "Vendre",
+    "b4": "Investir",
+    "b5": "À propos",
+    "b6": "Contactez-nous"
+  },
+  "landingPage": {
+    "title": "Bienvenue chez Legal Boutique Advisers",
+    "subtitle": "Réalisez la maison de vos rêves",
+    "content": "Avec nos nombreuses annonces et nos agents expérimentés, la propriété parfaite est à portée de recherche.",
+    "button1": "Contactez-nous",
+    "button2": "En savoir plus"
+  },
+  "main": {
+    "section1": {
+      "sectionTitle": "Expertise",
+      "description": "Notre cabinet est une boutique spécialisée en droit et en fiscalité, dédiée au secteur immobilier. Nous vous offrons des conseils et une représentation experte en tant qu'investisseur, promoteur et/ou intermédiaire professionnel dans les transactions immobilières, sans que la langue soit un obstacle."
+    },
+    "section2": {
+      "sectionTitle": "Intéressé par l'achat ?",
+      "description": "Nous sommes vos experts en recherche de maison à Marbella. Grâce à notre expertise locale et un large éventail d'annonces, nous vous aidons à trouver la maison de vos rêves facilement. De la consultation à la conclusion, nous rendons l'achat à Marbella simple et accessible.",
+      "button": "Achetez avec nous"
+    },
+    "section3": {
+      "sectionTitle": "Prêt à mettre en vente ?",
+      "description": "Nous sommes vos experts en vente à Marbella. De l'évaluation au marketing, nous assurons une expérience de vente sans faille. Faites-nous confiance pour maximiser la valeur de votre propriété et conclure le meilleur accord possible. Avec notre expertise et notre gamme variée de propriétés, nous contribuons à rendre l'achat ou la vente aussi agréable qu'une brise d'été.",
+      "button": "Mettez en valeur avec nous"
+    },
+    "section4": {
+      "sectionTitle": "Culture et Art",
+      "description": "Chez Legal Boutique Advisers, nous avons une profonde appréciation pour l’art sous toutes ses formes, le considérant comme une facette essentielle de l'harmonie de la vie quotidienne. Nous sommes dédiés à encourager et promouvoir la culture sous toutes ses expressions, en soutenant activement les artistes contemporains en leur offrant une plateforme pour exposer leur créativité et leur talent sur notre site."
+    },
+    "section5": {
+      "sectionTitle": "Mécénat",
+      "description": "Le Centre de Diffusion Musicale de la Méditerranée a été fondé à Marbella en 2004. Depuis lors, il a développé diverses activités liées à la musique classique. Également connu comme Música con Encanto, ce projet a organisé depuis sa création une saison de concerts, des documentaires musicaux, des cours et ateliers pour adultes, des voyages musicaux ainsi que la gestion administrative et artistique de l'Orchestre Méditerranéen des Petits, orchestre pour enfants et instruments à cordes pour jeunes."
+    },
+    "section6": {
+      "sectionTitle": "Investir dans l'avenir",
+      "description": "Nous sommes vos spécialistes en investissement à Marbella, offrant des perspectives locales et des opportunités pour simplifier votre parcours. De la sélection des propriétés aux conseils financiers, nous sommes là pour garantir le succès de vos investissements à Marbella.",
+      "button": "Commencez à investir maintenant"
+    }
+  },
+  "buy": {
+    "section1": {
+      "sectionTitle": "Pourquoi acheter avec nous ?",
+      "description": "Chez Legal Boutique Advisers, nous nous engageons à faire de ce parcours une expérience extraordinaire pour vous. Notre dévouement à trouver la propriété de vos rêves va au-delà des simples biens physiques – il s'agit de vous aider à découvrir votre mode de vie idéal."
+    },
+    "section2": {
+      "sectionTitle": "Notre expertise",
+      "description": "Grâce à une longue expérience dans la recherche de marché, nous avons développé une profonde compréhension du secteur immobilier ainsi que des tendances qui influencent le marché. Nos compétences dans la collecte et l’analyse de données nous permettent de transformer des résultats complexes en conseils exploitables pour nos clients."
+    },
+    "section3": {
+      "sectionTitle": "L'expérience apporte la connaissance",
+      "description": "Avec un large portefeuille de propriétés et une équipe d’experts locaux expérimentés, nous offrons des perspectives inégalées sur le marché immobilier. Que vous soyez un primo-acquéreur ou un investisseur aguerri, nous fournissons un accompagnement personnalisé à chaque étape, garantissant une expérience d'achat fluide, transparente et enrichissante."
+    },
+    "section4": {
+      "sectionTitle": "Votre vision, notre mission",
+      "description": "Chez Legal Boutique Advisers, votre vision de la maison devient notre mission, et nous sommes là pour la concrétiser. Découvrez la propriété idéale avec nous et commencez un voyage qui promet bien plus qu'une maison : un endroit que vous appellerez vraiment chez vous."
+    },
+    "section5": {
+      "sectionTitle": "Support juridique expert : Golden Visa",
+      "description": "Le permis de résidence Golden Visa est conçu pour les citoyens non européens cherchant à réaliser des investissements leur permettant de résider et de voyager librement dans les pays de l’Union européenne. Nos services juridiques vous proposent une assistance et des conseils complets tout au long des démarches nécessaires pour obtenir un Golden Visa. Ce permis convoité peut être obtenu grâce à un investissement immobilier ou d’autres formes d’investissements."
+    }
+  },
+  "sell": {
+    "section1": {
+      "sectionTitle": "Trouvez votre accord parfait",
+      "description": "Avec notre vaste réseau, notre expertise du secteur et notre engagement sans faille, nous ne nous contentons pas de vendre des propriétés ; nous trouvons l'accord parfait pour vous. Notre équipe dévouée travaille sans relâche pour mettre en valeur votre propriété sous son meilleur jour, atteindre le bon public et assurer un processus de vente fluide."
+    },
+    "section2": {
+      "sectionTitle": "Vendez en toute confiance",
+      "description": "Explorez les opportunités offertes, découvrez votre potentiel et profitez d’une expérience de vente sans encombre avec nous. Que vous soyez un vendeur expérimenté ou un débutant, nos ressources complètes et nos conseils d’experts vous permettront de tirer le meilleur parti de votre bien immobilier."
+    },
+    "section3": {
+      "sectionTitle": "Conseils fiscaux",
+      "description": "Les conseils fiscaux sont une boussole qui vous guide à travers le paysage complexe des décisions financières. Il s’agit d’optimiser vos économies tout en respectant les lois fiscales en constante évolution. Nous vous aidons à naviguer dans les subtilités de la planification fiscale, en veillant à ce que vos objectifs financiers soient atteints avec efficacité et en toute légalité. Faites de nous votre partenaire de confiance pour prendre des décisions fiscales éclairées."
+    }
+  },
+  "invest": {
+    "section1": {
+      "title": "Pourquoi choisir Marbella ?",
+      "body": "Investir à Marbella est une décision intelligente grâce à son emplacement magnifique, son fort potentiel locatif et une économie stable. Ce joyau côtier de la Costa del Sol offre une vaste gamme de propriétés et des incitations fiscales avantageuses, en faisant une destination attrayante tant pour le style de vie que pour les gains financiers."
+    },
+    "section2": {
+      "title": "Un engagement à long terme pour un avenir brillant",
+      "body": "Investir à Marbella, c'est un engagement envers un avenir brillant. Avec son ensoleillement durable, sa vitalité économique et son style de vie enviable, Marbella offre un engagement à long terme tant pour la sécurité financière que pour une vie de qualité."
+    },
+    "section3": {
+      "title": "Le style de vie luxueux de Marbella",
+      "body": "Le style de vie à Marbella est un mélange harmonieux de luxe, de loisirs et de plaisir en plein air tout au long de l'année. Avec ses plages immaculées, sa cuisine gastronomique, ses boutiques haut de gamme et sa scène culturelle vibrante, c'est un endroit où chaque jour ressemble à des vacances."
+    },
+    "section4": {
+      "title": "Assurer votre héritage",
+      "body": "L'héritage, c'est bien plus que des biens ; c'est un legs de sécurité et de valeurs. Une planification successorale efficace et une distribution réfléchie des actifs peuvent aider à minimiser les charges fiscales et les complexités juridiques, permettant à vos proches d'hériter facilement de votre héritage. C'est un aspect essentiel de la planification financière qui offre sérénité et impact durable pour les générations futures."
+    },
+    "section5": {
+      "title": "L'Art de l'Investissement",
+      "body": "Partez à la découverte du monde de la culture, de l'esthétique et de la croissance potentielle. L'art a non seulement le potentiel de prendre de la valeur au fil du temps, mais il offre également l'opportunité unique de vous entourer de beauté et de créativité. Alliez potentiel financier et enrichissement culturel pour diversifier votre portefeuille et ajouter une touche de sophistication à votre gestion de patrimoine."
+    }
+  },
+  "about": {
+    "section1": {
+      "sectionTitle": "Qui sommes-nous ?",
+      "description": "Avec une expertise approfondie et une vaste connaissance de l’univers immobilier, nous sommes une équipe spécialisée dans les évaluations comparatives méticuleuses. Nous nous engageons à identifier et à atténuer de façon proactive les défis qui pourraient survenir tout en offrant une assistance juridique et fiscale complète."
+    },
+    "section2": {
+      "sectionTitle": "Une relation attentive",
+      "description": "Nous sommes un cabinet de droit et de fiscalité qui offre des conseils juridiques, au niveau national et international, sans que la langue soit un obstacle."
+    },
+    "section3": {
+      "sectionTitle": "Offrir de la confiance",
+      "description": "La sérénité d'avoir un avocat expert en immobilier et en taxes sur place nous permet de proposer un accompagnement réel aux entreprises et aux particuliers, adapté à vos besoins, sans perte de temps et permettant de réduire le coût de votre acquisition."
+    },
+    "section4": {
+      "sectionTitle": "L'équipe",
+      "description": "Nous reconnaissons l’unicité de nos clients, c'est pourquoi nos conseils sont soigneusement adaptés pour correspondre à leurs besoins spécifiques."
+    },
+    "marisela": {
+      "name": "Marisela Castro Abad",
+      "title": "Avocate",
+      "description": "Diplômée en droit de l’Université de Malaga, je me suis spécialisée en droit européen et je possède des diplômes en droit fiscal et en comptabilité. Avec un parcours professionnel diversifié, j’ai travaillé avec la Commission Européenne, la Délégation du Barreau Espagnol à Bruxelles, ainsi que dans des cabinets d’avocats prestigieux à travers l'Espagne. \n En tant que membre du Barreau de Malaga et avocate mandataire en transactions immobilières certifiée par l’association AAMTI à Paris, j’apporte une expérience riche et variée. De plus, je suis associée à la Chambre Franco-Espagnole de Commerce et d’Industrie et j’ai enrichi mon expertise grâce à des formations spécialisées comme \"Tax in the Arts\" à l’université Panthéon-Assas Paris 2. Mon approche repose sur l’analyse minutieuse des circonstances uniques de chaque client, la fourniture de conseils sur mesure et la mise en œuvre de décisions qui génèrent des solutions optimales. Ma mission est de proposer des stratégies fiscalement avantageuses pour maximiser vos investissements dans divers domaines, y compris l’immobilier, le marché de l’art et bien plus encore, tout en facilitant le financement en cas de besoin. Passionnée d’opéra et d’art, je m’engage à m’impliquer et à encourager les initiatives artistiques."
+    }
+  },
+  "contact": {
+    "title": "Nous sommes là pour vous aider de toutes les manières.",
+    "description": "Investir à Marbella est un choix judicieux en raison de son emplacement magnifique, de son fort potentiel locatif et de son économie stable. Ce joyau côtier de la Costa del Sol offre une grande variété de propriétés et des avantages fiscaux attractifs, ce qui en fait une destination attrayante tant pour le style de vie que pour les gains financiers.",
+    "email": "Votre email",
+    "email-placeholder": "nom@email.com",
+    "subject": "Sujet",
+    "subject-placeholder": "Faites-nous savoir comment nous pouvons vous aider",
+    "message": "Votre message",
+    "message-body" : "Laissez-nous un commentaire",
+    "submit": "Envoyer"
+  },
+  "callToAction": {
+    "title": "N'hésitez pas à nous contacter",
+    "body": "Fort d'une grande expérience en étude de marché, nous avons acquis une connaissance approfondie du secteur immobilier et des facteurs qui influencent les tendances du marché. Nos compétences en collecte et analyse de données nous permettent de traduire des résultats de recherche complexes en insights exploitables pour nos clients.",
+    "contactUsButton": "Contactez-nous",
+    "learnMoreButton": "En savoir plus"
+  }
+}
