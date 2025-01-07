@@ -1,4 +1,5 @@
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
 export default function BuyComponent() {
   const { t } = useTranslation();
@@ -6,12 +7,12 @@ export default function BuyComponent() {
   return (
     <div 
       id="buy-section"
-      className="bg-gray-50 min-h-screen"
+      className="bg-gray-50 min-h-screen font-zesta-regular"
     >
       {/* Header Section */}
       <div className="sticky top-0 relative h-4 bg-primary z-20"> </div>
       <header className="sticky top-0 bg-white text-primary">
-        <div className="container mx-auto px-6 py-16 text-center">
+        <div className="container mx-auto md:px-bdr px-6 py-16 text-center">
           <h1 className="text-4xl lg:text-6xl font-bold uppercase">
             {t("buy.section1.sectionTitle")}
           </h1>
@@ -20,19 +21,19 @@ export default function BuyComponent() {
           </p>
         </div>
         {/* Dummy Image */}
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-30"
+        <div 
+          className="absolute inset-0 w-full h-full bg-cover bg-center z-0 
+              opacity-50 bg-primary"
           style={{
-            backgroundImage:
-              'url("https://via.placeholder.com/1920x1080?text=Modern+Luxury+Home+in+Spain")',
+            backgroundImage: `url('images/puente-romano-peer.jpeg')`,
           }}
-        ></div>
+        />
       </header>
 
       {/* Main Sections */}
       <div className="relative h-4 bg-primary z-20"> </div>
       <main className="relative bg-gray-50">
-        <div className="container mx-auto py-16 px-6 space-y-16 z-20">
+        <div className="container mx-auto py-16 md:px-bdr px-6 space-y-16 z-20">
           {/* Section 1: Expertise */}
           <section className="flex flex-col-reverse lg:flex-row gap-8 items-center">
             <div className="lg:w-1/2">
@@ -42,14 +43,6 @@ export default function BuyComponent() {
               <p className="mt-4 text-lt-primary">
                 {t("buy.section2.description")}
               </p>
-            </div>
-            <div className="lg:w-1/2">
-              {/* Dummy Image */}
-              <img
-                src="https://via.placeholder.com/600x400?text=Real+Estate+Market+Expertise"
-                alt="Real Estate Expertise"
-                className="rounded-lg shadow-lg"
-              />
             </div>
           </section>
 
@@ -62,11 +55,15 @@ export default function BuyComponent() {
               <p className="mt-4 text-lt-primary">
                 {t("buy.section3.description")}
               </p>
+              <button className="border rounded border-primary mt-4 px-6 py-2 w-full text-xl bg-transparent hover:bg-pink-50 text-primary transition uppercase">
+                <Link to="/contact">
+                  {t("sell.section2.button")}
+                </Link>
+              </button>
             </div>
             <div className="lg:w-1/2">
-              {/* Dummy Image */}
               <img
-                src="https://via.placeholder.com/600x400?text=Luxury+Properties+Portfolio"
+                src="images/marbella-old-town-flowers.jpg"
                 alt="Luxury Properties Portfolio"
                 className="rounded-lg shadow-lg"
               />
@@ -91,7 +88,7 @@ export default function BuyComponent() {
 
           {/* Section 4: Golden Visa */}
           <section className="bg-white shadow-md p-8 rounded-lg flex flex-col lg:flex-row gap-8 items-center">
-            <div className="lg:w-1/2">
+            <div>
               <h2 className="text-3xl font-bold text-primary">
                 {t("buy.section5.sectionTitle")}
               </h2>

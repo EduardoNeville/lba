@@ -6,6 +6,11 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        'zesta-regular': "Zesta_Regular",
+        'zesta-bold': "Zesta_Bold",
+        'cocogothic': "CocoGothic",
+      },
       colors: {
         'primary': '#8C2851',
         'lt-primary': '#9c6079',
@@ -14,7 +19,9 @@ export default {
       width: {
         'icon': '2rem'
       },
-
+      padding: {
+        'bdr': '10rem'
+      }
     },
   },
   plugins: [],

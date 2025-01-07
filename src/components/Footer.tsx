@@ -4,18 +4,18 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   const { t } = useTranslation();
   return (
-    <footer className="bg-primary text-white py-12">
-      <div className="container mx-auto px-20 text-center">
+    <footer className="bg-primary text-white py-12 font-zesta-regular">
+      <div className="container mx-auto md:px-bdr px-6 text-center">
         <h2 className="text-3xl font-bold">
           {t("callToAction.title")}
         </h2>
         <p className="mt-4 text-white">{t("callToAction.body")}</p>
 
         <div className="mt-8 flex justify-center gap-4">
-          <button className="border rounded border-white mt-6 px-6 py-2 w-1/2 lg:w-1/4 bg-transparent hover:bg-white hover:text-primary text-white transition">
+          <button className="border rounded border-white mt-6 px-6 py-2 w-1/2 lg:w-1/4 bg-transparent hover:bg-white hover:text-primary text-white transition uppercase">
             <Link to="/contact">{t("callToAction.contactUsButton")}</Link>
           </button>
-          <button className="border rounded border-white mt-6 px-6 py-2 w-1/2 lg:w-1/4 bg-transparent hover:bg-pink-50 hover:text-primary text-white transition">
+          <button className="border rounded border-white mt-6 px-6 py-2 w-1/2 lg:w-1/4 bg-transparent hover:bg-pink-50 hover:text-primary text-white transition uppercase">
             <Link to="/about">{t("callToAction.learnMoreButton")}</Link>
           </button>
         </div>

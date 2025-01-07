@@ -28,7 +28,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="sticky top-0 z-30 w-full bg-white bg-opacity-90 shadow">
+    <nav className="sticky top-0 z-30 w-full bg-white font-zesta-bold">
       <div className="justify-between px-8 md:w-full md:mx-auto lg:max-w-7xl md:items-center md:flex md:px-16 md:mx-16">
         
         {/* Logo & Toggle Button */}
@@ -97,7 +97,9 @@ const Navbar = () => {
             <li className="relative text-sm md:text-base font-medium text-primary hover:text-secondary uppercase">
               <span 
                 className="cursor-pointer flex items-center justify-between" 
-                onClick={() => setShowInvestDropdown(!showInvestDropdown)}
+                onClick={() => {
+                  setShowInvestDropdown(!showInvestDropdown)
+                }}
               >
                 {t("navbar.b2")}
                 <svg 
@@ -114,11 +116,22 @@ const Navbar = () => {
               </span>
               {/* Dropdown items for Invest */}
               {showInvestDropdown && (
-                <ul className="mt-2 pb-6 w-full md:absolute md:w-max md:mt-0 md:bg-white md:shadow-md md:rounded-md">
+                <ul className="pt-4 pb-6 w-full md:absolute md:w-max md:mt-4 md:bg-white md:shadow-md md:rounded-md">
                   {INVEST_SECTIONS.map((section) => (
-                    <li key={section.id} className="px-4 py-2 hover:bg-gray-100">
+                    <li 
+                      key={section.id} 
+                      className="px-4 py-2 hover:bg-gray-100"
+                      onClick={() => {
+                        setShowInvestDropdown(!showInvestDropdown)}
+                      }
+                    >
                       <a href={`/invest_and_plan#${section.id}`} className="block text-primary">
-                        {t(section.textKey)}
+                        <h2>
+                          {t(section.textKey)}
+                        </h2>
+                        <p className="text-sm">
+                          {t(section.descriptionKey)}
+                        </p>
                       </a>
                     </li>
                   ))}
@@ -132,7 +145,12 @@ const Navbar = () => {
               >
                 <Link 
                   to={menu.path}
-                  onClick={() => setNavbar(!navbar)}
+                  onClick={() => {
+                    setNavbar(!navbar)
+                    showInvestDropdown ? 
+                    (setShowInvestDropdown(!showInvestDropdown)) :
+                    (setShowInvestDropdown(showInvestDropdown))
+                  }}
                 >
                   {t(menu.textKey)}
                 </Link>
@@ -142,21 +160,32 @@ const Navbar = () => {
           </ul>
 
           {/* Language Toggle */}
-          <div className="flex items-left justify-left space-x-4 ">
+          <div className="flex items-left justify-left space-x-4">
             <div className="relative">
-              <button
-                className="flex items-center px-3 py-2"
-                onClick={() => setToggle((prevState) => !prevState)}
+              <span 
+                className="cursor-pointer flex items-center justify-between" 
+                onClick={() => setToggle(!langToggle)}
               >
                 <img
                   src={`/flags/${selectedLanguage}.png`}
                   alt={`${selectedLanguage} flag`}
                   className="w-icon"
                 />
-              </button>
+                <svg 
+                  className={`w-5 h-5 transform transition-transform duration-200 ${
+                    showInvestDropdown ? "rotate-180" : ""
+                  }`} 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  fill="none" 
+                  viewBox="0 0 24 24" 
+                  stroke="currentColor"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </span>
 
               {langToggle && (
-                <div className="absolute bg-white border rounded-md shadow-lg">
+                <div className="absolute bg-white border rounded-md shadow-lg md:mt-1">
                   <div className="flex flex-col">
                     <button
                       className="flex items-center px-3 py-2 hover:bg-gray-100"
@@ -170,7 +199,6 @@ const Navbar = () => {
                         alt="English"
                         className="w-icon"
                       />
-                      <span className="ml-2">English</span>
                     </button>
                     <button
                       className="flex items-center px-3 py-2 hover:bg-gray-100"
@@ -184,7 +212,6 @@ const Navbar = () => {
                         alt="French"
                         className="w-icon"
                       />
-                      <span className="ml-2">Français</span>
                     </button>
                   </div>
                 </div>

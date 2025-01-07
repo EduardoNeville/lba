@@ -48,18 +48,27 @@
       "button": "Market With Us"
     }
   },
-  "invest_plan" : {
-    "title": "LEGAL BOUTIQUE ADVISERS",
-    "description": {
-      "paragraph1": "LEGAL BOUTIQUE ADVISERS is a law firm that offers asset management advice, both in real estate and in the art sector, covering legal and tax aspects at national and international levels, without language being an obstacle.",
-      "paragraph2": "LEGAL BOUTIQUE ADVISERS was founded as a group of professionals specializing in asset investment, where we assist from the beginning to analyze interests and search for the best investment that suits the needs of our clients, whether it is for investment purposes or searching for a vacation residence. Always in contact with professionals from the real estate sector, architects, notaries, and banks, we provide services as financial advisers or asset management consultants, where clients benefit from our global and detailed analysis that allows us to select and advise on the best investment possibilities, financial, and tax strategies.",
-      "paragraph3": "Precisely in the quest to optimize our clients' resources, we not only focus on real estate but also consider investments in the art sector, which offers interesting tax benefits. What better way to invest in a work of art and become part of our history?",
-      "paragraph4": "Our clients typically have an international profile with unique needs. We deal with investments in second holiday homes, but also primary residences, investments to establish rental businesses or hotel projects, already built homes, or land to build their dream residence, to mention a few examples.",
-      "paragraph5": "Our main area of operation is Marbella, Costa del Sol, the province of Málaga, but we have competence and scope of action throughout Spain.",
-      "paragraph6": "We also provide advice for obtaining the investor residence permit, known as the 'Golden Visa,' which is a privileged permit in Spain. The holder can choose to live, work, or study in Spain without needing any other permission, and it also grants certain mobility rights within other Schengen countries. We will advise on finding the best option for our clients and ensure that their investment is suitable for their residence in Spain.",
-      "paragraph7": "LEGAL BOUTIQUE ADVISERS develops and promotes Corporate Social Responsibility, incorporating it into our work approach and encouraging participation from our clients so that their investments help reduce the negative impact on the environment and society in general.",
-      "conclusion": "We want to shape your future!!!"
-    }
+  "investPlan": {
+    "title": "Optimizing Your Investments",
+    "description": "A law firm that offers asset management advice, both in real estate and in the art sector, covering legal and tax aspects at national and international levels, without language being an obstacle.",
+    "section2": {
+      "sectionTitle": "Comprehensive Asset Management",
+      "description": "LBA was founded as a group of professionals specializing in asset investment, where we assist from the beginning to analyze interests and search for the best investment that suits the needs of our clients, whether it is for investment purposes or searching for a vacation residence. Always in contact with professionals from the real estate sector, architects, notaries, and banks, we provide services as financial advisers or asset management consultants, where clients benefit from our global and detailed analysis that allows us to select and advise on the best investment possibilities, financial, and tax strategies.",
+      "button": "Learn More"
+    },
+    "section3": {
+      "sectionTitle": "Tailored Real Estate Solutions",
+      "description": "Our clients typically have an international profile with unique needs. We deal with investments in second holiday homes, but also primary residences, investments to establish rental businesses or hotel projects, already built homes, or land to build their dream residence, to mention a few examples."
+    },
+    "section4": {
+      "sectionTitle": "Expanding into Art Investment",
+      "description": "Precisely in the quest to optimize our clients' resources, we not only focus on real estate but also consider investments in the art sector, which offers interesting tax benefits. What better way to invest in a work of art and become part of our history?"
+    },
+    "section5": {
+      "sectionTitle": "Operating Across Spain",
+      "description": "Our main area of operation is Marbella, Costa del Sol, the province of Málaga, but we have competence and scope of action throughout Spain."
+    },
+    "conclusion": "We want to shape your future!!!"
   },
   "buy": {
     "section1": {
@@ -90,7 +99,8 @@
     },
     "section2": {
       "sectionTitle": "Sell with Confidence",
-      "description": "Explore the possibilities, discover the potential, and embark on a seamless selling experience with us. Whether you're a seasoned seller or a first-time lister, our comprehensive resources, and expert guidance will empower you to make the most of your property."
+      "description": "Explore the possibilities, discover the potential, and embark on a seamless selling experience with us. Whether you're a seasoned seller or a first-time lister, our comprehensive resources, and expert guidance will empower you to make the most of your property.",
+      "button": "Learn more"
     },
     "section3": {
       "sectionTitle": "Tax Advice",
@@ -98,13 +108,24 @@
     }
   },
   "legalAspect": {
-    "title": "LEGAL BOUTIQUE ADVISERS",
+    "title": "Legal Boutique Advisers",
     "description": {
-      "paragraph1": "LEGAL BOUTIQUE ADVISERS has been developed to offer our clients a wide range of legal services with a personalized approach.",
-      "paragraph2": "From the moment you decide to invest in Spain, whether for a vacation residence, for investment companies or funds, or even construction companies, we provide complete advice, from finding the property to recommending the best legal form to minimize the tax impact of your investment, accompanying you until the end 'turnkey,' in all aspects related to Real Estate Law.",
-      "paragraph3": "Once you’ve invested, we assist you in matters related to Inheritance Law, including prior tax planning and post-investment legal and fiscal aspects.",
-      "paragraph4": "For individuals or their companies, we study and analyze their situation with banking entities.",
-      "paragraph5": "We work with real-time communication on the matter.",
+      "paragraph1": {
+        "title": "Personalized Legal Services",
+        "text": "LEGAL BOUTIQUE ADVISERS has been developed to offer our clients a wide range of legal services with a personalized approach."
+      },
+      "paragraph2": {
+        "title": "Comprehensive Real Estate Investment Support",
+        "text": "From the moment you decide to invest in Spain, whether for a vacation residence, for investment companies or funds, or even construction companies, we provide complete advice, from finding the property to recommending the best legal form to minimize the tax impact of your investment, accompanying you until the end 'turnkey,' in all aspects related to Real Estate Law."
+      },
+      "paragraph3": {
+        "title": "Inheritance and Post-Investment Planning",
+        "text": "Once you’ve invested, we assist you in matters related to Inheritance Law, including prior tax planning and post-investment legal and fiscal aspects."
+      },
+      "paragraph4": {
+        "title": "Banking Advice and Real-Time Interaction",
+        "text": "We study individual or corporate relationships with banking entities, offering tailored advice and maintaining real-time communication for seamless interactions."
+      },
       "services": {
         "area1": "Real Estate Law",
         "area2": "Private International Law",

@@ -1,0 +1,130 @@
+@font-face {
+    font-family: 'Zesta';
+    src: url('Zesta-BoldItalic.eot');
+    src: local('Zesta Bold Italic'), local('Zesta-BoldItalic'),
+        url('Zesta-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('Zesta-BoldItalic.woff2') format('woff2'),
+        url('Zesta-BoldItalic.woff') format('woff'),
+        url('Zesta-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Zesta';
+    src: url('Zesta-BlackItalic.eot');
+    src: local('Zesta Black Italic'), local('Zesta-BlackItalic'),
+        url('Zesta-BlackItalic.eot?#iefix') format('embedded-opentype'),
+        url('Zesta-BlackItalic.woff2') format('woff2'),
+        url('Zesta-BlackItalic.woff') format('woff'),
+        url('Zesta-BlackItalic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Zesta';
+    src: url('Zesta-LightItalic.eot');
+    src: local('Zesta Light Italic'), local('Zesta-LightItalic'),
+        url('Zesta-LightItalic.eot?#iefix') format('embedded-opentype'),
+        url('Zesta-LightItalic.woff2') format('woff2'),
+        url('Zesta-LightItalic.woff') format('woff'),
+        url('Zesta-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Zesta';
+    src: url('Zesta-Bold.eot');
+    src: local('Zesta Bold'), local('Zesta-Bold'),
+        url('Zesta-Bold.eot?#iefix') format('embedded-opentype'),
+        url('Zesta-Bold.woff2') format('woff2'),
+        url('Zesta-Bold.woff') format('woff'),
+        url('Zesta-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Zesta';
+    src: url('Zesta-Italic.eot');
+    src: local('Zesta Italic'), local('Zesta-Italic'),
+        url('Zesta-Italic.eot?#iefix') format('embedded-opentype'),
+        url('Zesta-Italic.woff2') format('woff2'),
+        url('Zesta-Italic.woff') format('woff'),
+        url('Zesta-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Zesta';
+    src: url('Zesta-Black.eot');
+    src: local('Zesta Black'), local('Zesta-Black'),
+        url('Zesta-Black.eot?#iefix') format('embedded-opentype'),
+        url('Zesta-Black.woff2') format('woff2'),
+        url('Zesta-Black.woff') format('woff'),
+        url('Zesta-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Zesta';
+    src: url('Zesta-Regular.eot');
+    src: local('Zesta'), local('Zesta-Regular'),
+        url('Zesta-Regular.eot?#iefix') format('embedded-opentype'),
+        url('Zesta-Regular.woff2') format('woff2'),
+        url('Zesta-Regular.woff') format('woff'),
+        url('Zesta-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Zesta';
+    src: url('Zesta-Medium.eot');
+    src: local('Zesta Medium'), local('Zesta-Medium'),
+        url('Zesta-Medium.eot?#iefix') format('embedded-opentype'),
+        url('Zesta-Medium.woff2') format('woff2'),
+        url('Zesta-Medium.woff') format('woff'),
+        url('Zesta-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Zesta';
+    src: url('Zesta-MediumItalic.eot');
+    src: local('Zesta Medium Italic'), local('Zesta-MediumItalic'),
+        url('Zesta-MediumItalic.eot?#iefix') format('embedded-opentype'),
+        url('Zesta-MediumItalic.woff2') format('woff2'),
+        url('Zesta-MediumItalic.woff') format('woff'),
+        url('Zesta-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Zesta';
+    src: url('Zesta-Light.eot');
+    src: local('Zesta Light'), local('Zesta-Light'),
+        url('Zesta-Light.eot?#iefix') format('embedded-opentype'),
+        url('Zesta-Light.woff2') format('woff2'),
+        url('Zesta-Light.woff') format('woff'),
+        url('Zesta-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+

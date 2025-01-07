@@ -29,8 +29,8 @@
     "title": "Bienvenue chez Legal Boutique Advisers",
     "subtitle": "Réalisez la maison de vos rêves",
     "content": "Avec nos nombreuses annonces et nos agents expérimentés, la propriété parfaite est à portée de recherche.",
-    "button1": "Contactez-nous",
-    "button2": "En savoir plus"
+    "contactUsButton": "Contactez-nous",
+    "learnMoreButton": "En savoir plus"
   },
   "main": {
     "section1": {
@@ -61,22 +61,27 @@
       "button": "Commencez à investir maintenant"
     }
   },
-  "invest_plan" : {
-    "title": "LEGAL BOUTIQUE ADVISERS",
-    "description": {
-      "paragraph1": "LEGAL BOUTIQUE ADVISERS a été développé pour offrir à nos clients une large gamme de services juridiques avec une approche personnalisée.",
-      "paragraph2": "Dès que vous décidez d'investir en Espagne, que ce soit pour une résidence de vacances, pour des entreprises ou fonds d'investissement, ou même des entreprises de construction, nous fournissons des conseils complets, de la recherche de la propriété à la recommandation de la meilleure forme juridique pour minimiser l'impact fiscal de votre investissement, en vous accompagnant jusqu'à la fin 'clé en main,' dans tous les aspects liés au Droit Immobilier.",
-      "paragraph3": "Une fois que vous avez investi, nous vous accompagnons dans les questions relatives au Droit des Successions, y compris une planification fiscale préalable et des aspects juridiques et fiscaux postérieurs.",
-      "paragraph4": "Pour les individus ou leurs entreprises, nous étudions et analysons leur situation avec les entités bancaires.",
-      "paragraph5": "Nous travaillons avec une communication en temps réel sur le dossier.",
-      "services": {
-        "area1": "Droit Immobilier",
-        "area2": "Droit International Privé",
-        "area3": "Droit de la Famille",
-        "area4": "Obligations et Contrats",
-        "area5": "Droit Fiscal"
-      }
-    }
+  "investPlan": {
+    "title": "Optimiser Vos Investissements",
+    "description": "Un cabinet d’avocats qui offre des conseils en gestion d’actifs, tant dans le secteur immobilier que dans celui de l'art, couvrant les aspects juridiques et fiscaux aux niveaux national et international, sans que la langue ne soit un obstacle.",
+    "section2": {
+      "sectionTitle": "Gestion Globale d’Actifs",
+      "description": "LBA a été fondé en tant que groupe de professionnels spécialisés dans l’investissement d’actifs, où nous assistons dès le début à analyser les intérêts et chercher le meilleur investissement répondant aux besoins de nos clients, que ce soit pour des objectifs d'investissement ou pour chercher une résidence de vacances. Toujours en contact avec des professionnels du secteur immobilier, des architectes, des notaires et des banques, nous offrons des services en tant que conseillers financiers ou consultants en gestion d’actifs. Nos clients bénéficient de nos analyses globales et détaillées qui nous permettent de sélectionner et de conseiller sur les meilleures possibilités d’investissement ainsi que sur les stratégies financières et fiscales.",
+      "button": "En savoir plus"
+    },
+    "section3": {
+      "sectionTitle": "Solutions Immobilières Sur Mesure",
+      "description": "Nos clients ont généralement un profil international avec des besoins spécifiques. Nous gérons des investissements dans des secondes résidences de vacances, mais aussi des résidences principales, des investissements pour créer des entreprises locatives ou des projets hôteliers, des maisons déjà construites ou des terrains pour construire leur résidence de rêve, pour ne citer que quelques exemples."
+    },
+    "section4": {
+      "sectionTitle": "S’étendre à l’Investissement dans l’Art",
+      "description": "Précisément dans la quête d’optimisation des ressources de nos clients, nous ne nous concentrons pas seulement sur l'immobilier, mais nous considérons également les investissements dans le secteur de l’art, qui offre des avantages fiscaux intéressants. Quelle meilleure façon d’investir qu’à travers une œuvre d’art pour devenir partie intégrante de notre histoire ?"
+    },
+    "section5": {
+      "sectionTitle": "Opérant à Travers Toute l’Espagne",
+      "description": "Notre principal domaine d'intervention est Marbella, la Costa del Sol, et la province de Málaga, mais nous avons la compétence et la capacité d'action dans toute l'Espagne."
+    },
+    "conclusion": "Nous voulons façonner votre avenir !!!"
   },
   "buy": {
     "section1": {
@@ -107,21 +112,33 @@
     },
     "section2": {
       "sectionTitle": "Vendez en toute confiance",
-      "description": "Explorez les opportunités offertes, découvrez votre potentiel et profitez d’une expérience de vente sans encombre avec nous. Que vous soyez un vendeur expérimenté ou un débutant, nos ressources complètes et nos conseils d’experts vous permettront de tirer le meilleur parti de votre bien immobilier."
+      "description": "Explorez les opportunités offertes, découvrez votre potentiel et profitez d’une expérience de vente sans encombre avec nous. Que vous soyez un vendeur expérimenté ou un débutant, nos ressources complètes et nos conseils d’experts vous permettront de tirer le meilleur parti de votre bien immobilier.",
+      "button": "En savoir plus"
     },
     "section3": {
       "sectionTitle": "Conseils fiscaux",
       "description": "Les conseils fiscaux sont une boussole qui vous guide à travers le paysage complexe des décisions financières. Il s’agit d’optimiser vos économies tout en respectant les lois fiscales en constante évolution. Nous vous aidons à naviguer dans les subtilités de la planification fiscale, en veillant à ce que vos objectifs financiers soient atteints avec efficacité et en toute légalité. Faites de nous votre partenaire de confiance pour prendre des décisions fiscales éclairées."
     }
   },
-  "legal_aspect" : {
-    "title": "LEGAL BOUTIQUE ADVISERS",
+  "legalAspect": {
+    "title": "Conseillers Boutique Légale",
     "description": {
-      "paragraph1": "LEGAL BOUTIQUE ADVISERS a été développé pour offrir à nos clients une large gamme de services juridiques avec une approche personnalisée.",
-      "paragraph2": "Dès que vous décidez d'investir en Espagne, que ce soit pour une résidence de vacances, pour des entreprises ou fonds d'investissement, ou même des entreprises de construction, nous fournissons des conseils complets, de la recherche de la propriété à la recommandation de la meilleure forme juridique pour minimiser l'impact fiscal de votre investissement, en vous accompagnant jusqu'à la fin 'clé en main,' dans tous les aspects liés au Droit Immobilier.",
-      "paragraph3": "Une fois que vous avez investi, nous vous accompagnons dans les questions relatives au Droit des Successions, y compris une planification fiscale préalable et des aspects juridiques et fiscaux postérieurs.",
-      "paragraph4": "Pour les individus ou leurs entreprises, nous étudions et analysons leur situation avec les entités bancaires.",
-      "paragraph5": "Nous travaillons avec une communication en temps réel sur le dossier.",
+      "paragraph1": {
+        "title": "Services Juridiques Personnalisés",
+        "text": "LEGAL BOUTIQUE ADVISERS a été développé pour offrir à nos clients une large gamme de services juridiques avec une approche personnalisée."
+      },
+      "paragraph2": {
+        "title": "Soutien Complet pour les Investissements Immobiliers",
+        "text": "Dès que vous décidez d'investir en Espagne, que ce soit pour une résidence de vacances, pour des entreprises ou fonds d'investissement, ou même des entreprises de construction, nous fournissons des conseils complets, de la recherche de la propriété à la recommandation de la meilleure forme juridique pour minimiser l'impact fiscal de votre investissement, en vous accompagnant jusqu'à la fin 'clé en main,' dans tous les aspects liés au Droit Immobilier."
+      },
+      "paragraph3": {
+        "title": "Planification Successorale et Post-Investissement",
+        "text": "Une fois que vous avez investi, nous vous accompagnons dans les questions relatives au Droit des Successions, y compris une planification fiscale préalable et des aspects juridiques et fiscaux postérieurs."
+      },
+      "paragraph4": {
+        "title": "Conseils Bancaires Globaux et Interaction en Temps Réel",
+        "text": "Nous analysons les relations des particuliers ou des entreprises avec les entités bancaires, proposant des conseils sur mesure et assurant une communication en temps réel pour des interactions fluides."
+      },
       "services": {
         "area1": "Droit Immobilier",
         "area2": "Droit International Privé",

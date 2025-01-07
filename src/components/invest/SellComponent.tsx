@@ -7,12 +7,12 @@ export default function SellPage() {
   return (
     <div 
       id="sell-section"
-      className="bg-gray-50 min-h-screen"
+      className="bg-gray-50 min-h-screen font-zesta-bold"
     >
       {/* Header Section */}
       <div className="sticky top-0 relative h-4 bg-primary z-20"></div>
       <header className="sticky top-0 bg-white text-primary">
-        <div className="container mx-auto px-6 py-16 text-center">
+        <div className="container mx-auto md:px-bdr px-6 py-16 text-center">
           <h1 className="text-4xl lg:text-6xl font-bold uppercase">
             {t("sell.section1.sectionTitle")}
           </h1>
@@ -24,7 +24,7 @@ export default function SellPage() {
             className="absolute inset-0 bg-cover bg-center opacity-40"
             style={{
               backgroundImage:
-                'url("https://via.placeholder.com/1920x1080?text=Luxury+Marbella+Homes")',
+                'url("images/plaza-los-naranjos.jpg")',
             }}
           ></div>
         </div>
@@ -33,28 +33,9 @@ export default function SellPage() {
       {/* Main Sections */}
       <div className="relative h-4 bg-primary z-20"> </div>
       <main className="relative bg-gray-50">
-        <div className="container mx-auto pt-16 px-6 space-y-16 z-20">
-          {/* Section 1: Find Your Perfect Match */}
-          <section className="flex flex-col lg:flex-row gap-8 items-center">
-            <div className="lg:w-1/2">
-              <h2 className="text-3xl font-bold text-primary">
-                {t("sell.section1.sectionTitle")}
-              </h2>
-              <p className="mt-4 text-lt-primary">
-                {t("sell.section1.description")}
-              </p>
-            </div>
-            {/* Ideal Image */}
-            <div className="lg:w-1/2">
-              <img
-                src="https://via.placeholder.com/600x400?text=Perfect+Real+Estate+Match+Image"
-                alt="Find Your Perfect Match"
-                className="rounded-lg shadow-lg"
-              />
-            </div>
-          </section>
+        <div className="container mx-auto pt-16 md:px-bdr px-6 space-y-16 z-20">
 
-          {/* Section 2: Sell with Confidence */}
+          {/* Section 1: Sell with Confidence */}
           <section className="bg-white shadow-md p-8 rounded-lg flex flex-col lg:flex-row-reverse gap-8 items-center">
             <div className="lg:w-1/2">
               <h2 className="text-3xl font-bold text-primary">
@@ -63,16 +44,16 @@ export default function SellPage() {
               <p className="my-4 text-lt-primary">
                 {t("sell.section2.description")}
               </p>
-              <button className="border rounded border-primary px-6 py-2 w-full text-xl bg-transparent hover:bg-pink-50 text-primary transition">
+              <button className="border rounded border-primary px-6 py-2 w-full text-xl bg-transparent hover:bg-pink-50 text-primary transition uppercase">
                 <Link to="/contact">
-                  {t("landingPage.button1")}
+                  {t("sell.section2.button")}
                 </Link>
               </button>
             </div>
             {/* Ideal Image */}
             <div className="lg:w-1/2">
               <img
-                src="https://via.placeholder.com/600x400?text=Confident+Selling+Experience"
+                src="images/palmera-house.jpeg"
                 alt="Sell with Confidence"
                 className="rounded-lg shadow-lg"
               />
@@ -80,23 +61,13 @@ export default function SellPage() {
           </section>
 
           {/* Section 3: Tax Advice */}
-          <section className="bg-gray-50 py-16">
-            <div className="text-center max-w-2xl mx-auto">
-              <h2 className="text-3xl font-bold text-primary">
-                {t("sell.section3.sectionTitle")}
-              </h2>
-              <p className="mt-4 text-lt-primary">
-                {t("sell.section3.description")}
-              </p>
-            </div>
-            <div className="mt-8 flex justify-center">
-              {/* Dummy Image for Tax Advice */}
-              <img
-                src="https://via.placeholder.com/800x400?text=Expert+Tax+Advice"
-                alt="Expert Tax Advice"
-                className="rounded-lg shadow-lg"
-              />
-            </div>
+          <section className="text-center bg-gray-50 py-16">
+            <h2 className="text-6xl font-bold text-primary">
+              {t("sell.section3.sectionTitle")}
+            </h2>
+            <p className="mt-4 text-lt-primary max-w-3xl mx-auto">
+              {t("sell.section3.description")}
+            </p>
           </section>
         </div>
       </main>

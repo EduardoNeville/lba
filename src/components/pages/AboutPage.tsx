@@ -4,52 +4,33 @@ export default function AboutPage() {
   const { t } = useTranslation();
 
   return (
-    <div className="bg-gray-50 min-h-screen">
+    <div className="bg-gray-50 min-h-screen font-zesta-regular">
       {/* Header Section */}
-      <header className="bg-white text-primary relative z-20">
-        <div className="container mx-auto px-6 py-16 text-center">
+      <header className="sticky top-0 bg-white text-pink-50 relative">
+        <div className="container mx-auto lg:px-bdr px-6 py-16 text-center 
+                relative z-10 text-primary"
+        >
           <h1 className="text-4xl lg:text-6xl font-bold uppercase">
             {t("about.section1.sectionTitle")}
           </h1>
-          <p className="mt-4 font-light text-lg lg:text-2xl">
+          <p className="mt-4 text-2xl lg:text-2xl">
             {t("about.section1.description")}
           </p>
         </div>
-        {/* Dummy Header Background Image */}
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-30 z-10"
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 w-full h-full bg-cover bg-center z-0 
+              opacity-50 bg-primary"
           style={{
-            backgroundImage:
-              'url("https://via.placeholder.com/1920x1080?text=Teamwork+at+Marbella+Luxury")',
+            backgroundImage: `url("images/pool-house.jpg")`,
           }}
-        ></div>
+        />
       </header>
 
-      {/* Divider */}
-      <div className="relative h-4 bg-primary"></div>
-
-      <main className="bg-gray-50 py-16">
-        <div className="container mx-auto px-6 space-y-16">
-
-          {/* Section 1: Who are we? */}
-          <section className="flex flex-col-reverse lg:flex-row gap-8 items-center">
-            <div className="lg:w-1/2">
-              <h2 className="text-3xl font-bold text-primary">
-                {t("about.section1.sectionTitle")}
-              </h2>
-              <p className="mt-4 text-lt-primary">
-                {t("about.section1.description")}
-              </p>
-            </div>
-            {/* Placeholder Image */}
-            <div className="lg:w-1/2">
-              <img
-                src="https://via.placeholder.com/600x400?text=Professional+Real+Estate+Team"
-                alt="Professional Real Estate Team"
-                className="rounded-lg shadow-lg"
-              />
-            </div>
-          </section>
+      {/* Main Sections */}
+      <div className="relative h-4 bg-primary z-20"> </div>
+      <main className="relative bg-gray-50">
+        <div className="container mx-auto py-16 lg:px-bdr px-6 space-y-16 z-20">
 
           {/* Section 2: An Attentive Relationship */}
           <section className="bg-white shadow-md p-8 rounded-lg flex flex-col lg:flex-row gap-8 items-center">
@@ -60,21 +41,8 @@ export default function AboutPage() {
               <p className="mt-4 text-lt-primary">
                 {t("about.section2.description")}
               </p>
-            </div>
-            {/* Placeholder Image */}
-            <div className="lg:w-1/2">
-              <img
-                src="https://via.placeholder.com/600x400?text=Global+Legal+Advice"
-                alt="Global Legal Advice"
-                className="rounded-lg shadow-lg"
-              />
-            </div>
-          </section>
 
-          {/* Section 3: Providing Trust */}
-          <section className="flex flex-col-reverse lg:flex-row-reverse gap-8 items-center">
-            <div className="lg:w-1/2">
-              <h2 className="text-3xl font-bold text-primary">
+              <h2 className="mt-4 text-3xl font-bold text-primary">
                 {t("about.section3.sectionTitle")}
               </h2>
               <p className="mt-4 text-lt-primary">
@@ -84,8 +52,8 @@ export default function AboutPage() {
             {/* Placeholder Image */}
             <div className="lg:w-1/2">
               <img
-                src="https://via.placeholder.com/600x400?text=Reliable+Real+Estate+Services"
-                alt="Reliable Real Estate Services"
+                src="images/catedral-malaga-crop.jpeg"
+                alt="Global Legal Advice"
                 className="rounded-lg shadow-lg"
               />
             </div>
