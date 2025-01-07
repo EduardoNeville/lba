@@ -3,18 +3,24 @@ import { useTranslation } from "react-i18next";
 import { useState } from "react";
 
 const MENU_LIST = [
-  { textKey: "navbar.b2", path: "/buy" },
-  { textKey: "navbar.b3", path: "/sell" },
-  { textKey: "navbar.b4", path: "/invest" },
-  { textKey: "navbar.b5", path: "/about" },
-  { textKey: "navbar.b6", path: "/contact" },
+  { textKey: "navbar.b3", path: "/corporate_responsibility" },
+  { textKey: "navbar.b4", path: "/about" },
+  { textKey: "navbar.b5", path: "/contact" },
+];
+
+const INVEST_SECTIONS = [
+  { textKey: "navbar.sections.buy.title", id: "buy-section", descriptionKey: "navbar.sections.buy.description" },
+  { textKey: "navbar.sections.sell.title", id: "sell-section", descriptionKey: "navbar.sections.sell.description" },
+  { textKey: "navbar.sections.invest.title", id: "invest-section", descriptionKey: "navbar.sections.invest.description" },
+  { textKey: "navbar.sections.legal.title", id: "legal-aspect-section", descriptionKey: "navbar.sections.legal.description" },
 ];
 
 const Navbar = () => {
   const { t, i18n } = useTranslation();
   const [navbar, setNavbar] = useState(false);
-  const [selectedLanguage, setSelectedLanguage] = useState(t('lang'));
+  const [selectedLanguage, setSelectedLanguage] = useState(t("lang"));
   const [langToggle, setToggle] = useState(false);
+  const [showInvestDropdown, setShowInvestDropdown] = useState(false); // State to toggle the Invest dropdown
 
   const changeLanguage = (lang: string) => {
     setSelectedLanguage(lang);
@@ -23,17 +29,20 @@ const Navbar = () => {
 
   return (
     <nav className="sticky top-0 z-30 w-full bg-white bg-opacity-90 shadow">
-      <div className="justify-between px-8 md:w-[55rem] md:mx-auto lg:max-w-7xl md:items-center md:flex md:px-16 md:mx-16">
+      <div className="justify-between px-8 md:w-full md:mx-auto lg:max-w-7xl md:items-center md:flex md:px-16 md:mx-16">
+        
         {/* Logo & Toggle Button */}
         <div className="flex items-center justify-between w-full md:w-auto md:mr-5">
-          <Link to="/" className="flex items-center">
-            {/* Logo for larger screens */}
+          <Link 
+            to="/" 
+            className="flex items-center"
+            onClick={() => setNavbar(!navbar)}
+          >
             <img
               alt="LBA_Logo"
               className="hidden md:block w-full max-w-[10rem] h-auto"
               src="icons/LBA_Logo.jpg"
             />
-            {/* Text Logo for smaller screens */}
             <span className="block md:hidden text-lg font-bold text-primary ">
               L-B-A
             </span>
@@ -83,14 +92,53 @@ const Navbar = () => {
         >
           {/* Menu List */}
           <ul className="flex flex-col md:flex-row justify-left items-left space-y-4 mx-3 md:space-y-0 md:space-x-8 py-4 md:py-0">
+
+            {/* Dropdown for Invest Sections */}
+            <li className="relative text-sm md:text-base font-medium text-primary hover:text-secondary uppercase">
+              <span 
+                className="cursor-pointer flex items-center justify-between" 
+                onClick={() => setShowInvestDropdown(!showInvestDropdown)}
+              >
+                {t("navbar.b2")}
+                <svg 
+                  className={`w-5 h-5 transform transition-transform duration-200 ${
+                    showInvestDropdown ? "rotate-180" : ""
+                  }`} 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  fill="none" 
+                  viewBox="0 0 24 24" 
+                  stroke="currentColor"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </span>
+              {/* Dropdown items for Invest */}
+              {showInvestDropdown && (
+                <ul className="mt-2 pb-6 w-full md:absolute md:w-max md:mt-0 md:bg-white md:shadow-md md:rounded-md">
+                  {INVEST_SECTIONS.map((section) => (
+                    <li key={section.id} className="px-4 py-2 hover:bg-gray-100">
+                      <a href={`/invest_and_plan#${section.id}`} className="block text-primary">
+                        {t(section.textKey)}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </li>
             {MENU_LIST.map((menu) => (
               <li
                 key={menu.textKey}
-                className="text-sm md:text-base font-medium text-primary hover:text-secondary"
+                className="text-sm md:text-base font-medium text-primary hover:text-secondary uppercase"
               >
-                <Link to={menu.path}>{t(menu.textKey)}</Link>
+                <Link 
+                  to={menu.path}
+                  onClick={() => setNavbar(!navbar)}
+                >
+                  {t(menu.textKey)}
+                </Link>
               </li>
             ))}
+
           </ul>
 
           {/* Language Toggle */}
@@ -113,8 +161,8 @@ const Navbar = () => {
                     <button
                       className="flex items-center px-3 py-2 hover:bg-gray-100"
                       onClick={() => {
-                        setToggle((prevState) => !prevState)
-                        changeLanguage("en")
+                        setToggle(false);
+                        changeLanguage("en");
                       }}
                     >
                       <img
@@ -122,19 +170,21 @@ const Navbar = () => {
                         alt="English"
                         className="w-icon"
                       />
+                      <span className="ml-2">English</span>
                     </button>
                     <button
                       className="flex items-center px-3 py-2 hover:bg-gray-100"
                       onClick={() => {
-                        setToggle((prevState) => !prevState)
-                        changeLanguage("fr")}
-                      }
+                        setToggle(false);
+                        changeLanguage("fr");
+                      }}
                     >
                       <img
                         src="/flags/fr.png"
                         alt="French"
                         className="w-icon"
                       />
+                      <span className="ml-2">Français</span>
                     </button>
                   </div>
                 </div>

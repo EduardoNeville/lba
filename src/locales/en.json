@@ -2,11 +2,28 @@
   "lang" : "en",
   "navbar": {
     "b1": "Home",
-    "b2": "Buy",
-    "b3": "Sell",
-    "b4": "Invest",
-    "b5": "About Us",
-    "b6": "Contact Us"
+    "b2": "Invest & Plan",
+    "b3": "Corporate Responsibility",
+    "b4": "About",
+    "b5": "Contact",
+    "sections": {
+      "buy": {
+        "title": "Buy",
+        "description": "Discover our buying opportunities."
+      },
+      "sell": {
+        "title": "Sell",
+        "description": "Explore ways to sell your assets."
+      },
+      "invest": {
+        "title": "Invest",
+        "description": "Learn how to invest effectively with us."
+      },
+      "legal": {
+        "title": "Legal Aspects",
+        "description": "Understand the legal aspects of investing."
+      }
+    }
   },
   "landingPage": {
     "title": "Welcome to Legal Boutique Advisers",
@@ -29,19 +46,19 @@
       "sectionTitle": "Time to make a listing?",
       "description": "We're your Marbella selling experts. From pricing to marketing, we've got you covered for a seamless selling experience. Trust us to maximize your property's value and secure the best deal possible. With our extensive expertise and range of listings, we'll make finding your dream home effortless. From consultation to closing, we make buying in Marbella feel like a summer breeze.",
       "button": "Market With Us"
-    },
-    "section4": {
-      "sectionTitle": "Culture and Artistry",
-      "description": "At Legal Boutique Advisers we hold a profound appreciation for art in all its forms, considering it an essential facet of daily life's harmony. We are dedicated to fostering and promoting culture in all its expressions, actively supporting contemporary artists by providing a platform to showcase their creativity and talent on our website."
-    },
-    "section5": {
-      "sectionTitle": "Patronage",
-      "description": "The Musical Outreach Center of the Mediterranean was founded in Marbella in 2004. Since then he has developed different activities related to classical music. Also known as Música con Encanto, this project has carried out since its foundation a season of concerts, musical documentary cinema, courses and workshops for adults, musical trips and the administrative and artistic management of the Little Mediterranean Orchestra, children's orchestra and youth string."
-    },
-    "section6": {
-      "sectionTitle": "Investing in the future",
-      "description": "We're your Marbella investment specialists, offering local insights and opportunities to simplify your journey. From property selection to financial guidance, we're here to ensure your Marbella investments thrive.",
-      "button": "Start Investing Now"
+    }
+  },
+  "invest_plan" : {
+    "title": "LEGAL BOUTIQUE ADVISERS",
+    "description": {
+      "paragraph1": "LEGAL BOUTIQUE ADVISERS is a law firm that offers asset management advice, both in real estate and in the art sector, covering legal and tax aspects at national and international levels, without language being an obstacle.",
+      "paragraph2": "LEGAL BOUTIQUE ADVISERS was founded as a group of professionals specializing in asset investment, where we assist from the beginning to analyze interests and search for the best investment that suits the needs of our clients, whether it is for investment purposes or searching for a vacation residence. Always in contact with professionals from the real estate sector, architects, notaries, and banks, we provide services as financial advisers or asset management consultants, where clients benefit from our global and detailed analysis that allows us to select and advise on the best investment possibilities, financial, and tax strategies.",
+      "paragraph3": "Precisely in the quest to optimize our clients' resources, we not only focus on real estate but also consider investments in the art sector, which offers interesting tax benefits. What better way to invest in a work of art and become part of our history?",
+      "paragraph4": "Our clients typically have an international profile with unique needs. We deal with investments in second holiday homes, but also primary residences, investments to establish rental businesses or hotel projects, already built homes, or land to build their dream residence, to mention a few examples.",
+      "paragraph5": "Our main area of operation is Marbella, Costa del Sol, the province of Málaga, but we have competence and scope of action throughout Spain.",
+      "paragraph6": "We also provide advice for obtaining the investor residence permit, known as the 'Golden Visa,' which is a privileged permit in Spain. The holder can choose to live, work, or study in Spain without needing any other permission, and it also grants certain mobility rights within other Schengen countries. We will advise on finding the best option for our clients and ensure that their investment is suitable for their residence in Spain.",
+      "paragraph7": "LEGAL BOUTIQUE ADVISERS develops and promotes Corporate Social Responsibility, incorporating it into our work approach and encouraging participation from our clients so that their investments help reduce the negative impact on the environment and society in general.",
+      "conclusion": "We want to shape your future!!!"
     }
   },
   "buy": {
@@ -78,6 +95,23 @@
     "section3": {
       "sectionTitle": "Tax Advice",
       "description": "Tax advice is the compass that guides you through the complex landscape of financial decisions. It's about maximizing your savings while staying compliant with ever-changing tax laws. We help you navigate the intricacies of tax planning, ensuring your financial goals are met efficiently and legally. Let us be your trusted partner in making smart tax decisions."
+    }
+  },
+  "legalAspect": {
+    "title": "LEGAL BOUTIQUE ADVISERS",
+    "description": {
+      "paragraph1": "LEGAL BOUTIQUE ADVISERS has been developed to offer our clients a wide range of legal services with a personalized approach.",
+      "paragraph2": "From the moment you decide to invest in Spain, whether for a vacation residence, for investment companies or funds, or even construction companies, we provide complete advice, from finding the property to recommending the best legal form to minimize the tax impact of your investment, accompanying you until the end 'turnkey,' in all aspects related to Real Estate Law.",
+      "paragraph3": "Once you’ve invested, we assist you in matters related to Inheritance Law, including prior tax planning and post-investment legal and fiscal aspects.",
+      "paragraph4": "For individuals or their companies, we study and analyze their situation with banking entities.",
+      "paragraph5": "We work with real-time communication on the matter.",
+      "services": {
+        "area1": "Real Estate Law",
+        "area2": "Private International Law",
+        "area3": "Family Law",
+        "area4": "Obligations and Contracts",
+        "area5": "Tax Law"
+      }
     }
   },
   "invest": {
@@ -141,5 +175,20 @@
     "body": "Having extensive experience in market research, we have developed a deep understanding of the real estate industry and the factors that influence market trends. Our skills collecting and analyzing data show us able to translate complex research findings into actionable insights for our clients.",
     "contactUsButton": "Contact Us",
     "learnMoreButton": "Learn more"
+  },
+  "corporateResposibility": {
+    "section1": {
+      "sectionTitle": "Culture and Artistry",
+      "description": "At Legal Boutique Advisers we hold a profound appreciation for art in all its forms, considering it an essential facet of daily life's harmony. We are dedicated to fostering and promoting culture in all its expressions, actively supporting contemporary artists by providing a platform to showcase their creativity and talent on our website."
+    },
+    "section2": {
+      "sectionTitle": "Patronage",
+      "description": "The Musical Outreach Center of the Mediterranean was founded in Marbella in 2004. Since then he has developed different activities related to classical music. Also known as Música con Encanto, this project has carried out since its foundation a season of concerts, musical documentary cinema, courses and workshops for adults, musical trips and the administrative and artistic management of the Little Mediterranean Orchestra, children's orchestra and youth string."
+    },
+    "section3": {
+      "sectionTitle": "Investing in the future",
+      "description": "We're your Marbella investment specialists, offering local insights and opportunities to simplify your journey. From property selection to financial guidance, we're here to ensure your Marbella investments thrive.",
+      "button": "Start Investing Now"
+    }
   }
 }

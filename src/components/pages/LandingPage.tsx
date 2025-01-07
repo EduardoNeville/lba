@@ -115,50 +115,6 @@ export default function LandingPage() {
               />
             </div>
           </section>
-
-          {/* Section 4: Culture and Art */}
-          <section className="text-center bg-gray-50 py-16">
-            <h2 className="text-3xl font-bold text-primary">
-              {t("main.section4.sectionTitle")}
-            </h2>
-            <p className="mt-4 text-lt-primary max-w-3xl mx-auto">
-              {t("main.section4.description")}
-            </p>
-            {/* Ideal Image */}
-            <img
-              src="https://via.placeholder.com/800x400?text=Contemporary+Art+Exhibition"
-              alt="Contemporary Art"
-              className="mt-8 mx-auto rounded-lg shadow-lg"
-            />
-          </section>
-
-          {/* Section 5 & 6: Patronage + Investing */}
-          <section className="flex flex-col lg:flex-row gap-8">
-            {/* Patronage */}
-            <div className="bg-white shadow-md p-8 rounded-lg lg:w-1/2">
-              <h2 className="text-3xl font-bold text-primary">
-                {t("main.section5.sectionTitle")}
-              </h2>
-              <p className="mt-4 text-lt-primary">
-                {t("main.section5.description")}
-              </p>
-            </div>
-
-            {/* Investing */}
-            <div className="bg-white shadow-md p-8 rounded-lg lg:w-1/2">
-              <h2 className="text-3xl font-bold text-primary">
-                {t("main.section6.sectionTitle")}
-              </h2>
-              <p className="mt-4 text-lt-primary">
-                {t("main.section6.description")}
-              </p>
-              <button className="border rounded border-primary mt-6 px-6 py-2 w-full text-xl bg-transparent hover:bg-pink-50 text-primary transition">
-                <Link to="/sell">
-                  {t("main.section6.button")}
-                </Link>
-              </button>
-            </div>
-          </section>
         </div>
       </main>
     </div>

@@ -2,11 +2,28 @@
   "lang": "fr",
   "navbar": {
     "b1": "Accueil",
-    "b2": "Acheter",
-    "b3": "Vendre",
-    "b4": "Investir",
-    "b5": "À propos",
-    "b6": "Contactez-nous"
+    "b2": "Investir & Planifier",
+    "b3": "Responsabilité d'Entreprise",
+    "b4": "À Propos",
+    "b5": "Contact",
+    "sections": {
+      "buy": {
+        "title": "Acheter",
+        "description": "Découvrez nos opportunités d'achat."
+      },
+      "sell": {
+        "title": "Vendre",
+        "description": "Explorez les solutions pour vendre vos actifs."
+      },
+      "invest": {
+        "title": "Investir",
+        "description": "Apprenez à investir efficacement avec nous."
+      },
+      "legal": {
+        "title": "Aspects Juridiques",
+        "description": "Comprenez les aspects juridiques de l'investissement."
+      }
+    }
   },
   "landingPage": {
     "title": "Bienvenue chez Legal Boutique Advisers",
@@ -44,6 +61,23 @@
       "button": "Commencez à investir maintenant"
     }
   },
+  "invest_plan" : {
+    "title": "LEGAL BOUTIQUE ADVISERS",
+    "description": {
+      "paragraph1": "LEGAL BOUTIQUE ADVISERS a été développé pour offrir à nos clients une large gamme de services juridiques avec une approche personnalisée.",
+      "paragraph2": "Dès que vous décidez d'investir en Espagne, que ce soit pour une résidence de vacances, pour des entreprises ou fonds d'investissement, ou même des entreprises de construction, nous fournissons des conseils complets, de la recherche de la propriété à la recommandation de la meilleure forme juridique pour minimiser l'impact fiscal de votre investissement, en vous accompagnant jusqu'à la fin 'clé en main,' dans tous les aspects liés au Droit Immobilier.",
+      "paragraph3": "Une fois que vous avez investi, nous vous accompagnons dans les questions relatives au Droit des Successions, y compris une planification fiscale préalable et des aspects juridiques et fiscaux postérieurs.",
+      "paragraph4": "Pour les individus ou leurs entreprises, nous étudions et analysons leur situation avec les entités bancaires.",
+      "paragraph5": "Nous travaillons avec une communication en temps réel sur le dossier.",
+      "services": {
+        "area1": "Droit Immobilier",
+        "area2": "Droit International Privé",
+        "area3": "Droit de la Famille",
+        "area4": "Obligations et Contrats",
+        "area5": "Droit Fiscal"
+      }
+    }
+  },
   "buy": {
     "section1": {
       "sectionTitle": "Pourquoi acheter avec nous ?",
@@ -78,6 +112,23 @@
     "section3": {
       "sectionTitle": "Conseils fiscaux",
       "description": "Les conseils fiscaux sont une boussole qui vous guide à travers le paysage complexe des décisions financières. Il s’agit d’optimiser vos économies tout en respectant les lois fiscales en constante évolution. Nous vous aidons à naviguer dans les subtilités de la planification fiscale, en veillant à ce que vos objectifs financiers soient atteints avec efficacité et en toute légalité. Faites de nous votre partenaire de confiance pour prendre des décisions fiscales éclairées."
+    }
+  },
+  "legal_aspect" : {
+    "title": "LEGAL BOUTIQUE ADVISERS",
+    "description": {
+      "paragraph1": "LEGAL BOUTIQUE ADVISERS a été développé pour offrir à nos clients une large gamme de services juridiques avec une approche personnalisée.",
+      "paragraph2": "Dès que vous décidez d'investir en Espagne, que ce soit pour une résidence de vacances, pour des entreprises ou fonds d'investissement, ou même des entreprises de construction, nous fournissons des conseils complets, de la recherche de la propriété à la recommandation de la meilleure forme juridique pour minimiser l'impact fiscal de votre investissement, en vous accompagnant jusqu'à la fin 'clé en main,' dans tous les aspects liés au Droit Immobilier.",
+      "paragraph3": "Une fois que vous avez investi, nous vous accompagnons dans les questions relatives au Droit des Successions, y compris une planification fiscale préalable et des aspects juridiques et fiscaux postérieurs.",
+      "paragraph4": "Pour les individus ou leurs entreprises, nous étudions et analysons leur situation avec les entités bancaires.",
+      "paragraph5": "Nous travaillons avec une communication en temps réel sur le dossier.",
+      "services": {
+        "area1": "Droit Immobilier",
+        "area2": "Droit International Privé",
+        "area3": "Droit de la Famille",
+        "area4": "Obligations et Contrats",
+        "area5": "Droit Fiscal"
+      }
     }
   },
   "invest": {
@@ -141,5 +192,20 @@
     "body": "Fort d'une grande expérience en étude de marché, nous avons acquis une connaissance approfondie du secteur immobilier et des facteurs qui influencent les tendances du marché. Nos compétences en collecte et analyse de données nous permettent de traduire des résultats de recherche complexes en insights exploitables pour nos clients.",
     "contactUsButton": "Contactez-nous",
     "learnMoreButton": "En savoir plus"
+  },
+  "corporateResposibility": {
+    "section1": {
+      "sectionTitle": "Culture et Art",
+      "description": "Chez Legal Boutique Advisers, nous avons une profonde appréciation pour l'art sous toutes ses formes, le considérant comme une composante essentielle de l'harmonie de la vie quotidienne. Nous nous consacrons à favoriser et à promouvoir la culture dans toutes ses expressions, en soutenant activement les artistes contemporains en leur offrant une plateforme pour présenter leur créativité et leur talent sur notre site web."
+    },
+    "section2": {
+      "sectionTitle": "Mécénat",
+      "description": "Le Centre Musical de la Méditerranée a été fondé à Marbella en 2004. Depuis, il a développé diverses activités liées à la musique classique. Également connu sous le nom de Música con Encanto, ce projet a réalisé, depuis sa création, une saison de concerts, du cinéma documentaire musical, des cours et des ateliers pour adultes, des voyages musicaux et la gestion administrative et artistique de la Petite Méditerranée Orchestra, un orchestre pour enfants et un orchestre à cordes pour jeunes."
+    },
+    "section3": {
+      "sectionTitle": "Investir dans l'avenir",
+      "description": "Nous sommes vos spécialistes en investissement à Marbella, offrant des perspectives locales et des opportunités pour simplifier votre parcours. De la sélection de propriétés aux conseils financiers, nous sommes là pour assurer le succès de vos investissements à Marbella.",
+      "button": "Commencez à investir maintenant"
+    }
   }
 }

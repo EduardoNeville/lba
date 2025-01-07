@@ -1,11 +1,15 @@
 import { useTranslation } from "react-i18next";
 
-export default function BuyPage() {
+export default function BuyComponent() {
   const { t } = useTranslation();
 
   return (
-    <div className="bg-gray-50 min-h-screen">
+    <div 
+      id="buy-section"
+      className="bg-gray-50 min-h-screen"
+    >
       {/* Header Section */}
+      <div className="sticky top-0 relative h-4 bg-primary z-20"> </div>
       <header className="sticky top-0 bg-white text-primary">
         <div className="container mx-auto px-6 py-16 text-center">
           <h1 className="text-4xl lg:text-6xl font-bold uppercase">
