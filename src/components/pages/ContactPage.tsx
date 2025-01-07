@@ -33,7 +33,25 @@ export default function ContactPage() {
             <h2 className="text-3xl font-bold text-center mb-6 text-primary">
               {t("contact.title")}
             </h2>
-            <form className="space-y-6">
+            <form 
+              className="space-y-6"
+              method="POST"
+              action="https://formsubmit.co/eduardoneville82@gmail.com"
+            >
+              {/* Hidden Fields for Extra Features */}
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_next" value="https://legal-boutique-advisers-bf25a.web.app/thank-you" />
+              
+              {/* Honeypot Field for Spam Protection */}
+              <input 
+                type="text" 
+                name="_honey" 
+                className="hidden"
+                style={{ display: "none" }} 
+                tabIndex={-1} 
+                autoComplete="off" 
+              />
+
               {/* Email Field */}
               <div>
                 <label
@@ -47,6 +65,7 @@ export default function ContactPage() {
                   id="email"
                   name="email"
                   placeholder={t("contact.email-placeholder")}
+                  required
                   className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring focus:ring-primary focus:border-transparent"
                 />
               </div>
@@ -64,6 +83,7 @@ export default function ContactPage() {
                   id="subject"
                   name="subject"
                   placeholder={t("contact.subject-placeholder")}
+                  required
                   className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring focus:ring-primary focus:border-transparent"
                 />
               </div>
@@ -81,6 +101,7 @@ export default function ContactPage() {
                   name="message"
                   rows={4}
                   placeholder={t("contact.message-body")}
+                  required
                   className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring focus:ring-primary focus:border-transparent"
                 ></textarea>
               </div>

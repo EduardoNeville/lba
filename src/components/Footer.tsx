@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   const { t } = useTranslation();
   return (
-    <footer className="bg-primary text-white py-12 font-zesta-regular">
+    <footer className="bottom-0 bg-primary text-white py-12 font-zesta-regular">
       <div className="container mx-auto md:px-bdr px-6 text-center">
         <h2 className="text-3xl font-bold">
           {t("callToAction.title")}

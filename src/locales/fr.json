@@ -224,5 +224,12 @@
       "description": "Nous sommes vos spécialistes en investissement à Marbella, offrant des perspectives locales et des opportunités pour simplifier votre parcours. De la sélection de propriétés aux conseils financiers, nous sommes là pour assurer le succès de vos investissements à Marbella.",
       "button": "Commencez à investir maintenant"
     }
+  },
+  "thankyou": {
+    "title": "Merci!",
+    "description": "Nous avons bien reçu votre message.",
+    "header": "Merci de nous avoir contactés",
+    "body": "Votre message a été envoyé avec succès. Notre équipe vous répondra dans les plus brefs délais.",
+    "additionalInfo": "N'hésitez pas à explorer notre site ou à nous recontacter pour plus d'informations !"
   }
 }
