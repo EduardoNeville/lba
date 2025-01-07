@@ -9,6 +9,28 @@ import AboutPage from "./components/pages/AboutPage";
 import ContactPage from "./components/pages/ContactPage";
 import "./i18n.ts"; // Import i18n configuration
 
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyDcS6ugm3ikZLUn_W72ZSs1yhj4OuoeAnc",
+  authDomain: "legal-boutique-advisers-bf25a.firebaseapp.com",
+  projectId: "legal-boutique-advisers-bf25a",
+  storageBucket: "legal-boutique-advisers-bf25a.firebasestorage.app",
+  messagingSenderId: "349550465017",
+  appId: "1:349550465017:web:e1e07f7f7850f8d7bcb728",
+  measurementId: "G-X730YGS783"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+getAnalytics(app);
+
 const App = () => {
   return (
     <Router>
