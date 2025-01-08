@@ -21,24 +21,24 @@ export default function LandingPage() {
             {t("landingPage.content")}
           </p>
           <div className="mt-8 flex justify-center gap-4">
-            <button className="border rounded border-primary mt-6 px-6 py-2 
-                      w-1/2 text-xl hover:bg-lt-primary bg-primary text-pink-50 
-                      hover:text-pink-50 transition uppercase font-zesta-bold 
-                      uppercase"
+            <Link 
+              to="/contact" 
+              onClick={() => window.scrollTo(0, 0)} 
+              className="border rounded border-primary mt-6 px-6 py-2 w-1/2
+              text-xl hover:bg-lt-primary bg-primary text-pink-50 
+              hover:text-pink-50 transition font-zesta-bold uppercase"
             >
-              <Link to="/contact">
-                {t("landingPage.contactUsButton")}
-              </Link>
-            </button>
-            <button className="border rounded border-primary mt-6 px-6 py-2 
-                      w-1/2 text-xl hover:bg-lt-primary bg-primary text-pink-50 
-                      hover:text-pink-50 transition uppercase font-zesta-bold 
-                      uppercase"
+              {t("landingPage.contactUsButton")}
+            </Link>
+            <Link 
+              to="/about"
+              onClick={() => window.scrollTo(0, 0)}  
+              className="border rounded border-primary mt-6 px-6 py-2 w-1/2
+              text-xl hover:bg-lt-primary bg-primary text-pink-50 
+              hover:text-pink-50 transition font-zesta-bold uppercase"
             >
-              <Link to="/about">
-                {t("landingPage.learnMoreButton")}
-              </Link>
-            </button>
+              {t("landingPage.learnMoreButton")}
+            </Link>
           </div>
         </div>
         {/* Background Image */}
@@ -93,14 +93,14 @@ export default function LandingPage() {
               <p className="my-4 text-lt-primary">
                 {t("main.section2.description")}
               </p>
-              <button className="border rounded border-primary p-1 w-full 
-                          text-xl bg-transparent hover:bg-pink-50 text-primary 
-                          uppercase"
-              >
-                <Link to="/buy">
+              <a href={`/invest_and_plan#buy-section`}>
+                <button className="border rounded border-primary p-1 w-full 
+                            text-xl bg-transparent hover:bg-pink-50 text-primary 
+                            uppercase"
+                >
                   {t("main.section2.button")}
-                </Link>
-              </button>
+                </button>
+              </a>
             </div>
           </section>
 
@@ -112,14 +112,14 @@ export default function LandingPage() {
             <p className="mt-4 text-lt-primary">
               {t("main.section3.description")}
             </p>
-            <button className="border rounded border-primary mt-6 px-6 py-2 
-                        w-auto text-xl bg-transparent hover:bg-pink-50 
-                        text-primary transition uppercase"
-            >
-              <Link to="/sell">
+            <a href={`/invest_and_plan#sell-section`}>
+              <button className="border rounded border-primary mt-6 px-6 py-2 
+                          w-auto text-xl bg-transparent hover:bg-pink-50 
+                          text-primary transition uppercase"
+              >
                 {t("main.section3.button")}
-              </Link>
-            </button>
+              </button>
+            </a>
           </section>
         </div>
       </main>

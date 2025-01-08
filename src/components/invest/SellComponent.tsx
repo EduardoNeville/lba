@@ -44,11 +44,11 @@ export default function SellPage() {
               <p className="my-4 text-lt-primary">
                 {t("sell.section2.description")}
               </p>
-              <button className="border rounded border-primary px-6 py-2 w-full text-xl bg-transparent hover:bg-pink-50 text-primary transition uppercase">
-                <Link to="/contact">
+              <Link to="/contact" onClick={() => window.scrollTo(0, 0)}>
+                <button className="border rounded border-primary px-6 py-2 w-full text-xl bg-transparent hover:bg-pink-50 text-primary transition uppercase">
                   {t("sell.section2.button")}
-                </Link>
-              </button>
+                </button>
+              </Link>
             </div>
             {/* Ideal Image */}
             <div className="lg:w-1/2">

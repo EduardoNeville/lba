@@ -1,5 +1,4 @@
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
 
 export default function CorporateResponsibility() {
   const { t } = useTranslation();
@@ -67,11 +66,11 @@ export default function CorporateResponsibility() {
             <p className="mt-4 text-lt-primary">
               {t("corporateResposibility.section3.description")}
             </p>
-            <button className="border rounded border-primary mt-6 px-6 py-2 w-full text-xl bg-transparent hover:bg-pink-50 text-primary transition">
-              <Link to="/sell">
-                {t("corporateResposibility.section3.button")}
-              </Link>
-            </button>
+            <a href={`/invest_and_plan#sell-section`}>
+              <button className="border rounded border-primary mt-6 px-6 py-2 w-full text-xl bg-transparent hover:bg-pink-50 text-primary transition">
+                  {t("corporateResposibility.section3.button")}
+              </button>
+            </a>
           </div>
         </section>
       </main>
