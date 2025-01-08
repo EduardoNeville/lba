@@ -28,9 +28,7 @@ export default function LandingPage() {
               text-xl hover:bg-lt-primary bg-primary text-pink-50 
               hover:text-pink-50 transition font-zesta-bold uppercase"
             >
-              <button>
-                {t("landingPage.contactUsButton")}
-              </button>
+              {t("landingPage.contactUsButton")}
             </Link>
             <Link 
               to="/about"
@@ -39,9 +37,7 @@ export default function LandingPage() {
               text-xl hover:bg-lt-primary bg-primary text-pink-50 
               hover:text-pink-50 transition font-zesta-bold uppercase"
             >
-              <button>
-                {t("landingPage.learnMoreButton")}
-              </button>
+              {t("landingPage.learnMoreButton")}
             </Link>
           </div>
         </div>
