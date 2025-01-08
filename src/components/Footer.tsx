@@ -12,12 +12,16 @@ const Footer = () => {
         <p className="mt-4 text-white">{t("callToAction.body")}</p>
 
         <div className="mt-8 flex justify-center gap-4">
-          <button className="border rounded border-white mt-6 px-6 py-2 w-1/2 lg:w-1/4 bg-transparent hover:bg-white hover:text-primary text-white transition uppercase">
-            <Link to="/contact">{t("callToAction.contactUsButton")}</Link>
-          </button>
-          <button className="border rounded border-white mt-6 px-6 py-2 w-1/2 lg:w-1/4 bg-transparent hover:bg-pink-50 hover:text-primary text-white transition uppercase">
-            <Link to="/about">{t("callToAction.learnMoreButton")}</Link>
-          </button>
+          <Link className="border rounded border-white mt-6 px-6 py-2 w-1/2 lg:w-1/4 bg-transparent hover:bg-white hover:text-primary text-white transition uppercase" to="/contact" onClick={() => window.scrollTo(0, 0)}>
+            <button>
+                {t("callToAction.contactUsButton")}
+            </button>
+          </Link>
+          <Link className="border rounded border-white mt-6 px-6 py-2 w-1/2 lg:w-1/4 bg-transparent hover:bg-pink-50 hover:text-primary text-white transition uppercase" to="/about" onClick={() => window.scrollTo(0, 0)}>
+            <button>
+                {t("callToAction.learnMoreButton")}
+            </button>
+          </Link>
         </div>
 
         {/* Social Links and Contact Info */}

@@ -55,11 +55,11 @@ export default function BuyComponent() {
               <p className="mt-4 text-lt-primary">
                 {t("buy.section3.description")}
               </p>
-              <button className="border rounded border-primary mt-4 px-6 py-2 w-full text-xl bg-transparent hover:bg-pink-50 text-primary transition uppercase">
-                <Link to="/contact">
+              <Link to="/contact" onClick={() => window.scrollTo(0, 0)}>
+                <button className="border rounded border-primary mt-4 px-6 py-2 w-full text-xl bg-transparent hover:bg-pink-50 text-primary transition uppercase">
                   {t("sell.section2.button")}
-                </Link>
-              </button>
+                </button>
+              </Link>
             </div>
             <div className="lg:w-1/2">
               <img

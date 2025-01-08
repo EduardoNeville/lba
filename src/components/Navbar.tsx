@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const MENU_LIST = [
   { textKey: "navbar.b3", path: "/corporate_responsibility" },
@@ -17,18 +17,50 @@ const INVEST_SECTIONS = [
 
 const Navbar = () => {
   const { t, i18n } = useTranslation();
+
   const [navbar, setNavbar] = useState(false);
   const [selectedLanguage, setSelectedLanguage] = useState(t("lang"));
   const [langToggle, setToggle] = useState(false);
-  const [showInvestDropdown, setShowInvestDropdown] = useState(false); // State to toggle the Invest dropdown
+  const [showInvestDropdown, setShowInvestDropdown] = useState(false);
+  const [isVisible, setIsVisible] = useState(true); // Tracks navbar visibility
+  const [lastScrollY, setLastScrollY] = useState(0); // Tracks the last scroll position
 
   const changeLanguage = (lang: string) => {
     setSelectedLanguage(lang);
     i18n.changeLanguage(lang);
   };
 
+  const handleScroll = () => {
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY > lastScrollY && currentScrollY >= 100) {
+      // Scrolling down
+      setNavbar(false);
+      setIsVisible(false);
+      setShowInvestDropdown(false);
+      setToggle(false);
+    } else {
+      // Scrolling up
+      setIsVisible(true);
+    }
+    setLastScrollY(currentScrollY);
+  };
+
+  // Adding scroll event listener
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollY]);
+
   return (
-    <nav className="sticky top-0 z-30 w-full bg-white font-zesta-bold">
+    <nav
+      className={`fixed z-30 w-full bg-white font-zesta-bold transition-transform duration-300 ${
+        isVisible ? "translate-y-0" : "-translate-y-full"
+      }`}
+    >
       <div className="justify-between px-8 md:w-full md:mx-auto lg:max-w-7xl md:items-center md:flex md:px-16 md:mx-16">
         
         {/* Logo & Toggle Button */}
@@ -36,7 +68,13 @@ const Navbar = () => {
           <Link 
             to="/" 
             className="flex items-center"
-            onClick={() => setNavbar(!navbar)}
+            onClick={() => {
+              window.scrollTo(0, 0);
+              if (showInvestDropdown) {
+                setShowInvestDropdown(!showInvestDropdown);
+              }
+              setNavbar(!navbar);
+            }}
           >
             <img
               alt="LBA_Logo"
@@ -91,14 +129,15 @@ const Navbar = () => {
           }`}
         >
           {/* Menu List */}
-          <ul className="flex flex-col md:flex-row justify-left items-left space-y-4 mx-3 md:space-y-0 md:space-x-8 py-4 md:py-0">
+          <ul className="flex flex-col md:flex-row justify-left items-left space-y-4 mx-3 md:space-y-0 md:space-x-8 lg:py-4 py-4">
 
             {/* Dropdown for Invest Sections */}
-            <li className="relative text-sm md:text-base font-medium text-primary hover:text-secondary uppercase">
+            <li className="relative text-sm md:text-base font-medium text-primary hover:text-secondary ">
               <span 
-                className="cursor-pointer flex items-center justify-between" 
+                className="cursor-pointer flex items-center justify-between uppercase" 
                 onClick={() => {
-                  setShowInvestDropdown(!showInvestDropdown)
+                  window.scrollTo(0, 0);
+                  setShowInvestDropdown(!showInvestDropdown);
                 }}
               >
                 {t("navbar.b2")}
@@ -116,17 +155,16 @@ const Navbar = () => {
               </span>
               {/* Dropdown items for Invest */}
               {showInvestDropdown && (
-                <ul className="pt-4 pb-6 w-full md:absolute md:w-max md:mt-4 md:bg-white md:shadow-md md:rounded-md">
+                <ul className="pt-4 md:pb-4 w-full md:absolute md:w-max md:mt-4 md:bg-white md:shadow-md md:rounded-b-md">
                   {INVEST_SECTIONS.map((section) => (
                     <li 
                       key={section.id} 
-                      className="px-4 py-2 hover:bg-gray-100"
-                      onClick={() => {
-                        setShowInvestDropdown(!showInvestDropdown)}
-                      }
+                      className="flex items-center px-4 py-2 hover:bg-gray-100"
+                      onClick={() => setShowInvestDropdown(!showInvestDropdown)}
                     >
+                      <span className="mr-2">{">"}</span> {/* Arrow for list item */}
                       <a href={`/invest_and_plan#${section.id}`} className="block text-primary">
-                        <h2>
+                        <h2 className="uppercase">
                           {t(section.textKey)}
                         </h2>
                         <p className="text-sm">
@@ -146,34 +184,32 @@ const Navbar = () => {
                 <Link 
                   to={menu.path}
                   onClick={() => {
-                    setNavbar(!navbar)
-                    showInvestDropdown ? 
-                    (setShowInvestDropdown(!showInvestDropdown)) :
-                    (setShowInvestDropdown(showInvestDropdown))
+                    setNavbar(!navbar);
+                    window.scrollTo(0, 0);
+                    if (showInvestDropdown) {
+                      setShowInvestDropdown(!showInvestDropdown);
+                    }
                   }}
                 >
                   {t(menu.textKey)}
                 </Link>
               </li>
             ))}
-
           </ul>
 
-          {/* Language Toggle */}
-          <div className="flex items-left justify-left space-x-4">
+          {/* Language T */}
+          <div className="flex items-left justify-left mx-3 pb-4 lg:py-4">
             <div className="relative">
               <span 
                 className="cursor-pointer flex items-center justify-between" 
                 onClick={() => setToggle(!langToggle)}
               >
-                <img
-                  src={`/flags/${selectedLanguage}.png`}
-                  alt={`${selectedLanguage} flag`}
-                  className="w-icon"
-                />
+                <span className="font-bold text-primary text-sm md:text-base">
+                  {selectedLanguage.toUpperCase()}
+                </span>
                 <svg 
-                  className={`w-5 h-5 transform transition-transform duration-200 ${
-                    showInvestDropdown ? "rotate-180" : ""
+                  className={`w-5 h-5 text-primary transform transition-transform duration-200 ${
+                    langToggle ? "rotate-180" : ""
                   }`} 
                   xmlns="http://www.w3.org/2000/svg" 
                   fill="none" 
@@ -185,33 +221,25 @@ const Navbar = () => {
               </span>
 
               {langToggle && (
-                <div className="absolute bg-white border rounded-md shadow-lg md:mt-1">
+                <div className="absolute bg-white rounded-b-md md:mt-1 py-2 -mx-3">
                   <div className="flex flex-col">
                     <button
-                      className="flex items-center px-3 py-2 hover:bg-gray-100"
+                      className="flex items-center px-4 py-2 hover:bg-gray-100"
                       onClick={() => {
                         setToggle(false);
                         changeLanguage("en");
                       }}
                     >
-                      <img
-                        src="/flags/en.png"
-                        alt="English"
-                        className="w-icon"
-                      />
+                      <span className="text-primary">EN</span>
                     </button>
                     <button
-                      className="flex items-center px-3 py-2 hover:bg-gray-100"
+                      className="flex items-center px-4 py-2 hover:bg-gray-100"
                       onClick={() => {
                         setToggle(false);
                         changeLanguage("fr");
                       }}
                     >
-                      <img
-                        src="/flags/fr.png"
-                        alt="French"
-                        className="w-icon"
-                      />
+                      <span className="text-primary">FR</span>
                     </button>
                   </div>
                 </div>
