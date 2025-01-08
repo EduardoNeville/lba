@@ -186,7 +186,7 @@
     "email": "Your email",
     "email-placeholder": "name@email.com",
     "subject": "Subject",
-    "subject-placeholder": "Let us konw how we can help you",
+    "subject-placeholder": "Let us know how we can help you",
     "message": "Your message",
     "message-body" : "Leave us a comment",
     "submit": "Submit"
@@ -211,5 +211,12 @@
       "description": "We're your Marbella investment specialists, offering local insights and opportunities to simplify your journey. From property selection to financial guidance, we're here to ensure your Marbella investments thrive.",
       "button": "Start Investing Now"
     }
+  },
+  "thankyou": {
+    "title": "Thank You!",
+    "description": "We have received your message.",
+    "header": "Thank You for Reaching Out",
+    "body": "Your message has been sent successfully. Our team will get back to you as soon as possible.",
+    "additionalInfo": "Feel free to explore our site or contact us again for more information!"
   }
 }
