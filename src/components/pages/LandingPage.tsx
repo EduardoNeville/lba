@@ -21,21 +21,25 @@ export default function LandingPage() {
             {t("landingPage.content")}
           </p>
           <div className="mt-8 flex justify-center gap-4">
-            <Link to="/contact" onClick={() => window.scrollTo(0, 0)}>
-              <button className="border rounded border-primary mt-6 px-6 py-2 
-                        w-1/2 text-xl hover:bg-lt-primary bg-primary text-pink-50 
-                        hover:text-pink-50 transition uppercase font-zesta-bold 
-                        uppercase"
-              >
+            <Link 
+              to="/contact" 
+              onClick={() => window.scrollTo(0, 0)} 
+              className="border rounded border-primary mt-6 px-6 py-2 w-1/2
+              text-xl hover:bg-lt-primary bg-primary text-pink-50 
+              hover:text-pink-50 transition font-zesta-bold uppercase"
+            >
+              <button>
                 {t("landingPage.contactUsButton")}
               </button>
             </Link>
-            <Link to="/about" onClick={() => window.scrollTo(0, 0)}>
-              <button className="border rounded border-primary mt-6 px-6 py-2 
-                        w-1/2 text-xl hover:bg-lt-primary bg-primary text-pink-50 
-                        hover:text-pink-50 transition uppercase font-zesta-bold 
-                        uppercase"
-              >
+            <Link 
+              to="/about"
+              onClick={() => window.scrollTo(0, 0)}  
+              className="border rounded border-primary mt-6 px-6 py-2 w-1/2
+              text-xl hover:bg-lt-primary bg-primary text-pink-50 
+              hover:text-pink-50 transition font-zesta-bold uppercase"
+            >
+              <button>
                 {t("landingPage.learnMoreButton")}
               </button>
             </Link>
