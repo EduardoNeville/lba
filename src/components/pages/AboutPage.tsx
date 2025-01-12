@@ -41,13 +41,6 @@ export default function AboutPage() {
               <p className="mt-4 text-lt-primary">
                 {t("about.section2.description")}
               </p>
-
-              <h2 className="mt-4 text-3xl font-bold text-primary">
-                {t("about.section3.sectionTitle")}
-              </h2>
-              <p className="mt-4 text-lt-primary">
-                {t("about.section3.description")}
-              </p>
             </div>
             {/* Placeholder Image */}
             <div className="lg:w-1/2">
@@ -62,10 +55,10 @@ export default function AboutPage() {
           {/* Section 4: The Team */}
           <section className="text-center bg-gray-50 py-16">
             <h2 className="text-3xl font-bold text-primary">
-              {t("about.section4.sectionTitle")}
+              {t("about.section3.sectionTitle")}
             </h2>
             <p className="mt-4 text-lt-primary max-w-3xl mx-auto">
-              {t("about.section4.description")}
+              {t("about.section3.description")}
             </p>
             {/* Placeholder Team Image */}
             <img
@@ -75,6 +68,30 @@ export default function AboutPage() {
             />
           </section>
 
+          {/* New Section: Marisela - The Founder */}
+          <section className="bg-white shadow-md p-8 rounded-lg flex flex-col lg:flex-row gap-8 items-center">
+            {/* Marisela's Profile Image */}
+            <div className="lg:w-1/3">
+              <img
+                src="images/marisela-castro.jpg"
+                alt={t("about.marisela.name")}
+                className="rounded-lg shadow-lg"
+              />
+            </div>
+
+            {/* Marisela's Profile Details */}
+            <div className="lg:w-2/3">
+              <h2 className="text-3xl font-bold text-primary">
+                {t("about.marisela.name")}
+              </h2>
+              <h3 className="mt-2 text-xl font-semibold text-lt-primary">
+                {t("about.marisela.title")}
+              </h3>
+              <p className="mt-4 text-lt-primary whitespace-pre-wrap">
+                {t("about.marisela.description")}
+              </p>
+            </div>
+          </section>
         </div>
       </main>
     </div>
