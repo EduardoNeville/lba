@@ -1,35 +1,23 @@
 import { useTranslation } from "react-i18next";
 
+import Header from "../components/Header";
+
 export default function CorporateResponsibility() {
   const { t } = useTranslation();
 
   return (
     <div className="bg-gray-50 min-h-screen font-zesta-regular">
       {/* Header Section */}
-      <header className="sticky top-0 bg-white text-pink-50 relative">
-        <div className="container mx-auto lg:px-bdr px-6 py-16 text-center 
-                relative z-10 text-primary"
-        >
-          <h1 className="text-4xl lg:text-6xl font-bold uppercase">
-            {t("invest.section1.title")}
-          </h1>
-          <p className="mt-4 text-2xl lg:text-2xl">
-            {t("invest.section1.body")}
-          </p>
-        </div>
-        {/* Background Image */}
-        <div 
-          className="absolute inset-0 w-full h-full bg-cover bg-center z-0 
-              opacity-50 bg-primary"
-          style={{
-              backgroundImage: 'url("images/las-brisas-landscape.jpg")',
-          }}
-        />
-      </header>
+      <div className="relative h-4 bg-primary z-2"> </div>
+      <Header
+        title={t("invest.section1.title")}
+        content={t("invest.section1.body")}
+        backgroundImage="images/las-brisas-landscape.jpg"
+      />
 
       {/* Section 1: Culture and Art */}
-      <div className="relative h-4 bg-primary z-20"></div>
-      <main className="relative md:px-bdr px-2 py-16 z-20 space-y-16 bg-gray-50">
+      <div className="relative h-4 bg-primary z-2"></div>
+      <main className="sticky relative md:px-bdr px-2 py-16 z-2 space-y-16 bg-gray-50">
         <section className="text-center bg-gray-50 ">
           <h2 className="text-3xl font-bold text-primary">
             {t("corporateResposibility.section1.sectionTitle")}

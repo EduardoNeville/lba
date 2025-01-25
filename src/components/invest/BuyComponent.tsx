@@ -1,6 +1,8 @@
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
+import Header from "../Header";
+
 export default function BuyComponent() {
   const { t } = useTranslation();
 
@@ -10,29 +12,16 @@ export default function BuyComponent() {
       className="bg-gray-50 min-h-screen font-zesta-regular"
     >
       {/* Header Section */}
-      <div className="sticky top-0 relative h-4 bg-primary z-20"> </div>
-      <header className="sticky top-0 bg-white text-primary">
-        <div className="container mx-auto md:px-bdr px-6 py-16 text-center">
-          <h1 className="text-4xl lg:text-6xl font-bold uppercase">
-            {t("buy.section1.sectionTitle")}
-          </h1>
-          <p className="mt-4 font-light text-lg lg:text-2xl">
-            {t("buy.section1.description")}
-          </p>
-        </div>
-        {/* Dummy Image */}
-        <div 
-          className="absolute inset-0 w-full h-full bg-cover bg-center z-0 
-              opacity-50 bg-primary"
-          style={{
-            backgroundImage: `url('images/puente-romano-peer.jpeg')`,
-          }}
-        />
-      </header>
+      <div className="sticky relative h-4 bg-primary z-2"> </div>
+      <Header
+        title={t("buy.section1.sectionTitle")}
+        content={t("buy.section1.description")}
+        backgroundImage="images/puente-romano-peer.jpeg"
+      />
 
       {/* Main Sections */}
-      <div className="relative h-4 bg-primary z-20"> </div>
-      <main className="relative bg-gray-50">
+      <div className="sticky relative h-4 bg-primary z-20"> </div>
+      <main className="sticky relative bg-gray-50">
         <div className="container mx-auto py-16 md:px-bdr px-6 space-y-16 z-20">
           {/* Section 1: Expertise */}
           <section className="flex flex-col-reverse lg:flex-row gap-8 items-center">

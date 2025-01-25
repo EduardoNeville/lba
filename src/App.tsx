@@ -2,17 +2,17 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer.tsx";
 
-import LandingPage from "./components/pages/LandingPage";
-import InvestPlanPage from "./components/pages/InvestPlanPage.tsx";
-import CorporateResponsibility from "./components/pages/CorporateResponsibility.tsx";
-import AboutPage from "./components/pages/AboutPage";
-import ContactPage from "./components/pages/ContactPage";
+import LandingPage from "./pages/LandingPage";
+import InvestPlanPage from "./pages/InvestPlanPage.tsx";
+import CorporateResponsibility from "./pages/CorporateResponsibility.tsx";
+import AboutPage from "./pages/AboutPage";
+import ContactPage from "./pages/ContactPage";
+import ThankYouPage from "./pages/ThankYouPage.tsx";
 import "./i18n.ts"; // Import i18n configuration
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import ThankYouPage from "./components/pages/ThankYouPage.tsx";
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
