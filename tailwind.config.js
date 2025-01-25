@@ -21,6 +21,9 @@ export default {
       },
       padding: {
         'bdr': '10rem'
+      },
+      text: {
+
       }
     },
   },

@@ -27,7 +27,7 @@ export default function LandingPage() {
       />
 
       {/* Main Sections */}
-      <div className="relative h-4 bg-primary z-2"> </div>
+      <div className="sticky relative h-4 bg-primary z-2"> </div>
       <main className="sticky relative bg-gray-50 z-2">
         <div className="container mx-auto py-16 lg:px-bdr px-6 space-y-16">
           {/* Section 1: Expertise */}

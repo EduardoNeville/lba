@@ -16,7 +16,7 @@ export default function CorporateResponsibility() {
       />
 
       {/* Section 1: Culture and Art */}
-      <div className="relative h-4 bg-primary z-2"></div>
+      <div className="sticky relative h-4 bg-primary z-2"></div>
       <main className="sticky relative md:px-bdr px-2 py-16 z-2 space-y-16 bg-gray-50">
         <section className="text-center bg-gray-50 ">
           <h2 className="text-3xl font-bold text-primary">

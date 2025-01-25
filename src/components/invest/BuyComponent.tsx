@@ -67,32 +67,16 @@ export default function BuyComponent() {
             <p className="mt-4 text-lt-primary max-w-3xl mx-auto">
               {t("buy.section4.description")}
             </p>
-            {/* Dummy Image */}
-            <img
-              src="https://via.placeholder.com/800x400?text=Your+Dream+Home+Marbella"
-              alt="Dream Property in Marbella"
-              className="mt-8 mx-auto rounded-lg shadow-lg"
-            />
           </section>
 
           {/* Section 4: Golden Visa */}
           <section className="bg-white shadow-md p-8 rounded-lg flex flex-col lg:flex-row gap-8 items-center">
-            <div>
               <h2 className="text-3xl font-bold text-primary">
                 {t("buy.section5.sectionTitle")}
               </h2>
               <p className="mt-4 text-lt-primary">
                 {t("buy.section5.description")}
               </p>
-            </div>
-            <div className="lg:w-1/2">
-              {/* Dummy Image */}
-              <img
-                src="https://via.placeholder.com/600x400?text=Golden+Visa+Legal+Support"
-                alt="Golden Visa Legal Support"
-                className="rounded-lg shadow-lg"
-              />
-            </div>
           </section>
         </div>
       </main>

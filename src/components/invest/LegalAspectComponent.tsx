@@ -1,4 +1,5 @@
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 import Header from "../Header";
 
 export default function LegalAspectComponent() {
@@ -33,9 +34,11 @@ export default function LegalAspectComponent() {
               </p>
               {/* CTA Button */}
               <div className="mt-4">
-                <button className="border rounded border-primary px-6 py-2 text-lg bg-transparent hover:bg-pink-50 text-primary transition uppercase">
-                  Learn More
-                </button>
+                <Link to="/contact" onClick={() => window.scrollTo(0, 0)}>
+                  <button className="border rounded border-primary px-6 py-2 text-lg bg-transparent hover:bg-pink-50 text-primary transition uppercase">
+                    {t("sell.section2.button")}
+                  </button>
+                </Link>
               </div>
             </div>
             <div className="lg:w-1/2">
@@ -58,9 +61,11 @@ export default function LegalAspectComponent() {
 
             {/* CTA Button */}
             <div className="mt-4">
-              <button className="border rounded border-primary px-6 py-2 text-lg bg-transparent hover:bg-pink-50 text-primary transition uppercase">
-                {t("landingPage.learnMoreButton")}
-              </button>
+              <Link to="/contact" onClick={() => window.scrollTo(0, 0)}>
+                <button className="border rounded border-primary px-6 py-2 text-lg bg-transparent hover:bg-pink-50 text-primary transition uppercase">
+                  {t("landingPage.learnMoreButton")}
+                </button>
+              </Link>
             </div>
           </section>
 

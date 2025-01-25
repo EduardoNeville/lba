@@ -15,7 +15,7 @@ export default function AboutPage() {
       />
 
       {/* Main Sections */}
-      <div className="relative h-4 bg-primary z-2"> </div>
+      <div className="sticky relative h-4 bg-primary z-2"> </div>
       <main className="sticky relative bg-gray-50 z-2">
         <div className="container mx-auto py-16 lg:px-bdr px-6 space-y-16 z-2">
           {/* Section 2: An Attentive Relationship */}
@@ -46,12 +46,6 @@ export default function AboutPage() {
             <p className="mt-4 text-lt-primary max-w-3xl mx-auto">
               {t("about.section3.description")}
             </p>
-            {/* Placeholder Team Image */}
-            <img
-              src="https://via.placeholder.com/800x400?text=Real+Estate+Team"
-              alt="Our Real Estate Team"
-              className="mt-8 mx-auto rounded-lg shadow-lg"
-            />
           </section>
 
           {/* New Section: Marisela - The Founder */}

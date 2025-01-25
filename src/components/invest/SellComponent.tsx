@@ -22,7 +22,7 @@ export default function SellPage() {
       {/* Main Sections */}
       <div className="relative h-4 bg-primary z-2"> </div>
       <main className="sticky relative bg-gray-50 z-2">
-        <div className="container mx-auto pt-16 md:px-bdr px-6 space-y-16 z-20">
+        <div className="container mx-auto pt-16 md:px-bdr px-6 space-y-16 z-2">
 
           {/* Section 1: Sell with Confidence */}
           <section className="bg-white shadow-md p-8 rounded-lg flex flex-col lg:flex-row-reverse gap-8 items-center">
