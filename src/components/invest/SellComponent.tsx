@@ -1,6 +1,8 @@
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
+import Header from "../Header";
+
 export default function SellPage() {
   const { t } = useTranslation();
 
@@ -10,29 +12,16 @@ export default function SellPage() {
       className="bg-gray-50 min-h-screen font-zesta-bold"
     >
       {/* Header Section */}
-      <div className="sticky top-0 relative h-4 bg-primary z-20"></div>
-      <header className="sticky top-0 bg-white text-primary">
-        <div className="container mx-auto md:px-bdr px-6 py-16 text-center">
-          <h1 className="text-4xl lg:text-6xl font-bold uppercase">
-            {t("sell.section1.sectionTitle")}
-          </h1>
-          <p className="mt-4 font-light text-lg lg:text-2xl">
-            {t("sell.section1.description")}
-          </p>
-          {/* Dummy Banner Image */}
-          <div
-            className="absolute inset-0 bg-cover bg-center opacity-40"
-            style={{
-              backgroundImage:
-                'url("images/plaza-los-naranjos.jpg")',
-            }}
-          ></div>
-        </div>
-      </header>
+      <div className="relative h-4 bg-primary z-2"> </div>
+      <Header
+        title={t("sell.section1.sectionTitle")}
+        content={t("sell.section1.description")}
+        backgroundImage="images/plaza-los-naranjos.jpg"
+      />
       
       {/* Main Sections */}
-      <div className="relative h-4 bg-primary z-20"> </div>
-      <main className="relative bg-gray-50">
+      <div className="relative h-4 bg-primary z-2"> </div>
+      <main className="relative bg-gray-50 z-2">
         <div className="container mx-auto pt-16 md:px-bdr px-6 space-y-16 z-20">
 
           {/* Section 1: Sell with Confidence */}

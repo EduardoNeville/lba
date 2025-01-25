@@ -1,34 +1,24 @@
 import { useTranslation } from "react-i18next";
 
+import Header from "../components/Header";
+
 export default function ContactPage() {
   const { t } = useTranslation();
 
   return (
     <div className="bg-gray-50 min-h-screen font-zesta-regular">
       {/* Header Section */}
-      <header className="sticky top-0 bg-white text-primary">
-        <div className="container mx-auto md:px-bdr px-6 py-16 text-center relative">
-          <h1 className="text-4xl lg:text-6xl font-bold uppercase">
-            {t("contact.title")}
-          </h1>
-          <p className="mt-4 font-light text-lg lg:text-2xl">
-            {t("contact.description")}
-          </p>
-        </div>
-        {/* Background Image */}
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-30"
-          style={{
-            backgroundImage:
-              'url("images/casa-la-concha.jpg")',
-          }}
-        ></div>
-      </header>
+      <div className="relative h-4 bg-primary z-2"> </div>
+      <Header
+        title={t("contact.title")}
+        content={t("contact.description")}
+        backgroundImage="images/casa-la-concha.jpg"
+      />
 
       {/* Contact Form Section */}
-      <div className="relative h-4 bg-primary z-10"></div>
-      <main className="relative bg-gray-50">
-        <div className="container mx-auto py-16 md:px-bdr px-6 z-20">
+      <div className="sticky relative h-4 bg-primary z-3"></div>
+      <main className="relative bg-gray-50 z-2">
+        <div className="container mx-auto py-16 md:px-bdr px-6 z-2">
           <section className="bg-white shadow-md p-8 rounded-lg max-w-2xl mx-auto relative">
             <h2 className="text-3xl font-bold text-center mb-6 text-primary">
               {t("contact.title")}

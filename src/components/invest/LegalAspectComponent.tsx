@@ -9,9 +9,9 @@ export default function LegalAspectComponent() {
       className="bg-gray-50 min-h-screen font-zesta-regular"
     >
       {/* Header Section */}
-      <div className="sticky top-0 relative h-4 bg-primary z-20"> </div>
-      <header className="sticky top-0 bg-white text-primary">
-        <div className="container mx-auto md:px-bdr px-6 py-16 text-center">
+      <header className="sticky top-0 bg-white text-pink-50 relative z-0">
+        <div className="container mx-auto lg:px-bdr px-6 py-16 text-center 
+                        relative z-10 text-primary">
           <h1 className="text-4xl lg:text-6xl font-bold uppercase">
             {t("legalAspect.description.paragraph2.title")}
           </h1>
@@ -31,8 +31,8 @@ export default function LegalAspectComponent() {
       </header>
 
       {/* Main Sections */}
-      <div className="relative h-4 bg-primary z-20"> </div>
-      <main className="relative bg-gray-50">
+      <div className="relative h-4 bg-primary z-2"> </div>
+      <main className="relative bg-gray-50 z-2">
         <div className="container mx-auto py-16 md:px-bdr px-6 space-y-16 z-20">
 
           {/* Section 2: Inheritance Law */}
