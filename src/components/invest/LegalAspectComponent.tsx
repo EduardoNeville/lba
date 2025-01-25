@@ -1,4 +1,5 @@
 import { useTranslation } from "react-i18next";
+import Header from "../Header";
 
 export default function LegalAspectComponent() {
   const { t } = useTranslation();
@@ -9,31 +10,17 @@ export default function LegalAspectComponent() {
       className="bg-gray-50 min-h-screen font-zesta-regular"
     >
       {/* Header Section */}
-      <header className="sticky top-0 bg-white text-pink-50 relative z-0">
-        <div className="container mx-auto lg:px-bdr px-6 py-16 text-center 
-                        relative z-10 text-primary">
-          <h1 className="text-4xl lg:text-6xl font-bold uppercase">
-            {t("legalAspect.description.paragraph2.title")}
-          </h1>
-          <p className="mt-4 font-light text-lg lg:text-2xl">
-            {t("legalAspect.description.paragraph2.text")}
-          </p>
-        </div>
-        {/* Background Image */}
-        <div
-          className="absolute inset-0 w-full h-full bg-cover bg-center z-0 
-            opacity-50 bg-primary"
-          style={{
-            backgroundImage:
-              `url('images/golf-lake-villa-padierna.jpg')`,
-          }}
-        />
-      </header>
+      <div className="sticky relative h-4 bg-primary z-2"> </div>
+      <Header
+        title={t("legalAspect.description.paragraph2.title")}
+        content={t("legalAspect.description.paragraph2.text")}
+        backgroundImage="images/golf-lake-villa-padierna.jpg"
+      />
 
       {/* Main Sections */}
       <div className="relative h-4 bg-primary z-2"> </div>
-      <main className="relative bg-gray-50 z-2">
-        <div className="container mx-auto py-16 md:px-bdr px-6 space-y-16 z-20">
+      <main className="sticky relative bg-gray-50 z-2">
+        <div className="container mx-auto py-16 md:px-bdr px-6 space-y-16 z-2">
 
           {/* Section 2: Inheritance Law */}
           <section className="bg-white shadow-md p-8 rounded-lg flex flex-col lg:flex-row-reverse gap-8 items-center">

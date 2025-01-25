@@ -12,7 +12,7 @@ export default function BuyComponent() {
       className="bg-gray-50 min-h-screen font-zesta-regular"
     >
       {/* Header Section */}
-      <div className="relative h-4 bg-primary z-2"> </div>
+      <div className="sticky relative h-4 bg-primary z-2"> </div>
       <Header
         title={t("buy.section1.sectionTitle")}
         content={t("buy.section1.description")}
@@ -20,8 +20,8 @@ export default function BuyComponent() {
       />
 
       {/* Main Sections */}
-      <div className="relative h-4 bg-primary z-20"> </div>
-      <main className="relative bg-gray-50">
+      <div className="sticky relative h-4 bg-primary z-20"> </div>
+      <main className="sticky relative bg-gray-50">
         <div className="container mx-auto py-16 md:px-bdr px-6 space-y-16 z-20">
           {/* Section 1: Expertise */}
           <section className="flex flex-col-reverse lg:flex-row gap-8 items-center">

@@ -16,8 +16,8 @@ export default function ContactPage() {
       />
 
       {/* Contact Form Section */}
-      <div className="sticky relative h-4 bg-primary z-3"></div>
-      <main className="relative bg-gray-50 z-2">
+      <div className="relative h-4 bg-primary z-3"></div>
+      <main className="sticky relative bg-gray-50 z-2">
         <div className="container mx-auto py-16 md:px-bdr px-6 z-2">
           <section className="bg-white shadow-md p-8 rounded-lg max-w-2xl mx-auto relative">
             <h2 className="text-3xl font-bold text-center mb-6 text-primary">
