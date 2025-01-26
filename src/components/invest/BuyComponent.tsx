@@ -21,7 +21,7 @@ export default function BuyComponent() {
 
       {/* Main Sections */}
       <div className="sticky relative h-4 bg-primary z-20"> </div>
-      <main className="sticky relative bg-gray-50">
+      <section className="sticky relative bg-gray-50">
         <div className="container mx-auto py-16 md:px-bdr px-6 space-y-16 z-20">
           {/* Section 1: Expertise */}
           <section className="flex flex-col-reverse lg:flex-row gap-8 items-center">
@@ -36,7 +36,7 @@ export default function BuyComponent() {
 
             <div className="lg:w-1/2">
               <img
-                src="images/bariles.jpeg"
+                src="images/ayuntamiento-marbella.jpg"
                 alt="Luxury Properties Portfolio"
                 className="rounded-lg shadow-lg"
                 loading="lazy"
@@ -80,7 +80,7 @@ export default function BuyComponent() {
               </p>
             </div>
             <img
-              src="images/cuardo-puerto.jpeg"
+              src="images/puerto-banus.jpg"
               alt="Dream Property in Marbella"
               className="mt-16 mx-auto rounded-lg shadow-lg"
               loading="lazy"
@@ -99,7 +99,7 @@ export default function BuyComponent() {
             </div>
           </section>
         </div>
-      </main>
+      </section>
     </div>
   );
 }

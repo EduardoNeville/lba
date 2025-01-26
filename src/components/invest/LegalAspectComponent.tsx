@@ -20,7 +20,7 @@ export default function LegalAspectComponent() {
 
       {/* Main Sections */}
       <div className="relative h-4 bg-primary z-2"> </div>
-      <main className="sticky relative bg-gray-50 z-2">
+      <section className="sticky relative bg-gray-50 z-2">
         <div className="container mx-auto py-16 md:px-bdr px-6 space-y-16 z-2">
           {/* Section 3 & 4 Merged: Comprehensive Banking Advice */}
           <section className="text-center bg-gray-50 py-16">
@@ -98,7 +98,7 @@ export default function LegalAspectComponent() {
             </div>
           </section>
         </div>
-      </main>
+      </section>
     </div>
   );
 }
