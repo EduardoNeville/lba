@@ -24,7 +24,7 @@ export default function Header({
         <h1 className="text-flash uppercase">{title}</h1>
         <p className="mt-4 text-title">{subtitle}</p>
         <p className="mt-6 text-content">{content}</p>
-        <div className="mt-8 flex justify-center gap-4">
+        <div className="mt-8 flex flex-col md:flex-row justify-center gap-4">
           {buttons.map((button, index) => (
             <Link
               key={index}

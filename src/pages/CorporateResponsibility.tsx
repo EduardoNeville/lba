@@ -32,12 +32,12 @@ export default function CorporateResponsibility() {
 
   // Slider settings for react-slick
   const sliderSettings = {
-    className: "",
+    className: "center",
+    centerMode: true,
     infinite: true,
+    centerPadding: "60px",
+    slidesToShow: 3,
     speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: true,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
     responsive: [
@@ -46,6 +46,7 @@ export default function CorporateResponsibility() {
         settings: {
           arrows: false, // Hide custom arrows on smaller devices
           swipe: true,
+          slidesToShow: 1,
         },
       },
     ],
@@ -58,6 +59,8 @@ export default function CorporateResponsibility() {
       alt: "Image of a piano concert",
     },
     { src: "images/museo-arte.jpeg", alt: "Image of an art museum" },
+    { src: "images/polo-game.jpg", alt: "Image of polo game" },
+    { src: "images/playing-piano.jpeg", alt: "Image of playing piano" },
   ];
 
   return (
@@ -82,14 +85,14 @@ export default function CorporateResponsibility() {
           </p>
 
           {/* Carousel */}
-          <div className="mt-8 mx-auto max-w-screen-sm w-full relative overflow-hidden items-center justify-center">
+          <div className="mt-8 mx-auto w-full relative overflow-hidden items-center justify-center">
             <Slider {...sliderSettings}>
               {templateImages.map((image, index) => (
-                <div key={index} className="overflow-hidden">
+                <div key={index} className="overflow-hidden ">
                   <img
                     src={image.src}
                     alt={image.alt}
-                    className="w-full px-2 h-auto items-center object-cover rounded-lg shadow-lg"
+                    className="px-2 items-center object-cover rounded-2xl"
                     loading="lazy"
                   />
                 </div>
