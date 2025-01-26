@@ -1,9 +1,9 @@
 # PROMPT 8cc21528-6831-4728-8e9e-3e0f5a5673dc
 
-
 Fix this bash script to properly loop through the image names, check if they are being used if not move them to not_used directory.
 
 # OUTPUT 8cc21528-6831-4728-8e9e-3e0f5a5673dc
+
 Here is the corrected version of the bash script:
 
 ```bash
@@ -32,6 +32,7 @@ done
 ```
 
 ### Explanation of Fixes:
+
 1. **Quotes around Variables**: Quotes around variables like `"${img}"` and `"${out}"` ensure that the script handles filenames with spaces or special characters correctly.
 2. **Proper Command Structure**:
    - The `[[ -z "${out}" ]]` checks if the search output is empty (indicating the image is not used).
@@ -41,6 +42,7 @@ done
 5. **Friendly Output**: Prints the image name when it is not being used.
 
 ### Prerequisites:
+
 - The script assumes that the `rg` (ripgrep) tool is installed and configured.
 - The `public/images` directory contains the image files listed in `imgs`.
 
