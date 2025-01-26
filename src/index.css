@@ -2,86 +2,93 @@
 @tailwind components;
 @tailwind utilities;
 
-/* General body styling */
-body {
-  margin: 0;
-  font-family: 'Arial', sans-serif;
-  line-height: 1.6;
-  font-size: 16px;
-  color: #444;
+/* Slick carousel overrides */
+.slick-slider {
+  position: relative;
 }
 
-/* Container styles */
-.landing-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  min-height: 100vh;
-  background: linear-gradient(to bottom right, #002b5b, #00a8cc);
-  color: #fff;
+.slick-list {
+  overflow: visible !important; /* Show the images coming from behind */
 }
 
-/* Content styles */
-.landing-content {
-  text-align: center;
-  max-width: 500px;
+.slick-center .carousel-image {
+  transform: scale(1.2); /* Enlarge the center image */
+  transition:
+    transform 0.5s ease,
+    opacity 0.5s ease;
 }
 
-.landing-title {
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin-bottom: 10px;
+.carousel-image {
+  opacity: 0.6;
+  transform: scale(0.9);
+  transition:
+    transform 0.5s ease,
+    opacity 0.5s ease;
 }
 
-.landing-subtitle {
-  font-size: 1.5rem;
-  font-weight: 300;
-  margin-bottom: 15px;
+.slick-center {
+  z-index: 100; /* Ensure the center image is on top */
 }
 
-.landing-description {
-  font-size: 1rem;
-  margin-bottom: 20px;
-  color: #f0f0f0;
+.slick-center .carousel-image {
+  opacity: 1;
 }
 
-/* Button styles */
-.landing-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  flex-wrap: wrap;
+.slick-prev,
+.slick-next {
+  color: var(--tw-colors-primary); /* Tailwind's primary color */
+  z-index: 10; /* Ensure buttons are above the images */
 }
 
-.landing-button {
-  font-size: 1rem;
-  padding: 10px 20px;
-  background-color: #0277bd; /* Blue button */
-  border: none;
-  border-radius: 8px;
-  color: #fff;
-  cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.1s ease;
+.slick-prev:hover,
+.slick-next:hover {
+  color: var(--tw-colors-primary-light); /* Lighter shade on hover */
 }
 
-.landing-button:hover {
-  background-color: #01579b;
-  transform: scale(1.05);
+.slick-prev:before,
+.slick-next:before {
+  color: #000; /* Adjust arrow color */
+  font-size: 24px; /* Resize arrows */
 }
 
-/* Responsive design for smaller screens */
-@media screen and (max-width: 768px) {
-  .landing-title {
-    font-size: 2rem;
-  }
+.stack-container {
+  position: relative; /* Enable stacking behavior */
+  width: 100%; /* Adjust width of images */
+  height: 0;
+  padding-top: 75%; /* Maintain a responsive aspect ratio (4:3) */
+  margin: 0 auto;
+}
 
-  .landing-subtitle {
-    font-size: 1.25rem;
-  }
+.stacked-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Ensure image fills container */
+  height: 100%; /* Ensure image fills container */
+  object-fit: cover; /* Preserve proportions and crop if necessary */
+  transition:
+    transform 0.3s ease-in-out,
+    opacity 0.3s ease-in-out;
+}
 
-  .landing-description {
-    font-size: 0.95rem;
+.slick-list {
+  overflow: visible !important; /* Allow previous/next images to peek out */
+}
+
+.slick-center .stacked-image {
+  transform: scale(1.1); /* Slight zoom effect on the center image */
+  z-index: 100; /* Ensure it appears above others */
+  opacity: 1; /* Highlight the active image */
+}
+
+.slick-slide .stacked-image {
+  opacity: 0.6; /* Reduce opacity for non-active images */
+  transform: scale(0.9); /* Slight shrink effect for non-active images */
+}
+/* Responsive adjustment for smaller screens */
+@media (max-width: 768px) {
+  .carousel-image {
+    transform: scale(1) !important;
+    opacity: 1 !important; /* Make all images appear full-sized for mobile */
   }
 }

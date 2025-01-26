@@ -25,12 +25,17 @@
       }
     }
   },
+  "buttons": {
+    "buy": "Achetez avec nous",
+    "market": "Mettez en valeur avec nous",
+    "learn": "En savoir plus",
+    "invest": "Commencez à investir maintenant",
+    "contact": "Contactez-nous"
+  },
   "landingPage": {
     "title": "Bienvenue chez Legal Boutique Advisers",
     "subtitle": "Réalisez la maison de vos rêves",
-    "content": "Avec nos nombreuses annonces et nos agents expérimentés, la propriété parfaite est à portée de recherche.",
-    "contactUsButton": "Contactez-nous",
-    "learnMoreButton": "En savoir plus"
+    "content": "Avec nos nombreuses annonces et nos agents expérimentés, la propriété parfaite est à portée de recherche."
   },
   "main": {
     "section1": {
@@ -39,13 +44,11 @@
     },
     "section2": {
       "sectionTitle": "Intéressé par l'achat ?",
-      "description": "Nous sommes vos experts en recherche de maison à Marbella. Grâce à notre expertise locale et un large éventail d'annonces, nous vous aidons à trouver la maison de vos rêves facilement. De la consultation à la conclusion, nous rendons l'achat à Marbella simple et accessible.",
-      "button": "Achetez avec nous"
+      "description": "Nous sommes vos experts en recherche de maison à Marbella. Grâce à notre expertise locale et un large éventail d'annonces, nous vous aidons à trouver la maison de vos rêves facilement. De la consultation à la conclusion, nous rendons l'achat à Marbella simple et accessible."
     },
     "section3": {
       "sectionTitle": "Prêt à mettre en vente ?",
-      "description": "Nous sommes vos experts en vente à Marbella. De l'évaluation au marketing, nous assurons une expérience de vente sans faille. Faites-nous confiance pour maximiser la valeur de votre propriété et conclure le meilleur accord possible. Avec notre expertise et notre gamme variée de propriétés, nous contribuons à rendre l'achat ou la vente aussi agréable qu'une brise d'été.",
-      "button": "Mettez en valeur avec nous"
+      "description": "Nous sommes vos experts en vente à Marbella. De l'évaluation au marketing, nous assurons une expérience de vente sans faille. Faites-nous confiance pour maximiser la valeur de votre propriété et conclure le meilleur accord possible. Avec notre expertise et notre gamme variée de propriétés, nous contribuons à rendre l'achat ou la vente aussi agréable qu'une brise d'été."
     },
     "section4": {
       "sectionTitle": "Culture et Art",
@@ -57,8 +60,7 @@
     },
     "section6": {
       "sectionTitle": "Investir dans l'avenir",
-      "description": "Nous sommes vos spécialistes en investissement à Marbella, offrant des perspectives locales et des opportunités pour simplifier votre parcours. De la sélection des propriétés aux conseils financiers, nous sommes là pour garantir le succès de vos investissements à Marbella.",
-      "button": "Commencez à investir maintenant"
+      "description": "Nous sommes vos spécialistes en investissement à Marbella, offrant des perspectives locales et des opportunités pour simplifier votre parcours. De la sélection des propriétés aux conseils financiers, nous sommes là pour garantir le succès de vos investissements à Marbella."
     }
   },
   "investPlan": {
@@ -66,8 +68,7 @@
     "description": "Un cabinet d’avocats qui offre des conseils en gestion d’actifs, tant dans le secteur immobilier que dans celui de l'art, couvrant les aspects juridiques et fiscaux aux niveaux national et international, sans que la langue ne soit un obstacle.",
     "section2": {
       "sectionTitle": "Gestion Globale d’Actifs",
-      "description": "LBA a été fondé en tant que groupe de professionnels spécialisés dans l’investissement d’actifs, où nous assistons dès le début à analyser les intérêts et chercher le meilleur investissement répondant aux besoins de nos clients, que ce soit pour des objectifs d'investissement ou pour chercher une résidence de vacances. Toujours en contact avec des professionnels du secteur immobilier, des architectes, des notaires et des banques, nous offrons des services en tant que conseillers financiers ou consultants en gestion d’actifs. Nos clients bénéficient de nos analyses globales et détaillées qui nous permettent de sélectionner et de conseiller sur les meilleures possibilités d’investissement ainsi que sur les stratégies financières et fiscales.",
-      "button": "En savoir plus"
+      "description": "LBA a été fondé en tant que groupe de professionnels spécialisés dans l’investissement d’actifs, où nous assistons dès le début à analyser les intérêts et chercher le meilleur investissement répondant aux besoins de nos clients, que ce soit pour des objectifs d'investissement ou pour chercher une résidence de vacances. Toujours en contact avec des professionnels du secteur immobilier, des architectes, des notaires et des banques, nous offrons des services en tant que conseillers financiers ou consultants en gestion d’actifs. Nos clients bénéficient de nos analyses globales et détaillées qui nous permettent de sélectionner et de conseiller sur les meilleures possibilités d’investissement ainsi que sur les stratégies financières et fiscales."
     },
     "section3": {
       "sectionTitle": "Solutions Immobilières Sur Mesure",
@@ -89,7 +90,7 @@
       "description": "Chez Legal Boutique Advisers, nous nous engageons à faire de ce parcours une expérience extraordinaire pour vous. Notre dévouement à trouver la propriété de vos rêves va au-delà des simples biens physiques – il s'agit de vous aider à découvrir votre mode de vie idéal."
     },
     "section2": {
-      "sectionTitle": "Notre expertise",
+      "sectionTitle": "Notre Expertise",
       "description": "Grâce à une longue expérience dans la recherche de marché, nous avons développé une profonde compréhension du secteur immobilier ainsi que des tendances qui influencent le marché. Nos compétences dans la collecte et l’analyse de données nous permettent de transformer des résultats complexes en conseils exploitables pour nos clients."
     },
     "section3": {
@@ -112,8 +113,7 @@
     },
     "section2": {
       "sectionTitle": "Vendez en toute confiance",
-      "description": "Explorez les opportunités offertes, découvrez votre potentiel et profitez d’une expérience de vente sans encombre avec nous. Que vous soyez un vendeur expérimenté ou un débutant, nos ressources complètes et nos conseils d’experts vous permettront de tirer le meilleur parti de votre bien immobilier.",
-      "button": "En savoir plus"
+      "description": "Explorez les opportunités offertes, découvrez votre potentiel et profitez d’une expérience de vente sans encombre avec nous. Que vous soyez un vendeur expérimenté ou un débutant, nos ressources complètes et nos conseils d’experts vous permettront de tirer le meilleur parti de votre bien immobilier."
     },
     "section3": {
       "sectionTitle": "Conseils fiscaux",
@@ -186,7 +186,17 @@
     "marisela": {
       "name": "Marisela Castro Abad",
       "title": "Fondatrice & Avocate",
-      "description": "Diplômée en droit de l’Université de Malaga, je me suis spécialisée en droit européen et je possède des diplômes en droit fiscal et en comptabilité. Avec un parcours professionnel diversifié, j’ai travaillé avec la Commission Européenne, la Délégation du Barreau Espagnol à Bruxelles, ainsi que dans des cabinets d’avocats prestigieux à travers l'Espagne. \n En tant que membre du Barreau de Malaga et avocate mandataire en transactions immobilières certifiée par l’association AAMTI à Paris, j’apporte une expérience riche et variée. De plus, je suis associée à la Chambre Franco-Espagnole de Commerce et d’Industrie et j’ai enrichi mon expertise grâce à des formations spécialisées comme \"Tax in the Arts\" à l’université Panthéon-Assas Paris 2. Mon approche repose sur l’analyse minutieuse des circonstances uniques de chaque client, la fourniture de conseils sur mesure et la mise en œuvre de décisions qui génèrent des solutions optimales. Ma mission est de proposer des stratégies fiscalement avantageuses pour maximiser vos investissements dans divers domaines, y compris l’immobilier, le marché de l’art et bien plus encore, tout en facilitant le financement en cas de besoin. Passionnée d’opéra et d’art, je m’engage à m’impliquer et à encourager les initiatives artistiques."
+      "description": "Diplômée en droit de l’Université de Malaga, je me suis spécialisée en droit européen et je possède des diplômes en droit fiscal et en comptabilité. Avec un parcours professionnel diversifié, j’ai travaillé avec la Commission Européenne, la Délégation du Barreau Espagnol à Bruxelles, ainsi que dans des cabinets d’avocats prestigieux à travers l'Espagne. \n\nEn tant que membre du Barreau de Malaga et avocate mandataire en transactions immobilières certifiée par l’association AAMTI à Paris, j’apporte une expérience riche et variée. De plus, je suis associée à la Chambre Franco-Espagnole de Commerce et d’Industrie et j’ai enrichi mon expertise grâce à des formations spécialisées comme \"Tax in the Arts\" à l’université Panthéon-Assas Paris 2. \n\nMon approche repose sur l’analyse minutieuse des circonstances uniques de chaque client, la fourniture de conseils sur mesure et la mise en œuvre de décisions qui génèrent des solutions optimales. Ma mission est de proposer des stratégies fiscalement avantageuses pour maximiser vos investissements dans divers domaines, y compris l’immobilier, le marché de l’art et bien plus encore, tout en facilitant le financement en cas de besoin. Passionnée d’opéra et d’art, je m’engage à m’impliquer et à encourager les initiatives artistiques."
+    },
+    "jose-luis": {
+      "name": "Jose Luis Diaz Vazquez",
+      "title": "Avocat",
+      "description": "Il est diplômé en droit depuis 1998 de l’Université de Málaga. Spécialiste en Droit du travail. Le cabinet s'agit donc de conseiller le salarié au cours de la relation de travail et intervient également en défense d’employer. Défend et conseille aussi bien les travailleurs comme les entreprises, avec juridiction dans toute l'Espagne. Toujours à l'abri dans les conventions collectives ainsi que dans le Statut des employeurs, c'est pourquoi il offre une vision globale et corporative du droit du travail, donnant des solutions aux conflits du travail, essayant de médiation auparavant, évitant de recourir aux instances judiciaires"
+    },
+    "yeselia": {
+      "name": "Yeselia Castro Abad",
+      "title": "Conseiller juridique et en investissement",
+      "description": "Diplômée en droit de l'Université Rey Juan Carlos et titulaire d'un diplôme en relations sociales de l'Université de Malaga, Yeselia a également obtenu un Master of Arts en anglais à Texas Tech University. \n\nElle a eu une carrière professionnelle polyvalente, débutant dans la gestion des ressources humaines dans le secteur privé, où elle a occupé le poste de Directrice du Département du Travail dans une franchise d'une grande multinationale britannique. Plus tard, elle a rejoint ce Cabinet, se spécialisant en droit immobilier, droit du travail, immigration et comme conseillère commerciale pour les opérations d'achat et de vente de biens immobiliers. \n\nPassionnée par les différentes cultures, les langues étrangères et les relations interpersonnelles, elle aime travailler avec la population étrangère qui arrive sur la Costa del Sol et qui, ne connaissant pas la bureaucratie et la langue locale, a besoin de professionnels dans la région pour les aider à réaliser leurs objectifs. Inspirée par le concept boutique du cabinet, son objectif est de comprendre chaque client, ses besoins, de le conseiller sur les options les plus adaptées et de réaliser ses souhaits."
     }
   },
   "contact": {
@@ -197,7 +207,7 @@
     "subject": "Sujet",
     "subject-placeholder": "Faites-nous savoir comment nous pouvons vous aider",
     "message": "Votre message",
-    "message-body" : "Laissez-nous un commentaire",
+    "message-body": "Laissez-nous un commentaire",
     "submit": "Envoyer"
   },
   "callToAction": {
@@ -217,8 +227,7 @@
     },
     "section3": {
       "sectionTitle": "Investir dans l'avenir",
-      "description": "Nous sommes vos spécialistes en investissement à Marbella, offrant des perspectives locales et des opportunités pour simplifier votre parcours. De la sélection de propriétés aux conseils financiers, nous sommes là pour assurer le succès de vos investissements à Marbella.",
-      "button": "Commencez à investir maintenant"
+      "description": "Nous sommes vos spécialistes en investissement à Marbella, offrant des perspectives locales et des opportunités pour simplifier votre parcours. De la sélection de propriétés aux conseils financiers, nous sommes là pour assurer le succès de vos investissements à Marbella."
     }
   },
   "thankyou": {
