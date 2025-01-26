@@ -53,11 +53,7 @@ export default function CorporateResponsibility() {
 
   // Template images for carousel
   const templateImages = [
-    {
-      src: "images/concierto-piano-viola.jpeg",
-      alt: "Image of a piano concert",
-    },
-    { src: "images/cuardo-puerto.jpeg", alt: "Image of a harbor painting" },
+    { src: "images/concierto-piano-viola.jpeg", alt: "Image of a piano concert" },
     { src: "images/museo-arte.jpeg", alt: "Image of an art museum" },
   ];
 

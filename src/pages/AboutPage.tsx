@@ -57,6 +57,7 @@ export default function AboutPage() {
                 src="images/marisela.jpeg"
                 alt={t("about.marisela.name")}
                 className="rounded-lg shadow-lg"
+                loading="lazy"
               />
             </div>
             {/* Marisela's Profile Details */}
@@ -71,16 +72,16 @@ export default function AboutPage() {
                 {t("about.marisela.description")}
               </p>
             </div>
-            loading="lazy"
           </section>
 
           <section className="bg-white shadow-md p-8 rounded-lg flex flex-col lg:flex-row gap-8 items-center">
             {/* Profile Image */}
             <div className="lg:w-1/3 order-1 lg:order-2">
               <img
-                src="images/marisela.jpeg"
-                alt={t("about.marisela.name")}
+                src="images/yesi.jpeg"
+                alt={t("about.yeselia.name")}
                 className="rounded-lg shadow-lg"
+                loading="lazy"
               />
             </div>
             {/* Profile Details */}
@@ -95,7 +96,6 @@ export default function AboutPage() {
                 {t("about.yeselia.description")}
               </p>
             </div>
-            loading="lazy"
           </section>
 
           <section className="bg-white shadow-md p-8 rounded-lg flex flex-col lg:flex-row gap-8 items-center">
