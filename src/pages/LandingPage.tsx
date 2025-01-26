@@ -46,6 +46,7 @@ export default function LandingPage() {
                 src="images/hand-pen.jpg"
                 alt="Legal Expertise in Real Estate"
                 className="rounded-lg shadow-lg"
+                loading="lazy"
               />
             </div>
           </section>
@@ -58,6 +59,7 @@ export default function LandingPage() {
                 src="images/modern-house.jpeg"
                 alt="Buying Properties in Marbella"
                 className="rounded-lg shadow-lg"
+                loading="lazy"
               />
             </div>
             <div className="lg:w-1/2">

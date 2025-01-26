@@ -36,7 +36,13 @@
 
 .slick-prev,
 .slick-next {
-  z-index: 200 !important; /* Make navigation buttons visible */
+  color: var(--tw-colors-primary); /* Tailwind's primary color */
+  z-index: 10; /* Ensure buttons are above the images */
+}
+
+.slick-prev:hover,
+.slick-next:hover {
+  color: var(--tw-colors-primary-light); /* Lighter shade on hover */
 }
 
 .slick-prev:before,

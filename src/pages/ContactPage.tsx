@@ -121,6 +121,7 @@ export default function ContactPage() {
               src="images/golf-fondo-la-concha.jpg"
               alt="Contact our firm"
               className="mx-auto rounded-lg shadow-lg"
+              loading="lazy"
             />
           </section>
         </div>

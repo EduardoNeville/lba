@@ -39,6 +39,7 @@ export default function BuyComponent() {
                 src="images/bariles.jpeg"
                 alt="Luxury Properties Portfolio"
                 className="rounded-lg shadow-lg"
+                loading="lazy"
               />
             </div>
           </section>
@@ -63,6 +64,7 @@ export default function BuyComponent() {
                 src="images/marbella-old-town-flowers.jpg"
                 alt="Luxury Properties Portfolio"
                 className="rounded-lg shadow-lg"
+                loading="lazy"
               />
             </div>
           </section>
@@ -81,6 +83,7 @@ export default function BuyComponent() {
               src="images/cuardo-puerto.jpeg"
               alt="Dream Property in Marbella"
               className="mt-16 mx-auto rounded-lg shadow-lg"
+              loading="lazy"
             />
           </section>
 

@@ -41,6 +41,7 @@ export default function SellPage() {
                 src="images/palmera-house.jpeg"
                 alt="Sell with Confidence"
                 className="rounded-lg shadow-lg"
+                loading="lazy"
               />
             </div>
           </section>

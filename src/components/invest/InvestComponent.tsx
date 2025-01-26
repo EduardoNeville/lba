@@ -31,6 +31,7 @@ export default function InvestComponent() {
                 src="images/bugambilla-terace.jpg"
                 alt="Sell with Confidence"
                 className="rounded-lg shadow-lg"
+                loading="lazy"
               />
             </div>
             <div className="lg:w-1/2">

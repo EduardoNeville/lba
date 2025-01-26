@@ -62,6 +62,7 @@ export default function LegalAspectComponent() {
                 src="images/golf-sand-bunker-pink-trees-crop.jpg"
                 alt="Inheritance Planning"
                 className="rounded-lg shadow-lg"
+                loading="lazy"
               />
             </div>
           </section>

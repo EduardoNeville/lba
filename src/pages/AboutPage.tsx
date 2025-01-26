@@ -34,6 +34,7 @@ export default function AboutPage() {
                 src="images/catedral-malaga-crop.jpeg"
                 alt="Global Legal Advice"
                 className="rounded-lg shadow-lg"
+                loading="lazy"
               />
             </div>
           </section>
@@ -58,7 +59,6 @@ export default function AboutPage() {
                 className="rounded-lg shadow-lg"
               />
             </div>
-
             {/* Marisela's Profile Details */}
             <div className="lg:w-2/3">
               <h2 className="text-title font-bold text-primary">
@@ -71,6 +71,7 @@ export default function AboutPage() {
                 {t("about.marisela.description")}
               </p>
             </div>
+            loading="lazy"
           </section>
 
           <section className="bg-white shadow-md p-8 rounded-lg flex flex-col lg:flex-row gap-8 items-center">
@@ -94,6 +95,7 @@ export default function AboutPage() {
                 {t("about.yeselia.description")}
               </p>
             </div>
+            loading="lazy"
           </section>
 
           <section className="bg-white shadow-md p-8 rounded-lg flex flex-col lg:flex-row gap-8 items-center">
@@ -103,6 +105,7 @@ export default function AboutPage() {
                 src="images/joseluis.jpeg"
                 alt={t("about.jose-luis.name")}
                 className="rounded-lg shadow-lg"
+                loading="lazy"
               />
             </div>
             {/* Profile Details */}
