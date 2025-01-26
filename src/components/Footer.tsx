@@ -6,9 +6,7 @@ const Footer = () => {
   return (
     <footer className="bottom-0 bg-primary text-white py-32 font-zesta-regular">
       <div className="container mx-auto md:px-bdr px-6 text-center">
-        <h2 className="text-flash font-bold">
-          {t("callToAction.title")}
-        </h2>
+        <h2 className="text-flash font-bold">{t("callToAction.title")}</h2>
         <p className="mt-8 text-content text-white">{t("callToAction.body")}</p>
 
         <div className="mt-8 flex flex-col md:flex-row justify-center md:gap-16 gap-4">
@@ -66,8 +64,15 @@ const Footer = () => {
           <div className="flex flex-col items-center justify-center items-start mt-6 text-sm gap-4 text-black text-xl">
             {/* Telephone Section */}
             <div className="flex items-center gap-4">
-              <img src="icons/telephone.png" className="w-icon" alt="Phone Icon" />
-              <a href="tel:+34 952 777 991" className="hover:underline text-content">
+              <img
+                src="icons/telephone.png"
+                className="w-icon"
+                alt="Phone Icon"
+              />
+              <a
+                href="tel:+34 952 777 991"
+                className="hover:underline text-content"
+              >
                 +34 952 777 991
               </a>
             </div>
@@ -75,7 +80,10 @@ const Footer = () => {
             {/* Email Section */}
             <div className="flex items-center gap-4">
               <img src="icons/email.png" className="w-icon" alt="Email Icon" />
-              <a href="mailto:info@legalboutiqueadvisers.com" className="hover:underline text-content">
+              <a
+                href="mailto:info@legalboutiqueadvisers.com"
+                className="hover:underline text-content"
+              >
                 info@legalboutiqueadvisers.com
               </a>
             </div>

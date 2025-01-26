@@ -13,13 +13,17 @@
 
 .slick-center .carousel-image {
   transform: scale(1.2); /* Enlarge the center image */
-  transition: transform 0.5s ease, opacity 0.5s ease;
+  transition:
+    transform 0.5s ease,
+    opacity 0.5s ease;
 }
 
 .carousel-image {
   opacity: 0.6;
   transform: scale(0.9);
-  transition: transform 0.5s ease, opacity 0.5s ease;
+  transition:
+    transform 0.5s ease,
+    opacity 0.5s ease;
 }
 
 .slick-center {
@@ -56,7 +60,9 @@
   width: 100%; /* Ensure image fills container */
   height: 100%; /* Ensure image fills container */
   object-fit: cover; /* Preserve proportions and crop if necessary */
-  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  transition:
+    transform 0.3s ease-in-out,
+    opacity 0.3s ease-in-out;
 }
 
 .slick-list {

@@ -76,7 +76,6 @@ export default function CorporateResponsibility() {
         */}
         </section>
 
-
         {/* Section 2 & 3: Patronage and Investing */}
         <section className="flex flex-col lg:flex-row gap-8 mx-auto px-2 md:px-8">
           {/* Patronage */}

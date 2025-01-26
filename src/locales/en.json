@@ -1,5 +1,5 @@
 {
-  "lang" : "en",
+  "lang": "en",
   "navbar": {
     "b1": "Home",
     "b2": "Invest & Plan",
@@ -171,15 +171,15 @@
       "sectionTitle": "The Team",
       "description": "We recognize the individuality of our clients, which is why our advisory services are meticulously tailored to align with their distinctive needs."
     },
-    "marisela" : {
+    "marisela": {
       "name": "Marisela Castro Abad",
-      "title": "Founder & Lawyer", 
+      "title": "Founder & Lawyer",
       "description": "A graduate in law from the University of Malaga, I have specialized in European law and hold degrees in tax law and accounting. With a diverse professional background, I have worked with the European Commission , and Spanish Bar Delegation in Brussels, and esteemed law firms across Spain. \n\nAs a member of the Malaga Bar Association and a certified \"Avocat Mandataire in Transactions Immobilières\" by the AAMTI Association in Paris, I bring a wealth of experience. Additionally, I am associated with the \"Chambre Franco-Espagnole de Commerce et d' Industrie\" and have furthered my expertise through specialized training such as \"Tax in the Arts\" at the University Panthéon-Assas Paris 2. \n\nMy approach revolves around meticulously analyzing each client's unique circumstances, providing tailored advice, and executing decisions that yield optimal solutions. My mission is to offer tax-efficient strategies that enhance your investments across various domains, including real estate, the arts market, and more, even facilitating financing when needed. An ardent enthusiast of opera and art, I am devoted to engaging and fostering artistic pursuits."
     },
     "jose-luis": {
-        "name": "Jose Luis Diaz Vazquez",
-        "title": "Lawyer",
-        "description": "Graduated in law in 1998, at the University of Málaga. He specialised in Labour Law. He provides a guidance and valuable advice to employer and employee. Defends and advises both workers and companies, with jurisdiction throughout Spain. Always sheltering in collective agreements as well as the Statute of the Workers, for that reason it offers a global and corporative vision in Labour Law, giving solutions to the labour conflicts, trying to mediate previously, avoiding going to the judicial instances."
+      "name": "Jose Luis Diaz Vazquez",
+      "title": "Lawyer",
+      "description": "Graduated in law in 1998, at the University of Málaga. He specialised in Labour Law. He provides a guidance and valuable advice to employer and employee. Defends and advises both workers and companies, with jurisdiction throughout Spain. Always sheltering in collective agreements as well as the Statute of the Workers, for that reason it offers a global and corporative vision in Labour Law, giving solutions to the labour conflicts, trying to mediate previously, avoiding going to the judicial instances."
     },
     "yeselia": {
       "name": "Yeselia Castro Abad",
@@ -195,7 +195,7 @@
     "subject": "Subject",
     "subject-placeholder": "Let us know how we can help you",
     "message": "Your message",
-    "message-body" : "Leave us a comment",
+    "message-body": "Leave us a comment",
     "submit": "Submit"
   },
   "callToAction": {

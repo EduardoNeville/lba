@@ -68,7 +68,8 @@ export default function LandingPage() {
                 {t("main.section2.description")}
               </p>
               <a href={`/invest_and_plan#buy-section`}>
-                <button className="border rounded border-primary p-1 w-full 
+                <button
+                  className="border rounded border-primary p-1 w-full 
                             text-button bg-transparent hover:bg-pink-50 text-primary 
                             uppercase"
                 >
@@ -87,7 +88,8 @@ export default function LandingPage() {
               {t("main.section3.description")}
             </p>
             <a href={`/invest_and_plan#sell-section`}>
-              <button className="border rounded border-primary mt-6 px-6 py-2 
+              <button
+                className="border rounded border-primary mt-6 px-6 py-2 
                           w-full text-button bg-transparent hover:bg-pink-50 
                           text-primary transition uppercase"
               >

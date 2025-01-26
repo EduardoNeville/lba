@@ -23,7 +23,7 @@ const firebaseConfig = {
   storageBucket: "legal-boutique-advisers-bf25a.firebasestorage.app",
   messagingSenderId: "349550465017",
   appId: "1:349550465017:web:e1e07f7f7850f8d7bcb728",
-  measurementId: "G-X730YGS783"
+  measurementId: "G-X730YGS783",
 };
 
 // Initialize Firebase
@@ -37,7 +37,10 @@ const App = () => {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/invest_and_plan" element={<InvestPlanPage />} />
-        <Route path="/corporate_responsibility" element={<CorporateResponsibility />} />
+        <Route
+          path="/corporate_responsibility"
+          element={<CorporateResponsibility />}
+        />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/thankyou" element={<ThankYouPage />} />

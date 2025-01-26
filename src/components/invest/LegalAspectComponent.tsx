@@ -66,13 +66,14 @@ export default function LegalAspectComponent() {
             </div>
           </section>
 
-
           {/* Section 5: Legal Service Areas */}
           <section className="bg-gray-50 text-center py-16">
             <h2 className="text-flash font-bold text-primary">
               {t("legalAspect.title")}
             </h2>
-            <p className="mt-4 text-lt-primary text-content">We specialize in the following areas:</p>
+            <p className="mt-4 text-lt-primary text-content">
+              We specialize in the following areas:
+            </p>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-8">
               {[
                 t("legalAspect.description.services.area1"),

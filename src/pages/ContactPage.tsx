@@ -23,23 +23,27 @@ export default function ContactPage() {
             <h2 className="text-title font-bold text-center mb-6 text-primary">
               {t("contact.title")}
             </h2>
-            <form 
+            <form
               className="space-y-6"
               method="POST"
               action="https://formsubmit.co/eduardoneville82@gmail.com"
             >
               {/* Hidden Fields for Extra Features */}
               <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_next" value="https://legal-boutique-advisers-bf25a.web.app/thankyou" />
-              
+              <input
+                type="hidden"
+                name="_next"
+                value="https://legal-boutique-advisers-bf25a.web.app/thankyou"
+              />
+
               {/* Honeypot Field for Spam Protection */}
-              <input 
-                type="text" 
-                name="_honey" 
+              <input
+                type="text"
+                name="_honey"
                 className="hidden"
-                style={{ display: "none" }} 
-                tabIndex={-1} 
-                autoComplete="off" 
+                style={{ display: "none" }}
+                tabIndex={-1}
+                autoComplete="off"
               />
 
               {/* Email Field */}

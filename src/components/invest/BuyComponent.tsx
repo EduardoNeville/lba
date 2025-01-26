@@ -7,7 +7,7 @@ export default function BuyComponent() {
   const { t } = useTranslation();
 
   return (
-    <div 
+    <div
       id="buy-section"
       className="bg-gray-50 min-h-screen font-zesta-regular"
     >

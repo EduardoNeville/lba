@@ -7,7 +7,7 @@ export default function InvestComponent() {
   const { t } = useTranslation();
 
   return (
-    <div 
+    <div
       id="invest-section"
       className="bg-gray-50 min-h-screen font-zesta-bold"
     >
@@ -18,20 +18,19 @@ export default function InvestComponent() {
         content={t("investPlan.description")}
         backgroundImage="images/ronda-cliff.jpeg"
       />
-      
+
       {/* Main Sections */}
       <div className="relative h-4 bg-primary z-2"> </div>
       <main className="sticky relative bg-gray-50 z-2">
         <div className="container mx-auto pt-16 md:px-bdr px-6 space-y-16 z-20">
-
           {/* Section 1: Comprehensive Asset Management */}
           <section className="bg-white shadow-md p-8 rounded-lg flex flex-col lg:flex-row-reverse gap-8 items-center">
             {/* Ideal Image */}
             <div className="lg:w-1/2">
               <img
-              src="images/bugambilla-terace.jpg"
-              alt="Sell with Confidence"
-              className="rounded-lg shadow-lg"
+                src="images/bugambilla-terace.jpg"
+                alt="Sell with Confidence"
+                className="rounded-lg shadow-lg"
               />
             </div>
             <div className="lg:w-1/2">

@@ -189,9 +189,9 @@
       "description": "Diplômée en droit de l’Université de Malaga, je me suis spécialisée en droit européen et je possède des diplômes en droit fiscal et en comptabilité. Avec un parcours professionnel diversifié, j’ai travaillé avec la Commission Européenne, la Délégation du Barreau Espagnol à Bruxelles, ainsi que dans des cabinets d’avocats prestigieux à travers l'Espagne. \n\nEn tant que membre du Barreau de Malaga et avocate mandataire en transactions immobilières certifiée par l’association AAMTI à Paris, j’apporte une expérience riche et variée. De plus, je suis associée à la Chambre Franco-Espagnole de Commerce et d’Industrie et j’ai enrichi mon expertise grâce à des formations spécialisées comme \"Tax in the Arts\" à l’université Panthéon-Assas Paris 2. \n\nMon approche repose sur l’analyse minutieuse des circonstances uniques de chaque client, la fourniture de conseils sur mesure et la mise en œuvre de décisions qui génèrent des solutions optimales. Ma mission est de proposer des stratégies fiscalement avantageuses pour maximiser vos investissements dans divers domaines, y compris l’immobilier, le marché de l’art et bien plus encore, tout en facilitant le financement en cas de besoin. Passionnée d’opéra et d’art, je m’engage à m’impliquer et à encourager les initiatives artistiques."
     },
     "jose-luis": {
-        "name": "Jose Luis Diaz Vazquez",
-        "title": "Avocat",
-        "description": "Il est diplômé en droit depuis 1998 de l’Université de Málaga. Spécialiste en Droit du travail. Le cabinet s'agit donc de conseiller le salarié au cours de la relation de travail et intervient également en défense d’employer. Défend et conseille aussi bien les travailleurs comme les entreprises, avec juridiction dans toute l'Espagne. Toujours à l'abri dans les conventions collectives ainsi que dans le Statut des employeurs, c'est pourquoi il offre une vision globale et corporative du droit du travail, donnant des solutions aux conflits du travail, essayant de médiation auparavant, évitant de recourir aux instances judiciaires"
+      "name": "Jose Luis Diaz Vazquez",
+      "title": "Avocat",
+      "description": "Il est diplômé en droit depuis 1998 de l’Université de Málaga. Spécialiste en Droit du travail. Le cabinet s'agit donc de conseiller le salarié au cours de la relation de travail et intervient également en défense d’employer. Défend et conseille aussi bien les travailleurs comme les entreprises, avec juridiction dans toute l'Espagne. Toujours à l'abri dans les conventions collectives ainsi que dans le Statut des employeurs, c'est pourquoi il offre une vision globale et corporative du droit du travail, donnant des solutions aux conflits du travail, essayant de médiation auparavant, évitant de recourir aux instances judiciaires"
     },
     "yeselia": {
       "name": "Yeselia Castro Abad",
@@ -207,7 +207,7 @@
     "subject": "Sujet",
     "subject-placeholder": "Faites-nous savoir comment nous pouvons vous aider",
     "message": "Votre message",
-    "message-body" : "Laissez-nous un commentaire",
+    "message-body": "Laissez-nous un commentaire",
     "submit": "Envoyer"
   },
   "callToAction": {

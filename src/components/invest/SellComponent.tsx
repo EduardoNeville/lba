@@ -7,10 +7,7 @@ export default function SellPage() {
   const { t } = useTranslation();
 
   return (
-    <div 
-      id="sell-section"
-      className="bg-gray-50 min-h-screen font-zesta-bold"
-    >
+    <div id="sell-section" className="bg-gray-50 min-h-screen font-zesta-bold">
       {/* Header Section */}
       <div className="relative h-4 bg-primary z-2"> </div>
       <Header
@@ -18,12 +15,11 @@ export default function SellPage() {
         content={t("sell.section1.description")}
         backgroundImage="images/plaza-los-naranjos.jpg"
       />
-      
+
       {/* Main Sections */}
       <div className="relative h-4 bg-primary z-2"> </div>
       <main className="sticky relative bg-gray-50 z-2">
         <div className="container mx-auto pt-16 md:px-bdr px-6 space-y-16 z-2">
-
           {/* Section 1: Sell with Confidence */}
           <section className="bg-white shadow-md p-8 rounded-lg flex flex-col lg:flex-row-reverse gap-8 items-center">
             <div className="lg:w-1/2">

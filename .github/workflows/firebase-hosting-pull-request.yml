@@ -17,4 +17,3 @@ jobs:
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_LEGAL_BOUTIQUE_ADVISERS_BF25A }}
           projectId: legal-boutique-advisers-bf25a
           expires: 30d
-
