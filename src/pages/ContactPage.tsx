@@ -20,7 +20,7 @@ export default function ContactPage() {
       <main className="sticky relative bg-gray-50 z-2">
         <div className="container mx-auto py-16 md:px-bdr px-6 z-2">
           <section className="bg-white shadow-md p-8 rounded-lg max-w-2xl mx-auto relative">
-            <h2 className="text-3xl font-bold text-center mb-6 text-primary">
+            <h2 className="text-title font-bold text-center mb-6 text-primary">
               {t("contact.title")}
             </h2>
             <form 
@@ -30,7 +30,7 @@ export default function ContactPage() {
             >
               {/* Hidden Fields for Extra Features */}
               <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_next" value="https://legal-boutique-advisers-bf25a.web.app/thank-you" />
+              <input type="hidden" name="_next" value="https://legal-boutique-advisers-bf25a.web.app/thankyou" />
               
               {/* Honeypot Field for Spam Protection */}
               <input 
@@ -46,7 +46,7 @@ export default function ContactPage() {
               <div>
                 <label
                   htmlFor="email"
-                  className="block text-lt-primary font-semibold mb-1"
+                  className="block text-content text-lt-primary font-semibold mb-1"
                 >
                   {t("contact.email")}
                 </label>
@@ -56,7 +56,7 @@ export default function ContactPage() {
                   name="email"
                   placeholder={t("contact.email-placeholder")}
                   required
-                  className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring focus:ring-primary focus:border-transparent"
+                  className="w-full text-content border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring focus:ring-primary focus:border-transparent"
                 />
               </div>
 
@@ -64,7 +64,7 @@ export default function ContactPage() {
               <div>
                 <label
                   htmlFor="subject"
-                  className="block text-lt-primary font-semibold mb-1"
+                  className="block text-content text-lt-primary font-semibold mb-1"
                 >
                   {t("contact.subject")}
                 </label>
@@ -74,7 +74,7 @@ export default function ContactPage() {
                   name="subject"
                   placeholder={t("contact.subject-placeholder")}
                   required
-                  className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring focus:ring-primary focus:border-transparent"
+                  className="w-full text-content border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring focus:ring-primary focus:border-transparent"
                 />
               </div>
 
@@ -82,7 +82,7 @@ export default function ContactPage() {
               <div>
                 <label
                   htmlFor="message"
-                  className="block text-lt-primary font-semibold mb-1"
+                  className="block text-content text-lt-primary font-semibold mb-1"
                 >
                   {t("contact.message")}
                 </label>
@@ -92,7 +92,7 @@ export default function ContactPage() {
                   rows={4}
                   placeholder={t("contact.message-body")}
                   required
-                  className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring focus:ring-primary focus:border-transparent"
+                  className="w-full text-content border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring focus:ring-primary focus:border-transparent"
                 ></textarea>
               </div>
 
@@ -100,7 +100,7 @@ export default function ContactPage() {
               <div className="text-center">
                 <button
                   type="submit"
-                  className="border rounded border-primary px-6 py-2 w-1/2 text-lg bg-transparent hover:bg-pink-50 text-primary transition"
+                  className="border text-content rounded border-primary px-6 py-2 w-1/2 text-lg bg-transparent hover:bg-pink-50 text-primary transition"
                 >
                   {t("contact.submit")}
                 </button>
@@ -110,12 +110,11 @@ export default function ContactPage() {
 
           {/* Additional Contact Image Section */}
           <section className="mt-16 text-center">
-            <p className="text-lt-primary font-light text-md mb-8">
+            <p className="text-content text-lt-primary font-light text-md mb-8">
               {t("contact.description")}
             </p>
-            {/* Dummy Image */}
             <img
-              src="https://via.placeholder.com/800x400?text=Contact+Your+Real+Estate+Expert"
+              src="images/golf-fondo-la-concha.jpg"
               alt="Contact our firm"
               className="mx-auto rounded-lg shadow-lg"
             />

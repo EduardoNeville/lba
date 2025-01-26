@@ -27,15 +27,15 @@ export default function SellPage() {
           {/* Section 1: Sell with Confidence */}
           <section className="bg-white shadow-md p-8 rounded-lg flex flex-col lg:flex-row-reverse gap-8 items-center">
             <div className="lg:w-1/2">
-              <h2 className="text-3xl font-bold text-primary">
+              <h2 className="text-title font-bold text-primary">
                 {t("sell.section2.sectionTitle")}
               </h2>
-              <p className="my-4 text-lt-primary">
+              <p className="my-4 text-content text-lt-primary">
                 {t("sell.section2.description")}
               </p>
               <Link to="/contact" onClick={() => window.scrollTo(0, 0)}>
-                <button className="border rounded border-primary px-6 py-2 w-full text-xl bg-transparent hover:bg-pink-50 text-primary transition uppercase">
-                  {t("sell.section2.button")}
+                <button className="border rounded border-primary px-6 py-2 w-full text-xl bg-transparent hover:bg-pink-50 text-button text-primary transition uppercase">
+                  {t("buttons.learn")}
                 </button>
               </Link>
             </div>
@@ -50,11 +50,11 @@ export default function SellPage() {
           </section>
 
           {/* Section 3: Tax Advice */}
-          <section className="text-center bg-gray-50 py-16">
-            <h2 className="text-6xl font-bold text-primary">
+          <section className="text-center bg-gray-50 pt-16 pb-32">
+            <h2 className="text-flash font-bold text-primary">
               {t("sell.section3.sectionTitle")}
             </h2>
-            <p className="mt-4 text-lt-primary max-w-3xl mx-auto">
+            <p className="mt-4 text-content text-lt-primary max-w-3xl mx-auto">
               {t("sell.section3.description")}
             </p>
           </section>

@@ -6,7 +6,7 @@ export default function ThankYouPage() {
   const { t } = useTranslation();
 
   return (
-    <div className="bg-gray-50 min-h-screen font-zesta-regular">
+    <div className="bg-gray-50 font-zesta-regular">
       {/* Header Section */}
       <div className="relative h-4 bg-primary z-2"> </div>
       <Header
@@ -19,26 +19,21 @@ export default function ThankYouPage() {
       {/* Thank You Section */}
       <div className="relative h-4 bg-primary z-2"></div>
       <main className="sticky relative bg-gray-50 z-2">
-        <div className="container mx-auto py-16 md:px-bdr px-6 z-20">
+        <div className="container mx-auto py-32 md:px-bdr px-6 z-20">
           <section className="bg-white shadow-md p-8 rounded-lg max-w-2xl mx-auto relative text-center">
-            <h2 className="text-3xl font-bold mb-6 text-primary">
+            <h2 className="text-title font-bold mb-6 text-primary">
               {t("thankyou.header")}
             </h2>
-            <p className="text-lt-primary font-light text-md">
+            <p className="text-content text-lt-primary font-light text-md">
               {t("thankyou.body")}
             </p>
           </section>
 
           {/* Additional Contact Image Section */}
           <section className="mt-16 text-center">
-            <p className="text-lt-primary font-light text-md mb-8">
+            <p className="text-content text-lt-primary font-light text-md">
               {t("thankyou.additionalInfo")}
             </p>
-            <img
-              src="https://via.placeholder.com/800x400?text=Thank+You+Image"
-              alt="Thank you placeholder"
-              className="mx-auto rounded-lg shadow-lg"
-            />
           </section>
         </div>
       </main>

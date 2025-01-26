@@ -4,22 +4,30 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   const { t } = useTranslation();
   return (
-    <footer className="bottom-0 bg-primary text-white py-12 font-zesta-regular">
+    <footer className="bottom-0 bg-primary text-white py-32 font-zesta-regular">
       <div className="container mx-auto md:px-bdr px-6 text-center">
-        <h2 className="text-3xl font-bold">
+        <h2 className="text-flash font-bold">
           {t("callToAction.title")}
         </h2>
-        <p className="mt-4 text-white">{t("callToAction.body")}</p>
+        <p className="mt-8 text-content text-white">{t("callToAction.body")}</p>
 
-        <div className="mt-8 flex justify-center gap-4">
-          <Link className="border rounded border-white mt-6 px-6 py-2 w-1/2 lg:w-1/4 bg-transparent hover:bg-pink-50 hover:text-primary text-white transition" to="/contact" onClick={() => window.scrollTo(0, 0)}>
+        <div className="mt-8 flex flex-col md:flex-row justify-center md:gap-16 gap-4">
+          <Link
+            className="border rounded border-white mt-6 px-6 py-2 w-full md:w-1/3 bg-transparent hover:bg-pink-100 hover:text-primary text-white transition text-button"
+            to="/contact"
+            onClick={() => window.scrollTo(0, 0)}
+          >
             <button className="uppercase">
-                {t("callToAction.contactUsButton")}
+              {t("callToAction.contactUsButton")}
             </button>
           </Link>
-          <Link className="border rounded border-white mt-6 px-6 py-2 w-1/2 lg:w-1/4 bg-transparent hover:bg-pink-50 hover:text-primary text-white transition" to="/about" onClick={() => window.scrollTo(0, 0)}>
+          <Link
+            className="border rounded border-white mt-6 px-6 py-2 w-full md:w-1/3 bg-transparent hover:bg-pink-100 hover:text-primary text-white transition text-button"
+            to="/about"
+            onClick={() => window.scrollTo(0, 0)}
+          >
             <button className="uppercase">
-                {t("callToAction.learnMoreButton")}
+              {t("callToAction.learnMoreButton")}
             </button>
           </Link>
         </div>
@@ -59,7 +67,7 @@ const Footer = () => {
             {/* Telephone Section */}
             <div className="flex items-center gap-4">
               <img src="icons/telephone.png" className="w-icon" alt="Phone Icon" />
-              <a href="tel:+34 952 777 991" className="hover:underline">
+              <a href="tel:+34 952 777 991" className="hover:underline text-content">
                 +34 952 777 991
               </a>
             </div>
@@ -67,7 +75,7 @@ const Footer = () => {
             {/* Email Section */}
             <div className="flex items-center gap-4">
               <img src="icons/email.png" className="w-icon" alt="Email Icon" />
-              <a href="mailto:info@legalboutiqueadvisers.com" className="hover:underline">
+              <a href="mailto:info@legalboutiqueadvisers.com" className="hover:underline text-content">
                 info@legalboutiqueadvisers.com
               </a>
             </div>

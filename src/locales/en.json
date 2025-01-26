@@ -25,12 +25,17 @@
       }
     }
   },
+  "buttons": {
+    "buy": "Buy With Us",
+    "market": "Market With Us",
+    "learn": "Learn More",
+    "invest": "Start Investing Now",
+    "contact": "Contact Us"
+  },
   "landingPage": {
     "title": "Welcome to Legal Boutique Advisers",
     "subtitle": "Draw Your Dream Home",
-    "content": "With our extensive listings and experienced agents, your perfect property is just a search away.",
-    "contactUsButton": "Contact Us",
-    "learnMoreButton": "Learn more"
+    "content": "With our extensive listings and experienced agents, your perfect property is just a search away."
   },
   "main": {
     "section1": {
@@ -39,13 +44,11 @@
     },
     "section2": {
       "sectionTitle": "Interested in buying?",
-      "description": "We're your Marbella house-hunting experts. With our local knowledge and an array of listings, we'll help you find your dream home effortlessly. From consultation to closing, we make buying in Marbella a breeze.",
-      "button": "Buy With Us"
+      "description": "We're your Marbella house-hunting experts. With our local knowledge and an array of listings, we'll help you find your dream home effortlessly. From consultation to closing, we make buying in Marbella a breeze."
     },
     "section3": {
       "sectionTitle": "Time to make a listing?",
-      "description": "We're your Marbella selling experts. From pricing to marketing, we've got you covered for a seamless selling experience. Trust us to maximize your property's value and secure the best deal possible. With our extensive expertise and range of listings, we'll make finding your dream home effortless. From consultation to closing, we make buying in Marbella feel like a summer breeze.",
-      "button": "Market With Us"
+      "description": "We're your Marbella selling experts. From pricing to marketing, we've got you covered for a seamless selling experience. Trust us to maximize your property's value and secure the best deal possible. With our extensive expertise and range of listings, we'll make finding your dream home effortless. From consultation to closing, we make buying in Marbella feel like a summer breeze."
     }
   },
   "investPlan": {
@@ -53,8 +56,7 @@
     "description": "A law firm that offers asset management advice, both in real estate and in the art sector, covering legal and tax aspects at national and international levels, without language being an obstacle.",
     "section2": {
       "sectionTitle": "Comprehensive Asset Management",
-      "description": "LBA was founded as a group of professionals specializing in asset investment, where we assist from the beginning to analyze interests and search for the best investment that suits the needs of our clients, whether it is for investment purposes or searching for a vacation residence. Always in contact with professionals from the real estate sector, architects, notaries, and banks, we provide services as financial advisers or asset management consultants, where clients benefit from our global and detailed analysis that allows us to select and advise on the best investment possibilities, financial, and tax strategies.",
-      "button": "Learn More"
+      "description": "LBA was founded as a group of professionals specializing in asset investment, where we assist from the beginning to analyze interests and search for the best investment that suits the needs of our clients, whether it is for investment purposes or searching for a vacation residence. Always in contact with professionals from the real estate sector, architects, notaries, and banks, we provide services as financial advisers or asset management consultants, where clients benefit from our global and detailed analysis that allows us to select and advise on the best investment possibilities, financial, and tax strategies."
     },
     "section3": {
       "sectionTitle": "Tailored Real Estate Solutions",
@@ -76,7 +78,7 @@
       "description": "At Legal Boutique Advisers, we're committed to making this journey an extraordinary one for you. Our dedication to finding your dream property goes beyond just bricks and mortar – it's about helping you discover your ideal lifestyle."
     },
     "section2": {
-      "sectionTitle": "Our expertise",
+      "sectionTitle": "Our Expertise",
       "description": "Having extensive experience in market research, we have developed a deep understanding of the real estate industry and the factors that influence market trends. Our skills collecting and analyzing data show us able to translate complex research findings into actionable insights for our clients."
     },
     "section3": {
@@ -99,8 +101,7 @@
     },
     "section2": {
       "sectionTitle": "Sell with Confidence",
-      "description": "Explore the possibilities, discover the potential, and embark on a seamless selling experience with us. Whether you're a seasoned seller or a first-time lister, our comprehensive resources, and expert guidance will empower you to make the most of your property.",
-      "button": "Learn more"
+      "description": "Explore the possibilities, discover the potential, and embark on a seamless selling experience with us. Whether you're a seasoned seller or a first-time lister, our comprehensive resources, and expert guidance will empower you to make the most of your property."
     },
     "section3": {
       "sectionTitle": "Tax Advice",
@@ -173,7 +174,17 @@
     "marisela" : {
       "name": "Marisela Castro Abad",
       "title": "Founder & Lawyer", 
-      "description": "A graduate in law from the University of Malaga, I have specialized in European law and hold degrees in tax law and accounting. With a diverse professional background, I have worked with the European Commission , and Spanish Bar Delegation in Brussels, and esteemed law firms across Spain. \n As a member of the Malaga Bar Association and a certified \"Avocat Mandataire in Transactions Immobilières\" by the AAMTI Association in Paris, I bring a wealth of experience. Additionally, I am associated with the \"Chambre Franco-Espagnole de Commerce et d' Industrie\" and have furthered my expertise through specialized training such as \"Tax in the Arts\" at the University Panthéon-Assas Paris 2. My approach revolves around meticulously analyzing each client's unique circumstances, providing tailored advice, and executing decisions that yield optimal solutions. My mission is to offer tax-efficient strategies that enhance your investments across various domains, including real estate, the arts market, and more, even facilitating financing when needed. An ardent enthusiast of opera and art, I am devoted to engaging and fostering artistic pursuits."
+      "description": "A graduate in law from the University of Malaga, I have specialized in European law and hold degrees in tax law and accounting. With a diverse professional background, I have worked with the European Commission , and Spanish Bar Delegation in Brussels, and esteemed law firms across Spain. \n\nAs a member of the Malaga Bar Association and a certified \"Avocat Mandataire in Transactions Immobilières\" by the AAMTI Association in Paris, I bring a wealth of experience. Additionally, I am associated with the \"Chambre Franco-Espagnole de Commerce et d' Industrie\" and have furthered my expertise through specialized training such as \"Tax in the Arts\" at the University Panthéon-Assas Paris 2. \n\nMy approach revolves around meticulously analyzing each client's unique circumstances, providing tailored advice, and executing decisions that yield optimal solutions. My mission is to offer tax-efficient strategies that enhance your investments across various domains, including real estate, the arts market, and more, even facilitating financing when needed. An ardent enthusiast of opera and art, I am devoted to engaging and fostering artistic pursuits."
+    },
+    "jose-luis": {
+        "name": "Jose Luis Diaz Vazquez",
+        "title": "Lawyer",
+        "description": "Graduated in law in 1998, at the University of Málaga. He specialised in Labour Law. He provides a guidance and valuable advice to employer and employee. Defends and advises both workers and companies, with jurisdiction throughout Spain. Always sheltering in collective agreements as well as the Statute of the Workers, for that reason it offers a global and corporative vision in Labour Law, giving solutions to the labour conflicts, trying to mediate previously, avoiding going to the judicial instances."
+    },
+    "yeselia": {
+      "name": "Yeselia Castro Abad",
+      "title": "Legal and Investment Advisor",
+      "description": "A graduate in Law from the Rey Juan Carlos University and holding a diploma in Labour Relations from the University of Malaga, Yeselia also obtained a Master of Arts in English from Texas Tech University. \n\nShe has had a versatile professional career, starting in private enterprise within Human Resources management, where she served as Director of the Labour Department in a franchise of a major British multinational. Later, she joined this Firm, specializing in Real Estate Law, Labour Law, Immigration, and as a commercial advisor for property purchase and sales operations. \n\nDeeply interested in different cultures, foreign languages, and interpersonal relationships, she enjoys working with the foreign population arriving at Costa del Sol who, unfamiliar with bureaucracy and the local language, need professionals in the area to help them achieve their goals. Inspired by the boutique concept of the firm, her objective is to understand each client, their needs, advise them with the most suitable options, and ensure their desires are fulfilled."
     }
   },
   "contact": {
@@ -204,14 +215,13 @@
     },
     "section3": {
       "sectionTitle": "Investing in the future",
-      "description": "We're your Marbella investment specialists, offering local insights and opportunities to simplify your journey. From property selection to financial guidance, we're here to ensure your Marbella investments thrive.",
-      "button": "Start Investing Now"
+      "description": "We're your Marbella investment specialists, offering local insights and opportunities to simplify your journey. From property selection to financial guidance, we're here to ensure your Marbella investments thrive."
     }
   },
   "thankyou": {
     "title": "Thank You!",
     "description": "We have received your message.",
-    "header": "Thank You for Reaching Out",
+    "header": "Thank you for reaching out",
     "body": "Your message has been sent successfully. Our team will get back to you as soon as possible.",
     "additionalInfo": "Feel free to explore our site or contact us again for more information!"
   }

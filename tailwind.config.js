@@ -22,8 +22,30 @@ export default {
       padding: {
         'bdr': '10rem'
       },
-      text: {
-
+      fontSize: {
+        'flash': [
+          '1.875rem', {
+            'fontWeight': '900',
+            'lineHeight': '2.5rem',
+            'letterSpacing': '0.5rem',
+          }
+        ],
+        'title': [
+          '1.5rem', {
+            'fontWeight': '700',
+          }
+        ],
+        'button': [
+          '1.125rem', {
+            'fontWeight': '400',
+            'letterSpacing': '0.5rem',
+          }
+        ],
+        'content': [
+          '1rem', {
+            'fontWeight': '400',
+          }
+        ],
       }
     },
   },

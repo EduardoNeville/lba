@@ -78,12 +78,9 @@ const Navbar = () => {
           >
             <img
               alt="LBA_Logo"
-              className="hidden md:block w-full max-w-[10rem] h-auto"
+              className="w-full max-w-[10rem] h-auto"
               src="icons/LBA_Logo.jpg"
             />
-            <span className="block md:hidden text-lg font-bold text-primary ">
-              L-B-A
-            </span>
           </Link>
 
           <button
@@ -132,7 +129,7 @@ const Navbar = () => {
           <ul className="flex flex-col md:flex-row justify-left items-left space-y-4 mx-3 md:space-y-0 md:space-x-8 lg:py-4 py-4">
 
             {/* Dropdown for Invest Sections */}
-            <li className="relative text-sm md:text-base font-medium text-primary hover:text-secondary ">
+            <li className="relative text-content text-primary hover:text-secondary ">
               <span 
                 className="cursor-pointer flex items-center justify-between uppercase" 
                 onClick={() => {
@@ -164,7 +161,7 @@ const Navbar = () => {
                     >
                       <span className="mr-2">{">"}</span> {/* Arrow for list item */}
                       <a href={`/invest_and_plan#${section.id}`} className="block text-primary">
-                        <h2 className="uppercase">
+                        <h2 className="text-content uppercase">
                           {t(section.textKey)}
                         </h2>
                         <p className="text-sm">
@@ -179,7 +176,7 @@ const Navbar = () => {
             {MENU_LIST.map((menu) => (
               <li
                 key={menu.textKey}
-                className="text-sm md:text-base font-medium text-primary hover:text-secondary uppercase"
+                className="text-content text-primary hover:text-secondary uppercase"
               >
                 <Link 
                   to={menu.path}
