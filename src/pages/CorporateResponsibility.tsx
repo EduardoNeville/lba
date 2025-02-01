@@ -61,6 +61,7 @@ export default function CorporateResponsibility() {
     { src: "images/museo-arte.jpeg", alt: "Image of an art museum" },
     { src: "images/polo-game.jpg", alt: "Image of polo game" },
     { src: "images/playing-piano.jpeg", alt: "Image of playing piano" },
+    { src: "images/regata.jpg", alt: "Image of boat race" },
   ];
 
   return (
