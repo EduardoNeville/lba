@@ -14,8 +14,8 @@ export default function InvestPlanPage() {
         {/* Header Section */}
         <div className="sticky relative h-4 bg-primary z-2"> </div>
         <Header
-          title={t("legalAspect.description.paragraph2.title")}
-          content={t("legalAspect.description.paragraph2.text")}
+          title={t("legalServices.introduction.title")}
+          content={t("legalServices.introduction.description")}
           backgroundImage="images/golf-lake-villa-padierna.jpg"
         />
 
@@ -23,13 +23,20 @@ export default function InvestPlanPage() {
         <div className="relative h-4 bg-primary z-2"> </div>
         <section className="sticky relative bg-gray-50 z-2">
           <div className="container mx-auto py-16 md:px-bdr px-6 space-y-16 z-2">
-            {/* Section 3 & 4 Merged: Comprehensive Banking Advice */}
+            {/* Advisory Services */}
             <section className="text-center bg-gray-50 py-16">
               <h2 className="text-flash font-bold text-primary">
-                {t("legalAspect.description.paragraph4.title")}
+                {t("legalServices.advisoryServices.title")}
               </h2>
-              <p className="my-8 text-content text-lt-primary max-w-3xl mx-auto">
-                {t("legalAspect.description.paragraph4.text")}
+              <p className="mt-8 mb-4 text-content text-lt-primary max-w-3xl mx-auto">
+                {t("legalServices.advisoryServices.description")}
+              </p>
+
+              <h2 className="text-[1.25rem] font-bold text-primary">
+                {t("legalServices.clientFocus.title")}
+              </h2>
+              <p className="mt-4 mb-8 text-content text-lt-primary max-w-3xl mx-auto">
+                {t("legalServices.clientFocus.description")}
               </p>
 
               {/* CTA Button */}
@@ -40,14 +47,26 @@ export default function InvestPlanPage() {
               </Link>
             </section>
 
-            {/* Section 2: Inheritance Law */}
+            {/* Specialized Advisory */}
             <section className="bg-white shadow-md p-8 rounded-lg flex flex-col lg:flex-row-reverse gap-8 items-center">
               <div className="lg:w-1/2">
-                <h2 className="text-title font-bold text-primary">
-                  {t("legalAspect.description.paragraph3.title")}
+                <h2 className="text-content font-bold text-primary">
+                  {t("legalServices.specializedAdvisory.title")}
                 </h2>
                 <p className="my-4 text-content text-lt-primary">
-                  {t("legalAspect.description.paragraph3.text")}
+                  {t("legalServices.specializedAdvisory.description")}
+                </p>
+                <h2 className="text-content font-bold text-primary">
+                  {t("legalServices.complianceSupport.title")}
+                </h2>
+                <p className="my-4 text-content text-lt-primary">
+                  {t("legalServices.complianceSupport.description")}
+                </p>
+                <h2 className="text-content font-bold text-primary">
+                  {t("legalServices.businessStartups.title")}
+                </h2>
+                <p className="my-4 text-content text-lt-primary">
+                  {t("legalServices.businessStartups.description")}
                 </p>
                 {/* CTA Button */}
                 <div className="mt-4">
@@ -68,31 +87,32 @@ export default function InvestPlanPage() {
               </div>
             </section>
 
-            {/* Section 5: Legal Service Areas */}
+            {/* Expertise Sections */}
             <section className="bg-gray-50 text-center py-16">
               <h2 className="text-flash font-bold text-primary">
-                {t("legalAspect.title")}
+                {t("legalServices.services.title")}
               </h2>
-              <p className="mt-4 text-lt-primary text-content">
-                We specialize in the following areas:
+              <p className="my-4 text-lt-primary text-content">
+                {t("legalServices.services.description")}
               </p>
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-8">
                 {[
-                  t("legalAspect.description.services.area1"),
-                  t("legalAspect.description.services.area2"),
-                  t("legalAspect.description.services.area3"),
-                  t("legalAspect.description.services.area4"),
-                  t("legalAspect.description.services.area5"),
+                  t("legalServices.services.area1"),
+                  t("legalServices.services.area2"),
+                  t("legalServices.services.area3"),
+                  t("legalServices.services.area4"),
+                  t("legalServices.services.area5"),
+                  t("legalServices.services.area6"),
                 ].map((service, index) => (
                   <div
                     key={index}
                     className="border p-8 rounded-lg shadow-lg hover:bg-pink-50 transition"
                   >
                     <h3 className="text-title font-bold text-primary">
-                      {service}
+                      {service.split(":")[0]}
                     </h3>
-                    <p className="mt-4 text-content text-lt-primary">
-                      Comprehensive solutions tailored for your needs.
+                    <p className="text-content mt-4 text-lt-primary">
+                      {service.split(":")[1].trim()}
                     </p>
                   </div>
                 ))}

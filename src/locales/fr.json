@@ -2,7 +2,7 @@
   "lang": "fr",
   "navbar": {
     "b1": "Accueil",
-    "b2": "Aspects Juiridiques et Investir",
+    "b2": "Expertise",
     "b3": "Responsabilité d'Entreprise",
     "b4": "À Propos",
     "b5": "Contact",
@@ -122,29 +122,40 @@
   },
   "legalAspect": {
     "title": "Conseillers Boutique Légale",
-    "description": {
-      "paragraph1": {
-        "title": "Services Juridiques Personnalisés",
-        "text": "LEGAL BOUTIQUE ADVISERS a été développé pour offrir à nos clients une large gamme de services juridiques avec une approche personnalisée."
+    "legalServices": {
+      "introduction": {
+        "title": "Support Juridique Complet",
+        "description": "Ce cabinet vous offre une tranquillité d'esprit dans tout acte juridique que vous entreprenez, en vous assurant le soutien d'avocats et de conseillers fiscaux connaissant parfaitement les lois et pratiques locales, vous permettant ainsi de gagner du temps et de l'argent, tout en accordant une attention personnalisée et de proximité à nos clients."
       },
-      "paragraph2": {
-        "title": "Soutien Complet pour les Investissements Immobiliers",
-        "text": "Dès que vous décidez d'investir en Espagne, que ce soit pour une résidence de vacances, pour des entreprises ou fonds d'investissement, ou même des entreprises de construction, nous fournissons des conseils complets, de la recherche de la propriété à la recommandation de la meilleure forme juridique pour minimiser l'impact fiscal de votre investissement, en vous accompagnant jusqu'à la fin 'clé en main,' dans tous les aspects liés au Droit Immobilier."
+      "advisoryServices": {
+        "title": "Services de Conseil sur Mesure",
+        "description": "Nous prodiguons des conseils aux particuliers, investisseurs, promoteurs ou professionnels de l'intermédiation dans les transactions immobilières. Notre formation et notre expérience nous permettent de prévenir tout problème pouvant survenir lors d'investissements immobiliers, associés à un conseil fiscal et comptable complet."
       },
-      "paragraph3": {
-        "title": "Planification Successorale et Post-Investissement",
-        "text": "Une fois que vous avez investi, nous vous accompagnons dans les questions relatives au Droit des Successions, y compris une planification fiscale préalable et des aspects juridiques et fiscaux postérieurs."
+      "clientFocus": {
+        "title": "Approche Centrée sur le Client",
+        "description": "Nous savons que chaque client a des besoins différents. Ce cabinet possède les connaissances et les ressources nécessaires pour conseiller sur toutes les questions juridiques avec efficacité et efficience. Une communication claire et régulière constitue un élément essentiel de nos services."
       },
-      "paragraph4": {
-        "title": "Conseils Bancaires Globaux et Interaction en Temps Réel",
-        "text": "Nous analysons les relations des particuliers ou des entreprises avec les entités bancaires, proposant des conseils sur mesure et assurant une communication en temps réel pour des interactions fluides."
+      "specializedAdvisory": {
+        "title": "Services de Conseil Spécialisés pour les Propriétaires et Investisseurs",
+        "description": "Nous offrons également des conseils aux propriétaires et investisseurs dans les domaines suivants : \n- Droit successoral.\n- Élaboration du testament le plus avantageux pour vos proches, adapté à la récente législation européenne.\n- Conseils sur la location, y compris les locations de longue durée, de courte durée et d'usage touristique.\n- Accompagnement dans la propriété fractionnée ou la copropriété."
+      },
+      "complianceSupport": {
+        "title": "Conformité aux Réglementations Immobilières",
+        "description": "Pour toute transaction que vous entreprenez, vous serez accompagné afin de garantir la conformité avec la législation urbanistique espagnole et européenne."
+      },
+      "businessStartups": {
+        "title": "Support pour la Création et l'Expansion d'Entreprises",
+        "description": "Si vous souhaitez créer une entreprise, démarrer une activité commerciale ou étendre vos activités en Espagne, ce cabinet vous accompagne dans la création de sociétés espagnoles ou de filiales de votre entreprise en Espagne."
       },
       "services": {
-        "area1": "Droit Immobilier",
-        "area2": "Droit International Privé",
-        "area3": "Droit de la Famille",
-        "area4": "Obligations et Contrats",
-        "area5": "Droit Fiscal"
+        "title": "Nos Services Juridiques",
+        "description": "Nous sommes spécialisés dans les domaines suivants pour répondre à vos besoins juridiques :",
+        "area1": "Droit Immobilier : Expertise dans les transactions immobilières et la conformité légale.",
+        "area2": "Droit International Privé : Solutions adaptées aux défis juridiques transfrontaliers.",
+        "area3": "Droit de la Famille : Soutien juridique avec compassion pour les questions familiales.",
+        "area4": "Obligations et Contrats : Clarté et conformité juridique dans les accords.",
+        "area5": "Droit Fiscal : Assistance en matière de conformité fiscale et de scénarios complexes.",
+        "area6": "Conseil juridique : Accompagnement complet pour toutes préoccupations juridiques."
       }
     }
   },
@@ -225,10 +236,11 @@
       "sectionTitle": "Mécénat",
       "description": "Le Centre Musical de la Méditerranée a été fondé à Marbella en 2004. Depuis, il a développé diverses activités liées à la musique classique. Également connu sous le nom de Música con Encanto, ce projet a réalisé, depuis sa création, une saison de concerts, du cinéma documentaire musical, des cours et des ateliers pour adultes, des voyages musicaux et la gestion administrative et artistique de la Petite Méditerranée Orchestra, un orchestre pour enfants et un orchestre à cordes pour jeunes."
     },
-    "section3": {
-      "sectionTitle": "Investir dans l'avenir",
-      "description": "Nous sommes vos spécialistes en investissement à Marbella, offrant des perspectives locales et des opportunités pour simplifier votre parcours. De la sélection de propriétés aux conseils financiers, nous sommes là pour assurer le succès de vos investissements à Marbella."
+    "artInvesting": {
+      "title": "L'Art d'Investir",
+      "description": "Investir dans l'ART peut être très avantageux pour vos économies. C'est une manière tendance et parfois même lucrative de diversifier votre patrimoine. Le marché de l'art a connu un développement clair depuis quelque temps, sans précédent. Il s'est démocratisé, libéralisé et internationalisé. Les incitations fiscales encouragent la participation des citoyens à l'art en réduisant leurs impôts sur les dons qui contribuent au développement de l'art et de la culture. Nous sommes là pour vous guider dans cette démarche."
     }
+
   },
   "thankyou": {
     "title": "Merci!",
