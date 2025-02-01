@@ -76,15 +76,17 @@ export default function CorporateResponsibility() {
       {/* Section 1: Culture and Art */}
       <div className="sticky relative h-4 bg-primary z-2"></div>
       <main className="sticky relative text-center py-16 bg-gray-50 z-2 space-y-16">
-        <section className="text-center">
+        <section className="text-center py-16 lg:px-bdr px-6">
           <h2 className="text-flash font-bold text-primary">
             {t("corporateResposibility.section1.sectionTitle")}
           </h2>
           <p className="mt-4 text-content text-lt-primary max-w-3xl mx-auto">
             {t("corporateResposibility.section1.description")}
           </p>
+        </section>
 
-          {/* Carousel */}
+        {/* Carousel */}
+        <section>
           <div className="mt-8 mx-auto w-full relative overflow-hidden items-center justify-center">
             <Slider {...sliderSettings}>
               {templateImages.map((image, index) => (
@@ -101,31 +103,32 @@ export default function CorporateResponsibility() {
           </div>
         </section>
 
-        {/* Patronage and Investing */}
-        <section className="flex flex-col lg:flex-row gap-8 mx-auto px-2 md:px-8">
-          {/* Patronage */}
-          <div className="bg-white shadow-md p-8 rounded-lg lg:w-1/2">
-            <h2 className="text-title font-bold text-primary">
-              {t("corporateResposibility.section2.sectionTitle")}
-            </h2>
-            <p className="mt-4 text-content text-lt-primary">
-              {t("corporateResposibility.section2.description")}
-            </p>
-          </div>
-
-          {/* Investing */}
-          <div className="bg-white shadow-md p-8 rounded-lg lg:w-1/2">
-            <h2 className="text-title font-bold text-primary">
-              {t("corporateResposibility.artInvesting.title")}
-            </h2>
-            <p className="my-4 text-content text-lt-primary">
-              {t("corporateResposibility.artInvesting.description")}
-            </p>
-            <a href={`/invest_and_plan#sell-section`}>
-              <button className="border rounded border-primary px-6 py-2 w-full text-xl bg-transparent hover:bg-pink-50 text-primary transition uppercase text-button">
-                {t("buttons.learn")}
-              </button>
-            </a>
+        {/* Commitment */}
+        <section className="text-center py-16">
+          <h2 className="text-flash font-bold text-primary">
+            {t("corporateResposibility.commitment.title")}
+          </h2>
+          <p className="mt-4 text-lt-primary text-content">
+            {t("corporateResposibility.commitment.description")}
+          </p>
+          <div className="grid grid-cols-1 gap-8 mt-16 lg:px-bdr px-6">
+            {[
+              t("corporateResposibility.commitment.value1"),
+              t("corporateResposibility.commitment.value2"),
+              t("corporateResposibility.commitment.value3"),
+            ].map((commitment, index) => (
+              <div
+                key={index}
+                className="border p-8 rounded-lg shadow-lg hover:bg-pink-50 transition text-center"
+              >
+                <h3 className="text-title font-bold text-primary">
+                  {commitment.split(":")[0]}
+                </h3>
+                <p className="text-content mt-4 text-lt-primary">
+                  {commitment.split(":")[1].trim()}
+                </p>
+              </div>
+            ))}
           </div>
         </section>
       </main>

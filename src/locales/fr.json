@@ -33,8 +33,8 @@
     "contact": "Contactez-nous"
   },
   "landingPage": {
-    "title": "Bienvenue chez Legal Boutique Advisers",
-    "subtitle": "Réalisez la maison de vos rêves",
+    "title": "Réalisez la maison de vos rêves",
+    "subtitle": "",
     "content": "Avec nos nombreuses annonces et nos agents expérimentés, la propriété parfaite est à portée de recherche."
   },
   "main": {
@@ -52,7 +52,7 @@
     },
     "section4": {
       "sectionTitle": "Culture et Art",
-      "description": "Chez Legal Boutique Advisers, nous avons une profonde appréciation pour l’art sous toutes ses formes, le considérant comme une facette essentielle de l'harmonie de la vie quotidienne. Nous sommes dédiés à encourager et promouvoir la culture sous toutes ses expressions, en soutenant activement les artistes contemporains en leur offrant une plateforme pour exposer leur créativité et leur talent sur notre site."
+      "description": "Chez notre cabinet, nous avons une profonde appréciation pour l’art sous toutes ses formes, le considérant comme une facette essentielle de l'harmonie de la vie quotidienne. Nous sommes dédiés à encourager et promouvoir la culture sous toutes ses expressions, en soutenant activement les artistes contemporains en leur offrant une plateforme pour exposer leur créativité et leur talent sur notre site."
     },
     "section5": {
       "sectionTitle": "Mécénat",
@@ -68,7 +68,7 @@
     "description": "Un cabinet d’avocats qui offre des conseils en gestion d’actifs, tant dans le secteur immobilier que dans celui de l'art, couvrant les aspects juridiques et fiscaux aux niveaux national et international, sans que la langue ne soit un obstacle.",
     "section2": {
       "sectionTitle": "Gestion Globale d’Actifs",
-      "description": "LBA a été fondé en tant que groupe de professionnels spécialisés dans l’investissement d’actifs, où nous assistons dès le début à analyser les intérêts et chercher le meilleur investissement répondant aux besoins de nos clients, que ce soit pour des objectifs d'investissement ou pour chercher une résidence de vacances. Toujours en contact avec des professionnels du secteur immobilier, des architectes, des notaires et des banques, nous offrons des services en tant que conseillers financiers ou consultants en gestion d’actifs. Nos clients bénéficient de nos analyses globales et détaillées qui nous permettent de sélectionner et de conseiller sur les meilleures possibilités d’investissement ainsi que sur les stratégies financières et fiscales."
+      "description": "Notre cabinet a été fondé en tant que groupe de professionnels spécialisés dans l’investissement d’actifs, où nous assistons dès le début à analyser les intérêts et chercher le meilleur investissement répondant aux besoins de nos clients, que ce soit pour des objectifs d'investissement ou pour chercher une résidence de vacances. Toujours en contact avec des professionnels du secteur immobilier, des architectes, des notaires et des banques, nous offrons des services en tant que conseillers financiers ou consultants en gestion d’actifs. Nos clients bénéficient de nos analyses globales et détaillées qui nous permettent de sélectionner et de conseiller sur les meilleures possibilités d’investissement ainsi que sur les stratégies financières et fiscales."
     },
     "section3": {
       "sectionTitle": "Solutions Immobilières Sur Mesure",
@@ -87,7 +87,7 @@
   "buy": {
     "section1": {
       "sectionTitle": "Pourquoi acheter avec nous ?",
-      "description": "Chez Legal Boutique Advisers, nous nous engageons à faire de ce parcours une expérience extraordinaire pour vous. Notre dévouement à trouver la propriété de vos rêves va au-delà des simples biens physiques – il s'agit de vous aider à découvrir votre mode de vie idéal."
+      "description": "Chez notre cabinet, nous nous engageons à faire de ce parcours une expérience extraordinaire pour vous. Notre dévouement à trouver la propriété de vos rêves va au-delà des simples biens physiques – il s'agit de vous aider à découvrir votre mode de vie idéal."
     },
     "section2": {
       "sectionTitle": "Notre Expertise",
@@ -99,7 +99,7 @@
     },
     "section4": {
       "sectionTitle": "Votre vision, notre mission",
-      "description": "Chez Legal Boutique Advisers, votre vision de la maison devient notre mission, et nous sommes là pour la concrétiser. Découvrez la propriété idéale avec nous et commencez un voyage qui promet bien plus qu'une maison : un endroit que vous appellerez vraiment chez vous."
+      "description": "Chez notre cabinet, votre vision de la maison devient notre mission, et nous sommes là pour la concrétiser. Découvrez la propriété idéale avec nous et commencez un voyage qui promet bien plus qu'une maison : un endroit que vous appellerez vraiment chez vous."
     },
     "section5": {
       "sectionTitle": "Support juridique expert : Golden Visa",
@@ -172,6 +172,10 @@
       "title": "Le style de vie luxueux de Marbella",
       "body": "Le style de vie à Marbella est un mélange harmonieux de luxe, de loisirs et de plaisir en plein air tout au long de l'année. Avec ses plages immaculées, sa cuisine gastronomique, ses boutiques haut de gamme et sa scène culturelle vibrante, c'est un endroit où chaque jour ressemble à des vacances."
     },
+    "artInvesting": {
+      "title": "L'Art d'Investir",
+      "description": "Investir dans l'ART peut être très avantageux pour vos économies. C'est une manière tendance et parfois même lucrative de diversifier votre patrimoine. Le marché de l'art a connu un développement clair depuis quelque temps, sans précédent. Il s'est démocratisé, libéralisé et internationalisé. Les incitations fiscales encouragent la participation des citoyens à l'art en réduisant leurs impôts sur les dons qui contribuent au développement de l'art et de la culture. Nous sommes là pour vous guider dans cette démarche."
+    },
     "section4": {
       "title": "Assurer votre héritage",
       "body": "L'héritage, c'est bien plus que des biens ; c'est un legs de sécurité et de valeurs. Une planification successorale efficace et une distribution réfléchie des actifs peuvent aider à minimiser les charges fiscales et les complexités juridiques, permettant à vos proches d'hériter facilement de votre héritage. C'est un aspect essentiel de la planification financière qui offre sérénité et impact durable pour les générations futures."
@@ -236,11 +240,13 @@
       "sectionTitle": "Mécénat",
       "description": "Le Centre Musical de la Méditerranée a été fondé à Marbella en 2004. Depuis, il a développé diverses activités liées à la musique classique. Également connu sous le nom de Música con Encanto, ce projet a réalisé, depuis sa création, une saison de concerts, du cinéma documentaire musical, des cours et des ateliers pour adultes, des voyages musicaux et la gestion administrative et artistique de la Petite Méditerranée Orchestra, un orchestre pour enfants et un orchestre à cordes pour jeunes."
     },
-    "artInvesting": {
-      "title": "L'Art d'Investir",
-      "description": "Investir dans l'ART peut être très avantageux pour vos économies. C'est une manière tendance et parfois même lucrative de diversifier votre patrimoine. Le marché de l'art a connu un développement clair depuis quelque temps, sans précédent. Il s'est démocratisé, libéralisé et internationalisé. Les incitations fiscales encouragent la participation des citoyens à l'art en réduisant leurs impôts sur les dons qui contribuent au développement de l'art et de la culture. Nous sommes là pour vous guider dans cette démarche."
+    "commitment": {
+      "title": "Notre Engagement",
+      "description": "Nous nous engageons à faire une différence pour nos clients, la société et le monde grâce à la responsabilité, l'intégrité et une passion pour la culture.",
+      "value1": "Impact Communautaire : Notre engagement va au-delà des services juridiques. Nous participons activement à des initiatives qui favorisent des changements positifs dans la société, répondant aux défis sociaux fondamentaux et promouvant le bien-être de tous.",
+      "value2": "Soutien à l'Art : Nous croyons que l'art a le pouvoir d'inspirer et de transformer. Nous soutenons activement les artistes contemporains et contribuons à l'enrichissement culturel en encourageant la créativité et l'expression artistique sous toutes ses formes.",
+      "value3": "Promotion de la Musique : Grâce à des partenariats comme MUSICA CON ENCANTO, nous promouvons la musique classique et enrichissons l'identité culturelle de Marbella. Nous créons des opportunités pour les musiciens et les auditeurs afin de préserver cet art intemporel."
     }
-
   },
   "thankyou": {
     "title": "Merci!",

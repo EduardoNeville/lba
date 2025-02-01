@@ -6,7 +6,8 @@ export default function InvestPlanPage() {
   const { t } = useTranslation();
 
   return (
-    <div>
+    <div className="overflow-x-hidden">
+      {/* Legal Section */}
       <div
         id="legal-aspect-section"
         className="bg-gray-50 min-h-screen font-zesta-regular"
@@ -121,6 +122,8 @@ export default function InvestPlanPage() {
           </div>
         </section>
       </div>
+
+      {/* Buy Section */}
       <div
         id="buy-section"
         className="bg-gray-50 min-h-screen font-zesta-regular"
@@ -215,6 +218,8 @@ export default function InvestPlanPage() {
           </div>
         </section>
       </div>
+
+      {/* Sell Section */}
       <div
         id="sell-section"
         className="bg-gray-50 min-h-screen font-zesta-bold"
@@ -269,6 +274,8 @@ export default function InvestPlanPage() {
           </div>
         </section>
       </div>
+
+      {/* Invest Section */}
       <div
         id="invest-section"
         className="bg-gray-50 min-h-screen font-zesta-bold"
@@ -284,7 +291,7 @@ export default function InvestPlanPage() {
         {/* Main Sections */}
         <div className="relative h-4 bg-primary z-2"> </div>
         <section className="sticky relative bg-gray-50 z-2">
-          <div className="container mx-auto pt-16 md:px-bdr px-6 space-y-16 z-20">
+          <div className="container mx-auto pt-16 pb-32 md:px-bdr px-6 space-y-16 z-20">
             {/* Section 1: Comprehensive Asset Management */}
             <section className="bg-white shadow-md p-8 rounded-lg flex flex-col lg:flex-row-reverse gap-8 items-center">
               {/* Ideal Image */}
@@ -312,13 +319,39 @@ export default function InvestPlanPage() {
             </section>
 
             {/* Section 3: Tax Advice */}
-            <section className="text-center bg-gray-50 pt-16 pb-32">
+            <section className="text-center bg-gray-50 pt-16">
               <h2 className="text-flash font-bold text-primary">
                 {t("investPlan.section3.sectionTitle")}
               </h2>
               <p className="mt-4 text-content text-lt-primary max-w-3xl mx-auto">
                 {t("investPlan.section3.description")}
               </p>
+            </section>
+
+            {/* Section 1: The art of investing */}
+            <section className="bg-white shadow-md p-8 rounded-lg flex flex-col lg:flex-row gap-8 items-center">
+              {/* Ideal Image */}
+              <div className="lg:w-1/2">
+                <img
+                  src="images/art-gallery.jpg"
+                  alt="Sell with Confidence"
+                  className="rounded-lg shadow-lg"
+                  loading="lazy"
+                />
+              </div>
+              <div className="lg:w-1/2">
+                <h2 className="text-title font-bold text-primary">
+                  {t("investPlan.artInvesting.title")}
+                </h2>
+                <p className="my-4 text-content text-lt-primary">
+                  {t("investPlan.artInvesting.description")}
+                </p>
+                <Link to="/contact" onClick={() => window.scrollTo(0, 0)}>
+                  <button className="border rounded border-primary px-6 py-2 w-full text-xl bg-transparent hover:bg-pink-50 text-primary transition uppercase text-button">
+                    {t("buttons.market")}
+                  </button>
+                </Link>
+              </div>
             </section>
           </div>
         </section>

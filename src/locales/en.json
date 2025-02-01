@@ -33,8 +33,8 @@
     "contact": "Contact Us"
   },
   "landingPage": {
-    "title": "Welcome to Legal Boutique Advisers",
-    "subtitle": "Draw Your Dream Home",
+    "title": "Draw Your Dream Home",
+    "subtitle": "",
     "content": "With our extensive listings and experienced agents, your perfect property is just a search away."
   },
   "main": {
@@ -56,11 +56,15 @@
     "description": "A law firm that offers asset management advice, both in real estate and in the art sector, covering legal and tax aspects at national and international levels, without language being an obstacle.",
     "section2": {
       "sectionTitle": "Comprehensive Asset Management",
-      "description": "LBA was founded as a group of professionals specializing in asset investment, where we assist from the beginning to analyze interests and search for the best investment that suits the needs of our clients, whether it is for investment purposes or searching for a vacation residence. Always in contact with professionals from the real estate sector, architects, notaries, and banks, we provide services as financial advisers or asset management consultants, where clients benefit from our global and detailed analysis that allows us to select and advise on the best investment possibilities, financial, and tax strategies."
+      "description": "Our firm was founded as a group of professionals specializing in asset investment, where we assist from the beginning to analyze interests and search for the best investment that suits the needs of our clients, whether it is for investment purposes or searching for a vacation residence. Always in contact with professionals from the real estate sector, architects, notaries, and banks, we provide services as financial advisers or asset management consultants, where clients benefit from our global and detailed analysis that allows us to select and advise on the best investment possibilities, financial, and tax strategies."
     },
     "section3": {
       "sectionTitle": "Tailored Real Estate Solutions",
       "description": "Our clients typically have an international profile with unique needs. We deal with investments in second holiday homes, but also primary residences, investments to establish rental businesses or hotel projects, already built homes, or land to build their dream residence, to mention a few examples."
+    },
+    "artInvesting": {
+      "title": "The Art of Investing",
+      "description": "Investing in ART can be very advantageous for your savings. It is a trendy and even sometimes lucrative way to diversify your wealth. The art market has had a clear development for some time, without precedent. It has democratized, liberalized and internationalized. Tax incentives encourage citizen participation in art by reducing their taxes on donations that contribute to the development of art and culture. We are here to guide you on how to do this."
     },
     "section4": {
       "sectionTitle": "Expanding into Art Investment",
@@ -75,7 +79,7 @@
   "buy": {
     "section1": {
       "sectionTitle": "Why buy with us?",
-      "description": "At Legal Boutique Advisers, we're committed to making this journey an extraordinary one for you. Our dedication to finding your dream property goes beyond just bricks and mortar – it's about helping you discover your ideal lifestyle."
+      "description": "At our firm, we're committed to making this journey an extraordinary one for you. Our dedication to finding your dream property goes beyond just bricks and mortar – it's about helping you discover your ideal lifestyle."
     },
     "section2": {
       "sectionTitle": "Our Expertise",
@@ -87,7 +91,7 @@
     },
     "section4": {
       "sectionTitle": "Your Vision, Our Mission",
-      "description": "At Legal Boutique Advisers, your vision of home becomes our mission, and we're here to turn it into reality. Discover your perfect property with us and embark on a journey that promises not just a house, but a place you'll truly call home."
+      "description": "At our firm, your vision of home becomes our mission, and we're here to turn it into reality. Discover your perfect property with us and embark on a journey that promises not just a house, but a place you'll truly call home."
     },
     "section5": {
       "sectionTitle": "Expert Legal Support: Golden Visa",
@@ -215,7 +219,7 @@
   "corporateResposibility": {
     "section1": {
       "sectionTitle": "Culture and Artistry",
-      "description": "At Legal Boutique Advisers we hold a profound appreciation for art in all its forms, considering it an essential facet of daily life's harmony. We are dedicated to fostering and promoting culture in all its expressions, actively supporting contemporary artists by providing a platform to showcase their creativity and talent on our website."
+      "description": "At our firm we hold a profound appreciation for art in all its forms, considering it an essential facet of daily life's harmony. We are dedicated to fostering and promoting culture in all its expressions, actively supporting contemporary artists by providing a platform to showcase their creativity and talent on our website."
     },
     "section2": {
       "sectionTitle": "Patronage",
@@ -225,9 +229,12 @@
       "sectionTitle": "Investing in the future",
       "description": "We're your Marbella investment specialists, offering local insights and opportunities to simplify your journey. From property selection to financial guidance, we're here to ensure your Marbella investments thrive."
     },
-    "artInvesting": {
-      "title": "The Art of Investing",
-      "description": "Investing in ART can be very advantageous for your savings. It is a trendy and even sometimes lucrative way to diversify your wealth. The art market has had a clear development for some time, without precedent. It has democratized, liberalized and internationalized. Tax incentives encourage citizen participation in art by reducing their taxes on donations that contribute to the development of art and culture. We are here to guide you on how to do this."
+    "commitment": {
+      "title": "Our Commitment",
+      "description": "We are dedicated to making a difference for our clients, society, and the world through responsibility, integrity, and a passion for culture.",
+      "value1": "Community Impact: Our dedication extends beyond providing legal services. We actively engage in initiatives that drive positive societal change, addressing fundamental social challenges and promoting wellbeing for all.",
+      "value2": "Support for Art: We believe art has the power to inspire and transform. We champion contemporary artists and contribute to the cultural landscape, fostering creativity and supporting artistic expression in all its forms.",
+      "value3": "Music Promotion: Through partnerships like MUSICA CON ENCANTO, we promote classical music and enrich the cultural identity of Marbella. By creating opportunities for musicians and audiences alike, we aim to preserve this timeless art form."
     }
   },
   "thankyou": {
