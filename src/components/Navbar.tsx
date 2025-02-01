@@ -10,25 +10,20 @@ const MENU_LIST = [
 
 const INVEST_SECTIONS = [
   {
+    textKey: "navbar.sections.legal.title",
+    id: "legal-aspect-section",
+    descriptionKey: "navbar.sections.legal.description",
+  },
+  {
     textKey: "navbar.sections.buy.title",
     id: "buy-section",
     descriptionKey: "navbar.sections.buy.description",
   },
   {
-    textKey: "navbar.sections.sell.title",
-    id: "sell-section",
-    descriptionKey: "navbar.sections.sell.description",
-  },
-  {
     textKey: "navbar.sections.invest.title",
     id: "invest-section",
     descriptionKey: "navbar.sections.invest.description",
-  },
-  {
-    textKey: "navbar.sections.legal.title",
-    id: "legal-aspect-section",
-    descriptionKey: "navbar.sections.legal.description",
-  },
+  }
 ];
 
 const Navbar = () => {

@@ -2,14 +2,18 @@
   "lang": "fr",
   "navbar": {
     "b1": "Accueil",
-    "b2": "Investir & Planifier",
+    "b2": "Aspects Juiridiques et Investir",
     "b3": "Responsabilité d'Entreprise",
     "b4": "À Propos",
     "b5": "Contact",
     "sections": {
+      "legal": {
+        "title": "Aspects Juridiques",
+        "description": "Comprenez les aspects juridiques de l'investissement."
+      },
       "buy": {
-        "title": "Acheter",
-        "description": "Découvrez nos opportunités d'achat."
+        "title": "Acheter & Vendre",
+        "description": "Découvrez nos opportunités d'achat et vente."
       },
       "sell": {
         "title": "Vendre",
@@ -18,10 +22,6 @@
       "invest": {
         "title": "Investir",
         "description": "Apprenez à investir efficacement avec nous."
-      },
-      "legal": {
-        "title": "Aspects Juridiques",
-        "description": "Comprenez les aspects juridiques de l'investissement."
       }
     }
   },

@@ -2,14 +2,18 @@
   "lang": "en",
   "navbar": {
     "b1": "Home",
-    "b2": "Invest & Plan",
+    "b2": "Legal & Investment advice",
     "b3": "Corporate Responsibility",
     "b4": "About",
     "b5": "Contact",
     "sections": {
+      "legal": {
+        "title": "Legal Aspects",
+        "description": "Worldclass legal advice"
+      },
       "buy": {
-        "title": "Buy",
-        "description": "Discover our buying opportunities."
+        "title": "Buy & Sell",
+        "description": "Discover opportunities with us."
       },
       "sell": {
         "title": "Sell",
@@ -18,10 +22,6 @@
       "invest": {
         "title": "Invest",
         "description": "Secure your future with us."
-      },
-      "legal": {
-        "title": "Legal Aspects",
-        "description": "Worldclass legal advice"
       }
     }
   },
