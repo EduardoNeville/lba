@@ -88,8 +88,8 @@ const Navbar = () => {
           >
             <img
               alt="LBA_Logo"
-              className="w-full max-w-[10rem] h-auto"
-              src="icons/LBA_Logo.jpg"
+              className="w-full max-w-[20rem] h-auto"
+              src="icons/marisela_log.jpg"
             />
           </Link>
 
