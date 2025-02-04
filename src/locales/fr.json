@@ -2,14 +2,18 @@
   "lang": "fr",
   "navbar": {
     "b1": "Accueil",
-    "b2": "Investir & Planifier",
+    "b2": "Expertise",
     "b3": "Responsabilité d'Entreprise",
     "b4": "À Propos",
     "b5": "Contact",
     "sections": {
+      "legal": {
+        "title": "Aspects Juridiques",
+        "description": "Comprenez les aspects juridiques de l'investissement."
+      },
       "buy": {
-        "title": "Acheter",
-        "description": "Découvrez nos opportunités d'achat."
+        "title": "Acheter & Vendre",
+        "description": "Découvrez nos opportunités d'achat et vente."
       },
       "sell": {
         "title": "Vendre",
@@ -18,10 +22,6 @@
       "invest": {
         "title": "Investir",
         "description": "Apprenez à investir efficacement avec nous."
-      },
-      "legal": {
-        "title": "Aspects Juridiques",
-        "description": "Comprenez les aspects juridiques de l'investissement."
       }
     }
   },
@@ -33,8 +33,8 @@
     "contact": "Contactez-nous"
   },
   "landingPage": {
-    "title": "Bienvenue chez Legal Boutique Advisers",
-    "subtitle": "Réalisez la maison de vos rêves",
+    "title": "Réalisez la maison de vos rêves",
+    "subtitle": "",
     "content": "Avec nos nombreuses annonces et nos agents expérimentés, la propriété parfaite est à portée de recherche."
   },
   "main": {
@@ -52,7 +52,7 @@
     },
     "section4": {
       "sectionTitle": "Culture et Art",
-      "description": "Chez Legal Boutique Advisers, nous avons une profonde appréciation pour l’art sous toutes ses formes, le considérant comme une facette essentielle de l'harmonie de la vie quotidienne. Nous sommes dédiés à encourager et promouvoir la culture sous toutes ses expressions, en soutenant activement les artistes contemporains en leur offrant une plateforme pour exposer leur créativité et leur talent sur notre site."
+      "description": "Chez notre cabinet, nous avons une profonde appréciation pour l’art sous toutes ses formes, le considérant comme une facette essentielle de l'harmonie de la vie quotidienne. Nous sommes dédiés à encourager et promouvoir la culture sous toutes ses expressions, en soutenant activement les artistes contemporains en leur offrant une plateforme pour exposer leur créativité et leur talent sur notre site."
     },
     "section5": {
       "sectionTitle": "Mécénat",
@@ -68,7 +68,7 @@
     "description": "Un cabinet d’avocats qui offre des conseils en gestion d’actifs, tant dans le secteur immobilier que dans celui de l'art, couvrant les aspects juridiques et fiscaux aux niveaux national et international, sans que la langue ne soit un obstacle.",
     "section2": {
       "sectionTitle": "Gestion Globale d’Actifs",
-      "description": "LBA a été fondé en tant que groupe de professionnels spécialisés dans l’investissement d’actifs, où nous assistons dès le début à analyser les intérêts et chercher le meilleur investissement répondant aux besoins de nos clients, que ce soit pour des objectifs d'investissement ou pour chercher une résidence de vacances. Toujours en contact avec des professionnels du secteur immobilier, des architectes, des notaires et des banques, nous offrons des services en tant que conseillers financiers ou consultants en gestion d’actifs. Nos clients bénéficient de nos analyses globales et détaillées qui nous permettent de sélectionner et de conseiller sur les meilleures possibilités d’investissement ainsi que sur les stratégies financières et fiscales."
+      "description": "Notre cabinet a été fondé en tant que groupe de professionnels spécialisés dans l’investissement d’actifs, où nous assistons dès le début à analyser les intérêts et chercher le meilleur investissement répondant aux besoins de nos clients, que ce soit pour des objectifs d'investissement ou pour chercher une résidence de vacances. Toujours en contact avec des professionnels du secteur immobilier, des architectes, des notaires et des banques, nous offrons des services en tant que conseillers financiers ou consultants en gestion d’actifs. Nos clients bénéficient de nos analyses globales et détaillées qui nous permettent de sélectionner et de conseiller sur les meilleures possibilités d’investissement ainsi que sur les stratégies financières et fiscales."
     },
     "section3": {
       "sectionTitle": "Solutions Immobilières Sur Mesure",
@@ -87,7 +87,7 @@
   "buy": {
     "section1": {
       "sectionTitle": "Pourquoi acheter avec nous ?",
-      "description": "Chez Legal Boutique Advisers, nous nous engageons à faire de ce parcours une expérience extraordinaire pour vous. Notre dévouement à trouver la propriété de vos rêves va au-delà des simples biens physiques – il s'agit de vous aider à découvrir votre mode de vie idéal."
+      "description": "Chez notre cabinet, nous nous engageons à faire de ce parcours une expérience extraordinaire pour vous. Notre dévouement à trouver la propriété de vos rêves va au-delà des simples biens physiques – il s'agit de vous aider à découvrir votre mode de vie idéal."
     },
     "section2": {
       "sectionTitle": "Notre Expertise",
@@ -99,7 +99,7 @@
     },
     "section4": {
       "sectionTitle": "Votre vision, notre mission",
-      "description": "Chez Legal Boutique Advisers, votre vision de la maison devient notre mission, et nous sommes là pour la concrétiser. Découvrez la propriété idéale avec nous et commencez un voyage qui promet bien plus qu'une maison : un endroit que vous appellerez vraiment chez vous."
+      "description": "Chez notre cabinet, votre vision de la maison devient notre mission, et nous sommes là pour la concrétiser. Découvrez la propriété idéale avec nous et commencez un voyage qui promet bien plus qu'une maison : un endroit que vous appellerez vraiment chez vous."
     },
     "section5": {
       "sectionTitle": "Support juridique expert : Golden Visa",
@@ -122,29 +122,40 @@
   },
   "legalAspect": {
     "title": "Conseillers Boutique Légale",
-    "description": {
-      "paragraph1": {
-        "title": "Services Juridiques Personnalisés",
-        "text": "LEGAL BOUTIQUE ADVISERS a été développé pour offrir à nos clients une large gamme de services juridiques avec une approche personnalisée."
+    "legalServices": {
+      "introduction": {
+        "title": "Support Juridique Complet",
+        "description": "Ce cabinet vous offre une tranquillité d'esprit dans tout acte juridique que vous entreprenez, en vous assurant le soutien d'avocats et de conseillers fiscaux connaissant parfaitement les lois et pratiques locales, vous permettant ainsi de gagner du temps et de l'argent, tout en accordant une attention personnalisée et de proximité à nos clients."
       },
-      "paragraph2": {
-        "title": "Soutien Complet pour les Investissements Immobiliers",
-        "text": "Dès que vous décidez d'investir en Espagne, que ce soit pour une résidence de vacances, pour des entreprises ou fonds d'investissement, ou même des entreprises de construction, nous fournissons des conseils complets, de la recherche de la propriété à la recommandation de la meilleure forme juridique pour minimiser l'impact fiscal de votre investissement, en vous accompagnant jusqu'à la fin 'clé en main,' dans tous les aspects liés au Droit Immobilier."
+      "advisoryServices": {
+        "title": "Services de Conseil sur Mesure",
+        "description": "Nous prodiguons des conseils aux particuliers, investisseurs, promoteurs ou professionnels de l'intermédiation dans les transactions immobilières. Notre formation et notre expérience nous permettent de prévenir tout problème pouvant survenir lors d'investissements immobiliers, associés à un conseil fiscal et comptable complet."
       },
-      "paragraph3": {
-        "title": "Planification Successorale et Post-Investissement",
-        "text": "Une fois que vous avez investi, nous vous accompagnons dans les questions relatives au Droit des Successions, y compris une planification fiscale préalable et des aspects juridiques et fiscaux postérieurs."
+      "clientFocus": {
+        "title": "Approche Centrée sur le Client",
+        "description": "Nous savons que chaque client a des besoins différents. Ce cabinet possède les connaissances et les ressources nécessaires pour conseiller sur toutes les questions juridiques avec efficacité et efficience. Une communication claire et régulière constitue un élément essentiel de nos services."
       },
-      "paragraph4": {
-        "title": "Conseils Bancaires Globaux et Interaction en Temps Réel",
-        "text": "Nous analysons les relations des particuliers ou des entreprises avec les entités bancaires, proposant des conseils sur mesure et assurant une communication en temps réel pour des interactions fluides."
+      "specializedAdvisory": {
+        "title": "Services de Conseil Spécialisés pour les Propriétaires et Investisseurs",
+        "description": "Nous offrons également des conseils aux propriétaires et investisseurs dans les domaines suivants : \n- Droit successoral.\n- Élaboration du testament le plus avantageux pour vos proches, adapté à la récente législation européenne.\n- Conseils sur la location, y compris les locations de longue durée, de courte durée et d'usage touristique.\n- Accompagnement dans la propriété fractionnée ou la copropriété."
+      },
+      "complianceSupport": {
+        "title": "Conformité aux Réglementations Immobilières",
+        "description": "Pour toute transaction que vous entreprenez, vous serez accompagné afin de garantir la conformité avec la législation urbanistique espagnole et européenne."
+      },
+      "businessStartups": {
+        "title": "Support pour la Création et l'Expansion d'Entreprises",
+        "description": "Si vous souhaitez créer une entreprise, démarrer une activité commerciale ou étendre vos activités en Espagne, ce cabinet vous accompagne dans la création de sociétés espagnoles ou de filiales de votre entreprise en Espagne."
       },
       "services": {
-        "area1": "Droit Immobilier",
-        "area2": "Droit International Privé",
-        "area3": "Droit de la Famille",
-        "area4": "Obligations et Contrats",
-        "area5": "Droit Fiscal"
+        "title": "Nos Services Juridiques",
+        "description": "Nous sommes spécialisés dans les domaines suivants pour répondre à vos besoins juridiques :",
+        "area1": "Droit Immobilier : Expertise dans les transactions immobilières et la conformité légale.",
+        "area2": "Droit International Privé : Solutions adaptées aux défis juridiques transfrontaliers.",
+        "area3": "Droit de la Famille : Soutien juridique avec compassion pour les questions familiales.",
+        "area4": "Obligations et Contrats : Clarté et conformité juridique dans les accords.",
+        "area5": "Droit Fiscal : Assistance en matière de conformité fiscale et de scénarios complexes.",
+        "area6": "Conseil juridique : Accompagnement complet pour toutes préoccupations juridiques."
       }
     }
   },
@@ -160,6 +171,10 @@
     "section3": {
       "title": "Le style de vie luxueux de Marbella",
       "body": "Le style de vie à Marbella est un mélange harmonieux de luxe, de loisirs et de plaisir en plein air tout au long de l'année. Avec ses plages immaculées, sa cuisine gastronomique, ses boutiques haut de gamme et sa scène culturelle vibrante, c'est un endroit où chaque jour ressemble à des vacances."
+    },
+    "artInvesting": {
+      "title": "L'Art d'Investir",
+      "description": "Investir dans l'ART peut être très avantageux pour vos économies. C'est une manière tendance et parfois même lucrative de diversifier votre patrimoine. Le marché de l'art a connu un développement clair depuis quelque temps, sans précédent. Il s'est démocratisé, libéralisé et internationalisé. Les incitations fiscales encouragent la participation des citoyens à l'art en réduisant leurs impôts sur les dons qui contribuent au développement de l'art et de la culture. Nous sommes là pour vous guider dans cette démarche."
     },
     "section4": {
       "title": "Assurer votre héritage",
@@ -225,9 +240,12 @@
       "sectionTitle": "Mécénat",
       "description": "Le Centre Musical de la Méditerranée a été fondé à Marbella en 2004. Depuis, il a développé diverses activités liées à la musique classique. Également connu sous le nom de Música con Encanto, ce projet a réalisé, depuis sa création, une saison de concerts, du cinéma documentaire musical, des cours et des ateliers pour adultes, des voyages musicaux et la gestion administrative et artistique de la Petite Méditerranée Orchestra, un orchestre pour enfants et un orchestre à cordes pour jeunes."
     },
-    "section3": {
-      "sectionTitle": "Investir dans l'avenir",
-      "description": "Nous sommes vos spécialistes en investissement à Marbella, offrant des perspectives locales et des opportunités pour simplifier votre parcours. De la sélection de propriétés aux conseils financiers, nous sommes là pour assurer le succès de vos investissements à Marbella."
+    "commitment": {
+      "title": "Notre Engagement",
+      "description": "Nous nous engageons à faire une différence pour nos clients, la société et le monde grâce à la responsabilité, l'intégrité et une passion pour la culture.",
+      "value1": "Impact Communautaire : Notre engagement va au-delà des services juridiques. Nous participons activement à des initiatives qui favorisent des changements positifs dans la société, répondant aux défis sociaux fondamentaux et promouvant le bien-être de tous.",
+      "value2": "Soutien à l'Art : Nous croyons que l'art a le pouvoir d'inspirer et de transformer. Nous soutenons activement les artistes contemporains et contribuons à l'enrichissement culturel en encourageant la créativité et l'expression artistique sous toutes ses formes.",
+      "value3": "Promotion de la Musique : Grâce à des partenariats comme MUSICA CON ENCANTO, nous promouvons la musique classique et enrichissons l'identité culturelle de Marbella. Nous créons des opportunités pour les musiciens et les auditeurs afin de préserver cet art intemporel."
     }
   },
   "thankyou": {

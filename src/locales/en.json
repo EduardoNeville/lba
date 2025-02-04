@@ -2,14 +2,18 @@
   "lang": "en",
   "navbar": {
     "b1": "Home",
-    "b2": "Invest & Plan",
+    "b2": "Expertise",
     "b3": "Corporate Responsibility",
     "b4": "About",
     "b5": "Contact",
     "sections": {
+      "legal": {
+        "title": "Legal Aspects",
+        "description": "Worldclass legal advice"
+      },
       "buy": {
-        "title": "Buy",
-        "description": "Discover our buying opportunities."
+        "title": "Buy & Sell",
+        "description": "Discover opportunities with us."
       },
       "sell": {
         "title": "Sell",
@@ -18,10 +22,6 @@
       "invest": {
         "title": "Invest",
         "description": "Secure your future with us."
-      },
-      "legal": {
-        "title": "Legal Aspects",
-        "description": "Worldclass legal advice"
       }
     }
   },
@@ -33,8 +33,8 @@
     "contact": "Contact Us"
   },
   "landingPage": {
-    "title": "Welcome to Legal Boutique Advisers",
-    "subtitle": "Draw Your Dream Home",
+    "title": "Draw Your Dream Home",
+    "subtitle": "",
     "content": "With our extensive listings and experienced agents, your perfect property is just a search away."
   },
   "main": {
@@ -56,11 +56,15 @@
     "description": "A law firm that offers asset management advice, both in real estate and in the art sector, covering legal and tax aspects at national and international levels, without language being an obstacle.",
     "section2": {
       "sectionTitle": "Comprehensive Asset Management",
-      "description": "LBA was founded as a group of professionals specializing in asset investment, where we assist from the beginning to analyze interests and search for the best investment that suits the needs of our clients, whether it is for investment purposes or searching for a vacation residence. Always in contact with professionals from the real estate sector, architects, notaries, and banks, we provide services as financial advisers or asset management consultants, where clients benefit from our global and detailed analysis that allows us to select and advise on the best investment possibilities, financial, and tax strategies."
+      "description": "Our firm was founded as a group of professionals specializing in asset investment, where we assist from the beginning to analyze interests and search for the best investment that suits the needs of our clients, whether it is for investment purposes or searching for a vacation residence. Always in contact with professionals from the real estate sector, architects, notaries, and banks, we provide services as financial advisers or asset management consultants, where clients benefit from our global and detailed analysis that allows us to select and advise on the best investment possibilities, financial, and tax strategies."
     },
     "section3": {
       "sectionTitle": "Tailored Real Estate Solutions",
       "description": "Our clients typically have an international profile with unique needs. We deal with investments in second holiday homes, but also primary residences, investments to establish rental businesses or hotel projects, already built homes, or land to build their dream residence, to mention a few examples."
+    },
+    "artInvesting": {
+      "title": "The Art of Investing",
+      "description": "Investing in ART can be very advantageous for your savings. It is a trendy and even sometimes lucrative way to diversify your wealth. The art market has had a clear development for some time, without precedent. It has democratized, liberalized and internationalized. Tax incentives encourage citizen participation in art by reducing their taxes on donations that contribute to the development of art and culture. We are here to guide you on how to do this."
     },
     "section4": {
       "sectionTitle": "Expanding into Art Investment",
@@ -75,7 +79,7 @@
   "buy": {
     "section1": {
       "sectionTitle": "Why buy with us?",
-      "description": "At Legal Boutique Advisers, we're committed to making this journey an extraordinary one for you. Our dedication to finding your dream property goes beyond just bricks and mortar – it's about helping you discover your ideal lifestyle."
+      "description": "At our firm, we're committed to making this journey an extraordinary one for you. Our dedication to finding your dream property goes beyond just bricks and mortar – it's about helping you discover your ideal lifestyle."
     },
     "section2": {
       "sectionTitle": "Our Expertise",
@@ -87,7 +91,7 @@
     },
     "section4": {
       "sectionTitle": "Your Vision, Our Mission",
-      "description": "At Legal Boutique Advisers, your vision of home becomes our mission, and we're here to turn it into reality. Discover your perfect property with us and embark on a journey that promises not just a house, but a place you'll truly call home."
+      "description": "At our firm, your vision of home becomes our mission, and we're here to turn it into reality. Discover your perfect property with us and embark on a journey that promises not just a house, but a place you'll truly call home."
     },
     "section5": {
       "sectionTitle": "Expert Legal Support: Golden Visa",
@@ -108,32 +112,40 @@
       "description": "Tax advice is the compass that guides you through the complex landscape of financial decisions. It's about maximizing your savings while staying compliant with ever-changing tax laws. We help you navigate the intricacies of tax planning, ensuring your financial goals are met efficiently and legally. Let us be your trusted partner in making smart tax decisions."
     }
   },
-  "legalAspect": {
-    "title": "Legal Boutique Advisers",
-    "description": {
-      "paragraph1": {
-        "title": "Personalized Legal Services",
-        "text": "LEGAL BOUTIQUE ADVISERS has been developed to offer our clients a wide range of legal services with a personalized approach."
-      },
-      "paragraph2": {
-        "title": "Comprehensive Real Estate Investment Support",
-        "text": "From the moment you decide to invest in Spain, whether for a vacation residence, for investment companies or funds, or even construction companies, we provide complete advice, from finding the property to recommending the best legal form to minimize the tax impact of your investment, accompanying you until the end 'turnkey,' in all aspects related to Real Estate Law."
-      },
-      "paragraph3": {
-        "title": "Inheritance and Post-Investment Planning",
-        "text": "Once you’ve invested, we assist you in matters related to Inheritance Law, including prior tax planning and post-investment legal and fiscal aspects."
-      },
-      "paragraph4": {
-        "title": "Banking Advice and Real-Time Interaction",
-        "text": "We study individual or corporate relationships with banking entities, offering tailored advice and maintaining real-time communication for seamless interactions."
-      },
-      "services": {
-        "area1": "Real Estate Law",
-        "area2": "Private International Law",
-        "area3": "Family Law",
-        "area4": "Obligations and Contracts",
-        "area5": "Tax Law"
-      }
+  "legalServices": {
+    "introduction": {
+      "title": "Comprehensive Legal Support",
+      "description": "This firm offers you peace of mind in any legal act you undertake, ensuring you are backed by lawyers and tax advisors knowledgeable in local laws and practices, enabling you to save time and money, all while providing close and personalized attention to our clients."
+    },
+    "advisoryServices": {
+      "title": "Tailored Advisory Services",
+      "description": "We provide advice to individuals, investors, developers, or professionals intermediating in real estate transactions. Our training and experience allow us to prevent any problems that may arise in real estate investments, coupled with comprehensive tax and fiscal consultancy."
+    },
+    "clientFocus": {
+      "title": "Client-Centered Approach",
+      "description": "We understand that each client has different needs. This firm has the knowledge and resources to provide guidance on all legal matters with efficiency and effectiveness. Clear and regular communication is an essential element of our services."
+    },
+    "specializedAdvisory": {
+      "title": "Specialized Advisory Services for Property Owners and Investors",
+      "description": "We also offer guidance to property owners and investors on the following matters: \n- Inheritance law.\n- Creating the most beneficial will for your loved ones, customized to recent European legislation.\n- Rentals advice, including long-term, short-term, and tourist rentals.\n- Guidance on fractional ownership or co-ownership of property."
+    },
+    "complianceSupport": {
+      "title": "Compliance with Real Estate Regulations",
+      "description": "For any transaction you undertake, you will be guided to ensure compliance with Spanish and European urban planning legislation."
+    },
+    "businessStartups": {
+      "title": "Support for Business Creation and Expansion",
+      "description": "If you wish to establish a company, start a business activity, or expand your operations in Spain, this firm provides guidance on setting up Spanish companies or subsidiaries of your business in Spain."
+    },
+    "services": {
+      "title": "Our Legal Services",
+      "description": "We specialize in the following areas to meet your legal needs:",
+      "area1": "Real Estate Law: Expertise in property transactions and legal compliance.",
+      "area2": "Private International Law: Tailored solutions for cross-border legal challenges.",
+      "area3": "Family Law: Compassionate legal support for family-related matters.",
+      "area4": "Obligations and Contracts: Ensuring legal clarity and compliance in agreements.",
+      "area5": "Tax Law: Assistance with tax compliance and complex tax scenarios.",
+      "area6": "Advisory Services: Comprehensive guidance for all legal concerns."
     }
   },
   "invest": {
@@ -207,7 +219,7 @@
   "corporateResposibility": {
     "section1": {
       "sectionTitle": "Culture and Artistry",
-      "description": "At Legal Boutique Advisers we hold a profound appreciation for art in all its forms, considering it an essential facet of daily life's harmony. We are dedicated to fostering and promoting culture in all its expressions, actively supporting contemporary artists by providing a platform to showcase their creativity and talent on our website."
+      "description": "At our firm we hold a profound appreciation for art in all its forms, considering it an essential facet of daily life's harmony. We are dedicated to fostering and promoting culture in all its expressions, actively supporting contemporary artists by providing a platform to showcase their creativity and talent on our website."
     },
     "section2": {
       "sectionTitle": "Patronage",
@@ -216,6 +228,13 @@
     "section3": {
       "sectionTitle": "Investing in the future",
       "description": "We're your Marbella investment specialists, offering local insights and opportunities to simplify your journey. From property selection to financial guidance, we're here to ensure your Marbella investments thrive."
+    },
+    "commitment": {
+      "title": "Our Commitment",
+      "description": "We are dedicated to making a difference for our clients, society, and the world through responsibility, integrity, and a passion for culture.",
+      "value1": "Community Impact: Our dedication extends beyond providing legal services. We actively engage in initiatives that drive positive societal change, addressing fundamental social challenges and promoting wellbeing for all.",
+      "value2": "Support for Art: We believe art has the power to inspire and transform. We champion contemporary artists and contribute to the cultural landscape, fostering creativity and supporting artistic expression in all its forms.",
+      "value3": "Music Promotion: Through partnerships like MUSICA CON ENCANTO, we promote classical music and enrich the cultural identity of Marbella. By creating opportunities for musicians and audiences alike, we aim to preserve this timeless art form."
     }
   },
   "thankyou": {
