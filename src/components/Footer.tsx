@@ -35,7 +35,7 @@ const Footer = () => {
           {/* Social Links */}
           <div className="flex justify-center gap-6 mt-4">
             <a
-              href="https://www.linkedin.com/company/legal-boutique-advisers/"
+              href="https://www.linkedin.com/in/marisela-castro-abad-a87b0b295/"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:underline w-icon"
@@ -70,10 +70,10 @@ const Footer = () => {
                 alt="Phone Icon"
               />
               <a
-                href="tel:+34 952 777 991"
+                href="tel:+34 663 109 014"
                 className="hover:underline text-content"
               >
-                +34 952 777 991
+                +34 663 109 014
               </a>
             </div>
 
@@ -81,10 +81,10 @@ const Footer = () => {
             <div className="flex items-center gap-4">
               <img src="icons/email.png" className="w-icon" alt="Email Icon" />
               <a
-                href="mailto:info@legalboutiqueadvisers.com"
+                href="mailto:info@mariselacastro.com"
                 className="hover:underline text-content"
               >
-                info@legalboutiqueadvisers.com
+                info@mariselacastro.com
               </a>
             </div>
           </div>

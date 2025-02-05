@@ -26,14 +26,14 @@ export default function ContactPage() {
             <form
               className="space-y-6"
               method="POST"
-              action="https://formsubmit.co/eduardoneville82@gmail.com"
+              action="https://formsubmit.co/info@mariselacastro.com"
             >
               {/* Hidden Fields for Extra Features */}
               <input type="hidden" name="_captcha" value="false" />
               <input
                 type="hidden"
                 name="_next"
-                value="https://legal-boutique-advisers-bf25a.web.app/thankyou"
+                value="https://mariselacastro.com/thankyou"
               />
 
               {/* Honeypot Field for Spam Protection */}
