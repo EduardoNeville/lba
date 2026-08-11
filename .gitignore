@@ -1,0 +1,18 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Tooling state
+.pi/
+
+# Generated previews of source images
+.thumbs/
+.thumbs-img/
+
+# App (see app/.gitignore for the rest)
+app/node_modules/
+app/dist/
+app/.env.local
+app/.firebase/
