@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-cream text-ink antialiased;
+  }
+  ::selection {
+    @apply bg-oxblood text-cream;
+  }
+  :focus-visible {
+    @apply outline outline-oxblood outline-offset-4;
+  }
+  img {
+    @apply block;
+  }
+}
+
+@layer components {
+  .micro {
+    @apply text-[10px] md:text-[11px] uppercase tracking-[0.2em];
+  }
+}

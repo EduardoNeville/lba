@@ -1,0 +1,13 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /inquiries/{doc} {
+      allow read, update, delete: if false;
+      allow create: if request.resource.data.email is string
+                      && request.resource.data.consent == true;
+    }
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
