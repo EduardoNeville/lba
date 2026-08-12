@@ -8,9 +8,19 @@ import { ServiceCard } from '../components/ui/ServiceCard'
 import { CrossLinkBand } from '../components/shared/CrossLinkBand'
 import { CtaBand } from '../components/shared/CtaBand'
 import { ButtonLink } from '../components/ui/ButtonLink'
+import { useLang } from '../lib/lang'
 import { hero, statement, pillars, areas, practice, cta } from '../data/legal'
+import { fr, es } from '../data/locales/legal'
+
+function useLegalData() {
+  const { lang } = useLang()
+  if (lang === 'fr') return { hero: fr.hero, statement: fr.statement, pillars: fr.pillars, areas: fr.areas, practice: fr.practice, cta: fr.cta }
+  if (lang === 'es') return { hero: es.hero, statement: es.statement, pillars: es.pillars, areas: es.areas, practice: es.practice, cta: es.cta }
+  return { hero, statement, pillars, areas, practice, cta }
+}
 
 function Pillars() {
+  const { pillars } = useLegalData()
   return (
     <section className="py-16 md:py-24">
       <Container>
@@ -25,6 +35,7 @@ function Pillars() {
 }
 
 function AdviceGrid() {
+  const { areas } = useLegalData()
   return (
     <section className="pb-16 md:pb-24">
       <Container>
@@ -40,6 +51,7 @@ function AdviceGrid() {
 }
 
 export function LegalPage() {
+  const { hero, statement, practice, cta } = useLegalData()
   return (
     <>
       <PageHero {...hero} />

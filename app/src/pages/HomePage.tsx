@@ -5,9 +5,37 @@ import { ArrowLink } from '../components/ui/ArrowLink'
 import { ButtonLink } from '../components/ui/ButtonLink'
 import { ResidencesStrip } from '../components/shared/ResidencesStrip'
 import { CtaBand } from '../components/shared/CtaBand'
+import { useLang } from '../lib/lang'
+import { useUi } from '../lib/nav'
 import { hero, intro, practiceAreas, residences, cta } from '../data/home'
+import { fr, es } from '../data/locales/home'
+
+function useHomeData() {
+  const { lang } = useLang()
+  const ui = useUi()
+  if (lang === 'fr') {
+    return {
+      hero: { ...fr.hero, image: hero.image },
+      intro: fr.intro,
+      practiceAreas: fr.practiceAreas.map((p, i) => ({ ...p, to: practiceAreas[i].to, image: practiceAreas[i].image })),
+      residences: residences,
+      cta: { ...fr.cta, ctaLabel: ui.inquire },
+    }
+  }
+  if (lang === 'es') {
+    return {
+      hero: { ...es.hero, image: hero.image },
+      intro: es.intro,
+      practiceAreas: es.practiceAreas.map((p, i) => ({ ...p, to: practiceAreas[i].to, image: practiceAreas[i].image })),
+      residences: residences,
+      cta: { ...es.cta, ctaLabel: ui.inquire },
+    }
+  }
+  return { hero, intro, practiceAreas, residences, cta: { ...cta, ctaLabel: ui.inquire } }
+}
 
 function HomeHero() {
+  const { hero } = useHomeData()
   return (
     <section className="relative isolate flex min-h-[75vh] items-center justify-center overflow-hidden md:min-h-[88vh]">
       <img src={hero.image} alt={hero.alt} className="absolute inset-0 -z-20 h-full w-full object-cover object-center" />
@@ -28,6 +56,7 @@ function HomeHero() {
 }
 
 function IntroSplit() {
+  const { intro } = useHomeData()
   return (
     <section className="py-20 md:py-28">
       <Container>
@@ -58,6 +87,7 @@ function IntroSplit() {
 }
 
 function PracticeAreas() {
+  const { practiceAreas } = useHomeData()
   return (
     <section className="pb-20 md:pb-28">
       <Container>
@@ -91,13 +121,14 @@ function PracticeAreas() {
 }
 
 export function HomePage() {
+  const { residences, cta } = useHomeData()
   return (
     <>
       <HomeHero />
       <IntroSplit />
       <PracticeAreas />
       <ResidencesStrip residences={residences} allLink="/property" />
-      <CtaBand variant="accent" heading={cta.heading} subline={cta.subline} cta={{ to: '/inquiry', label: 'Make a private enquiry' }} />
+      <CtaBand variant="accent" heading={cta.heading} subline={cta.subline} cta={{ to: '/inquiry', label: cta.ctaLabel }} />
     </>
   )
 }

@@ -4,9 +4,23 @@ import { CtaBand } from '../components/shared/CtaBand'
 import { ValueItem } from '../components/ui/ValueItem'
 import { Checklist } from '../components/ui/Checklist'
 import { MosaicGrid } from '../components/ui/MosaicGrid'
+import { useLang } from '../lib/lang'
 import { hero, assist, access, mosaic, cta } from '../data/lifestyle'
+import { fr, es } from '../data/locales/lifestyle'
+
+function useLifeData() {
+  const { lang } = useLang()
+  if (lang === 'fr') {
+    return { hero: fr.hero, assist: fr.assist, access: fr.access, cta: { ...fr.cta, image: cta.image } }
+  }
+  if (lang === 'es') {
+    return { hero: es.hero, assist: es.assist, access: es.access, cta: { ...es.cta, image: cta.image } }
+  }
+  return { hero, assist, access, cta }
+}
 
 function AssistRow() {
+  const { assist } = useLifeData()
   return (
     <section className="pt-16 md:pt-24">
       <Container>
@@ -22,6 +36,7 @@ function AssistRow() {
 }
 
 function InsiderAccess() {
+  const { access } = useLifeData()
   return (
     <section className="py-20">
       <Container>
@@ -41,6 +56,7 @@ function InsiderAccess() {
 }
 
 export function LifestylePage() {
+  const { hero, cta } = useLifeData()
   return (
     <>
       <PageHero {...hero} />

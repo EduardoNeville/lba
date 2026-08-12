@@ -5,9 +5,23 @@ import { CtaBand } from '../components/shared/CtaBand'
 import { ServiceCard } from '../components/ui/ServiceCard'
 import { Checklist } from '../components/ui/Checklist'
 import { ButtonLink } from '../components/ui/ButtonLink'
+import { useLang } from '../lib/lang'
 import { hero, contactPoints, services, featureSplit, partners, cta } from '../data/privateClient'
+import { fr, es } from '../data/locales/privateClient'
+
+function usePCData() {
+  const { lang } = useLang()
+  if (lang === 'fr') {
+    return { hero: fr.hero, contactPoints: fr.contactPoints, services: fr.services, featureSplit: { ...fr.featureSplit, image: featureSplit.image }, partners: fr.partners, cta: fr.cta }
+  }
+  if (lang === 'es') {
+    return { hero: es.hero, contactPoints: es.contactPoints, services: es.services, featureSplit: { ...es.featureSplit, image: featureSplit.image }, partners: es.partners, cta: es.cta }
+  }
+  return { hero, contactPoints, services, featureSplit, partners, cta }
+}
 
 function ContactPoints() {
+  const { contactPoints } = usePCData()
   return (
     <section className="pt-16 md:pt-24">
       <Container>
@@ -32,6 +46,7 @@ function ContactPoints() {
 }
 
 function ServicesGrid() {
+  const { services } = usePCData()
   return (
     <section className="py-16 md:py-24">
       <Container>
@@ -47,6 +62,7 @@ function ServicesGrid() {
 }
 
 function FeatureSplit() {
+  const { featureSplit } = usePCData()
   return (
     <section className="pb-20">
       <Container>
@@ -73,6 +89,7 @@ function FeatureSplit() {
 }
 
 function TrustedNetwork() {
+  const { partners } = usePCData()
   return (
     <section className="bg-parchment py-16">
       <Container>
@@ -95,6 +112,7 @@ function TrustedNetwork() {
 }
 
 export function PrivateClientPage() {
+  const { hero, cta } = usePCData()
   return (
     <>
       <PageHero {...hero} />

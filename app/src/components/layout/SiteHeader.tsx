@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { NAV, type NavItem } from '../../data/navigation'
+import { useLang } from '../../lib/lang'
+import { useNav } from '../../lib/nav'
 import { Icon } from '../ui/icons'
 
 function Logo({ dark = false }: { dark?: boolean }) {
@@ -20,6 +22,7 @@ function Dropdown({ item, close }: { item: NavItem; close: () => void }) {
   const [open, setOpen] = useState(false)
   const ref = useRef<HTMLLIElement>(null)
   const location = useLocation()
+  const { lang } = useLang()
 
   useEffect(() => {
     if (!open) return
@@ -37,6 +40,8 @@ function Dropdown({ item, close }: { item: NavItem; close: () => void }) {
     }
   }, [open])
 
+  const label = lang === 'fr' ? navFrLabel(item.label) : lang === 'es' ? navEsLabel(item.label) : item.label
+
   return (
     <li ref={ref} className="relative">
       <button
@@ -48,7 +53,7 @@ function Dropdown({ item, close }: { item: NavItem; close: () => void }) {
           location.pathname.startsWith(item.to) ? 'text-oxblood underline underline-offset-8' : 'text-ink'
         }`}
       >
-        {item.label}
+        {label}
         <Icon name="chevron-down" className={`h-3 w-3 transition-transform ${open ? 'rotate-180' : ''}`} />
       </button>
       {open && (
@@ -73,9 +78,33 @@ function Dropdown({ item, close }: { item: NavItem; close: () => void }) {
   )
 }
 
+// label lookup for the 4 dropdown items + About
+function navFrLabel(label: string): string {
+  const map: Record<string, string> = {
+    Property: 'Propriété',
+    Legal: 'Juridique',
+    'Private Client Services': 'Services aux clients privés',
+    Lifestyle: 'Art de vivre',
+    About: 'À propos',
+  }
+  return map[label] ?? label
+}
+function navEsLabel(label: string): string {
+  const map: Record<string, string> = {
+    Property: 'Propiedad',
+    Legal: 'Legal',
+    'Private Client Services': 'Servicios para clientes privados',
+    Lifestyle: 'Estilo de vida',
+    About: 'Nosotros',
+  }
+  return map[label] ?? label
+}
+
 export function SiteHeader() {
   const [open, setOpen] = useState(false)
   const location = useLocation()
+  const { lang, setLang } = useLang()
+  const nav = useNav()
 
   useEffect(() => {
     setOpen(false)
@@ -107,26 +136,41 @@ export function SiteHeader() {
                       }`
                     }
                   >
-                    {item.label}
+                    {nav.find((n) => n.to === item.to)?.label ?? item.label}
                   </NavLink>
                 </li>
               ),
             )}
           </ul>
         </nav>
-        <Link to="/inquiry" className="micro hidden border border-ink px-5 py-2 transition-colors hover:bg-ink hover:text-cream lg:block">
-          Inquire
-        </Link>
-        <button
-          type="button"
-          aria-label={open ? 'Close menu' : 'Open menu'}
-          aria-expanded={open}
-          onClick={() => setOpen((o) => !o)}
-          className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 lg:hidden"
-        >
-          <span className={`h-px w-6 bg-ink transition-transform ${open ? 'translate-y-[3.5px] rotate-45' : ''}`} />
-          <span className={`h-px w-6 bg-ink transition-transform ${open ? '-translate-y-[3.5px] -rotate-45' : ''}`} />
-        </button>
+        <div className="flex items-center gap-4">
+          <div className="flex items-center gap-1 text-[10px] uppercase tracking-[0.2em]">
+            {(['en', 'fr', 'es'] as const).map((l) => (
+              <button
+                key={l}
+                type="button"
+                onClick={() => setLang(l)}
+                aria-label={`Switch to ${l.toUpperCase()}`}
+                className={`px-1.5 py-1 transition-colors ${lang === l ? 'text-oxblood' : 'text-taupe hover:text-oxblood'}`}
+              >
+                {l.toUpperCase()}
+              </button>
+            ))}
+          </div>
+          <Link to="/inquiry" className="micro hidden border border-ink px-5 py-2 transition-colors hover:bg-ink hover:text-cream lg:block">
+            {lang === 'fr' ? 'Nous contacter' : lang === 'es' ? 'Contacto' : 'Inquire'}
+          </Link>
+          <button
+            type="button"
+            aria-label={open ? 'Close menu' : 'Open menu'}
+            aria-expanded={open}
+            onClick={() => setOpen((o) => !o)}
+            className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 lg:hidden"
+          >
+            <span className={`h-px w-6 bg-ink transition-transform ${open ? 'translate-y-[3.5px] rotate-45' : ''}`} />
+            <span className={`h-px w-6 bg-ink transition-transform ${open ? '-translate-y-[3.5px] -rotate-45' : ''}`} />
+          </button>
+        </div>
       </div>
 
       {open && (
@@ -140,7 +184,7 @@ export function SiteHeader() {
                     `micro text-sm tracking-[0.25em] ${isActive ? 'text-oxblood' : 'text-ink'}`
                   }
                 >
-                  {item.label}
+                  {nav.find((n) => n.to === item.to)?.label ?? item.label}
                 </NavLink>
                 {item.children && (
                   <ul className="mt-3 space-y-2 border-l border-hairline pl-4">
@@ -157,7 +201,7 @@ export function SiteHeader() {
             ))}
           </ul>
           <Link to="/inquiry" className="micro mt-10 block w-full bg-ink py-4 text-center text-cream">
-            Inquire
+            {lang === 'fr' ? 'Nous contacter' : lang === 'es' ? 'Contacto' : 'Inquire'}
           </Link>
         </div>
       )}

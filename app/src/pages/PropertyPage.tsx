@@ -6,9 +6,23 @@ import { ResidencesStrip } from '../components/shared/ResidencesStrip'
 import { CrossLinkBand } from '../components/shared/CrossLinkBand'
 import { CtaBand } from '../components/shared/CtaBand'
 import { Checklist } from '../components/ui/Checklist'
+import { useLang } from '../lib/lang'
 import { hero, services, residences, crossLink, cta } from '../data/property'
+import { fr, es } from '../data/locales/property'
+
+function usePropertyData() {
+  const { lang } = useLang()
+  if (lang === 'fr') {
+    return { hero: { ...fr.hero, image: hero.image }, services: fr.services, residences: fr.residences, crossLink: fr.crossLink, cta: { ...fr.cta, image: cta.image } }
+  }
+  if (lang === 'es') {
+    return { hero: { ...es.hero, image: hero.image }, services: es.services, residences: es.residences, crossLink: es.crossLink, cta: { ...es.cta, image: cta.image } }
+  }
+  return { hero, services, residences, crossLink, cta }
+}
 
 function ServicesTrio() {
+  const { services } = usePropertyData()
   return (
     <section className="py-16 md:py-24">
       <Container>
@@ -30,6 +44,7 @@ function ServicesTrio() {
 }
 
 export function PropertyPage() {
+  const { hero, residences, crossLink, cta } = usePropertyData()
   return (
     <>
       <PageHero {...hero} />
