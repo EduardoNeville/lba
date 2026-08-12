@@ -7,6 +7,8 @@ export const hero = {
   subline: 'Local knowledge. Trusted introductions.',
   body: 'Beyond properties and legal matters, we help our clients discover and enjoy the best of life in Spain through curated recommendations and trusted relationships. Consider it local knowledge, at your service.',
   cta: { to: '/inquiry', label: 'Discuss your needs' },
+  image: lifestyleGolf,
+  alt: 'Golf fairway with bunkers at dusk',
 }
 
 export const assist = [

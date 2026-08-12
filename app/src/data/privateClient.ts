@@ -9,6 +9,8 @@ export const hero = {
   subline: 'Your life, well placed in Spain.',
   body: 'We provide ongoing support that extends far beyond the transaction. From relocation to home management and everyday needs, we are your trusted point of contact in Spain.',
   cta: { to: '/inquiry', label: 'Discuss your needs' },
+  image: pcKeys,
+  alt: 'Keys with a leather tag on an oak table',
 }
 
 export const contactPoints = {

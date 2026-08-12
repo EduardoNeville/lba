@@ -11,10 +11,10 @@ import { fr, es } from '../data/locales/lifestyle'
 function useLifeData() {
   const { lang } = useLang()
   if (lang === 'fr') {
-    return { hero: fr.hero, assist: fr.assist, access: fr.access, cta: { ...fr.cta, image: cta.image } }
+    return { hero: { ...fr.hero, image: hero.image }, assist: fr.assist, access: fr.access, cta: { ...fr.cta, image: cta.image } }
   }
   if (lang === 'es') {
-    return { hero: es.hero, assist: es.assist, access: es.access, cta: { ...es.cta, image: cta.image } }
+    return { hero: { ...es.hero, image: hero.image }, assist: es.assist, access: es.access, cta: { ...es.cta, image: cta.image } }
   }
   return { hero, assist, access, cta }
 }

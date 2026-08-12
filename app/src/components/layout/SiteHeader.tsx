@@ -157,7 +157,7 @@ export function SiteHeader() {
               </button>
             ))}
           </div>
-          <Link to="/inquiry" className="micro hidden border border-ink px-5 py-2 transition-colors hover:bg-ink hover:text-cream lg:block">
+          <Link to="/inquiry" className="micro hidden min-h-11 items-center border border-ink px-5 py-2 transition-colors hover:bg-ink hover:text-cream lg:flex">
             {lang === 'fr' ? 'Nous contacter' : lang === 'es' ? 'Contacto' : 'Inquire'}
           </Link>
           <button
@@ -200,6 +200,19 @@ export function SiteHeader() {
               </li>
             ))}
           </ul>
+          <div className="mt-8 flex items-center gap-1 border-t border-hairline pt-6 text-[10px] uppercase tracking-[0.2em]">
+            {(['en', 'fr', 'es'] as const).map((l) => (
+              <button
+                key={l}
+                type="button"
+                onClick={() => setLang(l)}
+                aria-label={`Switch to ${l.toUpperCase()}`}
+                className={`px-2 py-2 transition-colors ${lang === l ? 'text-oxblood' : 'text-taupe hover:text-oxblood'}`}
+              >
+                {l.toUpperCase()}
+              </button>
+            ))}
+          </div>
           <Link to="/inquiry" className="micro mt-10 block w-full bg-ink py-4 text-center text-cream">
             {lang === 'fr' ? 'Nous contacter' : lang === 'es' ? 'Contacto' : 'Inquire'}
           </Link>

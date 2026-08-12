@@ -12,10 +12,10 @@ import { fr, es } from '../data/locales/privateClient'
 function usePCData() {
   const { lang } = useLang()
   if (lang === 'fr') {
-    return { hero: fr.hero, contactPoints: fr.contactPoints, services: fr.services, featureSplit: { ...fr.featureSplit, image: featureSplit.image }, partners: fr.partners, cta: fr.cta }
+    return { hero: { ...fr.hero, image: hero.image }, contactPoints: fr.contactPoints, services: fr.services, featureSplit: { ...fr.featureSplit, image: featureSplit.image }, partners: fr.partners, cta: fr.cta }
   }
   if (lang === 'es') {
-    return { hero: es.hero, contactPoints: es.contactPoints, services: es.services, featureSplit: { ...es.featureSplit, image: featureSplit.image }, partners: es.partners, cta: es.cta }
+    return { hero: { ...es.hero, image: hero.image }, contactPoints: es.contactPoints, services: es.services, featureSplit: { ...es.featureSplit, image: featureSplit.image }, partners: es.partners, cta: es.cta }
   }
   return { hero, contactPoints, services, featureSplit, partners, cta }
 }

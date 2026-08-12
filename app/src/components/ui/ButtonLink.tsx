@@ -24,7 +24,7 @@ export function ButtonLink({
   className?: string
 }) {
   const style = variant === 'solid' && tone ? tones[tone] : variants[variant]
-  const cls = `micro inline-flex items-center gap-3 px-8 py-3 transition-colors ${style} ${className}`
+  const cls = `micro inline-flex items-center gap-3 px-8 py-3 min-h-11 transition-colors ${style} ${className}`
   if (to.startsWith('http')) {
     return (
       <a href={to} target="_blank" rel="noreferrer" className={cls}>

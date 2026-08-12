@@ -22,11 +22,11 @@ export function PageHero({
 }) {
   return (
     <section className="grid lg:grid-cols-2">
-      <div className="flex flex-col justify-center px-6 py-16 md:px-14">
+      <div className="flex flex-col justify-center px-6 py-16 md:px-10">
         <Eyebrow>{eyebrow}</Eyebrow>
         <h1
           className={`font-display mt-6 max-w-[14ch] leading-[1.08] tracking-wide ${
-            titleCase === 'upper' ? 'text-5xl uppercase md:text-6xl' : 'text-4xl leading-tight md:text-5xl'
+            titleCase === 'upper' ? 'text-4xl uppercase md:text-5xl lg:text-6xl' : 'text-4xl leading-tight md:text-5xl'
           }`}
         >
           {title}
