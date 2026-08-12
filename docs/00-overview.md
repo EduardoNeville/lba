@@ -35,3 +35,4 @@ Warm cream canvas, ink-brown display serif in uppercase, micro letter-spaced lab
 - `03-pages/*.md` — per-template layout contracts (7 files).
 - `04-migration-plan.md` — phases, routes, file tree, build order, checklist.
 - `07-mobile-plan.md` — mobile pass: 320/375/768 composition, touch ergonomics, perf, QA matrix.
+- `08-text-extraction-plan.md` — docx → data-file content pipeline: extraction, reconciliation, EN/FR/ES locale shapes, slot-coverage check.
