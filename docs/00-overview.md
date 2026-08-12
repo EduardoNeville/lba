@@ -34,3 +34,4 @@ Warm cream canvas, ink-brown display serif in uppercase, micro letter-spaced lab
 - `02-design-system.md` — tokens, type scale, primitives + props.
 - `03-pages/*.md` — per-template layout contracts (7 files).
 - `04-migration-plan.md` — phases, routes, file tree, build order, checklist.
+- `07-mobile-plan.md` — mobile pass: 320/375/768 composition, touch ergonomics, perf, QA matrix.
