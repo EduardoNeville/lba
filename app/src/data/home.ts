@@ -1,6 +1,7 @@
 import homeHero from '../assets/home-hero.jpg'
 import residenceModern from '../assets/residence-modern.jpg'
 import panelLegal from '../assets/panel-legal.jpg'
+import ctaBotanical from '../assets/cta-botanical.jpg'
 import type { Residence } from '../components/shared/ResidencesStrip'
 
 export const hero = {
@@ -57,4 +58,4 @@ export const residences: Residence[] = [
   { image: residenceModern, alt: 'Modern cliffside villa with infinity pool', title: 'Villa Horizonte', meta: 'Marbella · Estepona', slug: '/property/residences/villa-horizonte' },
 ]
 
-export const cta = { heading: 'Every client is different.', subline: 'Tell us what brings you to Spain.' }
+export const cta = { heading: 'Every client is different.', subline: 'Tell us what brings you to Spain.', image: ctaBotanical }

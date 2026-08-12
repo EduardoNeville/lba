@@ -19,7 +19,7 @@ function useHomeData() {
       intro: fr.intro,
       practiceAreas: fr.practiceAreas.map((p, i) => ({ ...p, to: practiceAreas[i].to, image: practiceAreas[i].image })),
       residences: residences,
-      cta: { ...fr.cta, ctaLabel: ui.inquire },
+      cta: { ...fr.cta, image: cta.image, ctaLabel: ui.inquire },
     }
   }
   if (lang === 'es') {
@@ -28,7 +28,7 @@ function useHomeData() {
       intro: es.intro,
       practiceAreas: es.practiceAreas.map((p, i) => ({ ...p, to: practiceAreas[i].to, image: practiceAreas[i].image })),
       residences: residences,
-      cta: { ...es.cta, ctaLabel: ui.inquire },
+      cta: { ...es.cta, image: cta.image, ctaLabel: ui.inquire },
     }
   }
   return { hero, intro, practiceAreas, residences, cta: { ...cta, ctaLabel: ui.inquire } }
@@ -128,7 +128,7 @@ export function HomePage() {
       <IntroSplit />
       <PracticeAreas />
       <ResidencesStrip residences={residences} allLink="/property" />
-      <CtaBand variant="accent" heading={cta.heading} subline={cta.subline} cta={{ to: '/inquiry', label: cta.ctaLabel }} />
+      <CtaBand variant="accent" heading={cta.heading} subline={cta.subline} image={cta.image} cta={{ to: '/inquiry', label: cta.ctaLabel }} />
     </>
   )
 }
