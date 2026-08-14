@@ -41,10 +41,10 @@ function HomeHero() {
       <img src={hero.image} alt={hero.alt} className="absolute inset-0 -z-20 h-full w-full object-cover object-center" />
       <div className="absolute inset-0 -z-10 bg-ink/35" />
       <div className="px-6 text-center">
-        <h1 className="font-display text-4xl uppercase leading-[1.1] tracking-wide text-cream md:text-6xl">
+        <h1 className="font-display text-4xl uppercase leading-[1.1] tracking-wide text-black md:text-6xl">
           {hero.heading}
         </h1>
-        <p className="mx-auto mt-6 max-w-xl text-sm leading-relaxed text-cream/85 md:text-[15px]">
+        <p className="mx-auto mt-6 max-w-xl text-sm leading-relaxed text-black md:text-[15px]">
           {hero.sub}
         </p>
         <div className="mt-8">
