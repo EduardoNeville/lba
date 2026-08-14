@@ -40,7 +40,7 @@ function HomeHero() {
     <section className="relative isolate flex min-h-[75vh] items-center justify-center overflow-hidden lg:min-h-[calc(100svh_-_5rem)]">
       <img src={hero.image} alt={hero.alt} className="absolute inset-0 -z-20 h-full w-full object-cover object-center" />
       <div className="absolute inset-0 -z-10 bg-ink/35" />
-      <div className="px-6 text-center">
+      <div className="px-6 text-center text-black">
         <h1 className="font-display text-4xl uppercase leading-[1.1] tracking-wide text-black md:text-6xl">
           {hero.heading}
         </h1>
