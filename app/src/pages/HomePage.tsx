@@ -68,9 +68,6 @@ function IntroSplit() {
                 <p key={p}>{p}</p>
               ))}
             </div>
-            <div className="mt-8">
-              <ArrowLink to="/about">Discover the firm</ArrowLink>
-            </div>
           </div>
           <div className="lg:col-span-5 lg:border-l lg:border-hairline lg:pl-12">
             <Icon name="columns" />
