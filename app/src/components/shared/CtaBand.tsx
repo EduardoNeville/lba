@@ -24,11 +24,11 @@ export function CtaBand({
           src={image}
           alt=""
           aria-hidden
-          className="absolute left-0 top-0 hidden h-full w-1/4 object-contain opacity-90 [mask-image:linear-gradient(to_right,black,transparent)] md:block"
+          className="absolute inset-0 -z-10 h-full w-full object-cover"
         />
       )}
       {variant === 'image' && image && (
-        <img src={image} alt="" aria-hidden className="absolute inset-0 -z-10 h-full w-full object-contain" />
+        <img src={image} alt="" aria-hidden className="absolute inset-0 -z-10 h-full w-full object-cover" />
       )}
       {variant === 'image' && (
         <div className={`absolute inset-0 -z-10 ${dark ? 'bg-ink/45' : 'bg-cream/40'}`} />
@@ -36,7 +36,7 @@ export function CtaBand({
       <Container>
         <h2 className="font-display text-center text-3xl uppercase md:text-4xl text-black">{heading}</h2>
         {subline && (
-          <p className="font-display mt-3 text-center text-3xl italic md:text-4xl text-black">
+          <p className="font-display mt-3 text-center text-5xl italic md:text-6xl text-black">
             {subline}
           </p>
         )}
