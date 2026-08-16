@@ -36,7 +36,7 @@ export function CtaBand({
       <Container>
         <h2 className="font-display text-center text-3xl uppercase md:text-4xl text-black">{heading}</h2>
         {subline && (
-          <p className="font-display mt-3 text-center text-5xl italic md:text-6xl text-black">
+          <p className="font-display mt-3 text-center text-4xl italic md:text-5xl text-black">
             {subline}
           </p>
         )}
