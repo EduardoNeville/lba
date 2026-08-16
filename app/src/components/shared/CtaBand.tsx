@@ -24,19 +24,19 @@ export function CtaBand({
           src={image}
           alt=""
           aria-hidden
-          className="absolute left-0 top-0 hidden h-full w-1/4 object-cover opacity-90 [mask-image:linear-gradient(to_right,black,transparent)] md:block"
+          className="absolute left-0 top-0 hidden h-full w-1/4 object-contain opacity-90 [mask-image:linear-gradient(to_right,black,transparent)] md:block"
         />
       )}
       {variant === 'image' && image && (
-        <img src={image} alt="" aria-hidden className="absolute inset-0 -z-10 h-full w-full object-cover" />
+        <img src={image} alt="" aria-hidden className="absolute inset-0 -z-10 h-full w-full object-contain" />
       )}
       {variant === 'image' && (
         <div className={`absolute inset-0 -z-10 ${dark ? 'bg-ink/45' : 'bg-cream/40'}`} />
       )}
       <Container>
-        <h2 className={`font-display text-center text-3xl uppercase md:text-4xl ${dark ? 'text-cream' : 'text-ink'}`}>{heading}</h2>
+        <h2 className="font-display text-center text-3xl uppercase md:text-4xl text-black">{heading}</h2>
         {subline && (
-          <p className={`font-display mt-3 text-center text-sm italic md:text-base ${dark ? 'text-cream/85' : 'text-ink/80'}`}>
+          <p className="font-display mt-3 text-center text-3xl italic md:text-4xl text-black">
             {subline}
           </p>
         )}

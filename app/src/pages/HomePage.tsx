@@ -121,7 +121,7 @@ export function HomePage() {
       <IntroSplit />
       <PracticeAreas />
       <ResidencesStrip residences={residences} allLink="/property" />
-      <CtaBand variant="accent" heading={cta.heading} subline={cta.subline} image={cta.image} cta={{ to: '/inquiry', label: cta.ctaLabel }} />
+      <CtaBand variant="accent" heading={cta.heading} subline={cta.subline} image={cta.image} cta={{ to: '/inquiry', label: 'MAKE A PRIVATE INQUIRY' }} />
     </>
   )
 }
