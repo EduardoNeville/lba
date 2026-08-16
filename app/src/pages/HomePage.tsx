@@ -36,14 +36,14 @@ function useHomeData() {
 function HomeHero() {
   const { hero } = useHomeData()
   return (
-    <section className="relative isolate flex min-h-[75vh] items-center justify-center overflow-hidden lg:min-h-[calc(100svh_-_5rem)]">
+    <section className="relative isolate flex min-h-[100svh] items-center justify-center overflow-hidden">
       <img src={hero.image} alt={hero.alt} className="absolute inset-0 -z-20 h-full w-full object-cover object-center" />
-      <div className="absolute inset-0 -z-10 bg-ink/35" />
-      <div className="px-6 text-center text-black">
-        <h1 className="font-display text-4xl uppercase leading-[1.1] tracking-wide text-black md:text-6xl">
+      <div className="absolute inset-0 -z-10 bg-gradient-to-r from-ink/80 via-ink/40 to-transparent" />
+      <div className="px-6 text-center text-cream">
+        <h1 className="font-display text-4xl uppercase leading-[1.1] tracking-wide text-cream md:text-6xl">
           {hero.heading}
         </h1>
-        <p className="mx-auto mt-6 max-w-xl text-sm leading-relaxed text-black md:text-[15px]">
+        <p className="mx-auto mt-6 max-w-xl text-sm leading-relaxed text-cream/90 md:text-[15px]">
           {hero.sub}
         </p>
         <div className="mt-8">
