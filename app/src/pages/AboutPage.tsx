@@ -1,9 +1,7 @@
 import { Eyebrow } from '../components/ui/Eyebrow'
 import { Container } from '../components/ui/Container'
 import { ValueItem } from '../components/ui/ValueItem'
-import { CtaBand } from '../components/shared/CtaBand'
 import { useLang } from '../lib/lang'
-import { useUi } from '../lib/nav'
 import { team, values } from '../data/team'
 import { fr, es } from '../data/locales/about'
 
@@ -132,19 +130,12 @@ function ApproachSection() {
 }
 
 export function AboutPage() {
-  const { cta } = useAboutData()
-  const ui = useUi()
   return (
     <>
       <AboutHero />
       <LegacySplit />
       <TeamSection />
       <ApproachSection />
-      <CtaBand
-        heading={cta.heading}
-        subline={cta.subline}
-        cta={{ to: '/inquiry', label: ui.inquire }}
-      />
     </>
   )
 }
