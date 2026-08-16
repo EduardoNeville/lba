@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
 import { Icon } from '../components/ui/icons'
 import { Container } from '../components/ui/Container'
-import { ArrowLink } from '../components/ui/ArrowLink'
 import { ButtonLink } from '../components/ui/ButtonLink'
 import { ResidencesStrip } from '../components/shared/ResidencesStrip'
 import { CtaBand } from '../components/shared/CtaBand'
@@ -73,9 +72,6 @@ function IntroSplit() {
             <Icon name="columns" />
             <p className="micro mt-4 text-[11px] tracking-[0.25em] text-ink">{intro.sideTitle}</p>
             <p className="mt-3 text-[13px] leading-relaxed text-taupe">{intro.sideBody}</p>
-            <div className="mt-6">
-              <ArrowLink to={intro.sideLink.url}>{intro.sideLink.label}</ArrowLink>
-            </div>
           </div>
         </div>
       </Container>
