@@ -27,7 +27,7 @@ export const crossLink = {
     heading: 'Property, with legal expertise.',
     body: 'Our legal background informs every property transaction, allowing us to consider what lies beyond the surface.',
     checks: ['Legal Due Diligence', 'Tax & Structuring', 'Contracts & Negotiation', 'Ownership & Regulation', 'Residency & Relocation'],
-    link: { to: 'https://mariselacastro.com', label: 'Visit our legal practice' },
+    link: { to: '/legal', label: 'Explore legal services' },
   },
   right: {
     eyebrow: 'Beyond the transaction',

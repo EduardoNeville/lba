@@ -20,7 +20,7 @@ export const fr = {
       heading: 'L’immobilier, avec une expertise juridique.',
       body: 'Notre formation juridique éclaire chaque transaction immobilière et nous permet d’examiner ce qui se trouve au-delà des apparences.',
       checks: ['Audit juridique', 'Fiscalité & structuration', 'Contrats & négociation', 'Propriété & réglementation', 'Résidence & relocalisation'],
-      link: { to: 'https://mariselacastro.com', label: 'Visiter notre cabinet juridique' },
+      link: { to: '/legal', label: 'Découvrir nos services juridiques' },
     },
     right: {
       eyebrow: 'Au-delà de la transaction',
@@ -54,7 +54,7 @@ export const es = {
       heading: 'Propiedad, con experiencia jurídica.',
       body: 'Nuestra formación jurídica orienta cada operación inmobiliaria, permitiéndonos valorar aquello que va más allá de lo visible.',
       checks: ['Due diligence jurídica', 'Fiscalidad y estructuración', 'Contratos y negociación', 'Propiedad y regulación', 'Residencia y reubicación'],
-      link: { to: 'https://mariselacastro.com', label: 'Visite nuestro despacho jurídico' },
+      link: { to: '/legal', label: 'Explorar servicios jurídicos' },
     },
     right: {
       eyebrow: 'Más allá de la operación',
