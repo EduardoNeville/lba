@@ -14,14 +14,14 @@ export const icons: Record<string, ReactElement> = {
     </svg>
   ),
   figure: (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1}>
-      <circle cx="12" cy="5" r="2.5" />
-      <path d="M12 10v6M8 13l4 3 4-3M12 16v5" />
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.25} strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="5.5" r="2.4" />
+      <path d="M12 9.5v6M8.8 12.8l3.2 2.6 3.2-2.6M12 15.4v5.2" />
     </svg>
   ),
   scales: (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1}>
-      <path d="M12 3v18M12 5 5 8M12 5l7 3M5 8v8a3 3 0 0 0 6 0V8M5 8h6M19 8v8a3 3 0 0 1-6 0V8m6 0h-6" />
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.25} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 3v17.5M12 5L4.8 8M12 5l7.2 3M4.8 8v7.2a3 3 0 0 0 6 0V8M4.8 8h6M19.2 8v7.2a3 3 0 0 1-6 0V8m6 0h-6" />
     </svg>
   ),
   shield: (
@@ -30,9 +30,9 @@ export const icons: Record<string, ReactElement> = {
     </svg>
   ),
   globe: (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1}>
-      <circle cx="12" cy="12" r="9" />
-      <path d="M3 12h18M12 3c3 3.5 3 14 0 18M12 3c-3 3.5-3 14 0 18" />
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.25} strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="8.5" />
+      <path d="M3.5 12h17M12 3.5c2.6 3.2 2.6 13.8 0 17M12 3.5C9.4 6.7 9.4 17.3 12 20.5" />
     </svg>
   ),
   columns: (
@@ -47,8 +47,8 @@ export const icons: Record<string, ReactElement> = {
     </svg>
   ),
   'eye-off': (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1}>
-      <path d="M3 3l18 18M10.5 5.2A9.8 9.8 0 0 1 12 5c5 0 9 4 9 7a9.7 9.7 0 0 1-2.6 3.9M6.3 6.6A9.3 9.3 0 0 0 3 12c0 3 4 7 9 7 1.6 0 3-.4 4.3-1" />
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.25} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M3 3l18 18M10.4 5.6A9.6 9.6 0 0 1 12 5.2C17 5.2 21 9 21 12a9.6 9.6 0 0 1-2.7 4M6.2 6.9A9.2 9.2 0 0 0 3 12c0 3 4 6.8 9 6.8 1.4 0 2.7-.3 3.9-.9" />
       <path d="M9.9 9.9a3 3 0 0 0 4.2 4.2" />
     </svg>
   ),
