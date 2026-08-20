@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import logoBrush from '../../assets/logo-lba-brush.svg'
 import { FOOTER_INFO, FOOTER_SERVICES } from '../../data/navigation'
 import { useLang } from '../../lib/lang'
 import { useFooter, FOOTER_NAV_KEYS, useNav } from '../../lib/nav'
@@ -22,10 +23,8 @@ export function SiteFooter() {
       <div className="mx-auto grid w-full max-w-[1200px] gap-10 px-6 py-14 md:grid-cols-2 md:px-10 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
         <div>
           <Link to="/" aria-label="Legal Boutique Advisers — home" className="inline-block">
-            <span className="font-display text-xl uppercase tracking-[0.18em] text-cream">Legal Boutique Advisers</span>
-            <span className="micro mt-1 block text-[9px] tracking-[0.28em] text-cream/60">Lawyers & Private Advisers</span>
+            <img src={logoBrush} alt="Legal Boutique Advisers" className="h-10 w-auto object-contain brightness-0 invert" />
           </Link>
-          <p className="micro mt-4 text-[10px] text-cream/60">{footer.tagline}</p>
         </div>
         <nav aria-label="Services">
           <h2 className="micro text-cream/60">{footer.services}</h2>
