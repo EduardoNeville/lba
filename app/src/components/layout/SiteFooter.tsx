@@ -21,9 +21,9 @@ export function SiteFooter() {
   return (
     <footer className="bg-maroon text-cream">
       <div className="mx-auto grid w-full max-w-[1200px] gap-10 px-6 py-14 md:grid-cols-2 md:px-10 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
-        <div>
+        <div className="self-start justify-self-start rounded-md bg-white p-3">
           <Link to="/" aria-label="Legal Boutique Advisers — home" className="inline-block">
-            <img src={logoBrush} alt="Legal Boutique Advisers" className="h-10 w-auto object-contain brightness-0 invert" />
+            <img src={logoBrush} alt="Legal Boutique Advisers" className="h-10 w-auto object-contain" />
           </Link>
         </div>
         <nav aria-label="Services">
