@@ -2,7 +2,7 @@ import { ButtonLink } from '../ui/ButtonLink'
 import { Container } from '../ui/Container'
 
 export function PageHero({
-  eyebrow: _eyebrow,
+  eyebrow,
   title,
   subline,
   body,
@@ -27,6 +27,7 @@ export function PageHero({
       <Container>
         <div className="max-w-[560px] py-16 md:py-20">
           <div>
+            {eyebrow && <p className="micro text-[11px] tracking-[0.2em] text-oxblood">{eyebrow}</p>}
             <h1
               className={`font-display mt-6 max-w-[14ch] leading-[1.08] tracking-wide ${
                 titleCase === 'upper' ? 'text-4xl uppercase md:text-5xl lg:text-6xl' : 'text-4xl leading-tight md:text-5xl'

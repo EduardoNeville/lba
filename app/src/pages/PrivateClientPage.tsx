@@ -50,7 +50,8 @@ function ServicesGrid() {
   return (
     <section className="py-16 md:py-24">
       <Container>
-        <p className="micro mb-10 text-center text-ink">Our Private Client Services</p>
+        <p className="micro mb-2 text-center text-oxblood">Our Private Client Services</p>
+        <div className="mx-auto mb-10 h-px w-8 bg-oxblood" />
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {services.map((s) => (
             <ServiceCard key={s.title} {...s} />
@@ -66,13 +67,14 @@ function FeatureSplit() {
   return (
     <section className="pb-20">
       <Container>
-        <div className="grid lg:grid-cols-2">
-          <div className="h-72 lg:h-full">
+        <div className="grid items-stretch lg:grid-cols-2">
+          <div className="min-h-72 lg:min-h-full">
             <img src={featureSplit.image} alt={featureSplit.alt} className="h-full w-full object-cover" />
           </div>
           <div className="flex flex-col justify-center bg-parchment px-8 py-12 md:px-12">
-            <p className="micro text-ink">{featureSplit.eyebrow}</p>
-            <h2 className="font-display mt-4 text-2xl uppercase leading-snug md:text-3xl">{featureSplit.heading}</h2>
+            <p className="micro text-oxblood">{featureSplit.eyebrow}</p>
+            <h2 className="font-display mt-3 text-2xl uppercase leading-snug md:text-3xl">{featureSplit.heading}</h2>
+            <div className="mt-3 h-px w-8 bg-oxblood" />
             <p className="mt-4 text-[13px] text-taupe">{featureSplit.body}</p>
             <div className="mt-6">
               <Checklist items={featureSplit.checks} columns={2} />
@@ -95,7 +97,8 @@ function TrustedNetwork() {
       <Container>
         <div className="grid items-center gap-12 lg:grid-cols-[1fr_2fr]">
           <div>
-            <p className="micro text-ink">{partners.heading}</p>
+            <p className="micro text-oxblood">{partners.heading}</p>
+            <div className="mt-3 h-px w-8 bg-oxblood" />
             <p className="mt-4 text-[13px] leading-relaxed text-taupe">{partners.body}</p>
           </div>
           <div className="grid grid-cols-2 gap-x-8 gap-y-6 sm:grid-cols-3 lg:grid-cols-6">

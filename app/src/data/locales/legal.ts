@@ -8,7 +8,6 @@ export const fr = {
     cta: { to: 'https://mariselacastro.com', label: 'Visiter notre cabinet juridique' },
     alt: 'Bureau en noyer avec lampe en laiton et livres de droit dans une niche voûtée',
   },
-  statement: 'Nous fournissons des conseils juridiques indépendants à une clientèle privée et internationale, ainsi qu’à leurs entreprises et à leurs familles.',
   pillars: [
     { icon: 'scales', title: 'Conseil indépendant', body: 'Des recommandations objectives centrées sur vos intérêts.' },
     { icon: 'eye-off', title: 'Discrétion', body: 'Confidentialité et sensibilité dans chaque dossier.' },
@@ -26,7 +25,8 @@ export const fr = {
     heading: 'Vision commerciale. Excellence juridique.',
     body: 'Notre cabinet partenaire fournit des conseils juridiques complets aux entreprises et aux clients privés, en Espagne comme à l’international. Des dossiers complexes. Des solutions claires.',
     cta: { to: 'https://mariselacastro.com', label: 'Visiter notre cabinet juridique' },
-    centerAlt: 'Livres de droit dans une niche voûtée',
+    image: undefined as unknown as string,
+    alt: 'Livres de droit dans une niche voûtée',
     right: [
       { icon: 'scales', title: 'Droit des affaires', body: 'Droit des sociétés, droit commercial, contrats et réglementation.' },
       { icon: 'knot', title: 'Contentieux & arbitrage', body: 'Représentation dans les litiges et modes alternatifs de résolution des différends.' },
@@ -46,7 +46,6 @@ export const es = {
     cta: { to: 'https://mariselacastro.com', label: 'Visite nuestro despacho jurídico' },
     alt: 'Escritorio de nogal con lámpara de latón y libros de derecho en un nicho arqueado',
   },
-  statement: 'Prestamos asesoramiento jurídico independiente a clientes privados e internacionales, sus empresas y sus familias.',
   pillars: [
     { icon: 'scales', title: 'Asesoramiento independiente', body: 'Orientación objetiva centrada en sus intereses.' },
     { icon: 'eye-off', title: 'Discreción', body: 'Confidencialidad y sensibilidad en cada asunto.' },
@@ -64,7 +63,8 @@ export const es = {
     heading: 'Visión empresarial. Excelencia jurídica.',
     body: 'Nuestro despacho vinculado presta asesoramiento jurídico integral a empresas y clientes privados en España y a nivel internacional. Asuntos complejos. Soluciones claras.',
     cta: { to: 'https://mariselacastro.com', label: 'Visite nuestro despacho jurídico' },
-    centerAlt: 'Libros de derecho en un nicho arqueado',
+    image: undefined as unknown as string,
+    alt: 'Libros de derecho en un nicho arqueado',
     right: [
       { icon: 'scales', title: 'Derecho mercantil', body: 'Derecho societario, mercantil, contractual y regulatorio.' },
       { icon: 'knot', title: 'Litigación y arbitraje', body: 'Representación en litigios y métodos alternativos de resolución de conflictos.' },

@@ -5,9 +5,8 @@ import { useFooter, FOOTER_NAV_KEYS, useNav } from '../../lib/nav'
 import { Icon } from '../ui/icons'
 
 const SOCIALS = [
-  { name: 'instagram', label: 'Instagram' },
-  { name: 'linkedin', label: 'LinkedIn' },
-  { name: 'mail', label: 'Email' },
+  { name: 'instagram', label: 'Instagram', href: 'https://www.instagram.com/legalboutiqueadvisers/' },
+  { name: 'linkedin', label: 'LinkedIn', href: 'https://www.linkedin.com/company/legal-boutique-advisers/' },
 ]
 
 export function SiteFooter() {
@@ -22,13 +21,9 @@ export function SiteFooter() {
     <footer className="bg-maroon text-cream">
       <div className="mx-auto grid w-full max-w-[1200px] gap-10 px-6 py-14 md:grid-cols-2 md:px-10 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
         <div>
-          <Link to="/" className="flex items-baseline gap-3" aria-label="Legal Boutique Advisers — home">
-            <span className="font-display text-2xl tracking-wide text-cream">LBA</span>
-            <span className="micro text-[9px] leading-snug tracking-[0.3em] text-cream/70">
-              Legal Boutique
-              <br />
-              Advisers
-            </span>
+          <Link to="/" aria-label="Legal Boutique Advisers — home" className="inline-block">
+            <span className="font-display text-xl uppercase tracking-[0.18em] text-cream">Legal Boutique Advisers</span>
+            <span className="micro mt-1 block text-[9px] tracking-[0.28em] text-cream/60">Lawyers & Private Advisers</span>
           </Link>
           <p className="micro mt-4 text-[10px] text-cream/60">{footer.tagline}</p>
         </div>
@@ -70,7 +65,7 @@ export function SiteFooter() {
           </address>
           <div className="mt-5 flex items-center gap-4">
             {SOCIALS.map((s) => (
-              <a key={s.name} href="#" aria-label={s.label} className="text-white transition-colors hover:text-white">
+              <a key={s.name} href={s.href} target="_blank" rel="noreferrer" aria-label={s.label} className="text-white transition-colors hover:text-white">
                 <Icon name={s.name} className="h-4 w-4 !text-white" />
               </a>
             ))}

@@ -32,9 +32,7 @@ function ServicesTrio() {
               <Icon name={s.icon} />
               <h2 className="font-display mt-4 text-sm uppercase tracking-[0.2em]">{s.title}</h2>
               <p className="mt-3 text-[13px] leading-relaxed text-taupe">{s.body}</p>
-              <div className="mt-5">
-                <ArrowLink to={s.link}>Enquire</ArrowLink>
-              </div>
+              {/* ponytail: spec p5 — Enquire ×3 deleted */}
             </div>
           ))}
         </div>
@@ -53,8 +51,9 @@ export function PropertyPage() {
       <CrossLinkBand
         left={
           <div>
-            <p className="micro text-ink">{crossLink.left.eyebrow}</p>
-            <h2 className="font-display mt-4 text-2xl uppercase leading-snug">{crossLink.left.heading}</h2>
+            <p className="micro text-oxblood">{crossLink.left.eyebrow}</p>
+            <h2 className="font-display mt-3 text-2xl uppercase leading-snug">{crossLink.left.heading}</h2>
+            <div className="mt-3 h-px w-8 bg-oxblood" />
             <p className="mt-4 text-[13px] text-taupe">{crossLink.left.body}</p>
             <div className="mt-5">
               <Checklist items={crossLink.left.checks} />
@@ -65,14 +64,13 @@ export function PropertyPage() {
           </div>
         }
         center={
-          <div aria-hidden className="hidden lg:block">
-            <div className="aspect-[3/4] w-full bg-parchment" />
-          </div>
+          <img src={cta.image} alt="" aria-hidden className="hidden h-full w-full object-cover lg:block" />
         }
         right={
           <div>
-            <p className="micro text-ink">{crossLink.right.eyebrow}</p>
-            <h2 className="font-display mt-4 text-2xl uppercase leading-snug">{crossLink.right.heading}</h2>
+            <p className="micro text-oxblood">{crossLink.right.eyebrow}</p>
+            <h2 className="font-display mt-3 text-2xl uppercase leading-snug">{crossLink.right.heading}</h2>
+            <div className="mt-3 h-px w-8 bg-oxblood" />
             <p className="mt-4 text-[13px] text-taupe">{crossLink.right.body}</p>
             <div className="mt-5">
               <Checklist items={crossLink.right.checks} />

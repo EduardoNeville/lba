@@ -36,14 +36,14 @@ function useHomeData() {
 function HomeHero() {
   const { hero } = useHomeData()
   return (
-    <section className="relative isolate flex min-h-[100svh] items-center justify-center overflow-hidden">
+    <section className="relative isolate flex min-h-[100svh] items-center justify-center overflow-hidden bg-cream">
       <img src={hero.image} alt={hero.alt} className="absolute inset-0 -z-20 h-full w-full object-cover object-center" />
-      <div className="absolute inset-0 -z-10 bg-gradient-to-r from-ink/80 via-ink/40 to-transparent" />
-      <div className="px-6 text-center text-cream">
-        <h1 className="font-display text-4xl uppercase leading-[1.1] tracking-wide text-cream md:text-6xl">
+      <div className="absolute inset-0 -z-10 bg-gradient-to-r from-cream/85 via-cream/35 to-transparent" />
+      <div className="px-6 text-center">
+        <h1 className="font-display text-4xl uppercase leading-[1.1] tracking-wide text-ink md:text-6xl">
           {hero.heading}
         </h1>
-        <p className="mx-auto mt-6 max-w-xl text-sm leading-relaxed text-cream/90 md:text-[15px]">
+        <p className="mx-auto mt-6 max-w-xl text-sm leading-relaxed text-ink/75 md:text-[15px]">
           {hero.sub}
         </p>
         <div className="mt-8">
@@ -86,8 +86,8 @@ function PracticeAreas() {
       <Container>
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {practiceAreas.map((p) => (
-            <Link key={p.num} to={p.to} className="group flex flex-col border border-hairline bg-parchment/60">
-              <div className="flex items-baseline justify-between px-5 pt-5">
+            <Link key={p.num} to={p.to} className="group flex flex-col border border-hairline bg-parchment/60 overflow-hidden">
+              <div className="px-5 pt-5">
                 <span className="text-[10px] tracking-[0.2em] text-taupe">{p.num}</span>
               </div>
               <h2 className="font-display px-5 pt-3 text-lg uppercase tracking-[0.12em]">{p.title}</h2>
@@ -98,12 +98,16 @@ function PracticeAreas() {
                   </li>
                 ))}
               </ul>
+              <div className="mt-4" />
               <div className="mt-auto">
                 {p.image ? (
                   <img src={p.image} alt="" aria-hidden className="aspect-[3/4] w-full object-cover" />
                 ) : (
                   <div className="aspect-[3/4] w-full bg-parchment" aria-hidden />
                 )}
+              </div>
+              <div className="px-5 pb-4 pt-3">
+                <span className="micro text-[10px] text-ink group-hover:text-oxblood">Explore →</span>
               </div>
             </Link>
           ))}

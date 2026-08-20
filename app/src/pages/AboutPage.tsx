@@ -1,9 +1,11 @@
 import { Eyebrow } from '../components/ui/Eyebrow'
 import { Container } from '../components/ui/Container'
 import { ValueItem } from '../components/ui/ValueItem'
+import { CtaBand } from '../components/shared/CtaBand'
 import { useLang } from '../lib/lang'
 import { team, values } from '../data/team'
 import { fr, es } from '../data/locales/about'
+import ctaCoast from '../assets/cta-coast.jpg'
 
 function useAboutData() {
   const { lang } = useLang()
@@ -14,7 +16,7 @@ function useAboutData() {
       eyebrow: 'About Us',
       title: 'Built on trust. Evolved around our clients.',
       body: [
-        'Legal Boutique Advisers was founded as a boutique legal practice with a simple principle: every client’s circumstances are different, and their advice should be too.',
+        'Legal Boutique Advisers was founded in 2021 as a boutique legal practice with a simple principle: every client’s circumstances are different, and their advice should be too.',
         'Over the years, our international clients increasingly turned to us not only for legal matters, but for guidance around their properties, investments and lives in Spain.',
         'Our firm has evolved around those needs.',
         'Today, Legal Boutique Advisers brings together legal expertise, property advisory and private client services, providing one trusted point of contact for clients establishing, investing or maintaining interests in Spain.',
@@ -119,7 +121,8 @@ function ApproachSection() {
     <section className="pb-20 md:pb-28">
       <Container>
         <Eyebrow center>Our Approach</Eyebrow>
-        <div className="mt-10 grid gap-10 border-t border-hairline pt-12 text-center sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-2 h-px w-8 bg-oxblood mx-auto" />
+        <div className="mt-10 grid gap-10 pt-12 text-center sm:grid-cols-2 lg:grid-cols-4">
           {values.map((v) => (
             <ValueItem key={v.title} icon={v.icon} title={v.title} body={v.body} />
           ))}
@@ -130,12 +133,14 @@ function ApproachSection() {
 }
 
 export function AboutPage() {
+  const { cta } = useAboutData()
   return (
     <>
       <AboutHero />
       <LegacySplit />
       <TeamSection />
       <ApproachSection />
+      <CtaBand heading={cta.heading} subline={cta.subline} image={ctaCoast} cta={{ to: '/inquiry', label: 'Make a private enquiry' }} />
     </>
   )
 }
