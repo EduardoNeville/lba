@@ -3,7 +3,7 @@ import { Link, NavLink, useLocation } from 'react-router-dom'
 import { NAV } from '../../data/navigation'
 import { useLang } from '../../lib/lang'
 import { useNav } from '../../lib/nav'
-import logoBrush from '../../assets/logo-lba-brush.jpg'
+import logoBrush from '../../assets/logo-lba-brush.svg'
 
 function Logo() {
   return (
