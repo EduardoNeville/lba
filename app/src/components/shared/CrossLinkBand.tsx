@@ -2,7 +2,7 @@ import { Container } from '../ui/Container'
 
 export function CrossLinkBand({ left, center, right }: { left: React.ReactNode; center: React.ReactNode; right: React.ReactNode }) {
   return (
-    <section className="py-16 md:py-24">
+    <section className="py-20 md:py-28">
       <Container>
         <div className="grid items-stretch gap-10 lg:grid-cols-[1fr_380px_1fr] lg:gap-14">
           <div className="flex flex-col justify-center">{left}</div>

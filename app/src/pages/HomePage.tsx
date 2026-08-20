@@ -84,7 +84,7 @@ function PracticeAreas() {
   return (
     <section className="pb-20 md:pb-28">
       <Container>
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {practiceAreas.map((p) => (
             <Link key={p.num} to={p.to} className="group flex flex-col border border-hairline bg-parchment/60 overflow-hidden">
               <div className="px-5 pt-5">
@@ -101,7 +101,7 @@ function PracticeAreas() {
               <div className="mt-4" />
               <div className="mt-auto">
                 {p.image ? (
-                  <img src={p.image} alt="" aria-hidden className="aspect-[3/4] w-full object-fill" />
+                  <img src={p.image} alt="" aria-hidden className="aspect-[3/4] w-full object-cover" />
                 ) : (
                   <div className="aspect-[3/4] w-full bg-parchment" aria-hidden />
                 )}

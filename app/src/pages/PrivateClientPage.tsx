@@ -23,7 +23,7 @@ function usePCData() {
 function ContactPoints() {
   const { contactPoints } = usePCData()
   return (
-    <section className="pt-16 md:pt-24">
+    <section className="py-20 md:py-28">
       <Container>
         <p className="micro mb-3 text-center text-ink">{contactPoints.heading}</p>
         <p className="font-display mb-12 text-center text-sm italic text-taupe md:text-base">
@@ -48,7 +48,7 @@ function ContactPoints() {
 function ServicesGrid() {
   const { services } = usePCData()
   return (
-    <section className="py-16 md:py-24">
+    <section className="py-20 md:py-28">
       <Container>
         <p className="micro mb-2 text-center text-oxblood">Our Private Client Services</p>
         <div className="mx-auto mb-10 h-px w-8 bg-oxblood" />
@@ -65,7 +65,7 @@ function ServicesGrid() {
 function FeatureSplit() {
   const { featureSplit } = usePCData()
   return (
-    <section className="pb-20">
+    <section className="pb-20 md:pb-28">
       <Container>
         <div className="grid items-stretch lg:grid-cols-2">
           <div className="min-h-72 lg:min-h-full">
@@ -93,7 +93,7 @@ function FeatureSplit() {
 function TrustedNetwork() {
   const { partners } = usePCData()
   return (
-    <section className="bg-parchment py-16">
+    <section className="bg-parchment py-20 md:py-28">
       <Container>
         <div className="grid items-center gap-12 lg:grid-cols-[1fr_2fr]">
           <div>

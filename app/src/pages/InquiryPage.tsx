@@ -315,7 +315,7 @@ export function InquiryPage() {
         body={hero.body}
         subline={hero.subline}
       />
-      <section id="form" className="border-t border-hairline py-16 md:py-24">
+      <section id="form" className="border-t border-hairline py-20 md:py-28">
         <Container>
           <div className="grid gap-12 lg:grid-cols-12">
             <div className="lg:col-span-7">

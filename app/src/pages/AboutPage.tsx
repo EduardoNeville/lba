@@ -43,7 +43,7 @@ function useAboutData() {
 function AboutHero() {
   const { hero } = useAboutData()
   return (
-    <section className="py-16 md:py-24">
+    <section className="py-20 md:py-28">
       <Container>
         <div className="grid items-start gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-7">
@@ -71,7 +71,7 @@ function AboutHero() {
 function LegacySplit() {
   const { legacy } = useAboutData()
   return (
-    <section className="pb-20 md:pb-28">
+    <section className="py-20 md:py-28">
       <Container>
         <div className="grid items-center gap-12 lg:grid-cols-12">
           <div className="lg:col-span-5">
@@ -97,7 +97,7 @@ function LegacySplit() {
 function TeamSection() {
   const { team } = useAboutData()
   return (
-    <section className="pb-20 md:pb-28">
+    <section className="py-20 md:py-28">
       <Container>
         <p className="micro mb-12 text-center text-taupe">{team.heading}</p>
         <div className="grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-4">
@@ -118,7 +118,7 @@ function TeamSection() {
 function ApproachSection() {
   const { values } = useAboutData()
   return (
-    <section className="pb-20 md:pb-28">
+    <section className="py-20 md:py-28">
       <Container>
         <Eyebrow center>Our Approach</Eyebrow>
         <div className="mt-2 h-px w-8 bg-oxblood mx-auto" />

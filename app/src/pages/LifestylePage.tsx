@@ -20,7 +20,7 @@ function useLifeData() {
 function AssistRow() {
   const { assist } = useLifeData()
   return (
-    <section className="pt-16 md:pt-24">
+    <section className="py-20 md:py-28">
       <Container>
         <p className="font-display mb-2 text-center text-xl uppercase tracking-[0.12em]">How We Can Assist</p>
         <div className="mx-auto mb-10 h-px w-8 bg-oxblood" />

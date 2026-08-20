@@ -21,7 +21,7 @@ function useLegalData() {
 function Pillars() {
   const { pillars } = useLegalData()
   return (
-    <section className="py-16 md:py-24">
+    <section className="py-20 md:py-28">
       <Container>
         <p className="font-display mx-auto max-w-2xl text-center text-xl leading-snug text-ink md:text-2xl">
           We provide independent legal advice to private and international clients, their businesses and their families.
@@ -40,7 +40,7 @@ function Pillars() {
 function AdviceGrid() {
   const { areas } = useLegalData()
   return (
-    <section className="pb-16 md:pb-24">
+    <section className="pb-20 md:pb-28">
       <Container>
         <p className="micro mb-2 text-center text-oxblood">Our Areas of Legal Advice</p>
         <div className="mx-auto mb-10 h-px w-8 bg-oxblood" />

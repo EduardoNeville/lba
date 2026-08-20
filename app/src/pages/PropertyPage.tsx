@@ -24,7 +24,7 @@ function usePropertyData() {
 function ServicesTrio() {
   const { services } = usePropertyData()
   return (
-    <section className="py-16 md:py-24">
+    <section className="py-20 md:py-28">
       <Container>
         <div className="grid gap-12 border-t border-hairline pt-12 md:grid-cols-3">
           {services.map((s) => (

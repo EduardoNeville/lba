@@ -20,7 +20,7 @@ export function ResidencesStrip({
   allLink?: string
 }) {
   return (
-    <section className="py-16 md:py-24">
+    <section className="py-20 md:py-28">
       <Container>
         <div className="mb-8 flex items-baseline justify-between">
           <p className="micro text-[11px] text-ink">Selected Residences</p>
