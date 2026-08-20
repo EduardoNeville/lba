@@ -101,7 +101,7 @@ function PracticeAreas() {
               <div className="mt-4" />
               <div className="mt-auto">
                 {p.image ? (
-                  <img src={p.image} alt="" aria-hidden className="aspect-[3/4] w-full object-cover" />
+                  <img src={p.image} alt="" aria-hidden className="aspect-[3/4] w-full object-fill" />
                 ) : (
                   <div className="aspect-[3/4] w-full bg-parchment" aria-hidden />
                 )}
