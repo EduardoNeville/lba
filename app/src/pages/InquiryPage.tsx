@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Container } from "../components/ui/Container";
-import { Eyebrow } from "../components/ui/Eyebrow";
 import { Field } from "../components/ui/Field";
 import { Icon } from "../components/ui/icons";
 import { submitInquiry, InquiryError } from "../lib/submitInquiry";
@@ -372,8 +371,7 @@ function InquiryHero() {
       <Container>
         <div className="grid items-start gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-7">
-            <Eyebrow>{hero.eyebrow}</Eyebrow>
-            <h1 className="font-display mt-6 max-w-[22ch] text-4xl leading-[1.08] tracking-wide md:text-5xl lg:text-[3.5rem]">{hero.title}</h1>
+            <h1 className="font-display max-w-[22ch] text-4xl leading-[1.08] tracking-wide md:text-5xl lg:text-[3.5rem]">{hero.title}</h1>
             {hero.body && <p className="mt-6 max-w-prose text-sm leading-relaxed text-taupe md:text-[15px]">{hero.body}</p>}
             {hero.subline && <p className="mt-4 max-w-prose font-display text-sm italic text-taupe">{hero.subline}</p>}
           </div>
