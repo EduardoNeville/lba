@@ -1,4 +1,5 @@
 import officeDespacho from '../assets/office-despacho.jpg'
+import legalPracticeVertical from '../assets/legal-practice-vertical.jpg'
 import legalResidency from '../assets/legal-residency.jpg'
 import homeHero from '../assets/home-hero.jpg'
 import ctaCoast from '../assets/cta-coast.jpg'
@@ -37,7 +38,7 @@ export const practice = {
   heading: 'Commercial minds. Legal excellence.',
   body: 'Our connected law firm provides full-service legal advice to businesses and private clients in Spain and internationally. Complex matters. Clear solutions.',
   cta: { to: 'https://mariselacastro.com', label: 'Visit our legal practice' },
-  image: officeDespacho,
+  image: legalPracticeVertical,
   alt: 'Walnut desk with brass lamp and law books in an arched niche',
   right: [
     { icon: 'scales', title: 'Business Law', body: 'Corporate, commercial, contracts and regulatory advice.' },
