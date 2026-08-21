@@ -5,7 +5,7 @@ import ctaCoast from '../assets/cta-coast.jpg'
 import ctaBotanical from '../assets/cta-botanical.jpg'
 
 export const hero = {
-  eyebrow: '',
+  eyebrow: 'Legal',
   title: 'Legal expertise at our core',
   subline: '',
   body: 'Our legal background is the foundation of everything we do. We advise international clients with clarity, discretion and a deep understanding of the Spanish legal landscape.',

@@ -6,6 +6,7 @@ import lifestyleGolf from '../assets/lifestyle-golf.jpg'
 import type { Residence } from '../components/shared/ResidencesStrip'
 
 export const hero = {
+  eyebrow: 'Home',
   image: homeHero,
   alt: 'Dusk villa terrace with infinity pool overlooking the coast',
   heading: 'Legal · Property · Private Client Services',

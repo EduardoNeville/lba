@@ -2,7 +2,7 @@ import lifestyleGolf from '../assets/lifestyle-golf.jpg'
 import ctaLifestyle from '../assets/cta-lifestyle.jpg'
 
 export const hero = {
-  eyebrow: '',
+  eyebrow: 'Lifestyle',
   title: 'Local knowledge',
   subline: 'Trusted introductions.',
   body: 'Beyond properties and legal matters, we help our clients discover and enjoy the best of life in Spain through curated recommendations and trusted relationships. Consider it local knowledge, at your service.',

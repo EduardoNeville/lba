@@ -1,7 +1,7 @@
 // FR + ES copy for the Private Client page — mirrors the EN shape in src/data/privateClient.ts
 export const fr = {
   hero: {
-    eyebrow: 'Services aux clients privés',
+    eyebrow: 'Clients Privés',
     title: 'Services aux clients privés',
     subline: 'Votre vie en Espagne, entre de bonnes mains.',
     body: 'Nous vous offrons un accompagnement continu qui va bien au-delà de la transaction. De votre installation à la gestion de votre résidence et à vos besoins quotidiens, nous sommes votre interlocuteur de confiance en Espagne.',
@@ -51,7 +51,7 @@ export const fr = {
 
 export const es = {
   hero: {
-    eyebrow: 'Servicios para clientes privados',
+    eyebrow: 'Cliente Privado',
     title: 'Servicios para clientes privados',
     subline: 'Su vida en España, bien atendida.',
     body: 'Ofrecemos un acompañamiento continuo que va mucho más allá de la operación. Desde la reubicación hasta la gestión del hogar y las necesidades del día a día, somos su punto de contacto de confianza en España.',

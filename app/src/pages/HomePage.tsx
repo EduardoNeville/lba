@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { Icon } from '../components/ui/icons'
 import { Container } from '../components/ui/Container'
+import { Eyebrow } from '../components/ui/Eyebrow'
 import { ButtonLink } from '../components/ui/ButtonLink'
 import { ResidencesStrip } from '../components/shared/ResidencesStrip'
 import { CtaBand } from '../components/shared/CtaBand'
@@ -40,6 +41,11 @@ function HomeHero() {
       <img src={hero.image} alt={hero.alt} className="absolute inset-0 -z-20 h-full w-full object-cover object-center" />
       <div className="absolute inset-0 -z-10 bg-gradient-to-r from-cream/85 via-cream/35 to-transparent" />
       <div className="px-6 text-center">
+        {hero.eyebrow && (
+          <div className="mb-6 flex justify-center">
+            <Eyebrow center>{hero.eyebrow}</Eyebrow>
+          </div>
+        )}
         <h1 className="font-display text-4xl uppercase leading-[1.1] tracking-wide text-ink md:text-6xl">
           {hero.heading}
         </h1>

@@ -1,7 +1,7 @@
 // FR + ES copy for the Lifestyle page — mirrors the EN shape in src/data/lifestyle.ts
 export const fr = {
   hero: {
-    eyebrow: 'La vie en Espagne',
+    eyebrow: 'Lifestyle',
     title: 'Art de vivre',
     subline: 'Connaissance locale. Introductions de confiance.',
     body: 'Au-delà de l’immobilier et des questions juridiques, nous aidons nos clients à découvrir et à profiter du meilleur de la vie en Espagne grâce à des recommandations soigneusement sélectionnées et à des relations de confiance. Une connaissance locale mise à votre service.',
@@ -33,7 +33,7 @@ export const fr = {
 
 export const es = {
   hero: {
-    eyebrow: 'La vida en España',
+    eyebrow: 'Lifestyle',
     title: 'Estilo de vida',
     subline: 'Conocimiento local. Contactos de confianza.',
     body: 'Más allá de las propiedades y los asuntos jurídicos, ayudamos a nuestros clientes a descubrir y disfrutar lo mejor de la vida en España mediante recomendaciones cuidadosamente seleccionadas y relaciones de confianza. Considérelo conocimiento local, a su servicio.',

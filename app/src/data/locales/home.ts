@@ -1,6 +1,7 @@
 // FR + ES copy for the Home page — mirrors the EN shape in src/data/home.ts
 export const fr = {
   hero: {
+    eyebrow: 'Accueil',
     alt: 'Terrasse de villa au crépuscule avec piscine à débordement surplombant la côte',
     heading: 'Juridique · Propriété · Services aux clients privés',
     sub: 'Un service de conseil privé destiné aux clients internationaux, à leurs investissements, à leurs biens immobiliers et à leur vie en Espagne.',
@@ -42,6 +43,7 @@ export const fr = {
 
 export const es = {
   hero: {
+    eyebrow: 'Inicio',
     alt: 'Terraza de villa al atardecer con piscina infinita sobre la costa',
     heading: 'Legal · Propiedad · Servicios para clientes privados',
     sub: 'Un servicio de asesoramiento privado para clientes internacionales, sus inversiones, propiedades y vida en España.',
