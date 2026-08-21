@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { Container } from "../components/ui/Container";
+import { Eyebrow } from "../components/ui/Eyebrow";
 import { Field } from "../components/ui/Field";
 import { Icon } from "../components/ui/icons";
-import { PageHero } from "../components/shared/PageHero";
 import { submitInquiry, InquiryError } from "../lib/submitInquiry";
+import inquiryHero from "../assets/inquiry-hero.jpg";
 import { useLang } from "../lib/lang";
 import { options as optionsEn } from "../data/inquiry";
 import {
@@ -364,17 +365,33 @@ function DiscretionAside() {
   );
 }
 
-export function InquiryPage() {
+function InquiryHero() {
   const { hero } = useInquiryDict();
   return (
+    <section className="py-20 md:py-28">
+      <Container>
+        <div className="grid items-start gap-12 lg:grid-cols-12 lg:gap-16">
+          <div className="lg:col-span-7">
+            <Eyebrow>{hero.eyebrow}</Eyebrow>
+            <h1 className="font-display mt-6 max-w-[22ch] text-4xl leading-[1.08] tracking-wide md:text-5xl lg:text-[3.5rem]">{hero.title}</h1>
+            {hero.body && <p className="mt-6 max-w-prose text-sm leading-relaxed text-taupe md:text-[15px]">{hero.body}</p>}
+            {hero.subline && <p className="mt-4 max-w-prose font-display text-sm italic text-taupe">{hero.subline}</p>}
+          </div>
+          <div className="lg:col-span-5">
+            <div className="h-72 w-full overflow-hidden lg:h-[520px]">
+              <img src={inquiryHero} alt="Open book with brass pen on stone table, olive branch" className="h-full w-full object-cover" />
+            </div>
+          </div>
+        </div>
+      </Container>
+    </section>
+  );
+}
+
+export function InquiryPage() {
+  return (
     <>
-      <PageHero
-        eyebrow={hero.eyebrow}
-        title={hero.title}
-        titleCase="sentence"
-        body={hero.body}
-        subline={hero.subline}
-      />
+      <InquiryHero />
       <section id="form" className="border-t border-hairline py-20 md:py-28">
         <Container>
           <div className="grid gap-12 lg:grid-cols-12">
