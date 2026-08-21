@@ -4,6 +4,7 @@ import pcArchitecture from '../assets/pc-architecture.jpg'
 import pcConciergeLifestyle from '../assets/pc-concierge-lifestyle.jpg'
 import pcPeace from '../assets/pc-peace.jpg'
 import pcTerraceHero from '../assets/pc-terrace-hero.jpg'
+import ctaPrivate from '../assets/cta-private-client.jpg'
 
 export const hero = {
   eyebrow: 'Private Client',
@@ -59,4 +60,4 @@ export const partners = {
   list: ['Architecture Studios', 'Private Bankers', 'Boutique Law Firms', 'Tax Advisors', 'Yachting Services', 'Lifestyle Partners'],
 }
 
-export const cta = { heading: 'How can we assist you?', subline: 'Tell us what brings you to Spain.' }
+export const cta = { heading: 'How can we assist you?', subline: 'Tell us what brings you to Spain.', image: ctaPrivate }
