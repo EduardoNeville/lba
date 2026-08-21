@@ -1,5 +1,5 @@
-import { lazy, Suspense } from 'react'
-import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom'
+import { lazy, Suspense, useEffect } from 'react'
+import { BrowserRouter, Route, Routes, Navigate, useLocation } from 'react-router-dom'
 import { SiteHeader } from './components/layout/SiteHeader'
 import { SiteFooter } from './components/layout/SiteFooter'
 import { LangProvider } from './lib/lang'
@@ -13,10 +13,17 @@ import { LifestylePage } from './pages/LifestylePage'
 // Lazy: keeps the Firestore SDK out of the main bundle (inquiry.md §4)
 const InquiryPage = lazy(() => import('./pages/InquiryPage').then((m) => ({ default: m.InquiryPage })))
 
+function ScrollToTop() {
+  const { pathname } = useLocation()
+  useEffect(() => { window.scrollTo(0, 0) }, [pathname])
+  return null
+}
+
 function App() {
   return (
     <LangProvider>
       <BrowserRouter>
+        <ScrollToTop />
         <SiteHeader />
         <main>
           <Routes>
