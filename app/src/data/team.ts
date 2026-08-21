@@ -1,3 +1,6 @@
+import teamMarisela from '../assets/team-marisela.jpg'
+import teamJoseLuis from '../assets/team-joseluis.jpg'
+
 export interface TeamMember {
   name: string
   role: string
@@ -6,12 +9,12 @@ export interface TeamMember {
   slug: string
 }
 
-// ponytail: grey blocks until real portraits exist (05-asset-map.md gaps)
 export const team: TeamMember[] = [
   {
     name: 'Marisela Castro Abad',
     role: 'Founder & Managing Lawyer',
     bio: 'Lawyer and founder of Legal Boutique Advisers, with extensive experience in real estate, taxation and international private client matters.',
+    photo: teamMarisela,
     slug: '/team/marisela-castro-abad',
   },
   {
@@ -30,6 +33,7 @@ export const team: TeamMember[] = [
     name: 'José Luis Díaz Vázquez',
     role: 'Legal Counsel',
     bio: 'Lawyer specialising in employment and labour law, advising both companies and individuals across Spain.',
+    photo: teamJoseLuis,
     slug: '/team/jose-luis-diaz-vazquez',
   },
 ]

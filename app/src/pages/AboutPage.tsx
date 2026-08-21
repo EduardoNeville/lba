@@ -6,11 +6,22 @@ import { useLang } from '../lib/lang'
 import { team, values } from '../data/team'
 import { fr, es } from '../data/locales/about'
 import ctaCoast from '../assets/cta-coast.jpg'
+import aboutHero from '../assets/about-hero.jpg'
+import aboutLegacy from '../assets/about-legacy.jpg'
 
 function useAboutData() {
   const { lang } = useLang()
-  if (lang === 'fr') return fr
-  if (lang === 'es') return es
+  const photoMap = Object.fromEntries(team.map((m) => [m.name, m.photo]))
+  if (lang === 'fr')
+    return {
+      ...fr,
+      team: { ...fr.team, members: fr.team.members.map((m) => ({ ...m, photo: photoMap[m.name] })) },
+    }
+  if (lang === 'es')
+    return {
+      ...es,
+      team: { ...es.team, members: es.team.members.map((m) => ({ ...m, photo: photoMap[m.name] })) },
+    }
   return {
     hero: {
       eyebrow: 'About Us',
@@ -33,7 +44,7 @@ function useAboutData() {
     },
     team: {
       heading: 'Our Team',
-      members: team.map((m) => ({ name: m.name, role: m.role, bio: m.bio })),
+      members: team.map((m) => ({ name: m.name, role: m.role, bio: m.bio, photo: m.photo })),
     },
     values,
     cta: { heading: 'Let’s talk.', subline: 'We would be delighted to learn more about your plans in Spain.' },
@@ -58,8 +69,8 @@ function AboutHero() {
             </div>
           </div>
           <div className="lg:col-span-5">
-            <div className="h-72 w-full lg:h-[560px]">
-              <div className="h-full w-full bg-parchment" aria-hidden />
+            <div className="h-72 w-full overflow-hidden lg:h-[560px]">
+              <img src={aboutHero} alt="Boutique office arched shelves with stone vases and warm light" className="h-full w-full object-cover" />
             </div>
           </div>
         </div>
@@ -75,7 +86,7 @@ function LegacySplit() {
       <Container>
         <div className="grid items-center gap-12 lg:grid-cols-12">
           <div className="lg:col-span-5">
-            <div className="aspect-[4/5] w-full bg-parchment" aria-hidden />
+            <img src={aboutLegacy} alt="Library with law books and architectural plans representing legacy and vision" className="aspect-[4/5] w-full object-cover" />
           </div>
           <div className="lg:col-span-7 lg:pl-8">
             <Eyebrow>{legacy.eyebrow}</Eyebrow>
@@ -103,7 +114,11 @@ function TeamSection() {
         <div className="grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-4">
           {team.members.map((m) => (
             <div key={m.name}>
-              <div className="aspect-[3/4] w-full bg-parchment" aria-hidden />
+              {m.photo ? (
+                <img src={m.photo} alt={m.name} className="aspect-[3/4] w-full object-cover object-top" loading="lazy" />
+              ) : (
+                <div className="aspect-[3/4] w-full bg-parchment" aria-hidden />
+              )}
               <h3 className="font-display mt-5 text-base uppercase tracking-[0.12em] md:text-lg">{m.name}</h3>
               <p className="font-display mt-1 text-[11px] italic text-taupe">{m.role}</p>
               <p className="mt-3 text-[13px] leading-relaxed text-taupe">{m.bio}</p>
