@@ -9,6 +9,7 @@ import { Checklist } from '../components/ui/Checklist'
 import { useLang } from '../lib/lang'
 import { hero, services, residences, crossLink, cta } from '../data/property'
 import { fr, es } from '../data/locales/property'
+import propertyCrosslink from '../assets/property-crosslink.jpg'
 
 function usePropertyData() {
   const { lang } = useLang()
@@ -64,7 +65,7 @@ export function PropertyPage() {
           </div>
         }
         center={
-          <img src={cta.image} alt="" aria-hidden className="hidden h-full w-full object-cover lg:block" />
+          <img src={propertyCrosslink} alt="Limestone hallway with law books opening to sea terrace" className="hidden h-full w-full object-cover lg:block" />
         }
         right={
           <div>
