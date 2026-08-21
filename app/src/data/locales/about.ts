@@ -35,6 +35,21 @@ export const fr = {
     { icon: 'globe', title: 'Connectée', body: 'Un réseau de spécialistes de confiance pour vous accompagner à chaque étape.' },
   ],
   cta: { heading: 'Parlons de vos projets', subline: 'Nous serions ravis d’en savoir plus sur vos projets en Espagne.' },
+  culture: {
+    eyebrow: 'Engagement culturel',
+    title: 'Soutenir la culture.\nInvestir dans l’avenir.',
+    body: [
+      'Chez Legal Boutique Advisers, nous croyons que la culture enrichit la vie et renforce les communautés dont nous faisons partie.',
+      'Nous sommes fiers de soutenir et de participer à Música con Encanto, une association à but non lucratif dédiée à apporter la musique classique et des expériences culturelles sur la Costa del Sol.',
+      'À travers des concerts, des programmes éducatifs et des initiatives artistiques, Música con Encanto inspire les jeunes talents et crée des liens significatifs grâce au langage universel de la musique.',
+      'Nous partageons leur vision d’un avenir plus beau, créatif et harmonieux.',
+    ],
+    bottomEyebrow: 'Legal Boutique Advisers',
+    bottomSub: 'Fiers collaborateurs de Música con Encanto',
+    linkLabel: 'Découvrir l’association →',
+    linkHref: 'https://musicaconencanto.org/',
+    tagline: 'Inspirer par la musique,\nenrichir notre communauté.',
+  },
 }
 
 export const es = {
@@ -73,4 +88,19 @@ export const es = {
     { icon: 'globe', title: 'Conectado', body: 'Una red de especialistas de confianza para acompañarle en cada etapa.' },
   ],
   cta: { heading: 'Hablemos', subline: 'Estaremos encantados de conocer mejor sus planes en España.' },
+  culture: {
+    eyebrow: 'Compromiso cultural',
+    title: 'Apoyando la cultura.\nInvirtiendo en el futuro.',
+    body: [
+      'En Legal Boutique Advisers creemos que la cultura enriquece la vida y fortalece las comunidades de las que formamos parte.',
+      'Estamos orgullosos de apoyar y participar en Música con Encanto, una asociación sin ánimo de lucro dedicada a llevar la música clásica y experiencias culturales a la Costa del Sol.',
+      'A través de conciertos, programas educativos e iniciativas artísticas, Música con Encanto inspira a jóvenes talentos y crea conexiones significativas a través del lenguaje universal de la música.',
+      'Compartimos su visión de un futuro más bello, creativo y armonioso.',
+    ],
+    bottomEyebrow: 'Legal Boutique Advisers',
+    bottomSub: 'Orgullosos colaboradores de Música con Encanto',
+    linkLabel: 'Descubrir la asociación →',
+    linkHref: 'https://musicaconencanto.org/',
+    tagline: 'Inspirando a través de la música,\nenriqueciendo nuestra comunidad.',
+  },
 }

@@ -2,12 +2,14 @@ import { Eyebrow } from "../components/ui/Eyebrow";
 import { Container } from "../components/ui/Container";
 import { ValueItem } from "../components/ui/ValueItem";
 import { CtaBand } from "../components/shared/CtaBand";
+import { Icon } from "../components/ui/icons";
 import { useLang } from "../lib/lang";
 import { team, values } from "../data/team";
 import { fr, es } from "../data/locales/about";
 import ctaCoast from "../assets/cta-coast.jpg";
 import aboutHero from "../assets/about-hero.jpg";
 import aboutLegacy from "../assets/about-legacy.jpg";
+import musicaImage from "../assets/musica-cultural.png";
 
 function useAboutData() {
   const { lang } = useLang();
@@ -68,6 +70,21 @@ function useAboutData() {
       heading: "Let’s talk.",
       subline: "We would be delighted to learn more about your plans in Spain.",
     },
+    culture: {
+      eyebrow: "Cultural Commitment",
+      title: "Supporting Culture.\nInvesting in the Future.",
+      body: [
+        "At Legal Boutique Advisers, we believe culture enriches life and strengthens the communities we are part of.",
+        "We are proud to support and participate in Música con Encanto, a non-profit association dedicated to bringing classical music and cultural experiences to the Costa del Sol.",
+        "Through concerts, educational programmes and artistic initiatives, Música con Encanto inspires young talent and creates meaningful connections through the universal language of music.",
+        "We share their vision of a more beautiful, creative and harmonious future.",
+      ],
+      bottomEyebrow: "Legal Boutique Advisers",
+      bottomSub: "Proud collaborators of Música con Encanto",
+      linkLabel: "Discover the association →",
+      linkHref: "https://musicaconencanto.org/",
+      tagline: "Inspiring through music,\nenriching our community.",
+    },
   };
 }
 
@@ -78,8 +95,7 @@ function AboutHero() {
       <Container>
         <div className="grid items-start gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-7">
-            <Eyebrow>{hero.eyebrow}</Eyebrow>
-            <h1 className="font-display mt-6 max-w-[22ch] text-4xl uppercase leading-[1.08] tracking-wide md:text-5xl lg:text-[3.5rem]">
+            <h1 className="font-display max-w-[22ch] text-4xl uppercase leading-[1.08] tracking-wide md:text-5xl lg:text-[3.5rem]">
               {hero.title}
             </h1>
             <div className="mt-8 max-w-prose space-y-5 text-sm leading-relaxed text-taupe md:text-[15px]">
@@ -127,6 +143,47 @@ function LegacySplit() {
               ))}
             </div>
           </div>
+        </div>
+      </Container>
+    </section>
+  );
+}
+
+function CultureSplit() {
+  const { culture } = useAboutData() as any;
+  return (
+    <section className="py-20 md:py-28 bg-cream/50">
+      <Container>
+        <div className="grid gap-10 lg:grid-cols-12 lg:gap-16">
+          <div className="lg:col-span-7">
+            <div className="flex items-center gap-3">
+              <span aria-hidden className="h-px w-8 bg-ink/60" />
+              <p className="micro text-ink">{culture.eyebrow}</p>
+            </div>
+            <h2 className="font-display mt-4 whitespace-pre-line text-3xl uppercase leading-[1.08] md:text-4xl">{culture.title}</h2>
+            <div className="mt-6 max-w-prose space-y-4 text-[13px] leading-relaxed text-taupe">
+              {culture.body.map((p: string) => (
+                <p key={p}>{p.includes("Música con Encanto") ? (<>{p.split("Música con Encanto")[0]}<span className="text-oxblood">Música con Encanto</span>{p.split("Música con Encanto")[1]}</>) : p}</p>
+              ))}
+            </div>
+          </div>
+          <div className="lg:col-span-5 lg:border-l lg:border-hairline lg:pl-12 flex flex-col items-center justify-center text-center">
+            <img src={musicaImage} alt="Centro de Divulgación Musical del Mediterráneo" className="h-48 w-48 object-contain" />
+            <p className="font-display mt-6 whitespace-pre-line text-center text-lg italic leading-relaxed text-taupe">{culture.tagline}</p>
+            <div className="mx-auto mt-4 h-px w-8 bg-oxblood" />
+          </div>
+        </div>
+        <div className="mt-12 flex flex-col gap-4 bg-parchment px-6 py-5 md:flex-row md:items-center md:justify-between">
+          <div className="flex items-center gap-4">
+            <Icon name="violin" className="h-6 w-6" />
+            <div>
+              <p className="micro text-ink">{culture.bottomEyebrow}</p>
+              <p className="font-display text-sm italic text-taupe">{culture.bottomSub}</p>
+            </div>
+          </div>
+          <a href={culture.linkHref} target="_blank" rel="noreferrer" className="micro inline-flex items-center gap-2 text-oxblood transition-colors hover:text-ink">
+            {culture.linkLabel}
+          </a>
         </div>
       </Container>
     </section>
@@ -196,6 +253,7 @@ export function AboutPage() {
     <>
       <AboutHero />
       <LegacySplit />
+      <CultureSplit />
       <TeamSection />
       <ApproachSection />
       <CtaBand

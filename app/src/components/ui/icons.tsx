@@ -118,6 +118,14 @@ export const icons: Record<string, ReactElement> = {
       <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" />
     </svg>
   ),
+  violin: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M14 3a3 3 0 0 1 2 2c0 1-.5 1.5-1 2.2-.5.6-1 1.3-1 2.3 0 1.5 1.2 3 3 3 1 0 1.8-.4 2.3-1" />
+      <path d="M9 13c-1 0-2 .7-2 1.8 0 1 .8 1.7 1.8 1.7 1 0 1.8-.7 1.8-1.7 0-.6-.3-1-.8-1.4" />
+      <path d="M9 13 15 7" />
+      <path d="M7 8a2 2 0 0 1 1.5-1 2 2 0 0 1 2 1.5" />
+    </svg>
+  ),
 }
 
 export function Icon({ name, className = 'h-6 w-6' }: { name: keyof typeof icons | string; className?: string }) {
