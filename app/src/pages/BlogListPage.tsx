@@ -21,10 +21,6 @@ export function BlogListPage() {
   const [error, setError] = useState('')
 
   useEffect(() => {
-    document.title = 'Journal — Legal Boutique Advisers'
-  }, [])
-
-  useEffect(() => {
     let cancelled = false
     async function load() {
       try {
@@ -81,7 +77,7 @@ export function BlogListPage() {
                   className="group flex flex-col border border-hairline bg-parchment/40 overflow-hidden hover:border-taupe transition-colors"
                 >
                   {p.coverImageUrl ? (
-                    <img src={p.coverImageUrl} alt="" className="aspect-[16/10] w-full object-cover" loading="lazy" />
+                    <img src={p.coverImageUrl} alt={p.title} className="aspect-[16/10] w-full object-cover" loading="lazy" />
                   ) : (
                     <div className="aspect-[16/10] w-full bg-parchment" aria-hidden />
                   )}

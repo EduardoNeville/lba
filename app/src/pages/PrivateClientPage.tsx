@@ -101,6 +101,7 @@ function FeatureSplit() {
             <img
               src={featureSplit.image}
               alt={featureSplit.alt}
+              loading="lazy"
               className="h-full w-full object-cover"
             />
           </div>

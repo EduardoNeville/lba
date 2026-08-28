@@ -14,36 +14,69 @@ export function SiteFooter() {
   const footer = useFooter()
   const nav = useNav()
 
-  const servicesLinks: string[] = footer.servicesLinks
-  const infoLinks: string[] = footer.informationLinks
-
   return (
     <footer className="bg-maroon text-cream">
-      <div className="mx-auto grid w-full max-w-[1200px] gap-10 px-6 py-14 md:grid-cols-3 md:px-10 lg:grid-cols-3">
-        <nav aria-label="Services">
+      <div className="mx-auto grid w-full max-w-[1200px] gap-10 px-6 py-14 sm:grid-cols-2 md:px-10 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
+        {/* Lockup + tagline */}
+        <div>
+          <p className="font-display text-lg uppercase tracking-[0.15em] text-cream">
+            Legal Boutique Advisers
+          </p>
+          <p className="micro mt-3 text-[10px] text-cream/60">{footer.tagline}</p>
+        </div>
+
+        {/* Our pages + the enquiry CTA lives with them */}
+        <nav aria-label={footer.services}>
           <h2 className="micro text-cream/60">{footer.services}</h2>
           <ul className="mt-4 space-y-2.5">
-            {servicesLinks.map((label: string, i: number) => (
+            {footer.servicesLinks.map((label, i) => (
               <li key={i}>
-                <Link to={FOOTER_SERVICES[i]?.to ?? '/'} className="micro text-[10px] text-cream/80 transition-colors hover:text-cream">
+                <Link
+                  to={FOOTER_SERVICES[i]?.to ?? '/'}
+                  className="micro text-[10px] text-cream/80 transition-colors hover:text-cream"
+                >
                   {label}
                 </Link>
               </li>
             ))}
           </ul>
+          <Link
+            to="/inquiry#form"
+            className="micro mt-6 inline-block border border-cream/40 px-5 py-2 text-[10px] text-cream transition-colors hover:bg-cream hover:text-maroon"
+          >
+            {footer.enquire}
+          </Link>
         </nav>
-        <nav aria-label="Information">
+
+        {/* Information / legal pages */}
+        <nav aria-label={footer.information}>
           <h2 className="micro text-cream/60">{footer.information}</h2>
           <ul className="mt-4 space-y-2.5">
-            {infoLinks.map((label: string, i: number) => (
-              <li key={i}>
-                <Link to={FOOTER_INFO[i]?.to ?? '/'} className="micro text-[10px] text-cream/80 transition-colors hover:text-cream">
-                  {label}
-                </Link>
-              </li>
-            ))}
+            {footer.informationLinks.map((label, i) => {
+              const to = FOOTER_INFO[i]?.to ?? '/'
+              return (
+                <li key={i}>
+                  {to.startsWith('http') ? (
+                    <a
+                      href={to}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="micro text-[10px] text-cream/80 transition-colors hover:text-cream"
+                    >
+                      {label}
+                    </a>
+                  ) : (
+                    <Link to={to} className="micro text-[10px] text-cream/80 transition-colors hover:text-cream">
+                      {label}
+                    </Link>
+                  )}
+                </li>
+              )
+            })}
           </ul>
         </nav>
+
+        {/* Contact */}
         <div>
           <h2 className="micro text-cream/60">{footer.contact}</h2>
           <address className="mt-4 space-y-2.5 text-[10px] not-italic uppercase tracking-[0.18em] text-cream/80">
@@ -76,14 +109,9 @@ export function SiteFooter() {
               ))}
             </span>
           </div>
-          <Link
-            to="/inquiry#form"
-            className="micro mt-6 inline-block border border-cream/40 px-5 py-2 text-[10px] text-cream transition-colors hover:bg-cream hover:text-maroon"
-          >
-            {footer.enquire}
-          </Link>
         </div>
       </div>
+
       <div className="border-t border-cream/20">
         <div className="mx-auto flex w-full max-w-[1200px] flex-col justify-between gap-2 px-6 py-6 text-[10px] uppercase tracking-[0.2em] text-cream/60 md:flex-row md:px-10">
           <p>{footer.rights}</p>

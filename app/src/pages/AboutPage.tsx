@@ -129,6 +129,7 @@ function LegacySplit() {
             <img
               src={aboutLegacy}
               alt="Library with law books and architectural plans representing legacy and vision"
+              loading="lazy"
               className="aspect-[4/5] w-full object-cover"
             />
           </div>

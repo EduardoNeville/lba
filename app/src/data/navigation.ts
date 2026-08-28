@@ -9,8 +9,6 @@ export interface NavItem {
   children?: NavChild[]
 }
 
-export const LEGAL_PRACTICE_URL = 'https://mariselacastro.com'
-
 export const NAV: NavItem[] = [
   { label: 'Property', to: '/property' },
   { label: 'Legal', to: '/legal' },
@@ -29,7 +27,6 @@ export const FOOTER_SERVICES = [
 
 export const FOOTER_INFO = [
   { label: 'About', to: '/about' },
-  { label: 'Legal Practice', to: LEGAL_PRACTICE_URL },
   { label: 'Privacy Policy', to: '/privacy' },
   { label: 'Terms & Conditions', to: '/terms' },
 ]

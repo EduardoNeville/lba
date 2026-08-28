@@ -9,7 +9,7 @@ const navEnFooter = {
   services: 'Our Services',
   servicesLinks: ['Property Advisory', 'Legal Advisory', 'Private Client Advisory', 'Lifestyle'],
   information: 'Information',
-  informationLinks: ['About', 'Legal Practice', 'Privacy Policy', 'Terms & Conditions'],
+  informationLinks: ['About', 'Privacy Policy', 'Terms & Conditions'],
   contact: 'Contact',
   address: ['Calle Nuestra Señora de Gracia, 26, bajo', 'Marbella, Spain', '+34 952 777 991 · +34 663 109 014', 'info@legalboutiqueadvisers.com'],
   enquire: 'Make a private enquiry',

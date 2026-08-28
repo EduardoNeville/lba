@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Container } from "../components/ui/Container";
 import { Field } from "../components/ui/Field";
 import { Icon } from "../components/ui/icons";
@@ -163,6 +164,22 @@ function InterestRadios({
   );
 }
 
+const POLICY_RE = /Privacy Policy|Politique de confidentialité|Política de Privacidad/;
+
+function ConsentText({ text }: { text: string }) {
+  const m = text.match(POLICY_RE);
+  if (!m || m.index === undefined) return <>{text}</>;
+  return (
+    <>
+      {text.slice(0, m.index)}
+      <Link to="/privacy" className="underline underline-offset-2 transition-colors hover:text-ink">
+        {m[0]}
+      </Link>
+      {text.slice(m.index + m[0].length)}
+    </>
+  );
+}
+
 function InquiryForm() {
   const { form, options } = useInquiryDict();
   const [formState, setFormState] = useState<FormState>(initial);
@@ -319,7 +336,7 @@ function InquiryForm() {
               className="mt-0.5 h-4 w-4 border-hairline accent-oxblood"
             />
             <span className="text-[11px] leading-relaxed text-taupe">
-              {form.consent}
+              <ConsentText text={form.consent} />
             </span>
           </label>
           {showError("consent") && (

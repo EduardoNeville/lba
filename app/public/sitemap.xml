@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Static routes only. Append /blog/<slug> as posts go live. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://legalboutiqueadvisers.com/</loc></url>
+  <url><loc>https://legalboutiqueadvisers.com/about</loc></url>
+  <url><loc>https://legalboutiqueadvisers.com/property</loc></url>
+  <url><loc>https://legalboutiqueadvisers.com/legal</loc></url>
+  <url><loc>https://legalboutiqueadvisers.com/private-client</loc></url>
+  <url><loc>https://legalboutiqueadvisers.com/lifestyle</loc></url>
+  <url><loc>https://legalboutiqueadvisers.com/blog</loc></url>
+  <url><loc>https://legalboutiqueadvisers.com/inquiry</loc></url>
+  <url><loc>https://legalboutiqueadvisers.com/privacy</loc></url>
+  <url><loc>https://legalboutiqueadvisers.com/terms</loc></url>
+</urlset>

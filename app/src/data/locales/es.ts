@@ -35,7 +35,7 @@ export const footer = {
   services: 'Nuestros Servicios',
   servicesLinks: ['Asesoramiento inmobiliario', 'Asesoramiento jurídico', 'Asesoramiento para clientes privados', 'Estilo de vida'],
   information: 'Información',
-  informationLinks: ['Nosotros', 'Despacho jurídico', 'Política de Privacidad', 'Términos y Condiciones'],
+  informationLinks: ['Nosotros', 'Política de Privacidad', 'Términos y Condiciones'],
   contact: 'Contacto',
   address: ['Calle Nuestra Señora de Gracia, número 26, bajo', 'Marbella, España', '+952777991 · +34 663 109 014', 'info@legalboutiqueadvisers.com'],
   enquire: 'Realizar una consulta privada',

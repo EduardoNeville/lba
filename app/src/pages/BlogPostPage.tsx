@@ -4,6 +4,7 @@ import { Container } from '../components/ui/Container'
 import { CtaBand } from '../components/shared/CtaBand'
 import { getApp } from '../lib/firebase'
 import { renderMarkdown } from '../lib/markdown'
+import { setPageMeta } from '../lib/seo'
 import type { Post } from '../lib/posts'
 import ctaCoast from '../assets/cta-coast.jpg'
 
@@ -49,7 +50,7 @@ export function BlogPostPage() {
         if (!cancelled) {
           setPost(data)
           setHtml(renderMarkdown(data.bodyMarkdown || ''))
-          document.title = `${data.title} — Legal Boutique Advisers`
+          setPageMeta(`${data.title} — Legal Boutique Advisers`, data.excerpt)
         }
       } catch {
         if (!cancelled) setNotFound(true)
@@ -101,7 +102,7 @@ export function BlogPostPage() {
 
         {post.coverImageUrl && (
           <div className="mx-auto w-full max-w-[1200px] px-6 md:px-10">
-            <img src={post.coverImageUrl} alt="" className="max-h-[560px] w-full object-cover" />
+            <img src={post.coverImageUrl} alt={post.title} className="max-h-[560px] w-full object-cover" />
           </div>
         )}
 
