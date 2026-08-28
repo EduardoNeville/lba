@@ -1,4 +1,4 @@
-# Legal Docs Draft — for review by [Intern]
+# Legal Docs Draft
 
 You're drafting the **Privacy Policy** and **Terms & Conditions** for the Legal
 Boutique Advisers website (legalboutiqueadvisers.com). The site currently runs
