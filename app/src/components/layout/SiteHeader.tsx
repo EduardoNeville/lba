@@ -19,6 +19,7 @@ function navFrLabel(label: string): string {
     Legal: 'Juridique',
     'Private Client Services': 'Services aux clients privés',
     Lifestyle: 'Art de vivre',
+    Journal: 'Journal',
     About: 'À propos',
   }
   return map[label] ?? label
@@ -29,6 +30,7 @@ function navEsLabel(label: string): string {
     Legal: 'Legal',
     'Private Client Services': 'Servicios para clientes privados',
     Lifestyle: 'Estilo de vida',
+    Journal: 'Journal',
     About: 'Nosotros',
   }
   return map[label] ?? label

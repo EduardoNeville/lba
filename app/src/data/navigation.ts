@@ -16,6 +16,7 @@ export const NAV: NavItem[] = [
   { label: 'Legal', to: '/legal' },
   { label: 'Private Client Services', to: '/private-client' },
   { label: 'Lifestyle', to: '/lifestyle' },
+  { label: 'Journal', to: '/blog' },
   { label: 'About', to: '/about' },
 ]
 

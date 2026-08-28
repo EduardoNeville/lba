@@ -22,4 +22,16 @@
   .micro {
     @apply text-[10px] md:text-[11px] uppercase tracking-[0.2em];
   }
+  .blog-content h1 { @apply font-display text-3xl uppercase leading-snug mt-10; }
+  .blog-content h2 { @apply font-display text-2xl uppercase leading-snug mt-10; }
+  .blog-content h3 { @apply font-display text-xl uppercase leading-snug mt-8; }
+  .blog-content p { @apply mt-5 text-[15px] leading-relaxed text-ink/90; }
+  .blog-content a { @apply text-oxblood underline underline-offset-4 hover:text-ink; }
+  .blog-content img { @apply my-8 w-full object-cover; }
+  .blog-content blockquote { @apply border-l-2 border-hairline pl-6 italic text-taupe my-6; }
+  .blog-content ul { @apply list-disc pl-6 mt-5 space-y-2 text-[15px] leading-relaxed; }
+  .blog-content ol { @apply list-decimal pl-6 mt-5 space-y-2 text-[15px] leading-relaxed; }
+  .blog-content hr { @apply my-8 border-hairline; }
+  .blog-content pre { @apply bg-parchment p-4 overflow-x-auto text-sm mt-6; }
+  .blog-content code { @apply bg-parchment px-1 py-0.5 text-sm; }
 }
