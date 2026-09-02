@@ -2,7 +2,6 @@ import homeHero from '../assets/home-hero.jpg'
 import officeDespacho from '../assets/office-despacho.jpg'
 import ctaBotanical from '../assets/cta-botanical.jpg'
 import pcKeys from '../assets/pc-keys.jpg'
-import lifestyleGolf from '../assets/lifestyle-golf.jpg'
 import type { Residence } from '../components/shared/ResidencesStrip'
 
 export const hero = {
@@ -44,13 +43,6 @@ export const practiceAreas = [
     to: '/private-client',
     items: ['Relocation to Spain', 'Architecture & Renovation', 'Private Home Management', 'Concierge Services'],
     image: pcKeys,
-  },
-  {
-    num: '04',
-    title: 'Lifestyle',
-    to: '/lifestyle',
-    items: ['Golf', 'Schools', 'Destinations', 'Culture & Wellness', 'Local Knowledge'],
-    image: lifestyleGolf,
   },
 ]
 

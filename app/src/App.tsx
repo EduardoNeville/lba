@@ -8,7 +8,6 @@ import { AboutPage } from './pages/AboutPage'
 import { PropertyPage } from './pages/PropertyPage'
 import { LegalPage } from './pages/LegalPage'
 import { PrivateClientPage } from './pages/PrivateClientPage'
-import { LifestylePage } from './pages/LifestylePage'
 import { BlogListPage } from './pages/BlogListPage'
 import { BlogPostPage } from './pages/BlogPostPage'
 
@@ -49,10 +48,6 @@ const ROUTE_META: Record<string, { title: string; description?: string }> = {
     title: 'Private Client Services · Legal Boutique Advisers',
     description: 'Relocation, home management, lifestyle and concierge services for international clients living in Spain.',
   },
-  '/lifestyle': {
-    title: 'Lifestyle · Legal Boutique Advisers',
-    description: 'A curated look at life on the Costa del Sol: culture, golf, residences and the Spanish way of living.',
-  },
   '/blog': {
     title: 'Journal · Legal Boutique Advisers',
     description: 'Notes on living, investing and building a life in Spain, from the Legal Boutique Advisers team.',
@@ -86,7 +81,6 @@ function App() {
             <Route path="/property" element={<PropertyPage />} />
             <Route path="/legal" element={<LegalPage />} />
             <Route path="/private-client" element={<PrivateClientPage />} />
-            <Route path="/lifestyle" element={<LifestylePage />} />
             <Route path="/blog" element={<BlogListPage />} />
             <Route path="/blog/:slug" element={<BlogPostPage />} />
             <Route path="/privacy" element={<LegalDocPage doc={privacyDoc} />} />

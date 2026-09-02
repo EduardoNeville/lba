@@ -19,7 +19,6 @@ const navEnFooter = {
     "Property Advisory",
     "Legal Advisory",
     "Private Client Advisory",
-    "Lifestyle",
   ],
   information: "Information",
   informationLinks: ["About", "Privacy Policy", "Terms & Conditions"],
@@ -77,7 +76,6 @@ export const FOOTER_NAV_KEYS = [
   "property",
   "legal",
   "privateClient",
-  "lifestyle",
   "about",
 ] as const;
 export type FooterNavKey = (typeof FOOTER_NAV_KEYS)[number];

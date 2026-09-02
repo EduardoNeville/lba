@@ -31,11 +31,6 @@ export const fr = {
       title: 'Clientèle privée',
       items: ['Installation en Espagne', 'Architecture & rénovation', 'Gestion privée de résidence', 'Services de conciergerie'],
     },
-    {
-      num: '04',
-      title: 'Art de vivre',
-      items: ['Golf', 'Écoles', 'Destinations', 'Culture & bien-être', 'Connaissance locale'],
-    },
   ],
   residences: [],
   cta: { heading: 'Chaque client est unique.', subline: 'Parlez-nous de ce qui vous amène en Espagne.' },
@@ -72,11 +67,6 @@ export const es = {
       num: '03',
       title: 'Cliente privado',
       items: ['Reubicación en España', 'Arquitectura y reforma', 'Gestión privada del hogar', 'Servicios de concierge'],
-    },
-    {
-      num: '04',
-      title: 'Estilo de vida',
-      items: ['Golf', 'Colegios', 'Destinos', 'Cultura y bienestar', 'Conocimiento local'],
     },
   ],
   residences: [],

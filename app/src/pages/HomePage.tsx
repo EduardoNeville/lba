@@ -109,7 +109,7 @@ function PracticeAreas() {
   return (
     <section className="pb-20 md:pb-28">
       <Container>
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {practiceAreas.map((p) => (
             <Link
               key={p.num}

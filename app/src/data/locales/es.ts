@@ -4,7 +4,6 @@ export const nav = {
     property: "Propiedad",
     legal: "Legal",
     privateClient: "Servicios para clientes privados",
-    lifestyle: "Estilo de vida",
     about: "Nosotros",
     inquire: "Contacto",
   },
@@ -37,7 +36,6 @@ export const footer = {
     "Asesoramiento inmobiliario",
     "Asesoramiento jurídico",
     "Asesoramiento para clientes privados",
-    "Estilo de vida",
   ],
   information: "Información",
   informationLinks: [
