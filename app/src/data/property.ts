@@ -1,4 +1,4 @@
-import propertyHero from "../assets/property-hero.jpg";
+import heroImage from "../assets/lifestyle-golf.jpg";
 import ctaCoast from "../assets/cta-coast.jpg";
 import type { Residence } from "../components/shared/ResidencesStrip";
 
@@ -8,8 +8,8 @@ export const hero = {
   subline: "A considered approach to property in Spain.",
   body: "Buying or selling property involves more than finding the right home. We advise our clients throughout the process, bringing together property expertise, legal insight and a trusted professional network.",
   cta: { to: "/inquiry", label: "Discuss your requirements" },
-  image: propertyHero,
-  alt: "Modern villa terrace with glass rail overlooking the sea at dusk",
+  image: heroImage,
+  alt: "Golf fairway with bunkers at dusk",
 };
 
 export const services = [

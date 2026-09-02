@@ -1,4 +1,4 @@
-import lifestyleGolf from '../assets/lifestyle-golf.jpg'
+import lifestyleHero from '../assets/property-hero.jpg'
 import ctaLifestyle from '../assets/cta-lifestyle.jpg'
 
 export const hero = {
@@ -7,8 +7,8 @@ export const hero = {
   subline: 'Trusted introductions.',
   body: 'Beyond properties and legal matters, we help our clients discover and enjoy the best of life in Spain through curated recommendations and trusted relationships. Consider it local knowledge, at your service.',
   cta: { to: '/inquiry', label: 'Discover life in Spain' },
-  image: lifestyleGolf,
-  alt: 'Golf fairway with bunkers at dusk',
+  image: lifestyleHero,
+  alt: 'Modern villa terrace with glass rail overlooking the sea at dusk',
 }
 
 // ponytail: spec p12 — remove Explore, use nicer icons, larger titles
