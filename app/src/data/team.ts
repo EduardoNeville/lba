@@ -1,5 +1,6 @@
 import teamMarisela from '../assets/team-marisela.jpg'
 import teamJoseLuis from '../assets/team-joseluis.jpg'
+import teamGalina from '../assets/team-galina.jpg'
 
 export interface TeamMember {
   name: string
@@ -35,6 +36,13 @@ export const team: TeamMember[] = [
     bio: 'Lawyer specialising in employment and labour law, advising both companies and individuals across Spain.',
     photo: teamJoseLuis,
     slug: '/team/jose-luis-diaz-vazquez',
+  },
+  {
+    name: 'Galina Dimitrova Nencheva',
+    role: 'Client Services Manager',
+    bio: 'Marketing por la Universidad de Economía de Varna (Bulgaria). Forma parte del equipo, aportando una amplia experiencia en atención al cliente internacional, gestión de servicios y coordinación administrativa. A lo largo de más de diez años de trayectoria profesional ha desarrollado sólidas habilidades organizativas, contribuyendo a ofrecer un servicio cercano, eficiente y de alta calidad.',
+    photo: teamGalina,
+    slug: '/team/galina-dimitrova-nencheva',
   },
 ]
 
