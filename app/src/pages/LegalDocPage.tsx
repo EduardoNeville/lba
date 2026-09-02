@@ -6,7 +6,7 @@ import type { LegalDoc } from '../data/legalDocs'
 
 export function LegalDocPage({ doc }: { doc: LegalDoc }) {
   useEffect(() => {
-    setPageMeta(`${doc.title} — Legal Boutique Advisers`)
+    setPageMeta(`${doc.title} · Legal Boutique Advisers`)
   }, [doc])
 
   return (

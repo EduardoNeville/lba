@@ -50,7 +50,7 @@ export function BlogPostPage() {
         if (!cancelled) {
           setPost(data)
           setHtml(renderMarkdown(data.bodyMarkdown || ''))
-          setPageMeta(`${data.title} — Legal Boutique Advisers`, data.excerpt)
+          setPageMeta(`${data.title} · Legal Boutique Advisers`, data.excerpt)
         }
       } catch {
         if (!cancelled) setNotFound(true)

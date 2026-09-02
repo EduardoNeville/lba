@@ -311,7 +311,7 @@ export function AdminPage() {
       <Container>
         <div className="flex flex-wrap items-center justify-between gap-4 border-b border-hairline pb-6">
           <div>
-            <h1 className="font-display text-2xl uppercase">Journal — Admin</h1>
+            <h1 className="font-display text-2xl uppercase">Journal · Admin</h1>
             <p className="micro mt-1 text-taupe">Text + images v1. Markdown supported.</p>
           </div>
           <div className="flex items-center gap-3">
@@ -359,7 +359,7 @@ export function AdminPage() {
 
             <div className="mt-8 rounded border border-hairline bg-parchment/60 p-4 text-[12px] leading-relaxed text-taupe">
               <p className="font-display text-ink">How to add an image:</p>
-              <p className="mt-1">Cover image → “Upload cover”. Inline → “Add image to body” (auto-inserts at your cursor). Images save to Firebase Storage under <code className="bg-parchment px-1">blog/…</code> and go live instantly — no redeploy needed.</p>
+              <p className="mt-1">Cover image → “Upload cover”. Inline → “Add image to body” (auto-inserts at your cursor). Images save to Firebase Storage under <code className="bg-parchment px-1">blog/…</code> and go live instantly. No redeploy needed.</p>
               <p className="mt-2 text-ink">Markdown: <code>**bold**</code>, <code>*italic*</code>, <code>[link](https://…)</code>, <code># H1</code>, <code>## H2</code>, <code>- list</code>, <code>---</code> rule, <code>![alt](url)</code> (auto via upload). Preview with the “Preview” toggle.</p>
             </div>
           </>
@@ -449,7 +449,7 @@ export function AdminPage() {
                       <input type="checkbox" checked={form.status === 'published'} onChange={(e) => setForm((f) => ({ ...f, status: e.target.checked ? 'published' : 'draft' }))} className="h-4 w-4 accent-oxblood" />
                       <span className="micro text-ink">Published</span>
                     </label>
-                    <span className="text-[11px] text-taupe">{form.status === 'published' ? 'Visible at /blog' : 'Draft — only you can see it'}</span>
+                    <span className="text-[11px] text-taupe">{form.status === 'published' ? 'Visible at /blog' : 'Draft · only you can see it'}</span>
                   </div>
 
                   {saveError && <p className="micro text-oxblood">{saveError}</p>}

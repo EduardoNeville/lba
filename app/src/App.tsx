@@ -31,34 +31,34 @@ function ScrollToTop() {
 const ROUTE_META: Record<string, { title: string; description?: string }> = {
   '/': {
     title: 'Legal Boutique Advisers | Legal, property & private client advice in Spain',
-    description: 'Independent legal, property and private client advice in Spain — personal, discreet and tailored to international clients.',
+    description: 'Independent legal, property and private client advice in Spain · personal, discreet and tailored to international clients.',
   },
   '/about': {
-    title: 'About Us — Legal Boutique Advisers',
+    title: 'About Us · Legal Boutique Advisers',
     description: 'A boutique legal practice in Marbella: legal expertise, property advisory and private client services under one trusted roof.',
   },
   '/property': {
-    title: 'Property Advisory in Spain — Legal Boutique Advisers',
+    title: 'Property Advisory in Spain · Legal Boutique Advisers',
     description: 'Acquiring, structuring and letting property in Spain with independent, client-side advice.',
   },
   '/legal': {
-    title: 'Legal Advice in Spain — Legal Boutique Advisers',
+    title: 'Legal Advice in Spain · Legal Boutique Advisers',
     description: 'Residency, tax, inheritance, corporate and commercial legal advice for private and international clients in Spain.',
   },
   '/private-client': {
-    title: 'Private Client Services — Legal Boutique Advisers',
+    title: 'Private Client Services · Legal Boutique Advisers',
     description: 'Relocation, home management, lifestyle and concierge services for international clients living in Spain.',
   },
   '/lifestyle': {
-    title: 'Lifestyle — Legal Boutique Advisers',
+    title: 'Lifestyle · Legal Boutique Advisers',
     description: 'A curated look at life on the Costa del Sol: culture, golf, residences and the Spanish way of living.',
   },
   '/blog': {
-    title: 'Journal — Legal Boutique Advisers',
+    title: 'Journal · Legal Boutique Advisers',
     description: 'Notes on living, investing and building a life in Spain, from the Legal Boutique Advisers team.',
   },
   '/inquiry': {
-    title: 'Enquire — Legal Boutique Advisers',
+    title: 'Enquire · Legal Boutique Advisers',
     description: 'Tell us about your plans in Spain. Every enquiry is read by a partner and treated with discretion.',
   },
 }

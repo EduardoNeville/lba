@@ -5,14 +5,14 @@ import { setPageMeta } from '../lib/seo'
 
 export function NotFoundPage() {
   useEffect(() => {
-    setPageMeta('Page not found — Legal Boutique Advisers', 'The page you were looking for does not exist.')
+    setPageMeta('Page not found · Legal Boutique Advisers', 'The page you were looking for does not exist.')
   }, [])
 
   return (
     <section className="py-20 md:py-28">
       <Container>
         <div className="mx-auto max-w-xl text-center">
-          <p className="micro text-taupe">404 — Page not found</p>
+          <p className="micro text-taupe">Page not found</p>
           <h1 className="font-display mt-4 text-3xl uppercase leading-[1.08] tracking-wide md:text-5xl">
             This page does not exist.
           </h1>
