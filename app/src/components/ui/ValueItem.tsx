@@ -19,7 +19,7 @@ export function ValueItem({
       {link && (
         <a href={link.to} className="micro group mt-4 inline-flex items-center gap-2 text-[10px] text-ink transition-colors hover:text-oxblood">
           {link.label}
-          <span aria-hidden className="transition-transform group-hover:translate-x-1">→</span>
+          <span aria-hidden>→</span>
         </a>
       )}
     </div>

@@ -11,7 +11,7 @@ export function ArrowLink({
 }) {
   const cls = `micro group inline-flex items-center gap-2 text-[11px] text-ink transition-colors hover:text-oxblood ${className}`
   const arrow = (
-    <span aria-hidden className="transition-transform group-hover:translate-x-1">
+    <span aria-hidden>
       →
     </span>
   )
