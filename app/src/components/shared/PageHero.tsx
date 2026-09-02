@@ -1,5 +1,6 @@
 import { ButtonLink } from '../ui/ButtonLink'
 import { Container } from '../ui/Container'
+import { ScrollCue } from '../ui/ScrollCue'
 
 export function PageHero({
   eyebrow: _eyebrow,
@@ -21,9 +22,9 @@ export function PageHero({
   titleCase?: 'upper' | 'sentence'
 }) {
   return (
-    <section className="relative isolate flex min-h-[100svh] items-center overflow-hidden">
+    <section className="relative isolate flex hero-screen items-center overflow-hidden">
       {image && <img src={image} alt={alt ?? ''} className="absolute inset-0 -z-20 h-full w-full object-cover object-center" />}
-      <div className="absolute inset-0 -z-10 bg-gradient-to-r from-cream via-cream/80 to-transparent" />
+      <div className="absolute inset-0 -z-10 bg-cream/70" />
       <Container>
         <div className="max-w-[560px] py-16 md:py-20">
           <div>
@@ -44,6 +45,9 @@ export function PageHero({
           </div>
         </div>
       </Container>
+      <div className="absolute inset-x-0 bottom-6 flex justify-center">
+        <ScrollCue />
+      </div>
     </section>
   )
 }
