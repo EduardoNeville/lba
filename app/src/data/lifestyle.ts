@@ -1,4 +1,5 @@
 import lifestyleHero from '../assets/property-hero.jpg'
+import golfMosaic from '../assets/lifestyle-golf.jpg'
 import ctaLifestyle from '../assets/cta-lifestyle.jpg'
 
 export const hero = {
@@ -36,7 +37,7 @@ export const access = {
 }
 
 export const mosaic = [
-  { src: lifestyleGolf, alt: 'Golf fairway with bunkers at dusk' },
+  { src: golfMosaic, alt: 'Golf fairway with bunkers at dusk' },
   { src: ctaLifestyle, alt: 'Dusk coast framed by olive branches' },
 ]
 

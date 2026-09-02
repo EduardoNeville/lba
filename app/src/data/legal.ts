@@ -1,6 +1,5 @@
 import officeDespacho from "../assets/office-despacho.jpg";
 import legalPracticeVertical from "../assets/legal-practice-vertical.jpg";
-import legalResidency from "../assets/legal-residency.jpg";
 import homeHero from "../assets/home-hero.jpg";
 import ctaCoast from "../assets/cta-coast.jpg";
 import ctaBotanical from "../assets/cta-botanical.jpg";
