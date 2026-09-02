@@ -213,7 +213,7 @@ function TeamSection() {
               <h3 className="font-display mt-5 text-base uppercase tracking-[0.12em] md:text-lg">
                 {m.name}
               </h3>
-              <p className="font-display mt-1 text-[11px] italic text-taupe">
+              <p className="font-display mt-1 text-[13px] italic text-taupe">
                 {m.role}
               </p>
               <p className="mt-3 text-[13px] leading-relaxed text-taupe">
