@@ -56,7 +56,7 @@ export function BlogListPage() {
             Insights &amp; updates
           </h1>
           <p className="mt-6 max-w-prose text-sm leading-relaxed text-taupe md:text-[15px]">
-            Notes on property, law and life in Spain — from our team in Marbella.
+            Notes on property, law and life in Spain, from our team in Marbella.
           </p>
         </Container>
       </section>
@@ -69,7 +69,7 @@ export function BlogListPage() {
             <p className="text-sm leading-relaxed text-taupe">No posts yet. Check back soon.</p>
           )}
           {posts && posts.length > 0 && (
-            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {posts.map((p) => (
                 <Link
                   key={p.slug}

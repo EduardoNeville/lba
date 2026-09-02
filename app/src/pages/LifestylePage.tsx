@@ -24,7 +24,7 @@ function AssistRow() {
       <Container>
         <p className="font-display mb-2 text-center text-xl uppercase tracking-[0.12em]">How We Can Assist</p>
         <div className="mx-auto mb-10 h-px w-8 bg-oxblood" />
-        <div className="grid grid-cols-2 gap-10 text-center md:grid-cols-3 lg:grid-cols-5">
+        <div className="grid grid-cols-2 gap-8 text-center md:grid-cols-3 lg:grid-cols-5">
           {assist.map((a) => (
             <ValueItem key={a.title} icon={a.icon} title={a.title} body={a.body} />
           ))}

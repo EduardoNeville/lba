@@ -19,7 +19,7 @@ export function Checklist({
   columns?: 1 | 2
 }) {
   return (
-    <ul className={`${columns === 2 ? 'grid gap-x-8 gap-y-2.5 sm:grid-cols-2' : 'space-y-2.5'}`}>
+    <ul className={`${columns === 2 ? 'grid gap-x-6 gap-y-2.5 sm:grid-cols-2' : 'space-y-2.5'}`}>
       {items.map((item) => (
         <li key={item} className="flex items-start gap-3">
           {Markers[marker]}

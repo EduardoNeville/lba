@@ -4,7 +4,7 @@ export function CrossLinkBand({ left, center, right }: { left: React.ReactNode; 
   return (
     <section className="py-20 md:py-28">
       <Container>
-        <div className="grid items-stretch gap-10 lg:grid-cols-[1fr_380px_1fr] lg:gap-14">
+        <div className="grid items-stretch gap-8 lg:grid-cols-[1fr_380px_1fr] lg:gap-10">
           <div className="flex flex-col justify-center">{left}</div>
           <div className="overflow-hidden">
             <div className="h-full min-h-[380px]">{center}</div>

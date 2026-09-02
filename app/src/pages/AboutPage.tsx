@@ -93,7 +93,7 @@ function AboutHero() {
   return (
     <section className="py-20 md:py-28">
       <Container>
-        <div className="grid items-start gap-12 lg:grid-cols-12 lg:gap-16">
+        <div className="grid items-start gap-8 lg:grid-cols-12 lg:gap-10">
           <div className="lg:col-span-7">
             <h1 className="font-display max-w-[22ch] text-4xl uppercase leading-[1.08] tracking-wide md:text-5xl lg:text-[3.5rem]">
               {hero.title}
@@ -124,7 +124,7 @@ function LegacySplit() {
   return (
     <section className="py-20 md:py-28">
       <Container>
-        <div className="grid items-center gap-12 lg:grid-cols-12">
+        <div className="grid items-center gap-8 lg:grid-cols-12">
           <div className="lg:col-span-5">
             <img
               src={aboutLegacy}
@@ -155,7 +155,7 @@ function CultureSplit() {
   return (
     <section className="py-20 md:py-28 bg-cream/50">
       <Container>
-        <div className="grid gap-10 lg:grid-cols-12 lg:gap-16">
+        <div className="grid gap-8 lg:grid-cols-12 lg:gap-10">
           <div className="lg:col-span-7">
             <div className="flex items-center gap-3">
               <span aria-hidden className="h-px w-8 bg-ink/60" />
@@ -168,7 +168,7 @@ function CultureSplit() {
               ))}
             </div>
           </div>
-          <div className="lg:col-span-5 lg:border-l lg:border-hairline lg:pl-12 flex flex-col items-center justify-center text-center">
+          <div className="lg:col-span-5 lg:border-l lg:border-hairline lg:pl-10 flex flex-col items-center justify-center text-center">
             <img src={musicaImage} alt="Centro de Divulgación Musical del Mediterráneo" className="h-48 w-48 object-contain" />
             <p className="font-display mt-6 whitespace-pre-line text-center text-lg italic leading-relaxed text-taupe">{culture.tagline}</p>
             <div className="mx-auto mt-4 h-px w-8 bg-oxblood" />
@@ -197,7 +197,7 @@ function TeamSection() {
     <section className="py-20 md:py-28">
       <Container>
         <p className="micro mb-12 text-center text-taupe">{team.heading}</p>
-        <div className="grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-x-6 gap-y-14 sm:grid-cols-2 lg:grid-cols-4">
           {team.members.map((m) => (
             <div key={m.name}>
               {m.photo ? (
@@ -233,7 +233,7 @@ function ApproachSection() {
     <section className="py-20 md:py-28">
       <Container>
         <p className="micro mb-12 text-center text-taupe">Our Approach</p>
-        <div className="mt-10 grid gap-10 pt-12 text-center sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10 grid gap-8 pt-12 text-center sm:grid-cols-2 lg:grid-cols-4">
           {values.map((v) => (
             <ValueItem
               key={v.title}

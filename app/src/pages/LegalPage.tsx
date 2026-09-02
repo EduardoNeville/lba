@@ -42,7 +42,7 @@ function Pillars() {
           clients, their businesses and their families.
         </p>
         <div className="mx-auto mt-4 h-px w-8 bg-oxblood" />
-        <div className="mt-12 grid gap-10 text-center sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid gap-8 text-center sm:grid-cols-2 lg:grid-cols-4">
           {pillars.map((p) => (
             <ValueItem
               key={p.title}
@@ -66,7 +66,7 @@ function AdviceGrid() {
           Our Areas of Legal Advice
         </p>
         <div className="mx-auto mb-10 h-px w-8 bg-oxblood" />
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {areas.map((a) => (
             <ServiceCard key={a.title} {...a} link="/inquiry" />
           ))}
