@@ -40,7 +40,7 @@ export const team: TeamMember[] = [
   {
     name: 'Galina Dimitrova Nencheva',
     role: 'Client Services Manager',
-    bio: 'Marketing por la Universidad de Economía de Varna (Bulgaria). Forma parte del equipo, aportando una amplia experiencia en atención al cliente internacional, gestión de servicios y coordinación administrativa. A lo largo de más de diez años de trayectoria profesional ha desarrollado sólidas habilidades organizativas, contribuyendo a ofrecer un servicio cercano, eficiente y de alta calidad.',
+    bio: 'Graduate in Marketing from the University of Economics of Varna (Bulgaria). She brings more than ten years of experience in international client care, service management and administrative coordination, providing attentive, efficient and high-quality service.',
     photo: teamGalina,
     slug: '/team/galina-dimitrova-nencheva',
   },

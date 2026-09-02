@@ -26,7 +26,7 @@ export const fr = {
       { name: 'Esther Neville', role: 'Conseillère Immobilier & Clientèle Privée', bio: 'Issue d’une formation juridique et titulaire d’un Master en Droit et Économie, Esther dirige les activités de conseil immobilier et de clientèle privée du cabinet, accompagnant une clientèle internationale dans ses investissements et sa vie en Espagne.' },
       { name: 'Bettina R. Lindstrøm', role: 'Architecte collaboratrice', bio: 'Architecte spécialisée en architecture, urbanisme et conception respectueuse de l’environnement. Elle accompagne nos clients sur des projets allant de la rénovation à la construction neuve.' },
       { name: 'José Luis Díaz Vázquez', role: 'Conseil juridique', bio: 'Avocat spécialisé en droit du travail, il conseille entreprises et particuliers dans toute l’Espagne.' },
-      { name: 'Galina Dimitrova Nencheva', role: 'Client Services Manager', bio: 'Marketing por la Universidad de Economía de Varna (Bulgaria). Forma parte del equipo, aportando una amplia experiencia en atención al cliente internacional, gestión de servicios y coordinación administrativa. A lo largo de más de diez años de trayectoria profesional ha desarrollado sólidas habilidades organizativas, contribuyendo a ofrecer un servicio cercano, eficiente y de alta calidad.' },
+      { name: 'Galina Dimitrova Nencheva', role: 'Client Services Manager', bio: 'Diplômée en marketing de l’Université d’économie de Varna (Bulgarie). Elle apporte plus de dix ans d’expérience en relation client internationale, gestion de services et coordination administrative, offrant un service attentionné, efficace et de qualité.' },
     ],
   },
   values: [
@@ -80,7 +80,7 @@ export const es = {
       { name: 'Esther Neville', role: 'Asesora de Propiedad y Cliente Privado', bio: 'Con formación jurídica y un Máster en Derecho y Economía, Esther dirige el asesoramiento inmobiliario y de clientes privados del despacho, trabajando con una clientela internacional en sus inversiones y su vida en España.' },
       { name: 'Bettina R. Lindstrøm', role: 'Arquitecta Colaboradora', bio: 'Arquitecta especializada en arquitectura, urbanismo y diseño respetuoso con el medio ambiente. Colabora con nuestros clientes en proyectos que abarcan desde reformas hasta obra nueva.' },
       { name: 'José Luis Díaz Vázquez', role: 'Asesor Jurídico', bio: 'Abogado especializado en derecho laboral, asesorando tanto a empresas como a particulares en toda España.' },
-      { name: 'Galina Dimitrova Nencheva', role: 'Client Services Manager', bio: 'Marketing por la Universidad de Economía de Varna (Bulgaria). Forma parte del equipo, aportando una amplia experiencia en atención al cliente internacional, gestión de servicios y coordinación administrativa. A lo largo de más de diez años de trayectoria profesional ha desarrollado sólidas habilidades organizativas, contribuyendo a ofrecer un servicio cercano, eficiente y de alta calidad.' },
+      { name: 'Galina Dimitrova Nencheva', role: 'Client Services Manager', bio: 'Graduada en Marketing por la Universidad de Economía de Varna (Bulgaria). Aporta más de diez años de experiencia en atención al cliente internacional, gestión de servicios y coordinación administrativa, ofreciendo un servicio cercano, eficiente y de alta calidad.' },
     ],
   },
   values: [
