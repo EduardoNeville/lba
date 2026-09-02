@@ -16,7 +16,7 @@ export function SiteFooter() {
 
   return (
     <footer className="bg-maroon text-cream">
-      <div className="mx-auto grid w-full max-w-[1200px] gap-10 px-6 py-14 sm:grid-cols-2 md:px-10 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
+      <div className="mx-auto grid w-full max-w-[1200px] gap-8 px-6 py-14 sm:grid-cols-2 md:px-10 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
         {/* Lockup + tagline */}
         <div>
           <p className="font-display text-lg uppercase tracking-[0.15em] text-cream">
@@ -91,8 +91,8 @@ export function SiteFooter() {
           </address>
           <div className="mt-5 flex items-center gap-4">
             {SOCIALS.map((s) => (
-              <a key={s.name} href={s.href} target="_blank" rel="noreferrer" aria-label={s.label} className="text-white transition-colors hover:text-white">
-                <Icon name={s.name} className="h-4 w-4 !text-white" />
+              <a key={s.name} href={s.href} target="_blank" rel="noreferrer" aria-label={s.label} className="text-cream transition-colors hover:text-cream">
+                <Icon name={s.name} className="h-4 w-4 !text-cream" />
               </a>
             ))}
             <span className="ml-2 flex items-center gap-1 text-[10px] uppercase tracking-[0.2em] text-cream/60">
@@ -102,7 +102,7 @@ export function SiteFooter() {
                   type="button"
                   onClick={() => setLang(l)}
                   aria-label={`Switch to ${l.toUpperCase()}`}
-                  className={`px-1.5 py-1 transition-colors ${lang === l ? 'text-white underline underline-offset-4' : 'text-cream/70 hover:text-cream'}`}
+                  className={`px-1.5 py-1 transition-colors ${lang === l ? 'text-cream underline underline-offset-4' : 'text-cream/70 hover:text-cream'}`}
                 >
                   {l.toUpperCase()}
                 </button>

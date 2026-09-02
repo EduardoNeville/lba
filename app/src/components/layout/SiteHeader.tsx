@@ -7,7 +7,7 @@ import logoBrush from '../../assets/logo-lba-brush.svg'
 
 function Logo() {
   return (
-    <Link to="/" className="flex items-center -my-1" aria-label="Legal Boutique Advisers — home">
+    <Link to="/" className="flex items-center -my-1" aria-label="Legal Boutique Advisers home page">
       <img src={logoBrush} alt="Legal Boutique Advisers" className="h-12 w-auto object-contain md:h-[52px] lg:h-14" />
     </Link>
   )
@@ -54,11 +54,11 @@ export function SiteHeader() {
   }, [open])
 
   return (
-    <header className="sticky top-0 z-50 border-b border-hairline bg-cream backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-hairline bg-cream">
       <div className="flex h-14 items-center justify-between px-6 md:px-10 lg:h-20">
         <Logo />
         <nav aria-label="Main" className="hidden lg:block">
-          <ul className="flex items-center gap-8">
+          <ul className="flex items-center gap-6">
             {NAV.map((item) => (
               <li key={item.to}>
                 <NavLink
