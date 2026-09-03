@@ -1,7 +1,7 @@
 {
   "firestore": [
     { "database": "(default)", "rules": "firestore.rules" },
-    { "database": "dev", "rules": "firestore.rules" }
+    { "database": "lba-dev", "rules": "firestore.rules" }
   ],
   "storage": {
     "rules": "storage.rules"
