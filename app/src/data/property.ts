@@ -61,7 +61,7 @@ export const crossLink = {
       "Concierge Services",
       "Lifestyle & Local Knowledge",
     ],
-    link: { to: "/private-client", label: "Explore private client" },
+    link: { to: "/private-client", label: "Explore private client services" },
   },
 };
 

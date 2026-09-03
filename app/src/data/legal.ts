@@ -1,8 +1,6 @@
 import officeDespacho from "../assets/office-despacho.jpg";
 import legalPracticeVertical from "../assets/legal-practice-vertical.jpg";
-import homeHero from "../assets/home-hero.jpg";
 import ctaCoast from "../assets/cta-coast.jpg";
-import ctaBotanical from "../assets/cta-botanical.jpg";
 
 export const hero = {
   eyebrow: "Legal",
@@ -40,7 +38,6 @@ export const pillars = [
   },
 ];
 
-// ponytail: p7 — reuse existing assets until new shoots arrive (spec says reuse portada images)
 export const areas = [
   {
     num: "01",
@@ -53,8 +50,6 @@ export const areas = [
       "Co-ownership & Development",
       "Leases & Tenancy",
     ],
-    image: homeHero,
-    alt: "Modern villa",
   },
   {
     num: "02",
@@ -67,8 +62,6 @@ export const areas = [
       "Tax Compliance",
       "International Mobility",
     ],
-    image: ctaBotanical,
-    alt: "Botanical detail",
   },
   {
     num: "03",
@@ -81,14 +74,11 @@ export const areas = [
       "Shareholders Agreements",
       "Regulatory Matters",
     ],
-    image: ctaCoast,
-    alt: "Coastal view",
   },
 ];
 
 export const practice = {
-  eyebrow: "Our Legal Practice",
-  heading: "Commercial minds. Legal excellence.",
+  heading: "Our Legal Practice",
   body: "Our connected law firm provides full-service legal advice to businesses and private clients in Spain and internationally. Complex matters. Clear solutions.",
   cta: { to: "https://mariselacastro.com", label: "Visit our legal practice" },
   image: legalPracticeVertical,

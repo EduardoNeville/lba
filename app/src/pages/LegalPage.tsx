@@ -60,7 +60,7 @@ function Pillars() {
 function AdviceGrid() {
   const { areas } = useLegalData();
   return (
-    <section className="pb-20 md:pb-28">
+    <section className="pb-0">
       <Container>
         <p className="micro mb-2 text-center text-oxblood">
           Our Areas of Legal Advice
