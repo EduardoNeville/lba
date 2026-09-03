@@ -1,4 +1,5 @@
 import homeHero from '../assets/home-hero.jpg'
+import heroBg from '../assets/home-hero-new.jpg'
 import officeDespacho from '../assets/office-despacho.jpg'
 import ctaBotanical from '../assets/cta-botanical.jpg'
 import pcKeys from '../assets/pc-keys.jpg'
@@ -6,10 +7,11 @@ import type { Residence } from '../components/shared/ResidencesStrip'
 
 export const hero = {
   eyebrow: 'Home',
-  image: homeHero,
-  alt: 'Dusk villa terrace with infinity pool overlooking the coast',
-  heading: 'Legal · Property · Private Client Services',
-  sub: 'A private advisory for international clients, their investments, properties and life in Spain.',
+  image: heroBg,
+  alt: 'Marbella, Spain',
+  heading: 'Lawyers & Property Advisers',
+  sub: 'Based in Marbella',
+  body: 'Legal expertise and personal property advice for international clients. We help you buy, sell, and invest in Spain, while advising on your wider legal, business, and family matters.',
 }
 
 export const intro = {

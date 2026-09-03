@@ -2,9 +2,10 @@
 export const fr = {
   hero: {
     eyebrow: 'Accueil',
-    alt: 'Terrasse de villa au crépuscule avec piscine à débordement surplombant la côte',
-    heading: 'Juridique · Propriété · Services aux clients privés',
-    sub: 'Un service de conseil privé destiné aux clients internationaux, à leurs investissements, à leurs biens immobiliers et à leur vie en Espagne.',
+    alt: 'Marbella, Espagne',
+    heading: 'Avocats & Conseillers Immobiliers',
+    sub: 'Basés à Marbella',
+    body: 'Expertise juridique et conseil immobilier personnalisé pour une clientèle internationale. Nous vous accompagnons dans l’achat, la vente et l’investissement en Espagne, tout en vous conseillant sur vos questions juridiques, professionnelles et familiales.',
   },
   intro: {
     heading: 'Bien plus que l’immobilier.',
@@ -39,9 +40,10 @@ export const fr = {
 export const es = {
   hero: {
     eyebrow: 'Inicio',
-    alt: 'Terraza de villa al atardecer con piscina infinita sobre la costa',
-    heading: 'Legal · Propiedad · Servicios para clientes privados',
-    sub: 'Un servicio de asesoramiento privado para clientes internacionales, sus inversiones, propiedades y vida en España.',
+    alt: 'Marbella, España',
+    heading: 'Abogados & Asesores Inmobiliarios',
+    sub: 'Con base en Marbella',
+    body: 'Experiencia jurídica y asesoramiento inmobiliario personalizado para clientes internacionales. Le ayudamos a comprar, vender e invertir en España, además de asesorarle en sus asuntos jurídicos, empresariales y familiares.',
   },
   intro: {
     heading: 'Mucho más que propiedad.',

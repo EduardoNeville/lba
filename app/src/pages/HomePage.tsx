@@ -59,9 +59,15 @@ function HomeHero() {
       />
       <div className="absolute inset-0 -z-10 bg-cream/60" />
       <div className="px-6 text-center">
-        <p className="mx-auto mt-6 max-w-xl text-sm leading-relaxed text-ink/75 md:text-[15px]">
-          {hero.sub}
-        </p>
+        <h1 className="font-display text-4xl uppercase leading-[1.1] tracking-wide text-ink md:text-6xl">
+          {hero.heading}
+        </h1>
+        {hero.sub && <p className="micro mt-4 text-[11px] text-ink/70">{hero.sub}</p>}
+        {hero.body && (
+          <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-ink/75 md:text-[15px]">
+            {hero.body}
+          </p>
+        )}
         <div className="mt-8">
           <ButtonLink to="/about">Discover more →</ButtonLink>
         </div>
