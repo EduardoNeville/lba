@@ -94,9 +94,9 @@ export function BlogPostPage() {
             <Link to="/blog" className="micro text-taupe hover:text-oxblood">
               ← Journal
             </Link>
-            <h1 className="font-display mt-6 max-w-[22ch] text-3xl uppercase leading-[1.08] tracking-wide md:text-5xl">{post.title}</h1>
+            <h1 className="font-display mt-6 text-3xl uppercase leading-[1.08] tracking-wide md:text-5xl">{post.title}</h1>
             <p className="micro mt-4 text-taupe">{formatDate(post.publishedAt ?? post.updatedAt)}</p>
-            {post.excerpt && <p className="mt-6 max-w-prose font-display italic text-[17px] leading-relaxed text-taupe">{post.excerpt}</p>}
+            {post.excerpt && <p className="mt-6 font-display italic text-[17px] leading-relaxed text-taupe">{post.excerpt}</p>}
           </Container>
         </section>
 
