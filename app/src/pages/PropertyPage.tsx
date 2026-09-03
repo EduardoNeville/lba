@@ -64,7 +64,6 @@ export function PropertyPage() {
     <>
       <PageHero {...hero} />
       <ServicesTrio />
-      <ResidencesStrip residences={residences} showLink allLink="/property" />
       <CrossLinkBand
         left={
           <div>
@@ -112,6 +111,7 @@ export function PropertyPage() {
           </div>
         }
       />
+      <ResidencesStrip residences={residences} showLink allLink="/property" />
       <CtaBand
         heading={cta.heading}
         subline={cta.subline}

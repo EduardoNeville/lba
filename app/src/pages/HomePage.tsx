@@ -152,7 +152,6 @@ function PracticeAreas() {
                     loading="lazy"
                     className={`aspect-[3/4] w-full object-cover ${p.imagePos ?? 'object-center'}`}
                   />
-                  />
                 ) : (
                   <div
                     className="aspect-[3/4] w-full bg-parchment"
