@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Container } from '../components/ui/Container'
 import { CtaBand } from '../components/shared/CtaBand'
-import { getApp } from '../lib/firebase'
+import { getApp, firestoreDb } from '../lib/firebase'
 import type { Post } from '../lib/posts'
 import ctaCoast from '../assets/cta-coast.jpg'
 
