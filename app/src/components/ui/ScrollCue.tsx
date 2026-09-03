@@ -2,8 +2,13 @@ import { Icon } from './icons'
 
 export function ScrollCue() {
   return (
-    <span aria-hidden className="scroll-bob">
-      <Icon name="chevron-down" className="h-6 w-6" />
-    </span>
+    <button
+      type="button"
+      aria-label="Scroll down"
+      onClick={() => window.scrollBy({ top: window.innerHeight * 0.9, behavior: 'smooth' })}
+      className="scroll-bob cursor-pointer rounded-full text-ink transition-colors hover:text-oxblood focus:outline-none focus-visible:ring-2 focus-visible:ring-oxblood/40"
+    >
+      <Icon name="chevron-down" className="h-9 w-9" />
+    </button>
   )
 }

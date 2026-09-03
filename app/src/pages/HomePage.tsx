@@ -3,11 +3,10 @@ import { Icon } from "../components/ui/icons";
 import { Container } from "../components/ui/Container";
 import { ButtonLink } from "../components/ui/ButtonLink";
 import { ScrollCue } from "../components/ui/ScrollCue";
-import { ResidencesStrip } from "../components/shared/ResidencesStrip";
 import { CtaBand } from "../components/shared/CtaBand";
 import { useLang } from "../lib/lang";
 import { useUi } from "../lib/nav";
-import { hero, intro, practiceAreas, residences, cta } from "../data/home";
+import { hero, intro, practiceAreas, cta } from "../data/home";
 import { fr, es } from "../data/locales/home";
 
 function useHomeData() {
@@ -23,7 +22,6 @@ function useHomeData() {
         image: practiceAreas[i].image,
         imagePos: practiceAreas[i].imagePos,
       })),
-      residences: residences,
       cta: { ...fr.cta, image: cta.image, ctaLabel: ui.inquire },
     };
   }
@@ -37,7 +35,6 @@ function useHomeData() {
         image: practiceAreas[i].image,
         imagePos: practiceAreas[i].imagePos,
       })),
-      residences: residences,
       cta: { ...es.cta, image: cta.image, ctaLabel: ui.inquire },
     };
   }
@@ -45,7 +42,6 @@ function useHomeData() {
     hero,
     intro,
     practiceAreas,
-    residences,
     cta: { ...cta, ctaLabel: ui.inquire },
   };
 }
@@ -175,7 +171,7 @@ function PracticeAreas() {
 }
 
 export function HomePage() {
-  const { residences, cta } = useHomeData();
+  const { cta } = useHomeData();
   return (
     <>
       <HomeHero />
