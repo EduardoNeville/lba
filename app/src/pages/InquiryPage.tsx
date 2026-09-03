@@ -4,7 +4,6 @@ import { Container } from "../components/ui/Container";
 import { Field } from "../components/ui/Field";
 import { Icon } from "../components/ui/icons";
 import { submitInquiry, InquiryError } from "../lib/submitInquiry";
-import inquiryHero from "../assets/inquiry-hero.jpg";
 import { useLang } from "../lib/lang";
 import { options as optionsEn } from "../data/inquiry";
 import {
@@ -381,44 +380,23 @@ function DiscretionAside() {
   );
 }
 
-function InquiryHero() {
+export function InquiryPage() {
   const { hero } = useInquiryDict();
   return (
-    <section className="py-20 md:py-28">
+    <section id="form" className="py-20 md:py-28">
       <Container>
-        <div className="grid items-start gap-8 lg:grid-cols-12 lg:gap-10">
+        <h1 className="font-display max-w-[22ch] text-4xl leading-[1.08] tracking-wide md:text-5xl lg:text-[3.5rem]">
+          {hero.title}
+        </h1>
+        <div className="mt-14 grid gap-8 lg:grid-cols-12">
           <div className="lg:col-span-7">
-            <h1 className="font-display max-w-[22ch] text-4xl leading-[1.08] tracking-wide md:text-5xl lg:text-[3.5rem]">{hero.title}</h1>
-            {hero.body && <p className="mt-6 max-w-prose text-sm leading-relaxed text-taupe md:text-[15px]">{hero.body}</p>}
-            {hero.subline && <p className="mt-4 max-w-prose font-display text-sm italic text-taupe">{hero.subline}</p>}
+            <InquiryForm />
           </div>
           <div className="lg:col-span-5">
-            <div className="h-72 w-full overflow-hidden lg:h-[520px]">
-              <img src={inquiryHero} alt="Open book with brass pen on stone table, olive branch" className="h-full w-full object-cover" />
-            </div>
+            <DiscretionAside />
           </div>
         </div>
       </Container>
     </section>
-  );
-}
-
-export function InquiryPage() {
-  return (
-    <>
-      <InquiryHero />
-      <section id="form" className="border-t border-hairline py-20 md:py-28">
-        <Container>
-          <div className="grid gap-8 lg:grid-cols-12">
-            <div className="lg:col-span-7">
-              <InquiryForm />
-            </div>
-            <div className="lg:col-span-5">
-              <DiscretionAside />
-            </div>
-          </div>
-        </Container>
-      </section>
-    </>
   );
 }
