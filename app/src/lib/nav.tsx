@@ -30,7 +30,7 @@ const navEnFooter = {
     "info@legalboutiqueadvisers.com",
   ],
   enquire: "Make a private enquiry",
-  rights: "© 2024 Legal Boutique Advisers. All rights reserved.",
+  rights: "© 2021 Legal Boutique Advisers. All rights reserved.",
 };
 const navEnUi = {
   inquire: "Inquire",
