@@ -25,7 +25,7 @@ export function BlogListPage() {
     async function load() {
       try {
         const { collection, getDocs, getFirestore, query, where } = await import('firebase/firestore')
-        const db = getFirestore(getApp())
+        const db = getFirestore(getApp(), firestoreDb)
         const snap = await getDocs(query(collection(db, 'posts'), where('status', '==', 'published')))
         const arr = snap.docs.map((d) => ({ slug: d.id, ...(d.data() as Omit<Post, 'slug'>) })) as Post[]
         arr.sort((a, b) => {

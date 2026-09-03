@@ -16,7 +16,7 @@ export class InquiryError extends Error {}
 export async function submitInquiry(input: InquiryInput): Promise<void> {
   try {
     const { addDoc, collection, getFirestore, serverTimestamp } = await import('firebase/firestore')
-    const db = getFirestore(getApp())
+    const db = getFirestore(getApp(), firestoreDb)
     await addDoc(collection(db, 'inquiries'), {
       ...input,
       consent: true,

@@ -34,7 +34,7 @@ export function BlogPostPage() {
     async function load() {
       try {
         const { doc, getDoc, getFirestore } = await import('firebase/firestore')
-        const db = getFirestore(getApp())
+        const db = getFirestore(getApp(), firestoreDb)
         const snap = await getDoc(doc(db, 'posts', slugVal))
         if (!snap.exists()) {
           if (!cancelled) setNotFound(true)
@@ -108,7 +108,7 @@ export function BlogPostPage() {
 
         <section className="py-12 md:py-16">
           <Container>
-            <div className="max-w-[68ch]">
+            <div>
               <div className="blog-content" dangerouslySetInnerHTML={{ __html: html }} />
             </div>
             <div className="mt-12 border-t border-hairline pt-8">
