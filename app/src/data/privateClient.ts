@@ -4,7 +4,7 @@ import pcArchitecture from "../assets/pc-architecture.jpg";
 import pcConciergeLifestyle from "../assets/golf-lake-villa-padierna.jpg";
 import pcPeace from "../assets/pc-peace.jpg";
 import pcTerraceHero from "../assets/pc-terrace-hero.jpg";
-import ctaPrivate from "../assets/cta-private-client.jpg";
+import ctaCoast from "../assets/cta-coast.jpg";
 
 export const hero = {
   eyebrow: "Private Client Services",
@@ -99,5 +99,5 @@ export const partners = {
 export const cta = {
   heading: "How can we assist you?",
   subline: "Tell us what brings you to Spain.",
-  image: ctaPrivate,
+  image: ctaCoast,
 };
