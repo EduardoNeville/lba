@@ -84,9 +84,10 @@ export function LegalPage() {
       <Pillars />
       <AdviceGrid />
       <CrossLinkBand
+        size="sm"
+        narrow
         left={
           <div>
-            <p className="micro text-oxblood">{practice.eyebrow}</p>
             <h2 className="font-display mt-3 text-2xl uppercase leading-snug">
               {practice.heading}
             </h2>

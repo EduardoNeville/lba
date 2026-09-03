@@ -65,9 +65,9 @@ export function PropertyPage() {
       <PageHero {...hero} />
       <ServicesTrio />
       <CrossLinkBand
+        size="sm"
         left={
           <div>
-            <p className="micro text-oxblood">{crossLink.left.eyebrow}</p>
             <h2 className="font-display mt-3 text-2xl uppercase leading-snug">
               {crossLink.left.heading}
             </h2>
@@ -92,7 +92,6 @@ export function PropertyPage() {
         }
         right={
           <div>
-            <p className="micro text-oxblood">{crossLink.right.eyebrow}</p>
             <h2 className="font-display mt-3 text-2xl uppercase leading-snug">
               {crossLink.right.heading}
             </h2>
