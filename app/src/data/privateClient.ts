@@ -1,7 +1,7 @@
 import pcRelocation from "../assets/pc-relocation.jpg";
 import pcHomeMgmt from "../assets/pc-home-mgmt.jpg";
 import pcArchitecture from "../assets/pc-architecture.jpg";
-import pcConciergeLifestyle from "../assets/pc-concierge-lifestyle.jpg";
+import pcConciergeLifestyle from "../assets/golf-lake-villa-padierna.jpg";
 import pcPeace from "../assets/pc-peace.jpg";
 import pcTerraceHero from "../assets/pc-terrace-hero.jpg";
 import ctaPrivate from "../assets/cta-private-client.jpg";
@@ -56,7 +56,7 @@ export const services = [
   },
   {
     image: pcConciergeLifestyle,
-    alt: "Candlelit terrace table at dusk overlooking a Mediterranean harbour",
+    alt: "Golf lake at Villa Padierna, Marbella",
     title: "Concierge & Lifestyle",
     body: "From everyday requests to exceptional experiences, we provide solutions that save you time and enhance your life in Spain.",
     link: "/inquiry",
