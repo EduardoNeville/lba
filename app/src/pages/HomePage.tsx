@@ -64,7 +64,9 @@ function HomeHero() {
         <h1 className="font-display text-4xl uppercase leading-[1.1] tracking-wide text-ink md:text-6xl">
           {hero.heading}
         </h1>
-        {hero.sub && <p className="micro mt-4 text-[11px] text-ink/70">{hero.sub}</p>}
+        {hero.sub && (
+          <p className="micro mt-4 text-[11px] text-ink/70">{hero.sub}</p>
+        )}
         {hero.body && (
           <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-ink/75 md:text-[15px]">
             {hero.body}
@@ -150,7 +152,7 @@ function PracticeAreas() {
                     alt=""
                     aria-hidden
                     loading="lazy"
-                    className={`aspect-[3/4] w-full object-cover ${p.imagePos ?? 'object-center'}`}
+                    className={`aspect-[3/4] w-full object-cover ${p.imagePos ?? "object-center"}`}
                   />
                 ) : (
                   <div
@@ -179,7 +181,6 @@ export function HomePage() {
       <HomeHero />
       <IntroSplit />
       <PracticeAreas />
-      <ResidencesStrip residences={residences} allLink="/property" />
       <CtaBand
         variant="accent"
         heading={cta.heading}
