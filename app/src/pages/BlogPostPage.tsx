@@ -34,7 +34,7 @@ export function BlogPostPage() {
     async function load() {
       try {
         const { doc, getDoc, getFirestore } = await import('firebase/firestore')
-        const db = getFirestore(getApp(), firestoreDb)
+        const db = firestoreDb ? getFirestore(getApp(), firestoreDb) : getFirestore(getApp())
         const snap = await getDoc(doc(db, 'posts', slugVal))
         if (!snap.exists()) {
           if (!cancelled) setNotFound(true)

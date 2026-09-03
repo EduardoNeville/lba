@@ -1,4 +1,4 @@
-import { getApp } from './firebase'
+import { getApp, firestoreDb } from './firebase'
 
 export interface InquiryInput {
   interest: string
@@ -16,7 +16,7 @@ export class InquiryError extends Error {}
 export async function submitInquiry(input: InquiryInput): Promise<void> {
   try {
     const { addDoc, collection, getFirestore, serverTimestamp } = await import('firebase/firestore')
-    const db = getFirestore(getApp(), firestoreDb)
+    const db = firestoreDb ? getFirestore(getApp(), firestoreDb) : getFirestore(getApp())
     await addDoc(collection(db, 'inquiries'), {
       ...input,
       consent: true,

@@ -54,7 +54,7 @@ export function AdminPage() {
 
   async function loadPosts() {
     const { collection, getDocs, getFirestore } = await import('firebase/firestore')
-    const db = getFirestore(getApp(), firestoreDb)
+    const db = firestoreDb ? getFirestore(getApp(), firestoreDb) : getFirestore(getApp())
     const snap = await getDocs(collection(db, 'posts'))
     const arr = snap.docs.map((d) => ({ slug: d.id, ...(d.data() as Omit<PostRow, 'slug'>) })) as PostRow[]
     arr.sort((a, b) => (b.updatedAt?.seconds ?? 0) - (a.updatedAt?.seconds ?? 0))
@@ -214,7 +214,7 @@ export function AdminPage() {
     setSaving(true)
     try {
       const { doc, getFirestore, serverTimestamp, setDoc } = await import('firebase/firestore')
-      const db = getFirestore(getApp(), firestoreDb)
+      const db = firestoreDb ? getFirestore(getApp(), firestoreDb) : getFirestore(getApp())
       const payload: Record<string, unknown> = {
         title,
         excerpt: form.excerpt.trim(),
@@ -253,7 +253,7 @@ export function AdminPage() {
   async function handleDelete(slug: string) {
     if (!confirm(`Delete "${slug}"? This cannot be undone.`)) return
     const { doc, deleteDoc, getFirestore } = await import('firebase/firestore')
-    const db = getFirestore(getApp(), firestoreDb)
+    const db = firestoreDb ? getFirestore(getApp(), firestoreDb) : getFirestore(getApp())
     await deleteDoc(doc(db, 'posts', slug))
     await loadPosts()
     if (editing?.slug === slug) {
