@@ -194,7 +194,7 @@ function CultureSplit() {
 function TeamSection() {
   const { team } = useAboutData();
   return (
-    <section className="py-20 md:py-28">
+    <section className="pt-20 pb-8 md:pt-28 md:pb-12">
       <Container>
         <p className="micro mb-12 text-center text-taupe">{team.heading}</p>
         <div className="grid gap-x-6 gap-y-14 sm:grid-cols-2 lg:grid-cols-4">
@@ -230,7 +230,7 @@ function TeamSection() {
 function ApproachSection() {
   const { values } = useAboutData();
   return (
-    <section className="py-20 md:py-28">
+    <section className="pt-12 pb-20 md:pt-16 md:pb-28">
       <Container>
         <p className="micro mb-12 text-center text-taupe">Our Approach</p>
         <div className="mt-10 grid gap-8 pt-12 text-center sm:grid-cols-2 lg:grid-cols-4">
