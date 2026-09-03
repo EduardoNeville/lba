@@ -21,6 +21,7 @@ function useHomeData() {
         ...p,
         to: practiceAreas[i].to,
         image: practiceAreas[i].image,
+        imagePos: practiceAreas[i].imagePos,
       })),
       residences: residences,
       cta: { ...fr.cta, image: cta.image, ctaLabel: ui.inquire },
@@ -34,6 +35,7 @@ function useHomeData() {
         ...p,
         to: practiceAreas[i].to,
         image: practiceAreas[i].image,
+        imagePos: practiceAreas[i].imagePos,
       })),
       residences: residences,
       cta: { ...es.cta, image: cta.image, ctaLabel: ui.inquire },
@@ -148,7 +150,8 @@ function PracticeAreas() {
                     alt=""
                     aria-hidden
                     loading="lazy"
-                    className="aspect-[3/4] w-full object-cover"
+                    className={`aspect-[3/4] w-full object-cover ${p.imagePos ?? 'object-center'}`}
+                  />
                   />
                 ) : (
                   <div

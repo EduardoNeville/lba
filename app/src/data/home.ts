@@ -38,6 +38,7 @@ export const practiceAreas = [
     to: '/legal',
     items: ['Real Estate Law', 'Tax & Structuring', 'Corporate & Investment', 'Residency & Relocation'],
     image: officeDespacho,
+    imagePos: 'object-right',
   },
   {
     num: '03',
