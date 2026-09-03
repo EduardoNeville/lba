@@ -1,5 +1,18 @@
 {
   "projects": {
     "default": "legal-boutique-advisers-bf25a"
-  }
+  },
+  "targets": {
+    "legal-boutique-advisers-bf25a": {
+      "hosting": {
+        "live": [
+          "legal-boutique-advisers-bf25a"
+        ],
+        "dev": [
+          "lba-dev"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }

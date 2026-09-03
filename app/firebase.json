@@ -1,7 +1,8 @@
 {
-  "firestore": {
-    "rules": "firestore.rules"
-  },
+  "firestore": [
+    { "database": "(default)", "rules": "firestore.rules" },
+    { "database": "dev", "rules": "firestore.rules" }
+  ],
   "storage": {
     "rules": "storage.rules"
   },
@@ -10,9 +11,18 @@
       "port": 8080
     }
   },
-  "hosting": {
-    "public": "dist",
-    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
-    "rewrites": [{ "source": "**", "destination": "/index.html" }]
-  }
+  "hosting": [
+    {
+      "target": "live",
+      "public": "dist",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "rewrites": [{ "source": "**", "destination": "/index.html" }]
+    },
+    {
+      "target": "dev",
+      "public": "dist",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "rewrites": [{ "source": "**", "destination": "/index.html" }]
+    }
+  ]
 }
