@@ -2,6 +2,7 @@ import teamMarisela from '../assets/team-marisela.jpg'
 import teamJoseLuis from '../assets/team-joseluis.jpg'
 import teamGalina from '../assets/team-galina.jpg'
 import teamEsther from '../assets/team-esther.jpeg'
+import teamBettina from '../assets/team-bettina.jpeg'
 
 export interface TeamMember {
   name: string
@@ -31,6 +32,7 @@ export const team: TeamMember[] = [
     role: 'Collaborating Architect',
     bio: 'Architect specialising in architecture, urban planning and environmentally considered design. She collaborates with our clients on projects ranging from renovations to new builds.',
     slug: '/team/bettina-lindstrom',
+    photo: teamBettina,
   },
   {
     name: 'José Luis Díaz Vázquez',
