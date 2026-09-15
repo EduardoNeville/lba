@@ -7,31 +7,22 @@ import { CrossLinkBand } from "../components/shared/CrossLinkBand";
 import { CtaBand } from "../components/shared/CtaBand";
 import { Checklist } from "../components/ui/Checklist";
 import { useLang } from "../lib/lang";
-import { hero, services, residences, crossLink, cta } from "../data/property";
-import { fr, es } from "../data/locales/property";
+import { hero, cta } from "../data/property";
+import { en, fr, es } from "../data/locales/property";
+import { useUi } from "../lib/nav";
 import propertyCrosslink from "../assets/property-crosslink.jpg";
 
 function usePropertyData() {
   const { lang } = useLang();
-  if (lang === "fr") {
-    return {
-      hero: { ...fr.hero, image: hero.image },
-      services: fr.services,
-      residences: fr.residences,
-      crossLink: fr.crossLink,
-      cta: { ...fr.cta, image: cta.image },
-    };
-  }
-  if (lang === "es") {
-    return {
-      hero: { ...es.hero, image: hero.image },
-      services: es.services,
-      residences: es.residences,
-      crossLink: es.crossLink,
-      cta: { ...es.cta, image: cta.image },
-    };
-  }
-  return { hero, services, residences, crossLink, cta };
+  const d = lang === "fr" ? { ...en, ...fr } : lang === "es" ? { ...en, ...es } : en;
+  return {
+    hero: { ...d.hero, image: hero.image },
+    services: d.services,
+    residences: d.residences,
+    crossLink: d.crossLink,
+    crossLinkAlt: d.crossLinkAlt,
+    cta: { ...d.cta, image: cta.image },
+  };
 }
 
 function ServicesTrio() {
@@ -59,7 +50,8 @@ function ServicesTrio() {
 }
 
 export function PropertyPage() {
-  const { hero, residences, crossLink, cta } = usePropertyData();
+  const { hero, residences, crossLink, crossLinkAlt, cta } = usePropertyData();
+  const ui = useUi();
   return (
     <>
       <PageHero {...hero} />
@@ -86,7 +78,7 @@ export function PropertyPage() {
         center={
           <img
             src={propertyCrosslink}
-            alt="Limestone hallway with law books opening to sea terrace"
+            alt={crossLinkAlt}
             className="hidden h-full w-full object-cover lg:block"
           />
         }
@@ -115,7 +107,7 @@ export function PropertyPage() {
         heading={cta.heading}
         subline={cta.subline}
         image={cta.image}
-        cta={{ to: "/inquiry", label: "Make a private enquiry" }}
+        cta={{ to: "/inquiry", label: ui.privateEnquiry }}
         tone="light"
       />
     </>

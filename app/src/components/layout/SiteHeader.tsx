@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
-import { NAV } from '../../data/navigation'
 import { useLang } from '../../lib/lang'
-import { useNav } from '../../lib/nav'
+import { useNav, useUi } from '../../lib/nav'
 import logoBrush from '../../assets/logo-lba-brush.svg'
 
 function Logo() {
@@ -13,32 +12,12 @@ function Logo() {
   )
 }
 
-function navFrLabel(label: string): string {
-  const map: Record<string, string> = {
-    Property: 'Propriété',
-    Legal: 'Juridique',
-    'Private Client Services': 'Services aux clients privés',
-    Journal: 'Journal',
-    About: 'À propos',
-  }
-  return map[label] ?? label
-}
-function navEsLabel(label: string): string {
-  const map: Record<string, string> = {
-    Property: 'Propiedad',
-    Legal: 'Legal',
-    'Private Client Services': 'Servicios para clientes privados',
-    Journal: 'Journal',
-    About: 'Nosotros',
-  }
-  return map[label] ?? label
-}
-
 export function SiteHeader() {
   const [open, setOpen] = useState(false)
   const location = useLocation()
   const { lang, setLang } = useLang()
   const nav = useNav()
+  const ui = useUi()
 
   useEffect(() => {
     setOpen(false)
@@ -57,13 +36,13 @@ export function SiteHeader() {
         <Logo />
         <nav aria-label="Main" className="hidden lg:block">
           <ul className="flex items-center gap-6">
-            {NAV.map((item) => (
+            {nav.map((item) => (
               <li key={item.to}>
                 <NavLink
                   to={item.to}
                   className={({ isActive }) => `micro pb-1 transition-colors hover:text-oxblood ${isActive ? 'text-oxblood underline underline-offset-8' : 'text-ink'}`}
                 >
-                  {lang === 'fr' ? navFrLabel(item.label) : lang === 'es' ? navEsLabel(item.label) : nav.find((n) => n.to === item.to)?.label ?? item.label}
+                  {item.label}
                 </NavLink>
               </li>
             ))}
@@ -84,7 +63,7 @@ export function SiteHeader() {
             ))}
           </div>
           <Link to="/inquiry" className="micro hidden min-h-11 items-center border border-ink px-5 py-2 transition-colors hover:bg-ink hover:text-cream lg:flex">
-            {lang === 'fr' ? 'Nous contacter' : lang === 'es' ? 'Contacto' : 'Inquire'}
+            {ui.inquire}
           </Link>
           <button
             type="button"
@@ -102,13 +81,13 @@ export function SiteHeader() {
       {open && (
         <div className="fixed inset-0 top-14 z-40 overflow-y-auto bg-cream px-6 py-8 pb-[max(2rem,env(safe-area-inset-bottom))] lg:hidden lg:top-20">
           <ul className="space-y-6">
-            {NAV.map((item) => (
+            {nav.map((item) => (
               <li key={item.to}>
                 <NavLink
                   to={item.to}
                   className={({ isActive }) => `micro text-sm tracking-[0.25em] ${isActive ? 'text-oxblood' : 'text-ink'}`}
                 >
-                  {lang === 'fr' ? navFrLabel(item.label) : lang === 'es' ? navEsLabel(item.label) : nav.find((n) => n.to === item.to)?.label ?? item.label}
+                  {item.label}
                 </NavLink>
               </li>
             ))}
@@ -127,7 +106,7 @@ export function SiteHeader() {
             ))}
           </div>
           <Link to="/inquiry" className="micro mt-10 block w-full bg-ink py-4 text-center text-cream">
-            {lang === 'fr' ? 'Nous contacter' : lang === 'es' ? 'Contacto' : 'Inquire'}
+            {ui.inquire}
           </Link>
         </div>
       )}

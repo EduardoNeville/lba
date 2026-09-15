@@ -6,48 +6,24 @@ import { ScrollCue } from "../components/ui/ScrollCue";
 import { CtaBand } from "../components/shared/CtaBand";
 import { useLang } from "../lib/lang";
 import { useUi } from "../lib/nav";
-import { hero, intro, practiceAreas, cta } from "../data/home";
-import { fr, es } from "../data/locales/home";
+import { hero, practiceAreas, cta } from "../data/home";
+import { en, fr, es } from "../data/locales/home";
 
 function useHomeData() {
   const { lang } = useLang();
   const ui = useUi();
-  if (lang === "fr") {
-    return {
-      hero: { ...fr.hero, image: hero.image },
-      intro: fr.intro,
-      practiceAreas: fr.practiceAreas.map((p, i) => ({
-        ...p,
-        to: practiceAreas[i].to,
-        image: practiceAreas[i].image,
-        imagePos: practiceAreas[i].imagePos,
-      })),
-      cta: { ...fr.cta, image: cta.image, ctaLabel: ui.inquire },
-    };
-  }
-  if (lang === "es") {
-    return {
-      hero: { ...es.hero, image: hero.image },
-      intro: es.intro,
-      practiceAreas: es.practiceAreas.map((p, i) => ({
-        ...p,
-        to: practiceAreas[i].to,
-        image: practiceAreas[i].image,
-        imagePos: practiceAreas[i].imagePos,
-      })),
-      cta: { ...es.cta, image: cta.image, ctaLabel: ui.inquire },
-    };
-  }
+  const d = lang === "fr" ? { ...en, ...fr } : lang === "es" ? { ...en, ...es } : en;
   return {
-    hero,
-    intro,
-    practiceAreas,
-    cta: { ...cta, ctaLabel: ui.inquire },
+    hero: { ...d.hero, image: hero.image },
+    intro: d.intro,
+    practiceAreas: d.practiceAreas.map((p, i) => ({ ...p, ...practiceAreas[i] })),
+    cta: { ...d.cta, image: cta.image, ctaLabel: ui.privateEnquiry },
   };
 }
 
 function HomeHero() {
   const { hero } = useHomeData();
+  const ui = useUi();
   return (
     <section className="relative isolate flex hero-screen items-center justify-center overflow-hidden bg-cream">
       <img
@@ -69,7 +45,7 @@ function HomeHero() {
           </p>
         )}
         <div className="mt-8">
-          <ButtonLink to="/about">Discover more →</ButtonLink>
+          <ButtonLink to="/about">{ui.discoverMore} →</ButtonLink>
         </div>
         <div className="absolute inset-x-0 bottom-6 flex justify-center">
           <ScrollCue />
@@ -112,6 +88,7 @@ function IntroSplit() {
 
 function PracticeAreas() {
   const { practiceAreas } = useHomeData();
+  const ui = useUi();
   return (
     <section className="pb-20 md:pb-28">
       <Container>
@@ -159,7 +136,7 @@ function PracticeAreas() {
               </div>
               <div className="px-5 pb-4 pt-3">
                 <span className="micro text-[10px] text-ink group-hover:text-oxblood">
-                  Explore →
+                  {ui.explore} →
                 </span>
               </div>
             </Link>
@@ -182,7 +159,7 @@ export function HomePage() {
         heading={cta.heading}
         subline={cta.subline}
         image={cta.image}
-        cta={{ to: "/inquiry", label: "MAKE A PRIVATE INQUIRY" }}
+        cta={{ to: "/inquiry", label: cta.ctaLabel }}
       />
     </>
   );

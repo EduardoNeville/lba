@@ -4,55 +4,12 @@ import teamGalina from '../assets/team-galina.jpg'
 import teamEsther from '../assets/team-esther.jpeg'
 import teamBettina from '../assets/team-bettina.jpeg'
 
-export interface TeamMember {
-  name: string
-  role: string
-  bio: string
-  photo?: string
-  slug: string
-}
-
-export const team: TeamMember[] = [
-  {
-    name: 'Marisela Castro Abad',
-    role: 'Founder & Managing Lawyer',
-    bio: 'Lawyer and founder of Legal Boutique Advisers, with extensive experience in real estate, taxation and international private client matters.',
-    photo: teamMarisela,
-    slug: '/team/marisela-castro-abad',
-  },
-  {
-    name: 'Esther Neville',
-    role: 'Property & Private Client Adviser',
-    bio: "With a background in law and a Master's in Law and Economics, Esther leads the firm's property and private client advisory, working with an international clientele on their investments and life in Spain.",
-    photo: teamEsther,
-    slug: '/team/esther-neville',
-  },
-  {
-    name: 'Bettina R. Lindstrøm',
-    role: 'Collaborating Architect',
-    bio: 'Architect specialising in architecture, urban planning and environmentally considered design. She collaborates with our clients on projects ranging from renovations to new builds.',
-    slug: '/team/bettina-lindstrom',
-    photo: teamBettina,
-  },
-  {
-    name: 'José Luis Díaz Vázquez',
-    role: 'Legal Counsel',
-    bio: 'Lawyer specialising in employment and labour law, advising both companies and individuals across Spain.',
-    photo: teamJoseLuis,
-    slug: '/team/jose-luis-diaz-vazquez',
-  },
-  {
-    name: 'Galina Dimitrova Nencheva',
-    role: 'Client Services Manager',
-    bio: 'Graduate in Marketing from the University of Economics of Varna (Bulgaria). She brings more than ten years of experience in international client care, service management and administrative coordination, providing attentive, efficient and high-quality service.',
-    photo: teamGalina,
-    slug: '/team/galina-dimitrova-nencheva',
-  },
-]
-
-export const values = [
-  { icon: 'figure', title: 'Personal', body: 'We take the time to understand what matters to you.' },
-  { icon: 'eye-off', title: 'Discreet', body: 'Confidentiality and discretion are at the core of everything we do.' },
-  { icon: 'scales', title: 'Independent', body: 'Objective advice, tailored to your best interests.' },
-  { icon: 'globe', title: 'Connected', body: 'A trusted network of specialists to guide you at every step.' },
+// Non-text data for the About page team grid — names/roles/bios live in
+// src/data/locales/about.ts and photos are joined by member name.
+export const team = [
+  { name: 'Marisela Castro Abad', photo: teamMarisela },
+  { name: 'Esther Neville', photo: teamEsther },
+  { name: 'Bettina R. Lindstrøm', photo: teamBettina },
+  { name: 'José Luis Díaz Vázquez', photo: teamJoseLuis },
+  { name: 'Galina Dimitrova Nencheva', photo: teamGalina },
 ]

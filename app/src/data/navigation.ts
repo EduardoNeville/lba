@@ -1,30 +1,26 @@
-export interface NavChild {
-  label: string
-  to: string
-}
-
+// Routes only — labels live in src/data/locales/{en,fr,es}.ts under `nav.label`,
+// keyed by `key` here.
 export interface NavItem {
-  label: string
+  key: string
   to: string
-  children?: NavChild[]
 }
 
 export const NAV: NavItem[] = [
-  { label: 'Property', to: '/property' },
-  { label: 'Legal', to: '/legal' },
-  { label: 'Private Client Services', to: '/private-client' },
-  { label: 'Journal', to: '/blog' },
-  { label: 'About', to: '/about' },
+  { key: 'property', to: '/property' },
+  { key: 'legal', to: '/legal' },
+  { key: 'privateClient', to: '/private-client' },
+  { key: 'journal', to: '/blog' },
+  { key: 'about', to: '/about' },
 ]
 
 export const FOOTER_SERVICES = [
-  { label: 'Property Advisory', to: '/property' },
-  { label: 'Legal Advisory', to: '/legal' },
-  { label: 'Private Client Advisory', to: '/private-client' },
+  { to: '/property' },
+  { to: '/legal' },
+  { to: '/private-client' },
 ]
 
 export const FOOTER_INFO = [
-  { label: 'About', to: '/about' },
-  { label: 'Privacy Policy', to: '/privacy' },
-  { label: 'Terms & Conditions', to: '/terms' },
+  { to: '/about' },
+  { to: '/privacy' },
+  { to: '/terms' },
 ]

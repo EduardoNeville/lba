@@ -1,4 +1,68 @@
-// FR + ES copy for the About page — mirrors the EN shapes in src/pages/AboutPage.tsx + src/data/team.ts
+// Copy for the About page. `en` is the source of truth; fr/es replace text only —
+// team photos live in src/data/team.ts and are joined by member name.
+export const en = {
+  hero: {
+    eyebrow: 'About Us',
+    title: 'Built on trust. Evolved around our clients.',
+    body: [
+      'Legal Boutique Advisers was founded in 2021 as a boutique legal practice with a simple principle: every client’s circumstances are different, and their advice should be too.',
+      'Over the years, our international clients increasingly turned to us not only for legal matters, but for guidance around their properties, investments and lives in Spain.',
+      'Our firm has evolved around those needs.',
+      'Today, Legal Boutique Advisers brings together legal expertise, property advisory and private client services, providing one trusted point of contact for clients establishing, investing or maintaining interests in Spain.',
+    ],
+  },
+  legacy: {
+    eyebrow: 'From one generation to the next',
+    title: 'A legacy of experience. A vision for the future.',
+    body: [
+      'Founded by lawyer Marisela Castro Abad, Legal Boutique Advisers is now entering a new chapter with the expansion of its property and private client advisory.',
+      'Bringing together established legal experience with a new generation of international perspective, the firm continues to evolve while remaining intentionally boutique.',
+      'Our commitment is unchanged: personal relationships, discreet advice and solutions tailored to each client’s life and goals in Spain.',
+    ],
+  },
+  team: {
+    heading: 'Our Team',
+    members: [
+      { name: 'Marisela Castro Abad', role: 'Founder & Managing Lawyer', bio: 'Lawyer and founder of Legal Boutique Advisers, with extensive experience in real estate, taxation and international private client matters.' },
+      { name: 'Esther Neville', role: 'Property & Private Client Adviser', bio: "With a background in law and a Master's in Law and Economics, Esther leads the firm's property and private client advisory, working with an international clientele on their investments and life in Spain." },
+      { name: 'Bettina R. Lindstrøm', role: 'Collaborating Architect', bio: 'Architect specialising in architecture, urban planning and environmentally considered design. She collaborates with our clients on projects ranging from renovations to new builds.' },
+      { name: 'José Luis Díaz Vázquez', role: 'Legal Counsel', bio: 'Lawyer specialising in employment and labour law, advising both companies and individuals across Spain.' },
+      { name: 'Galina Dimitrova Nencheva', role: 'Client Services Manager', bio: 'Graduate in Marketing from the University of Economics of Varna (Bulgaria). She brings more than ten years of experience in international client care, service management and administrative coordination, providing attentive, efficient and high-quality service.' },
+    ],
+  },
+  values: [
+    { icon: 'figure', title: 'Personal', body: 'We take the time to understand what matters to you.' },
+    { icon: 'eye-off', title: 'Discreet', body: 'Confidentiality and discretion are at the core of everything we do.' },
+    { icon: 'scales', title: 'Independent', body: 'Objective advice, tailored to your best interests.' },
+    { icon: 'globe', title: 'Connected', body: 'A trusted network of specialists to guide you at every step.' },
+  ],
+  approach: { heading: 'Our Approach' },
+  cta: {
+    heading: 'Let’s talk.',
+    subline: 'We would be delighted to learn more about your plans in Spain.',
+  },
+  culture: {
+    eyebrow: 'Cultural Commitment',
+    title: 'Supporting Culture.\nInvesting in the Future.',
+    body: [
+      'At Legal Boutique Advisers, we believe culture enriches life and strengthens the communities we are part of.',
+      'We are proud to support and participate in Música con Encanto, a non-profit association dedicated to bringing classical music and cultural experiences to the Costa del Sol.',
+      'Through concerts, educational programmes and artistic initiatives, Música con Encanto inspires young talent and creates meaningful connections through the universal language of music.',
+      'We share their vision of a more beautiful, creative and harmonious future.',
+    ],
+    bottomEyebrow: 'Legal Boutique Advisers',
+    bottomSub: 'Proud collaborators of Música con Encanto',
+    linkLabel: 'Discover the association →',
+    linkHref: 'https://musicaconencanto.org/',
+    tagline: 'Inspiring through music,\nenriching our community.',
+  },
+  alts: {
+    hero: 'Boutique office arched shelves with stone vases and warm light',
+    legacy: 'Library with law books and architectural plans representing legacy and vision',
+    culture: 'Centro de Divulgación Musical del Mediterráneo',
+  },
+}
+
 export const fr = {
   hero: {
     eyebrow: 'À propos',

@@ -66,6 +66,7 @@ export const ui = {
   discuss: "Háblenos de sus necesidades",
   submit: "Enviar consulta",
   selectedResidences: "Residencias seleccionadas",
+  privateEnquiry: "Realizar una consulta privada",
 };
 
 export const form = {

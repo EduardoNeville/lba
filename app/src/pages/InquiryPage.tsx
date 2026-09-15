@@ -5,7 +5,11 @@ import { Field } from "../components/ui/Field";
 import { Icon } from "../components/ui/icons";
 import { submitInquiry, InquiryError } from "../lib/submitInquiry";
 import { useLang } from "../lib/lang";
-import { options as optionsEn } from "../data/inquiry";
+import {
+  form as formEn,
+  options as optionsEn,
+  aside as asideEn,
+} from "../data/locales/en";
 import {
   form as formFr,
   options as optionsFr,
@@ -51,62 +55,15 @@ const COUNTRIES = [
 
 function useInquiryDict() {
   const { lang } = useLang();
-  if (lang === "fr")
-    return {
-      form: formFr,
-      options: optionsFr,
-      aside: asideFr,
-      hero: formFr.hero,
-    };
-  if (lang === "es")
-    return {
-      form: formEs,
-      options: optionsEs,
-      aside: asideEs,
-      hero: formEs.hero,
-    };
-  return {
-    form: {
-      interestLabel: "I am interested in",
-      fullName: "Full name",
-      fullNamePlaceholder: "Your full name",
-      email: "Email",
-      emailPlaceholder: "Your email address",
-      phone: "Phone",
-      phonePlaceholder: "Your phone number",
-      country: "Country of residence",
-      countryPlaceholder: "Select a country",
-      message: "How can we assist you?",
-      messagePlaceholder: "Please tell us more about your enquiry",
-      consent: "I confirm that I have read and accept the Privacy Policy.",
-      submit: "Submit enquiry →",
-      sending: "Sending…",
-      thankYou: "Thank you. We will be in touch shortly.",
-      replyNote: "We reply to every enquiry, usually within one working day.",
-      errorGeneric: "Something went wrong. Please try again.",
-      errorInterest: "Please select an area of interest.",
-      errorName: "Please tell us your name.",
-      errorEmail: "Please enter a valid email address.",
-      errorConsent: "We need your consent to contact you.",
-      errors: {
-        interest: "Please select an area of interest.",
-        fullName: "Please tell us your name.",
-        email: "Please enter a valid email address.",
-        consent: "We need your consent to contact you.",
-      },
-    },
-    options: optionsEn,
-    aside: {
-      heading: "Discretion is at the heart of everything we do.",
-      body: "Your enquiry is read only by a partner. We never share your details, never add you to lists and never discuss your affairs with anyone else.",
-    },
-    hero: {
-      eyebrow: "Enquire",
-      title: "How can we assist you?",
-      body: "We understand that every situation is unique. Please share a few details about your enquiry and a member of our team will be in touch.",
-      subline: "All enquiries are treated with the utmost discretion.",
-    },
-  };
+  if (lang === "fr") {
+    const form = { ...formEn, ...formFr };
+    return { form, options: optionsFr, aside: { ...asideEn, ...asideFr }, hero: form.hero };
+  }
+  if (lang === "es") {
+    const form = { ...formEn, ...formEs };
+    return { form, options: optionsEs, aside: { ...asideEn, ...asideEs }, hero: form.hero };
+  }
+  return { form: formEn, options: optionsEn, aside: asideEn, hero: formEn.hero };
 }
 
 function InterestRadios({

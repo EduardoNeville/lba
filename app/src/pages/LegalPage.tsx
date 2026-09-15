@@ -8,38 +8,31 @@ import { CrossLinkBand } from "../components/shared/CrossLinkBand";
 import { CtaBand } from "../components/shared/CtaBand";
 import { ButtonLink } from "../components/ui/ButtonLink";
 import { useLang } from "../lib/lang";
-import { hero, pillars, areas, practice, cta } from "../data/legal";
-import { fr, es } from "../data/locales/legal";
+import { hero, practice, cta } from "../data/legal";
+import { en, fr, es } from "../data/locales/legal";
+import { useUi } from "../lib/nav";
 
 function useLegalData() {
   const { lang } = useLang();
-  if (lang === "fr")
-    return {
-      hero: { ...hero, ...fr.hero },
-      pillars: fr.pillars,
-      areas: fr.areas,
-      practice: { ...practice, ...fr.practice, image: practice.image },
-      cta: { ...cta, ...fr.cta, image: cta.image },
-    };
-  if (lang === "es")
-    return {
-      hero: { ...hero, ...es.hero },
-      pillars: es.pillars,
-      areas: es.areas,
-      practice: { ...practice, ...es.practice, image: practice.image },
-      cta: { ...cta, ...es.cta, image: cta.image },
-    };
-  return { hero, pillars, areas, practice, cta };
+  const d = lang === "fr" ? { ...en, ...fr } : lang === "es" ? { ...en, ...es } : en;
+  return {
+    hero: { ...d.hero, image: hero.image },
+    statement: d.statement,
+    areasHeading: d.areasHeading,
+    pillars: d.pillars,
+    areas: d.areas,
+    practice: { ...d.practice, image: practice.image },
+    cta: { ...d.cta, image: cta.image },
+  };
 }
 
 function Pillars() {
-  const { pillars } = useLegalData();
+  const { pillars, statement } = useLegalData();
   return (
     <section className="py-20 md:py-28">
       <Container>
         <p className="font-display mx-auto max-w-2xl text-center text-xl leading-snug text-ink md:text-2xl">
-          We provide independent legal advice to private and international
-          clients, their businesses and their families.
+          {statement}
         </p>
         <div className="mx-auto mt-4 h-px w-8 bg-oxblood" />
         <div className="mt-12 grid gap-8 text-center sm:grid-cols-2 lg:grid-cols-4">
@@ -58,12 +51,12 @@ function Pillars() {
 }
 
 function AdviceGrid() {
-  const { areas } = useLegalData();
+  const { areas, areasHeading } = useLegalData();
   return (
     <section className="pb-0">
       <Container>
         <p className="micro mb-2 text-center text-oxblood">
-          Our Areas of Legal Advice
+          {areasHeading}
         </p>
         <div className="mx-auto mb-10 h-px w-8 bg-oxblood" />
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -78,6 +71,7 @@ function AdviceGrid() {
 
 export function LegalPage() {
   const { hero, practice, cta } = useLegalData();
+  const ui = useUi();
   return (
     <>
       <PageHero {...hero} />
@@ -126,7 +120,7 @@ export function LegalPage() {
               ))}
             </ul>
             <div className="mt-4">
-              <ArrowLink to="/about">Meet the team</ArrowLink>
+              <ArrowLink to="/about">{ui.meetTheTeam}</ArrowLink>
             </div>
           </div>
         }
@@ -135,7 +129,7 @@ export function LegalPage() {
         heading={cta.heading}
         subline={cta.subline}
         image={cta.image}
-        cta={{ to: "/inquiry", label: "Make a private enquiry" }}
+        cta={{ to: "/inquiry", label: ui.privateEnquiry }}
       />
     </>
   );

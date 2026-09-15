@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { ArrowLink } from './ArrowLink'
+import { useUi } from '../../lib/nav'
 
 export function PropertyCard({
   image,
@@ -16,6 +17,7 @@ export function PropertyCard({
   slug: string
   showLink?: boolean
 }) {
+  const ui = useUi()
   return (
     <Link to={slug} className="group block">
       {image && (
@@ -29,7 +31,7 @@ export function PropertyCard({
       <p className="mt-1 text-[10px] uppercase tracking-[0.18em] text-taupe">{meta}</p>
       {showLink && (
         <div className="mt-3">
-          <ArrowLink to={slug}>View residence</ArrowLink>
+          <ArrowLink to={slug}>{ui.viewResidence}</ArrowLink>
         </div>
       )}
     </Link>

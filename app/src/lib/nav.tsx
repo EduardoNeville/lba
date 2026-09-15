@@ -1,6 +1,11 @@
 import { useLang } from "../lib/lang";
 import { NAV } from "../data/navigation";
 import {
+  nav as navEn,
+  footer as footerEn,
+  ui as uiEn,
+} from "../data/locales/en";
+import {
   nav as navFr,
   footer as footerFr,
   ui as uiFr,
@@ -11,65 +16,33 @@ import {
   ui as uiEs,
 } from "../data/locales/es";
 
-// EN fallbacks (data/navigation.ts exports NAV, not a dict)
-const navEnFooter = {
-  tagline: "Lawyers & Private Advisors",
-  services: "Our Services",
-  servicesLinks: [
-    "Property Advisory",
-    "Legal Advisory",
-    "Private Client Advisory",
-  ],
-  information: "Information",
-  informationLinks: ["About", "Privacy Policy", "Terms & Conditions"],
-  contact: "Contact",
-  address: [
-    "Calle Nuestra Señora de Gracia, 26, bajo",
-    "Marbella, Málaga, Spain",
-    "+34 952 777 991 · +34 663 109 014",
-    "info@legalboutiqueadvisers.com",
-  ],
-  enquire: "Make a private enquiry",
-  rights: "© 2021 Legal Boutique Advisers. All rights reserved.",
-};
-const navEnUi = {
-  inquire: "Inquire",
-  discoverMore: "Discover more",
-  viewAllProperties: "View all properties",
-  viewAllResidences: "View all residences",
-  viewResidence: "View residence",
-  learnMore: "Learn more",
-  explore: "Explore",
-  meetTheTeam: "Meet the team",
-  discuss: "Discuss your needs",
-  submit: "Submit enquiry",
-  selectedResidences: "Selected Residences",
-};
-
 export function useNav() {
   const { lang } = useLang();
-  const dict = lang === "fr" ? navFr : lang === "es" ? navEs : null;
-  return NAV.map((item) => {
-    const label = dict
-      ? (dict.label[item.to.replace("/", "") as keyof typeof dict.label] ??
-        item.label)
-      : item.label;
-    return { label, to: item.to, en: item.label };
-  });
+  const labels: Record<string, string> =
+    lang === "fr"
+      ? { ...navEn.label, ...navFr.label }
+      : lang === "es"
+        ? { ...navEn.label, ...navEs.label }
+        : navEn.label;
+  return NAV.map((item) => ({
+    key: item.key,
+    to: item.to,
+    label: labels[item.key] ?? item.key,
+  }));
 }
 
 export function useFooter() {
   const { lang } = useLang();
-  if (lang === "fr") return footerFr;
-  if (lang === "es") return footerEs;
-  return navEnFooter;
+  if (lang === "fr") return { ...footerEn, ...footerFr };
+  if (lang === "es") return { ...footerEn, ...footerEs };
+  return footerEn;
 }
 
 export function useUi() {
   const { lang } = useLang();
-  if (lang === "fr") return uiFr;
-  if (lang === "es") return uiEs;
-  return navEnUi;
+  if (lang === "fr") return { ...uiEn, ...uiFr };
+  if (lang === "es") return { ...uiEn, ...uiEs };
+  return uiEn;
 }
 
 export const FOOTER_NAV_KEYS = [

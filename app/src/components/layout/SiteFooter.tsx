@@ -117,8 +117,8 @@ export function SiteFooter() {
           <p>{footer.rights}</p>
           <p className="flex gap-4">
             {FOOTER_NAV_KEYS.map((k) => (
-              <Link key={k} to={nav.find((n) => n.en === k)?.to ?? '/'} className="transition-colors hover:text-cream">
-                {nav.find((n) => n.en === k)?.label ?? k}
+              <Link key={k} to={nav.find((n) => n.key === k)?.to ?? '/'} className="transition-colors hover:text-cream">
+                {nav.find((n) => n.key === k)?.label ?? k}
               </Link>
             ))}
           </p>

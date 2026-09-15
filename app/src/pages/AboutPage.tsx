@@ -4,8 +4,9 @@ import { ValueItem } from "../components/ui/ValueItem";
 import { CtaBand } from "../components/shared/CtaBand";
 import { Icon } from "../components/ui/icons";
 import { useLang } from "../lib/lang";
-import { team, values } from "../data/team";
-import { fr, es } from "../data/locales/about";
+import { team } from "../data/team";
+import { en, fr, es } from "../data/locales/about";
+import { useUi } from "../lib/nav";
 import ctaCoast from "../assets/cta-coast.jpg";
 import aboutHero from "../assets/about-hero.jpg";
 import aboutLegacy from "../assets/about-legacy.jpg";
@@ -14,82 +15,18 @@ import musicaImage from "../assets/musica-cultural.png";
 function useAboutData() {
   const { lang } = useLang();
   const photoMap = Object.fromEntries(team.map((m) => [m.name, m.photo]));
-  if (lang === "fr")
-    return {
-      ...fr,
-      team: {
-        ...fr.team,
-        members: fr.team.members.map((m) => ({
-          ...m,
-          photo: photoMap[m.name],
-        })),
-      },
-    };
-  if (lang === "es")
-    return {
-      ...es,
-      team: {
-        ...es.team,
-        members: es.team.members.map((m) => ({
-          ...m,
-          photo: photoMap[m.name],
-        })),
-      },
-    };
+  const d = lang === "fr" ? { ...en, ...fr } : lang === "es" ? { ...en, ...es } : en;
   return {
-    hero: {
-      eyebrow: "About Us",
-      title: "Built on trust. Evolved around our clients.",
-      body: [
-        "Legal Boutique Advisers was founded in 2021 as a boutique legal practice with a simple principle: every client’s circumstances are different, and their advice should be too.",
-        "Over the years, our international clients increasingly turned to us not only for legal matters, but for guidance around their properties, investments and lives in Spain.",
-        "Our firm has evolved around those needs.",
-        "Today, Legal Boutique Advisers brings together legal expertise, property advisory and private client services, providing one trusted point of contact for clients establishing, investing or maintaining interests in Spain.",
-      ],
-    },
-    legacy: {
-      eyebrow: "From one generation to the next",
-      title: "A legacy of experience. A vision for the future.",
-      body: [
-        "Founded by lawyer Marisela Castro Abad, Legal Boutique Advisers is now entering a new chapter with the expansion of its property and private client advisory.",
-        "Bringing together established legal experience with a new generation of international perspective, the firm continues to evolve while remaining intentionally boutique.",
-        "Our commitment is unchanged: personal relationships, discreet advice and solutions tailored to each client’s life and goals in Spain.",
-      ],
-    },
+    ...d,
     team: {
-      heading: "Our Team",
-      members: team.map((m) => ({
-        name: m.name,
-        role: m.role,
-        bio: m.bio,
-        photo: m.photo,
-      })),
-    },
-    values,
-    cta: {
-      heading: "Let’s talk.",
-      subline: "We would be delighted to learn more about your plans in Spain.",
-    },
-    culture: {
-      eyebrow: "Cultural Commitment",
-      title: "Supporting Culture.\nInvesting in the Future.",
-      body: [
-        "At Legal Boutique Advisers, we believe culture enriches life and strengthens the communities we are part of.",
-        "We are proud to support and participate in Música con Encanto, a non-profit association dedicated to bringing classical music and cultural experiences to the Costa del Sol.",
-        "Through concerts, educational programmes and artistic initiatives, Música con Encanto inspires young talent and creates meaningful connections through the universal language of music.",
-        "We share their vision of a more beautiful, creative and harmonious future.",
-      ],
-      bottomEyebrow: "Legal Boutique Advisers",
-      bottomSub: "Proud collaborators of Música con Encanto",
-      linkLabel: "Discover the association →",
-      linkHref: "https://musicaconencanto.org/",
-      tagline: "Inspiring through music,\nenriching our community.",
+      ...d.team,
+      members: d.team.members.map((m) => ({ ...m, photo: photoMap[m.name] })),
     },
   };
 }
 
 function AboutHero() {
-  const { hero } = useAboutData();
+  const { hero, alts } = useAboutData();
   return (
     <section className="pt-20 pb-10 md:pt-28 md:pb-14">
       <Container>
@@ -108,7 +45,7 @@ function AboutHero() {
             <div className="h-72 w-full overflow-hidden lg:h-[560px]">
               <img
                 src={aboutHero}
-                alt="Boutique office arched shelves with stone vases and warm light"
+                alt={alts.hero}
                 className="h-full w-full object-cover"
               />
             </div>
@@ -120,7 +57,7 @@ function AboutHero() {
 }
 
 function LegacySplit() {
-  const { legacy } = useAboutData();
+  const { legacy, alts } = useAboutData();
   return (
     <section className="py-10 md:py-14">
       <Container>
@@ -128,7 +65,7 @@ function LegacySplit() {
           <div className="lg:col-span-5">
             <img
               src={aboutLegacy}
-              alt="Library with law books and architectural plans representing legacy and vision"
+              alt={alts.legacy}
               loading="lazy"
               className="aspect-[4/5] w-full object-cover"
             />
@@ -151,7 +88,7 @@ function LegacySplit() {
 }
 
 function CultureSplit() {
-  const { culture } = useAboutData() as any;
+  const { culture, alts } = useAboutData();
   return (
     <section className="py-10 md:py-14 bg-cream/50">
       <Container>
@@ -169,7 +106,7 @@ function CultureSplit() {
             </div>
           </div>
           <div className="lg:col-span-5 lg:border-l lg:border-hairline lg:pl-10 flex flex-col items-center justify-center text-center">
-            <img src={musicaImage} alt="Centro de Divulgación Musical del Mediterráneo" className="h-48 w-48 object-contain" />
+            <img src={musicaImage} alt={alts.culture} className="h-48 w-48 object-contain" />
             <p className="font-display mt-6 whitespace-pre-line text-center text-lg italic leading-relaxed text-taupe">{culture.tagline}</p>
             <div className="mx-auto mt-4 h-px w-8 bg-oxblood" />
           </div>
@@ -228,11 +165,11 @@ function TeamSection() {
 }
 
 function ApproachSection() {
-  const { values } = useAboutData();
+  const { values, approach } = useAboutData();
   return (
     <section className="py-10 md:py-14">
       <Container>
-        <p className="micro mb-12 text-center text-taupe">Our Approach</p>
+        <p className="micro mb-12 text-center text-taupe">{approach.heading}</p>
         <div className="mt-10 grid gap-8 pt-12 text-center sm:grid-cols-2 lg:grid-cols-4">
           {values.map((v) => (
             <ValueItem
@@ -250,6 +187,7 @@ function ApproachSection() {
 
 export function AboutPage() {
   const { cta } = useAboutData();
+  const ui = useUi();
   return (
     <>
       <AboutHero />
@@ -261,7 +199,7 @@ export function AboutPage() {
         heading={cta.heading}
         subline={cta.subline}
         image={ctaCoast}
-        cta={{ to: "/inquiry", label: "Make a private enquiry" }}
+        cta={{ to: "/inquiry", label: ui.privateEnquiry }}
       />
     </>
   );

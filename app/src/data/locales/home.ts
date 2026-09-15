@@ -1,4 +1,43 @@
-// FR + ES copy for the Home page — mirrors the EN shape in src/data/home.ts
+// Copy for the Home page. `en` is the source of truth; fr/es replace text only —
+// images, links and positions live in src/data/home.ts.
+export const en = {
+  hero: {
+    eyebrow: 'Home',
+    alt: 'Marbella, Spain',
+    heading: 'Lawyers & Property Advisers',
+    sub: 'Based in Marbella',
+    body: 'Legal expertise and personal property advice for international clients. We help you buy, sell, and invest in Spain, while advising on your wider legal, business, and family matters.',
+  },
+  intro: {
+    heading: 'More than property.',
+    body: [
+      'We are lawyers with extensive experience in Spanish law. We combine legal expertise with property, tax and lifestyle advisory, offering one trusted point of contact throughout your journey in Spain and the ongoing care of your home.',
+    ],
+    sideTitle: 'Legal expertise at our core',
+    sideBody: 'All our services are delivered with a legal foundation, ensuring your interests are protected at every step.',
+    sideLink: { label: 'Legal Practice', url: 'https://mariselacastro.com' },
+  },
+  practiceAreas: [
+    {
+      num: '01',
+      title: 'Property',
+      items: ['Buy', 'Sell', 'Private Search', 'Selected Residences'],
+    },
+    {
+      num: '02',
+      title: 'Legal',
+      items: ['Real Estate Law', 'Tax & Structuring', 'Corporate & Investment', 'Residency & Relocation'],
+    },
+    {
+      num: '03',
+      title: 'Private Client Services',
+      items: ['Relocation to Spain', 'Architecture & Renovation', 'Private Home Management', 'Concierge Services'],
+    },
+  ],
+  residences: [],
+  cta: { heading: 'Every client is different.', subline: 'Tell us what brings you to Spain.' },
+}
+
 export const fr = {
   hero: {
     eyebrow: 'Accueil',

@@ -1,4 +1,41 @@
-// FR + ES copy for the Legal page — mirrors the EN shape in src/data/legal.ts
+// Copy for the Legal page. `en` is the source of truth; fr/es replace text only —
+// images live in src/data/legal.ts.
+export const en = {
+  hero: {
+    eyebrow: 'Legal',
+    title: 'Legal expertise at our core',
+    subline: '',
+    body: 'Our legal background is the foundation of everything we do. We advise international clients with clarity, discretion and a deep understanding of the Spanish legal landscape.',
+    cta: { to: 'https://mariselacastro.com', label: 'Visit our legal practice' },
+    alt: 'Walnut desk with brass lamp and law books in an arched niche',
+  },
+  statement: 'We provide independent legal advice to private and international clients, their businesses and their families.',
+  areasHeading: 'Our Areas of Legal Advice',
+  pillars: [
+    { icon: 'scales', title: 'Independent Advice', body: 'Objective guidance focused on your interests.' },
+    { icon: 'eye-off', title: 'Discretion', body: 'Confidentiality and sensitivity in every matter.' },
+    { icon: 'globe', title: 'International Perspective', body: 'Cross-border experience with a local understanding.' },
+    { icon: 'columns', title: 'Trusted Network', body: 'Long-standing relationships with leading professionals.' },
+  ],
+  areas: [
+    { num: '01', title: 'Real Estate Law', body: 'Comprehensive legal support for the acquisition, ownership and sale of property in Spain.', checks: ['Purchase & Sale', 'Due Diligence', 'Contracts & Negotiation', 'Co-ownership & Development', 'Leases & Tenancy'] },
+    { num: '02', title: 'Tax & Structuring', body: 'Tailored tax advice and structuring solutions for individuals, families and their assets.', checks: ['Tax Planning', 'Wealth Structuring', 'Inheritance & Succession', 'Tax Compliance', 'International Mobility'] },
+    { num: '03', title: 'Corporate & Investment', body: 'Legal advice for companies, investors and entrepreneurs operating in or investing in Spain.', checks: ['Company Formation', 'Commercial Contracts', 'M&A & Transactions', 'Shareholders Agreements', 'Regulatory Matters'] },
+  ],
+  practice: {
+    heading: 'Our Legal Practice',
+    body: 'Our connected law firm provides full-service legal advice to businesses and private clients in Spain and internationally. Complex matters. Clear solutions.',
+    cta: { to: 'https://mariselacastro.com', label: 'Visit our legal practice' },
+    alt: 'Walnut desk with brass lamp and law books in an arched niche',
+    right: [
+      { icon: 'scales', title: 'Business Law', body: 'Corporate, commercial, contracts and regulatory advice.' },
+      { icon: 'globe', title: 'International Services', body: 'Cross-border transactions and international legal coordination.' },
+      { icon: 'shield', title: 'Compliance', body: 'Compliance, risk management and corporate governance.' },
+    ],
+  },
+  cta: { heading: 'Need legal advice?', subline: 'We are here to help.' },
+}
+
 export const fr = {
   hero: {
     eyebrow: 'Conseil juridique',
@@ -6,8 +43,7 @@ export const fr = {
     subline: 'Conseil juridique',
     body: 'Notre expérience juridique constitue le fondement de tout ce que nous faisons. Nous conseillons une clientèle internationale avec clarté, discrétion et une connaissance approfondie du paysage juridique espagnol.',
     cta: { to: 'https://mariselacastro.com', label: 'Visiter notre cabinet juridique' },
-    alt: 'Bureau en noyer avec lampe en laiton et livres de droit dans une niche voûtée',
-  },
+    alt: 'Bureau en noyer avec lampe en laiton et livres de droit dans une niche voûtée',  },
   pillars: [
     { icon: 'scales', title: 'Conseil indépendant', body: 'Des recommandations objectives centrées sur vos intérêts.' },
     { icon: 'eye-off', title: 'Discrétion', body: 'Confidentialité et sensibilité dans chaque dossier.' },
@@ -21,11 +57,8 @@ export const fr = {
     { num: '04', title: 'Résidence & relocalisation', body: 'Assistance juridique aux personnes qui s’installent en Espagne et souhaitent obtenir le titre de séjour approprié.', checks: ['Conseil en matière de résidence', 'Golden Visa', 'Visa non lucratif', 'Regroupement familial', 'Conformité continue'], alt: 'Entrée voûtée de villa avec lanternes et urnes en terre cuite' },
   ],
   practice: {
-    eyebrow: 'Notre cabinet juridique',
-    heading: 'Vision commerciale. Excellence juridique.',
-    body: 'Notre cabinet partenaire fournit des conseils juridiques complets aux entreprises et aux clients privés, en Espagne comme à l’international. Des dossiers complexes. Des solutions claires.',
+    heading: 'Vision commerciale. Excellence juridique.',    body: 'Notre cabinet partenaire fournit des conseils juridiques complets aux entreprises et aux clients privés, en Espagne comme à l’international. Des dossiers complexes. Des solutions claires.',
     cta: { to: 'https://mariselacastro.com', label: 'Visiter notre cabinet juridique' },
-    image: undefined as unknown as string,
     alt: 'Livres de droit dans une niche voûtée',
     right: [
       { icon: 'scales', title: 'Droit des affaires', body: 'Droit des sociétés, droit commercial, contrats et réglementation.' },
@@ -59,11 +92,9 @@ export const es = {
     { num: '04', title: 'Residencia y reubicación', body: 'Asistencia jurídica para quienes se trasladan a España y necesitan obtener la residencia adecuada.', checks: ['Asesoramiento en residencia', 'Golden Visa', 'Visado no lucrativo', 'Reagrupación familiar', 'Cumplimiento continuado'], alt: 'Entrada arqueada de villa con faroles y urnas de terracota' },
   ],
   practice: {
-    eyebrow: 'Nuestro despacho jurídico',
     heading: 'Visión empresarial. Excelencia jurídica.',
     body: 'Nuestro despacho vinculado presta asesoramiento jurídico integral a empresas y clientes privados en España y a nivel internacional. Asuntos complejos. Soluciones claras.',
     cta: { to: 'https://mariselacastro.com', label: 'Visite nuestro despacho jurídico' },
-    image: undefined as unknown as string,
     alt: 'Libros de derecho en un nicho arqueado',
     right: [
       { icon: 'scales', title: 'Derecho mercantil', body: 'Derecho societario, mercantil, contractual y regulatorio.' },

@@ -6,39 +6,22 @@ import { ServiceCard } from "../components/ui/ServiceCard";
 import { Checklist } from "../components/ui/Checklist";
 import { ButtonLink } from "../components/ui/ButtonLink";
 import { useLang } from "../lib/lang";
-import {
-  hero,
-  contactPoints,
-  services,
-  featureSplit,
-  partners,
-  cta,
-} from "../data/privateClient";
-import { fr, es } from "../data/locales/privateClient";
+import { hero, services, featureSplit, cta } from "../data/privateClient";
+import { en, fr, es } from "../data/locales/privateClient";
+import { useUi } from "../lib/nav";
 
 function usePCData() {
   const { lang } = useLang();
-  if (lang === "fr") {
-    return {
-      hero: { ...fr.hero, image: hero.image },
-      contactPoints: fr.contactPoints,
-      services: fr.services,
-      featureSplit: { ...fr.featureSplit, image: featureSplit.image },
-      partners: fr.partners,
-      cta: { ...fr.cta, image: cta.image },
-    };
-  }
-  if (lang === "es") {
-    return {
-      hero: { ...es.hero, image: hero.image },
-      contactPoints: es.contactPoints,
-      services: es.services,
-      featureSplit: { ...es.featureSplit, image: featureSplit.image },
-      partners: es.partners,
-      cta: { ...es.cta, image: cta.image },
-    };
-  }
-  return { hero, contactPoints, services, featureSplit, partners, cta };
+  const d = lang === "fr" ? { ...en, ...fr } : lang === "es" ? { ...en, ...es } : en;
+  return {
+    hero: { ...d.hero, image: hero.image },
+    contactPoints: d.contactPoints,
+    servicesHeading: d.servicesHeading,
+    services: d.services.map((s, i) => ({ ...s, ...services[i] })),
+    featureSplit: { ...d.featureSplit, image: featureSplit.image },
+    partners: d.partners,
+    cta: { ...d.cta, image: cta.image },
+  };
 }
 
 function ContactPoints() {
@@ -73,12 +56,12 @@ function ContactPoints() {
 }
 
 function ServicesGrid() {
-  const { services } = usePCData();
+  const { services, servicesHeading } = usePCData();
   return (
     <section className="py-20 md:py-28">
       <Container>
         <p className="micro mb-2 text-center text-oxblood">
-          Our Private Client Services
+          {servicesHeading}
         </p>
         <div className="mx-auto mb-10 h-px w-8 bg-oxblood" />
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -161,6 +144,7 @@ function TrustedNetwork() {
 
 export function PrivateClientPage() {
   const { hero, cta } = usePCData();
+  const ui = useUi();
   return (
     <>
       <PageHero {...hero} />
@@ -171,8 +155,8 @@ export function PrivateClientPage() {
       <CtaBand
         heading={cta.heading}
         subline={cta.subline}
-        image={(cta as any).image}
-        cta={{ to: "/inquiry", label: "Make a private enquiry" }}
+        image={cta.image}
+        cta={{ to: "/inquiry", label: ui.privateEnquiry }}
       />
     </>
   );
