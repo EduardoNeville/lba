@@ -23,12 +23,6 @@
       "public": "dist",
       "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
       "rewrites": [{ "source": "**", "destination": "/index.html" }]
-    },
-    {
-      "target": "es",
-      "public": "dist",
-      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
-      "redirects": [{ "source": "**", "destination": "https://legalboutiqueadvisers.com", "type": 301 }]
     }
   ]
 }
