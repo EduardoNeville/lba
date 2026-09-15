@@ -1,6 +1,7 @@
 import teamMarisela from '../assets/team-marisela.jpg'
 import teamJoseLuis from '../assets/team-joseluis.jpg'
 import teamGalina from '../assets/team-galina.jpg'
+import teamEsther from '../assets/team-esther.jpeg'
 
 export interface TeamMember {
   name: string
@@ -22,6 +23,7 @@ export const team: TeamMember[] = [
     name: 'Esther Neville',
     role: 'Property & Private Client Adviser',
     bio: "With a background in law and a Master's in Law and Economics, Esther leads the firm's property and private client advisory, working with an international clientele on their investments and life in Spain.",
+    photo: teamEsther,
     slug: '/team/esther-neville',
   },
   {
