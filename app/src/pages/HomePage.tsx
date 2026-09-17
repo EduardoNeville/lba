@@ -6,6 +6,7 @@ import { ScrollCue } from "../components/ui/ScrollCue";
 import { CtaBand } from "../components/shared/CtaBand";
 import { useLang } from "../lib/lang";
 import { useUi } from "../lib/nav";
+import { ArrowLink } from "../components/ui/ArrowLink";
 import { hero, practiceAreas, cta } from "../data/home";
 import { en, fr, es } from "../data/locales/home";
 
@@ -33,7 +34,8 @@ function HomeHero() {
       />
       <div className="absolute inset-0 -z-10 bg-cream/60" />
       <div className="px-6 text-center">
-        <h1 className="font-display text-4xl uppercase leading-[1.1] tracking-wide text-ink md:text-6xl">
+        <p className="micro text-[11px] text-ink/70">{hero.eyebrow}</p>
+        <h1 className="font-display mt-3 text-4xl uppercase leading-[1.1] tracking-wide text-ink md:text-6xl">
           {hero.heading}
         </h1>
         {hero.sub && (
@@ -79,6 +81,11 @@ function IntroSplit() {
             <p className="mt-3 text-[13px] leading-relaxed text-taupe">
               {intro.sideBody}
             </p>
+            {intro.sideLink && (
+              <div className="mt-5">
+                <ArrowLink to={intro.sideLink.url}>{intro.sideLink.label}</ArrowLink>
+              </div>
+            )}
           </div>
         </div>
       </Container>

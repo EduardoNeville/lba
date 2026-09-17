@@ -32,7 +32,8 @@ function AboutHero() {
       <Container>
         <div className="grid items-start gap-8 lg:grid-cols-12 lg:gap-10">
           <div className="lg:col-span-7">
-            <h1 className="font-display max-w-[22ch] text-4xl uppercase leading-[1.08] tracking-wide md:text-5xl lg:text-[3.5rem]">
+            <Eyebrow>{hero.eyebrow}</Eyebrow>
+            <h1 className="font-display mt-4 max-w-[22ch] text-4xl uppercase leading-[1.08] tracking-wide md:text-5xl lg:text-[3.5rem]">
               {hero.title}
             </h1>
             <div className="mt-8 max-w-prose space-y-5 text-sm leading-relaxed text-taupe md:text-[15px]">
