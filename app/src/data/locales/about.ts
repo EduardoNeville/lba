@@ -116,6 +116,11 @@ export const fr = {
     linkHref: 'https://musicaconencanto.org/',
     tagline: 'Inspirer par la musique,\nenrichir notre communauté.',
   },
+  alts: {
+    hero: 'Étagères voûtées du bureau boutique, vases en pierre et lumière chaleureuse',
+    legacy: 'Bibliothèque avec livres de droit et plans d’architecture, évoquant l’héritage et la vision',
+    culture: 'Centro de Divulgación Musical del Mediterráneo',
+  },
 }
 
 export const es = {
@@ -170,5 +175,10 @@ export const es = {
     linkLabel: 'Descubrir la asociación →',
     linkHref: 'https://musicaconencanto.org/',
     tagline: 'Inspirando a través de la música,\nenriqueciendo nuestra comunidad.',
+  },
+  alts: {
+    hero: 'Estanterías arqueadas de la oficina boutique con jarrones de piedra y luz cálida',
+    legacy: 'Biblioteca con libros de derecho y planos de arquitectura que representan legado y visión',
+    culture: 'Centro de Divulgación Musical del Mediterráneo',
   },
 }

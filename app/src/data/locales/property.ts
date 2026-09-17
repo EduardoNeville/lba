@@ -66,7 +66,7 @@ export const fr = {
       link: { to: '/private-client', label: 'Découvrir la clientèle privée' },
     },
   },
-  crossLinkAlt: 'Limestone hallway with law books opening to sea terrace',
+  crossLinkAlt: 'Couloir en pierre calcaire avec livres de droit ouvrant sur une terrasse face à la mer',
   cta: { heading: "Vous envisagez un projet immobilier en Espagne?", subline: 'Nous serions ravis d’échanger avec vous.' },
 }
 
@@ -101,6 +101,6 @@ export const es = {
       link: { to: '/private-client', label: 'Explorar cliente privado' },
     },
   },
-  crossLinkAlt: 'Limestone hallway with law books opening to sea terrace',
+  crossLinkAlt: 'Pasillo de piedra caliza con libros de derecho que se abre a una terraza frente al mar',
   cta: { heading: "¿Tiene un proyecto inmobiliario en España?", subline: 'Estaremos encantados de atenderle.' },
 }

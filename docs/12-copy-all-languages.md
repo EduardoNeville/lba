@@ -1045,20 +1045,20 @@ enriqueciendo nuestra comunidad.
 **`about.alts.hero`**
 
 EN — Boutique office arched shelves with stone vases and warm light\
-FR — —\
-ES — —
+FR — Étagères voûtées du bureau boutique, vases en pierre et lumière chaleureuse\
+ES — Estanterías arqueadas de la oficina boutique con jarrones de piedra y luz cálida
 
 **`about.alts.legacy`**
 
 EN — Library with law books and architectural plans representing legacy and vision\
-FR — —\
-ES — —
+FR — Bibliothèque avec livres de droit et plans d’architecture, évoquant l’héritage et la vision\
+ES — Biblioteca con libros de derecho y planos de arquitectura que representan legado y visión
 
 **`about.alts.culture`**
 
 EN — Centro de Divulgación Musical del Mediterráneo\
-FR — —\
-ES — —
+FR — Centro de Divulgación Musical del Mediterráneo\
+ES — Centro de Divulgación Musical del Mediterráneo
 
 # Legal page
 
@@ -1585,8 +1585,8 @@ ES — Explorar cliente privado
 **`property.crossLinkAlt`**
 
 EN — Limestone hallway with law books opening to sea terrace\
-FR — Limestone hallway with law books opening to sea terrace\
-ES — Limestone hallway with law books opening to sea terrace
+FR — Couloir en pierre calcaire avec livres de droit ouvrant sur une terrasse face à la mer\
+ES — Pasillo de piedra caliza con libros de derecho que se abre a una terraza frente al mar
 
 **`property.cta.heading`**
 
@@ -1635,8 +1635,8 @@ ES — Háblenos de sus necesidades
 **`privateClient.hero.alt`**
 
 EN — Terrace with olive tree overlooking the sea\
-FR — Terrace with olive tree overlooking the sea\
-ES — Terrace with olive tree overlooking the sea
+FR — Terrasse avec olivier surplombant la mer\
+ES — Terraza con olivo con vistas al mar
 
 **`privateClient.contactPoints.heading`**
 
@@ -1735,8 +1735,8 @@ ES — /inquiry
 **`privateClient.services[0].alt`**
 
 EN — Silver suitcase in a cream stone corridor\
-FR — Silver suitcase in a cream stone corridor\
-ES — Silver suitcase in a cream stone corridor
+FR — Valise en argent dans un couloir en pierre claire\
+ES — Maleta plateada en un pasillo de piedra clara
 
 ## privateClient.services[1] — Private Home Management
 
@@ -1761,8 +1761,8 @@ ES — /inquiry
 **`privateClient.services[1].alt`**
 
 EN — Private pool terrace with loungers and a bay view\
-FR — Private pool terrace with loungers and a bay view\
-ES — Private pool terrace with loungers and a bay view
+FR — Terrasse privée avec piscine, chaises longues et vue sur la baie\
+ES — Terraza privada con piscina, tumbonas y vistas a la bahía
 
 ## privateClient.services[2] — Architecture & Renovation
 
@@ -1787,8 +1787,8 @@ ES — /inquiry
 **`privateClient.services[2].alt`**
 
 EN — Architect table with blueprints and stone samples in a limestone villa under renovation\
-FR — Architect table with blueprints and stone samples in a limestone villa under renovation\
-ES — Architect table with blueprints and stone samples in a limestone villa under renovation
+FR — Table d’architecte avec plans et échantillons de pierre dans une villa en pierre calcaire en cours de rénovation\
+ES — Mesa de arquitecto con planos y muestras de piedra en una villa de piedra caliza en reforma
 
 ## privateClient.services[3] — Concierge & Lifestyle
 
@@ -1813,8 +1813,8 @@ ES — /inquiry
 **`privateClient.services[3].alt`**
 
 EN — Golf lake at Villa Padierna, Marbella\
-FR — Golf lake at Villa Padierna, Marbella\
-ES — Golf lake at Villa Padierna, Marbella
+FR — Lac du golf de Villa Padierna, Marbella\
+ES — Lago del golf de Villa Padierna, Marbella
 
 **`privateClient.featureSplit.alt`**
 
@@ -1964,14 +1964,11 @@ ES — Cuéntenos qué le trae a España.
 
 These texts exist in English but not yet in the other languages, so the website shows the English version for now.
 
-**French (FR) — 3 text(s)**
+**French (FR) — 0 text(s)**
 
-- `about.alts.hero`
-- `about.alts.legacy`
-- `about.alts.culture`
+— none, all translated.
 
-**Spanish (ES) — 3 text(s)**
+**Spanish (ES) — 0 text(s)**
 
-- `about.alts.hero`
-- `about.alts.legacy`
-- `about.alts.culture`
+— none, all translated.
+
