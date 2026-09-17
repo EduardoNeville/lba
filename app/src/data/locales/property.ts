@@ -17,9 +17,9 @@ export const en = {
   residences: [],
   crossLink: {
     left: {
-      eyebrow: 'Property, with legal expertise',
+      eyebrow: "Property advice, grounded in legal expertise",
       heading: 'Property, with legal expertise.',
-      body: 'Our legal background informs every property transaction, allowing us to consider what lies beyond the surface.',
+      body: "Our legal background shapes the way we approach every property transaction. By considering the legal, tax and practical implications from the outset, we help identify potential issues early and protect our clients’ interests throughout the process.",
       checks: ['Legal Due Diligence', 'Tax & Structuring', 'Contracts & Negotiation', 'Ownership & Regulation', 'Residency & Relocation'],
       link: { to: '/legal', label: 'Explore legal services' },
     },
@@ -32,7 +32,7 @@ export const en = {
     },
   },
   crossLinkAlt: 'Limestone hallway with law books opening to sea terrace',
-  cta: { heading: 'Considering property in Spain?', subline: 'We would be delighted to hear from you.' },
+  cta: { heading: "Considering a property project in Spain?", subline: 'We would be delighted to hear from you.' },
 }
 
 export const fr = {
@@ -45,16 +45,16 @@ export const fr = {
     alt: 'Terrasse de villa moderne avec garde-corps en verre donnant sur la mer au crépuscule',
   },
   services: [
-    { icon: 'key', title: 'Achat', body: 'De notre premier échange jusqu’à la remise des clés, nous vous aidons à trouver le bien qui vous correspond et vous accompagnons à chaque étape de l’acquisition.', link: '/inquiry' },
-    { icon: 'building', title: 'Vente', body: 'Une approche discrète et stratégique de la vente de votre propriété, depuis son positionnement et sa présentation jusqu’à l’identification d’acquéreurs qualifiés et la gestion de la transaction.', link: '/inquiry' },
-    { icon: 'figure', title: 'Recherche privée', body: 'Certaines des propriétés les plus recherchées ne sont jamais proposées publiquement. Nous menons une recherche sur mesure au sein de notre réseau afin d’identifier les opportunités correspondant à vos critères.', link: '/inquiry' },
+    { icon: 'key', title: "Recherche privée", body: "Certaines des propriétés les plus recherchées ne sont jamais proposées publiquement. Nous menons une recherche sur mesure au sein de notre réseau afin d’identifier les opportunités correspondant à vos critères.", link: '/inquiry' },
+    { icon: 'building', title: "Achat", body: "De notre premier échange jusqu’à la remise des clés, nous vous aidons à trouver le bien qui vous correspond et vous accompagnons à chaque étape de l’acquisition.", link: '/inquiry' },
+    { icon: 'figure', title: "Vente", body: "Une approche discrète et stratégique de la vente de votre propriété, depuis son positionnement et sa présentation jusqu’à l’identification d’acquéreurs qualifiés et la gestion de la transaction.", link: '/inquiry' },
   ],
   residences: [],
   crossLink: {
     left: {
-      eyebrow: 'L’immobilier, avec une expertise juridique',
+      eyebrow: "Le conseil immobilier, fondé sur l’expertise juridique.",
       heading: 'L’immobilier, avec une expertise juridique.',
-      body: 'Notre formation juridique éclaire chaque transaction immobilière et nous permet d’examiner ce qui se trouve au-delà des apparences.',
+      body: "Notre formation juridique détermine notre façon de traiter chaque transaction immobilière, afin de détecter les risques avant qu’ils ne deviennent problématiques.",
       checks: ['Audit juridique', 'Fiscalité & structuration', 'Contrats & négociation', 'Propriété & réglementation', 'Résidence & relocalisation'],
       link: { to: '/legal', label: 'Découvrir nos services juridiques' },
     },
@@ -62,11 +62,12 @@ export const fr = {
       eyebrow: 'Au-delà de la transaction',
       heading: 'Au-delà de la transaction.',
       body: 'Notre relation ne s’arrête pas à la signature. Nous restons à vos côtés pour faciliter votre installation, gérer votre résidence et vous permettre de profiter pleinement de la vie en Espagne.',
-      checks: ['Gestion privée de résidence', 'Architecture & rénovation', 'Installation en Espagne', 'Services de conciergerie', 'Art de vivre & connaissance locale'],
+      checks: ['Gestion privée de résidence', "Architecture & Rénovation", 'Installation en Espagne', 'Services de conciergerie', 'Art de vivre & connaissance locale'],
       link: { to: '/private-client', label: 'Découvrir la clientèle privée' },
     },
   },
-  cta: { heading: 'Vous envisagez un projet immobilier en Espagne ?', subline: 'Nous serions ravis d’échanger avec vous.' },
+  crossLinkAlt: 'Limestone hallway with law books opening to sea terrace',
+  cta: { heading: "Vous envisagez un projet immobilier en Espagne?", subline: 'Nous serions ravis d’échanger avec vous.' },
 }
 
 export const es = {
@@ -79,16 +80,16 @@ export const es = {
     alt: 'Terraza de villa moderna con barandilla de cristal sobre el mar al atardecer',
   },
   services: [
-    { icon: 'key', title: 'Compra', body: 'Desde nuestra primera conversación hasta el momento en que recibe las llaves. Le ayudamos a encontrar la propiedad adecuada y le acompañamos en cada etapa de la adquisición.', link: '/inquiry' },
-    { icon: 'building', title: 'Venta', body: 'Un enfoque discreto y estratégico para la venta de su propiedad, desde el posicionamiento y la presentación hasta la identificación de compradores cualificados y la gestión de la operación.', link: '/inquiry' },
-    { icon: 'figure', title: 'Búsqueda privada', body: 'Algunas de las propiedades más exclusivas nunca llegan al mercado público. Realizamos una búsqueda a medida a través de nuestra red para encontrar oportunidades que se ajusten a sus necesidades.', link: '/inquiry' },
+    { icon: 'key', title: "Búsqueda privada", body: "Algunas de las propiedades más exclusivas nunca llegan al mercado público. Realizamos una búsqueda a medida a través de nuestra red para encontrar oportunidades que se ajusten a sus necesidades.", link: '/inquiry' },
+    { icon: 'building', title: "Compra", body: "Desde nuestra primera conversación hasta el momento en que recibe las llaves. Le ayudamos a encontrar la propiedad adecuada y le acompañamos en cada etapa de la adquisición.", link: '/inquiry' },
+    { icon: 'figure', title: "Venta", body: "Un enfoque discreto y estratégico para la venta de su propiedad, desde el posicionamiento y la presentación hasta la identificación de compradores cualificados y la gestión de la operación.", link: '/inquiry' },
   ],
   residences: [],
   crossLink: {
     left: {
-      eyebrow: 'Propiedad, con experiencia jurídica',
+      eyebrow: "Asesoramiento inmobiliario respaldado por experiencia jurídica.",
       heading: 'Propiedad, con experiencia jurídica.',
-      body: 'Nuestra formación jurídica orienta cada operación inmobiliaria, permitiéndonos valorar aquello que va más allá de lo visible.',
+      body: "Nuestra formación jurídica determina cómo gestionamos cada operación inmobiliaria, permitiéndonos detectar riesgos antes de que se conviertan en problemas.",
       checks: ['Due diligence jurídica', 'Fiscalidad y estructuración', 'Contratos y negociación', 'Propiedad y regulación', 'Residencia y reubicación'],
       link: { to: '/legal', label: 'Explorar servicios jurídicos' },
     },
@@ -96,9 +97,10 @@ export const es = {
       eyebrow: 'Más allá de la operación',
       heading: 'Más allá de la operación.',
       body: 'Nuestra relación no termina con el cierre de la operación. Estamos aquí para ayudarle a instalarse, gestionar su hogar y disfrutar al máximo de la vida en España.',
-      checks: ['Gestión privada del hogar', 'Arquitectura y reforma', 'Reubicación en España', 'Servicios de concierge', 'Estilo de vida y conocimiento local'],
+      checks: ['Gestión privada del hogar', "Arquitectura y Reforma", 'Reubicación en España', 'Servicios de concierge', 'Estilo de vida y conocimiento local'],
       link: { to: '/private-client', label: 'Explorar cliente privado' },
     },
   },
-  cta: { heading: '¿Está considerando una propiedad en España?', subline: 'Estaremos encantados de atenderle.' },
+  crossLinkAlt: 'Limestone hallway with law books opening to sea terrace',
+  cta: { heading: "¿Tiene un proyecto inmobiliario en España?", subline: 'Estaremos encantados de atenderle.' },
 }

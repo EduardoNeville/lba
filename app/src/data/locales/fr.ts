@@ -4,6 +4,7 @@ export const nav = {
     property: "Propriété",
     legal: "Juridique",
     privateClient: "Services aux clients privés",
+    journal: "Blog",
     about: "À propos",
     inquire: "Nous contacter",
   },
@@ -45,13 +46,13 @@ export const footer = {
   ],
   contact: "Contact",
   address: [
-    "Calle Nuestra Señora de Gracia, número 26, bajo",
+    "Calle Nuestra Señora de Gracia, 26, bajo",
     "Marbella, Málaga, Espagne",
-    "+952777991 · +34 663 109 014",
+    "+34 952 777 991 · +34 663 109 014",
     "info@legalboutiqueadvisers.com",
   ],
   enquire: "Faire une demande privée",
-  rights: "© 2024 Legal Boutique Advisers. Tous droits réservés.",
+  rights: "© 2021 Legal Boutique Advisers. Tous droits réservés.",
 };
 
 export const ui = {

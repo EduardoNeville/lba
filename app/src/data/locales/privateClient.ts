@@ -4,14 +4,14 @@ export const en = {
   hero: {
     eyebrow: 'Private Client Services',
     title: 'Private Client Services',
-    subline: 'Your life, well placed in Spain.',
+    subline: "Your life in Spain, thoughtfully managed.",
     body: 'We provide ongoing support that extends far beyond the transaction. From relocation to home management and everyday needs, we are your trusted point of contact in Spain.',
     cta: { to: '/inquiry', label: 'Discuss your needs' },
     alt: 'Terrace with olive tree overlooking the sea',
   },
   contactPoints: {
     heading: 'One point of contact in Spain',
-    subline: 'We simplify what can be a complex process. You tell us what you need; we take care of the rest.',
+    subline: "We simplify what can be a complex process. Tell us what you need ; we’ll coordinate the rest.",
     items: [
       { icon: 'figure', title: 'Personal service', sub: 'Tailored to you' },
       { icon: 'globe', title: 'Trusted network', sub: 'Carefully selected' },
@@ -41,7 +41,7 @@ export const en = {
       'Monthly reporting',
       'Priority support',
     ],
-    note: 'Available by private arrangement.',
+    note: "Available on a tailored basis.",
     cta: { to: '/inquiry', label: 'Discuss your needs' },
   },
   partners: {
@@ -64,15 +64,16 @@ export const en = {
 
 export const fr = {
   hero: {
-    eyebrow: 'Clients Privés',
+    eyebrow: "Clientèle Privée",
     title: 'Services aux clients privés',
     subline: 'Votre vie en Espagne, entre de bonnes mains.',
+    alt: 'Terrace with olive tree overlooking the sea',
     body: 'Nous vous offrons un accompagnement continu qui va bien au-delà de la transaction. De votre installation à la gestion de votre résidence et à vos besoins quotidiens, nous sommes votre interlocuteur de confiance en Espagne.',
     cta: { to: '/inquiry', label: 'Échanger sur vos besoins' },
   },
   contactPoints: {
     heading: 'Un interlocuteur unique en Espagne',
-    subline: 'Nous simplifions ce qui peut être un processus complexe. Vous nous indiquez ce dont vous avez besoin ; nous nous occupons du reste.',
+    subline: "Nous simplifions ce qui peut être un processus complexe. Faites-nous part de vos besoins ; nous coordonnons le reste.",
     items: [
       { icon: 'figure', title: 'Service personnalisé', sub: 'Adapté à vos besoins' },
       { icon: 'globe', title: 'Réseau de confiance', sub: 'Rigoureusement sélectionné' },
@@ -80,11 +81,12 @@ export const fr = {
       { icon: 'laurel', title: 'Équipe trilingue', sub: 'Anglais · Espagnol · Français' },
     ],
   },
+  servicesHeading: 'Nos Services aux Clients Privés',
   services: [
-    { title: 'Installation en Espagne', body: 'Nous vous accompagnons, vous et votre famille, à chaque étape de votre installation en Espagne, des visas et titres de séjour jusqu’à votre intégration dans la vie locale.', link: '/inquiry' },
-    { title: 'Gestion privée de résidence', body: 'Nous prenons soin de votre résidence en Espagne comme si elle était la nôtre. Supervision régulière, entretien et coordination d’un personnel et de prestataires de confiance.', link: '/inquiry' },
-    { title: 'Architecture & rénovation', body: 'De la conception à la réalisation, nous coordonnons votre rénovation ou votre construction neuve avec une sélection rigoureuse d’architectes, d’entrepreneurs et d’artisans.', link: '/inquiry' },
-    { title: 'Conciergerie & art de vivre', body: 'Des demandes du quotidien aux expériences exceptionnelles, nous proposons des solutions qui vous font gagner du temps et enrichissent votre vie en Espagne.', link: '/inquiry' },
+    { title: 'Installation en Espagne', body: 'Nous vous accompagnons, vous et votre famille, à chaque étape de votre installation en Espagne, des visas et titres de séjour jusqu’à votre intégration dans la vie locale.', link: '/inquiry', alt: 'Silver suitcase in a cream stone corridor' },
+    { title: 'Gestion privée de résidence', body: 'Nous prenons soin de votre résidence en Espagne comme si elle était la nôtre. Supervision régulière, entretien et coordination d’un personnel et de prestataires de confiance.', link: '/inquiry', alt: 'Private pool terrace with loungers and a bay view' },
+    { title: "Architecture & Rénovation", body: 'De la conception à la réalisation, nous coordonnons votre rénovation ou votre construction neuve avec une sélection rigoureuse d’architectes, d’entrepreneurs et d’artisans.', link: '/inquiry', alt: 'Architect table with blueprints and stone samples in a limestone villa under renovation' },
+    { title: 'Conciergerie & art de vivre', body: 'Des demandes du quotidien aux expériences exceptionnelles, nous proposons des solutions qui vous font gagner du temps et enrichissent votre vie en Espagne.', link: '/inquiry', alt: 'Golf lake at Villa Padierna, Marbella' },
   ],
   featureSplit: {
     alt: 'Clés avec étiquette en cuir sur une table en chêne',
@@ -101,7 +103,7 @@ export const fr = {
       'Rapport mensuel',
       'Assistance prioritaire',
     ],
-    note: 'Disponible sur arrangement privé.',
+    note: "Disponible selon vos besoins.",
     cta: { to: '/inquiry', label: 'Échanger sur vos besoins' },
   },
   partners: {
@@ -114,15 +116,16 @@ export const fr = {
 
 export const es = {
   hero: {
-    eyebrow: 'Cliente Privado',
+    eyebrow: "Clientes Privados",
     title: 'Servicios para clientes privados',
     subline: 'Su vida en España, bien atendida.',
+    alt: 'Terrace with olive tree overlooking the sea',
     body: 'Ofrecemos un acompañamiento continuo que va mucho más allá de la operación. Desde la reubicación hasta la gestión del hogar y las necesidades del día a día, somos su punto de contacto de confianza en España.',
     cta: { to: '/inquiry', label: 'Háblenos de sus necesidades' },
   },
   contactPoints: {
     heading: 'Un único punto de contacto en España',
-    subline: 'Simplificamos lo que puede ser un proceso complejo. Usted nos dice qué necesita; nosotros nos ocupamos del resto.',
+    subline: "Simplificamos lo que puede ser un proceso complejo. Cuéntenos qué necesita; nosotros coordinamos el resto.",
     items: [
       { icon: 'figure', title: 'Servicio personal', sub: 'Adaptado a usted' },
       { icon: 'globe', title: 'Red de confianza', sub: 'Cuidadosamente seleccionada' },
@@ -130,11 +133,12 @@ export const es = {
       { icon: 'laurel', title: 'Equipo trilingüe', sub: 'Inglés · Español · Francés' },
     ],
   },
+  servicesHeading: 'Nuestros Servicios para Clientes Privados',
   services: [
-    { title: 'Reubicación en España', body: 'Le ayudamos a usted y a su familia en cada etapa de su traslado a España, desde visados y residencia hasta la instalación e integración en la vida local.', link: '/inquiry' },
-    { title: 'Gestión privada del hogar', body: 'Cuidamos de su hogar en España como si fuera el nuestro. Supervisión periódica, mantenimiento y coordinación de personal y servicios de confianza.', link: '/inquiry' },
-    { title: 'Arquitectura y reforma', body: 'Desde el concepto hasta la finalización, gestionamos su reforma u obra nueva con arquitectos, constructores y artesanos cuidadosamente seleccionados.', link: '/inquiry' },
-    { title: 'Concierge y estilo de vida', body: 'Desde las necesidades cotidianas hasta experiencias excepcionales, ofrecemos soluciones que le ahorran tiempo y mejoran su vida en España.', link: '/inquiry' },
+    { title: 'Reubicación en España', body: 'Le ayudamos a usted y a su familia en cada etapa de su traslado a España, desde visados y residencia hasta la instalación e integración en la vida local.', link: '/inquiry', alt: 'Silver suitcase in a cream stone corridor' },
+    { title: 'Gestión privada del hogar', body: 'Cuidamos de su hogar en España como si fuera el nuestro. Supervisión periódica, mantenimiento y coordinación de personal y servicios de confianza.', link: '/inquiry', alt: 'Private pool terrace with loungers and a bay view' },
+    { title: "Arquitectura y Reforma", body: 'Desde el concepto hasta la finalización, gestionamos su reforma u obra nueva con arquitectos, constructores y artesanos cuidadosamente seleccionados.', link: '/inquiry', alt: 'Architect table with blueprints and stone samples in a limestone villa under renovation' },
+    { title: 'Concierge y estilo de vida', body: 'Desde las necesidades cotidianas hasta experiencias excepcionales, ofrecemos soluciones que le ahorran tiempo y mejoran su vida en España.', link: '/inquiry', alt: 'Golf lake at Villa Padierna, Marbella' },
   ],
   featureSplit: {
     alt: 'Llaves con etiqueta de cuero sobre una mesa de roble',
@@ -151,13 +155,13 @@ export const es = {
       'Informe mensual',
       'Asistencia prioritaria',
     ],
-    note: 'Disponible mediante acuerdo privado.',
+    note: "Disponible de forma personalizada.",
     cta: { to: '/inquiry', label: 'Háblenos de sus necesidades' },
   },
   partners: {
     heading: 'Una red de confianza',
     body: 'Trabajamos con una selecta red de profesionales que comparten nuestros valores y estándares: abogados, asesores fiscales, arquitectos, banqueros, interioristas, chefs y otros especialistas.',
-    list: ['Estudios de arquitectura', 'Banca privada', 'Despachos boutique', 'Asesores fiscales', 'Servicios náuticos', 'Colaboradores de estilo de vida'],
+    list: ['Estudios de arquitectura', "Banqueros privados", 'Despachos boutique', 'Asesores fiscales', 'Servicios náuticos', 'Colaboradores de estilo de vida'],
   },
   cta: { heading: '¿Cómo podemos ayudarle?', subline: 'Cuéntenos qué le trae a España.' },
 }

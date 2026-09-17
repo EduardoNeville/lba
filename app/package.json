@@ -9,7 +9,8 @@
     "build:dev": "tsc -b && vite build --mode development",
     "lint": "oxlint",
     "preview": "vite preview",
-    "check:locales": "node scripts/check-locales.ts"
+    "check:locales": "node scripts/check-locales.ts",
+    "export:copy": "node scripts/export-copy.ts"
   },
   "dependencies": {
     "firebase": "^12.17.1",

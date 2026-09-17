@@ -112,5 +112,5 @@ export const options = [
 
 export const aside = {
   heading: "Discretion is at the heart of everything we do.",
-  body: "Your enquiry is read only by a partner. We never share your details, never add you to lists and never discuss your affairs with anyone else.",
+  body: "Your enquiry is confidential and will be read only by a partner.",
 };

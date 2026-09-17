@@ -6,12 +6,12 @@ export const en = {
     alt: 'Marbella, Spain',
     heading: 'Lawyers & Property Advisers',
     sub: 'Based in Marbella',
-    body: 'Legal expertise and personal property advice for international clients. We help you buy, sell, and invest in Spain, while advising on your wider legal, business, and family matters.',
+    body: "Legal expertise and tailored property advice for international clients. We help you buy, sell, and invest in Spain, while advising on your wider legal, business, and family matters.",
   },
   intro: {
-    heading: 'More than property.',
+    heading: "Beyond Property.",
     body: [
-      'We are lawyers with extensive experience in Spanish law. We combine legal expertise with property, tax and lifestyle advisory, offering one trusted point of contact throughout your journey in Spain and the ongoing care of your home.',
+      "With extensive experience in Spanish law, we bring together legal, property and private client advisory under one roof. From an initial investment or property acquisition to the ongoing management of your interests in Spain, we provide a single, trusted point of contact.",
     ],
     sideTitle: 'Legal expertise at our core',
     sideBody: 'All our services are delivered with a legal foundation, ensuring your interests are protected at every step.',
@@ -35,7 +35,7 @@ export const en = {
     },
   ],
   residences: [],
-  cta: { heading: 'Every client is different.', subline: 'Tell us what brings you to Spain.' },
+  cta: { heading: "Every client is unique.", subline: "Tell us about your plans in Spain." },
 }
 
 export const fr = {
@@ -47,9 +47,9 @@ export const fr = {
     body: 'Expertise juridique et conseil immobilier personnalisé pour une clientèle internationale. Nous vous accompagnons dans l’achat, la vente et l’investissement en Espagne, tout en vous conseillant sur vos questions juridiques, professionnelles et familiales.',
   },
   intro: {
-    heading: 'Bien plus que l’immobilier.',
+    heading: "Au-delà de l’immobilier.",
     body: [
-      'Nous sommes des juristes disposant d’une vaste expérience du droit espagnol. Nous associons expertise juridique et conseil immobilier, fiscal et lifestyle afin d’offrir à nos clients un interlocuteur de confiance unique tout au long de leur parcours en Espagne, ainsi que pour la gestion continue de leur résidence.',
+      "Forts d’une solide expérience en droit espagnol, nous réunissons conseil juridique, immobilier et accompagnement de clientèle privée au sein d’une même structure. D’un premier investissement ou d’une acquisition immobilière à la gestion continue de vos intérêts en Espagne, nous vous offrons un interlocuteur de confiance unique.",
     ],
     sideTitle: 'L’expertise juridique au cœur de notre approche',
     sideBody: 'Tous nos services reposent sur une solide base juridique, afin de garantir la protection de vos intérêts à chaque étape.',
@@ -73,7 +73,7 @@ export const fr = {
     },
   ],
   residences: [],
-  cta: { heading: 'Chaque client est unique.', subline: 'Parlez-nous de ce qui vous amène en Espagne.' },
+  cta: { heading: 'Chaque client est unique.', subline: "Parlez-nous de vos projets en Espagne." },
 }
 
 export const es = {
@@ -85,9 +85,9 @@ export const es = {
     body: 'Experiencia jurídica y asesoramiento inmobiliario personalizado para clientes internacionales. Le ayudamos a comprar, vender e invertir en España, además de asesorarle en sus asuntos jurídicos, empresariales y familiares.',
   },
   intro: {
-    heading: 'Mucho más que propiedad.',
+    heading: "Más allá del inmobiliario.",
     body: [
-      'Somos abogados con amplia experiencia en derecho español. Combinamos experiencia jurídica con asesoramiento inmobiliario, fiscal y de estilo de vida, ofreciendo un único punto de contacto de confianza durante todo su recorrido en España y para el cuidado continuado de su hogar.',
+      "Con una amplia experiencia en derecho español, reunimos asesoramiento jurídico, inmobiliario y de clientes privados en una misma firma. Desde una primera inversión o adquisición inmobiliaria hasta la gestión continuada de sus intereses en España, le ofrecemos un único interlocutor de confianza.",
     ],
     sideTitle: 'La experiencia jurídica, en el centro de nuestro trabajo',
     sideBody: 'Todos nuestros servicios se prestan sobre una sólida base jurídica, garantizando la protección de sus intereses en cada etapa.',
@@ -111,5 +111,5 @@ export const es = {
     },
   ],
   residences: [],
-  cta: { heading: 'Cada cliente es diferente.', subline: 'Cuéntenos qué le trae a España.' },
+  cta: { heading: "Cada cliente es único.", subline: "Cuéntenos de sus proyectos en España." },
 }
