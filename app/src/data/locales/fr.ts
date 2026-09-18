@@ -6,27 +6,6 @@ export const nav = {
     privateClient: "Services aux clients privés",
     journal: "Blog",
     about: "À propos",
-    inquire: "Nous contacter",
-  },
-  children: {
-    buying: "Achat",
-    selling: "Vente",
-    privateSearch: "Recherche privée",
-    selectedResidences: "Résidences sélectionnées",
-    realEstate: "Droit immobilier",
-    tax: "Fiscalité & structuration",
-    corporate: "Droit des sociétés & investissement",
-    residency: "Résidence & relocalisation",
-    relocation: "Installation en Espagne",
-    architecture: "Architecture & rénovation",
-    homeManagement: "Gestion privée de résidence",
-    concierge: "Services de conciergerie",
-    golf: "Golf",
-    schools: "Écoles",
-    destinations: "Destinations",
-    culture: "Culture",
-    wellness: "Bien-être",
-    about: "À propos",
   },
 };
 
@@ -59,13 +38,9 @@ export const ui = {
   inquire: "Nous contacter",
   discoverMore: "Découvrir",
   viewAllProperties: "Voir toutes les propriétés",
-  viewAllResidences: "Voir toutes les résidences",
   viewResidence: "Voir la résidence",
-  learnMore: "En savoir plus",
   explore: "Explorer",
   meetTheTeam: "Rencontrer l’équipe",
-  discuss: "Échanger sur vos besoins",
-  submit: "Envoyer la demande",
   selectedResidences: "Résidences sélectionnées",
   privateEnquiry: "Faire une demande privée",
 };
@@ -90,22 +65,12 @@ export const form = {
     "Nous répondons à chaque demande, généralement sous un jour ouvré.",
   errorGeneric: "Une erreur est survenue. Veuillez réessayer.",
   hero: {
-    eyebrow: "Demande",
     title: "Comment pouvons-nous vous accompagner ?",
-    body: "Nous savons que chaque situation est unique. Merci de nous communiquer quelques informations sur votre demande ; un membre de notre équipe prendra contact avec vous.",
-    subline:
-      "Toutes les demandes sont traitées avec la plus grande discrétion.",
   },
   errorInterest: "Veuillez sélectionner un domaine.",
   errorName: "Veuillez nous indiquer votre nom.",
   errorEmail: "Veuillez saisir une adresse e-mail valide.",
   errorConsent: "Votre consentement est requis pour vous contacter.",
-  errors: {
-    interest: "Veuillez sélectionner un domaine.",
-    fullName: "Veuillez nous indiquer votre nom.",
-    email: "Veuillez saisir une adresse e-mail valide.",
-    consent: "Votre consentement est requis pour vous contacter.",
-  },
 };
 
 export const options = [

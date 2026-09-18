@@ -342,20 +342,9 @@ export function InquiryPage() {
   return (
     <section id="form" className="py-20 md:py-28">
       <Container>
-        <div className="max-w-[560px]">
-          <p className="micro text-taupe">{hero.eyebrow}</p>
-          <h1 className="font-display mt-3 max-w-[22ch] text-4xl leading-[1.08] tracking-wide md:text-5xl lg:text-[3.5rem]">
-            {hero.title}
-          </h1>
-          {hero.body && (
-            <p className="mt-6 max-w-prose text-sm leading-relaxed text-taupe md:text-[15px]">
-              {hero.body}
-            </p>
-          )}
-          {hero.subline && (
-            <p className="micro mt-4 text-[11px] text-taupe">{hero.subline}</p>
-          )}
-        </div>
+        <h1 className="font-display max-w-[22ch] text-4xl leading-[1.08] tracking-wide md:text-5xl lg:text-[3.5rem]">
+          {hero.title}
+        </h1>
         <div className="mt-14 grid gap-8 lg:grid-cols-12">
           <div className="lg:col-span-7">
             <InquiryForm />

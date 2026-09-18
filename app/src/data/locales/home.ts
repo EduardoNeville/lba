@@ -2,7 +2,6 @@
 // images, links and positions live in src/data/home.ts.
 export const en = {
   hero: {
-    eyebrow: 'Home',
     alt: 'Marbella, Spain',
     heading: 'Lawyers & Property Advisers',
     sub: 'Based in Marbella',
@@ -15,7 +14,6 @@ export const en = {
     ],
     sideTitle: 'Legal expertise at our core',
     sideBody: 'All our services are delivered with a legal foundation, ensuring your interests are protected at every step.',
-    sideLink: { label: 'Legal Practice', url: 'https://mariselacastro.com' },
   },
   practiceAreas: [
     {
@@ -34,13 +32,11 @@ export const en = {
       items: ['Relocation to Spain', 'Architecture & Renovation', 'Private Home Management', 'Concierge Services'],
     },
   ],
-  residences: [],
   cta: { heading: "Every client is unique.", subline: "Tell us about your plans in Spain." },
 }
 
 export const fr = {
   hero: {
-    eyebrow: 'Accueil',
     alt: 'Marbella, Espagne',
     heading: 'Avocats & Conseillers Immobiliers',
     sub: 'Basés à Marbella',
@@ -53,7 +49,6 @@ export const fr = {
     ],
     sideTitle: 'L’expertise juridique au cœur de notre approche',
     sideBody: 'Tous nos services reposent sur une solide base juridique, afin de garantir la protection de vos intérêts à chaque étape.',
-    sideLink: { label: 'Cabinet juridique', url: 'https://mariselacastro.com' },
   },
   practiceAreas: [
     {
@@ -72,13 +67,11 @@ export const fr = {
       items: ['Installation en Espagne', 'Architecture & rénovation', 'Gestion privée de résidence', 'Services de conciergerie'],
     },
   ],
-  residences: [],
   cta: { heading: 'Chaque client est unique.', subline: "Parlez-nous de vos projets en Espagne." },
 }
 
 export const es = {
   hero: {
-    eyebrow: 'Inicio',
     alt: 'Marbella, España',
     heading: 'Abogados & Asesores Inmobiliarios',
     sub: 'Con base en Marbella',
@@ -91,7 +84,6 @@ export const es = {
     ],
     sideTitle: 'La experiencia jurídica, en el centro de nuestro trabajo',
     sideBody: 'Todos nuestros servicios se prestan sobre una sólida base jurídica, garantizando la protección de sus intereses en cada etapa.',
-    sideLink: { label: 'Despacho jurídico', url: 'https://mariselacastro.com' },
   },
   practiceAreas: [
     {
@@ -110,6 +102,5 @@ export const es = {
       items: ['Reubicación en España', 'Arquitectura y reforma', 'Gestión privada del hogar', 'Servicios de concierge'],
     },
   ],
-  residences: [],
   cta: { heading: "Cada cliente es único.", subline: "Cuéntenos de sus proyectos en España." },
 }

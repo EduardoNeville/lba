@@ -2,9 +2,7 @@
 // images live in src/data/legal.ts.
 export const en = {
   hero: {
-    eyebrow: 'Legal',
     title: 'Legal expertise at our core',
-    subline: '',
     body: "We advise international clients with clarity, discretion and a deep understanding of the local legal landscape.",
     cta: { to: 'https://mariselacastro.com', label: 'Visit our legal practice' },
     alt: 'Walnut desk with brass lamp and law books in an arched niche',
@@ -40,9 +38,7 @@ export const fr = {
   statement: 'Nous offrons un conseil juridique indépendant à une clientèle privée et internationale, ainsi qu’à leurs familles et leurs entreprises.',
   areasHeading: 'Nos domaines d’expertise juridique',
   hero: {
-    eyebrow: 'Conseil juridique',
     title: 'L’expertise juridique au cœur de notre approche',
-    subline: "",
     body: "Nous conseillons une clientèle internationale sur le droit espagnol avec clarté, discrétion et une connaissance approfondie du paysage juridique local.",
     cta: { to: 'https://mariselacastro.com', label: 'Visiter notre cabinet juridique' },
     alt: 'Bureau en noyer avec lampe en laiton et livres de droit dans une niche voûtée',  },
@@ -74,9 +70,7 @@ export const es = {
   statement: 'Prestamos asesoramiento jurídico independiente a clientes privados e internacionales, así como a sus familias y empresas.',
   areasHeading: 'Nuestras áreas de asesoramiento jurídico',
   hero: {
-    eyebrow: 'Asesoramiento jurídico',
     title: 'La experiencia jurídica, en el centro de nuestro trabajo',
-    subline: "",
     body: "Asesoramos a clientes internacionales en derecho español con claridad, discreción y un profundo conocimiento del marco jurídico local.",
     cta: { to: 'https://mariselacastro.com', label: 'Visite nuestro despacho jurídico' },
     alt: 'Escritorio de nogal con lámpara de latón y libros de derecho en un nicho arqueado',

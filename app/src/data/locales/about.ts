@@ -2,7 +2,6 @@
 // team photos live in src/data/team.ts and are joined by member name.
 export const en = {
   hero: {
-    eyebrow: 'About Us',
     title: "Built on trust. Shaped around our clients.",
     body: [
       "Legal Boutique Advisers was founded in 2021 by lawyers with more than 25 years of experience advising private and international clients in Spain. The firm was built around a simple principle: every client’s circumstances are different, and their advice should be too.",
@@ -65,7 +64,6 @@ export const en = {
 
 export const fr = {
   hero: {
-    eyebrow: 'À propos',
     title: "Fondé sur la confiance. Façonné autour de nos clients.",
     body: [
       "Legal Boutique Advisers a été fondé en 2021 par des avocats bénéficiant de plus de 25 ans d’expérience dans l’accompagnement d’une clientèle privée et internationale en Espagne. Le cabinet s’est construit autour d’un principe simple : chaque client a une situation unique, et les conseils qui lui sont apportés doivent l’être également.",
@@ -125,7 +123,6 @@ export const fr = {
 
 export const es = {
   hero: {
-    eyebrow: 'Nosotros',
     title: "Basado en la confianza. Creciendo junto a nuestros clientes.",
     body: [
       "Legal Boutique Advisers fue fundado en 2021 por abogados con más de 25 años de experiencia en el asesoramiento a clientes privados e internacionales en España. El despacho se creó en torno a un principio sencillo: las circunstancias de cada cliente son únicas y su asesoramiento también debe serlo.",

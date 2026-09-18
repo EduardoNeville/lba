@@ -2,7 +2,6 @@
 // images and links live in src/data/property.ts.
 export const en = {
   hero: {
-    eyebrow: 'Property',
     title: 'Property',
     subline: 'A considered approach to property in Spain.',
     body: 'Buying or selling property involves more than finding the right home. We advise our clients throughout the process, bringing together property expertise, legal insight and a trusted professional network.',
@@ -17,14 +16,12 @@ export const en = {
   residences: [],
   crossLink: {
     left: {
-      eyebrow: "Property advice, grounded in legal expertise",
       heading: 'Property, with legal expertise.',
       body: "Our legal background shapes the way we approach every property transaction. By considering the legal, tax and practical implications from the outset, we help identify potential issues early and protect our clients’ interests throughout the process.",
       checks: ['Legal Due Diligence', 'Tax & Structuring', 'Contracts & Negotiation', 'Ownership & Regulation', 'Residency & Relocation'],
       link: { to: '/legal', label: 'Explore legal services' },
     },
     right: {
-      eyebrow: 'Beyond the transaction',
       heading: 'Beyond the transaction.',
       body: "Our relationship doesn't end at completion. We are here to help you settle in, manage your home and make the most of life in Spain.",
       checks: ['Private Home Management', 'Architecture & Renovation', 'Relocation to Spain', 'Concierge Services', 'Lifestyle & Local Knowledge'],
@@ -37,7 +34,6 @@ export const en = {
 
 export const fr = {
   hero: {
-    eyebrow: 'Propriété',
     title: 'Propriété',
     subline: 'Une approche réfléchie de l’immobilier en Espagne.',
     body: 'Acheter ou vendre un bien immobilier ne se résume pas à trouver la bonne propriété. Nous accompagnons nos clients tout au long du processus en réunissant expertise immobilière, savoir-faire juridique et réseau de professionnels de confiance.',
@@ -52,14 +48,12 @@ export const fr = {
   residences: [],
   crossLink: {
     left: {
-      eyebrow: "Le conseil immobilier, fondé sur l’expertise juridique.",
       heading: 'L’immobilier, avec une expertise juridique.',
       body: "Notre formation juridique détermine notre façon de traiter chaque transaction immobilière, afin de détecter les risques avant qu’ils ne deviennent problématiques.",
       checks: ['Audit juridique', 'Fiscalité & structuration', 'Contrats & négociation', 'Propriété & réglementation', 'Résidence & relocalisation'],
       link: { to: '/legal', label: 'Découvrir nos services juridiques' },
     },
     right: {
-      eyebrow: 'Au-delà de la transaction',
       heading: 'Au-delà de la transaction.',
       body: 'Notre relation ne s’arrête pas à la signature. Nous restons à vos côtés pour faciliter votre installation, gérer votre résidence et vous permettre de profiter pleinement de la vie en Espagne.',
       checks: ['Gestion privée de résidence', "Architecture & Rénovation", 'Installation en Espagne', 'Services de conciergerie', 'Art de vivre & connaissance locale'],
@@ -72,7 +66,6 @@ export const fr = {
 
 export const es = {
   hero: {
-    eyebrow: 'Propiedad',
     title: 'Propiedad',
     subline: 'Una forma cuidada de entender la propiedad en España.',
     body: 'Comprar o vender una propiedad implica mucho más que encontrar la vivienda adecuada. Asesoramos a nuestros clientes durante todo el proceso, aunando experiencia inmobiliaria, conocimiento jurídico y una red de profesionales de confianza.',
@@ -87,14 +80,12 @@ export const es = {
   residences: [],
   crossLink: {
     left: {
-      eyebrow: "Asesoramiento inmobiliario respaldado por experiencia jurídica.",
       heading: 'Propiedad, con experiencia jurídica.',
       body: "Nuestra formación jurídica determina cómo gestionamos cada operación inmobiliaria, permitiéndonos detectar riesgos antes de que se conviertan en problemas.",
       checks: ['Due diligence jurídica', 'Fiscalidad y estructuración', 'Contratos y negociación', 'Propiedad y regulación', 'Residencia y reubicación'],
       link: { to: '/legal', label: 'Explorar servicios jurídicos' },
     },
     right: {
-      eyebrow: 'Más allá de la operación',
       heading: 'Más allá de la operación.',
       body: 'Nuestra relación no termina con el cierre de la operación. Estamos aquí para ayudarle a instalarse, gestionar su hogar y disfrutar al máximo de la vida en España.',
       checks: ['Gestión privada del hogar', "Arquitectura y Reforma", 'Reubicación en España', 'Servicios de concierge', 'Estilo de vida y conocimiento local'],

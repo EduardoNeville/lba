@@ -6,27 +6,6 @@ export const nav = {
     privateClient: "Servicios para clientes privados",
     journal: "Blog",
     about: "Nosotros",
-    inquire: "Contacto",
-  },
-  children: {
-    buying: "Compra",
-    selling: "Venta",
-    privateSearch: "Búsqueda privada",
-    selectedResidences: "Residencias seleccionadas",
-    realEstate: "Derecho inmobiliario",
-    tax: "Fiscalidad y estructuración",
-    corporate: "Derecho societario e inversión",
-    residency: "Residencia y reubicación",
-    relocation: "Reubicación en España",
-    architecture: "Arquitectura y reforma",
-    homeManagement: "Gestión privada del hogar",
-    concierge: "Servicios de concierge",
-    golf: "Golf",
-    schools: "Colegios",
-    destinations: "Destinos",
-    culture: "Cultura",
-    wellness: "Bienestar",
-    about: "Nosotros",
   },
 };
 
@@ -59,13 +38,9 @@ export const ui = {
   inquire: "Contacto",
   discoverMore: "Descubrir más",
   viewAllProperties: "Ver todas las propiedades",
-  viewAllResidences: "Ver todas las residencias",
   viewResidence: "Ver la residencia",
-  learnMore: "Saber más",
   explore: "Explorar",
   meetTheTeam: "Conocer al equipo",
-  discuss: "Háblenos de sus necesidades",
-  submit: "Enviar consulta",
   selectedResidences: "Residencias seleccionadas",
   privateEnquiry: "Realizar una consulta privada",
 };
@@ -89,22 +64,13 @@ export const form = {
   replyNote: "Respondemos a cada consulta, normalmente en un día laborable.",
   errorGeneric: "Algo ha fallado. Por favor, inténtelo de nuevo.",
   hero: {
-    eyebrow: "Consulta",
     title: "¿Cómo podemos ayudarle?",
-    body: "Entendemos que cada situación es única. Comparta con nosotros algunos detalles sobre su consulta y un miembro de nuestro equipo se pondrá en contacto con usted.",
-    subline: "Todas las consultas se tratan con la máxima discreción.",
   },
   errorInterest: "Por favor, seleccione un área de interés.",
   errorName: "Por favor, indíquenos su nombre.",
   errorEmail:
     "Por favor, introduzca una dirección de correo electrónico válida.",
   errorConsent: "Necesitamos su consentimiento para contactarle.",
-  errors: {
-    interest: "Por favor, seleccione un área de interés.",
-    fullName: "Por favor, indíquenos su nombre.",
-    email: "Por favor, introduzca una dirección de correo electrónico válida.",
-    consent: "Necesitamos su consentimiento para contactarle.",
-  },
 };
 
 export const options = [

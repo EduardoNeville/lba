@@ -2,7 +2,6 @@
 // text only — images and links live in src/data/privateClient.ts.
 export const en = {
   hero: {
-    eyebrow: 'Private Client Services',
     title: 'Private Client Services',
     subline: "Your life in Spain, thoughtfully managed.",
     body: 'We provide ongoing support that extends far beyond the transaction. From relocation to home management and everyday needs, we are your trusted point of contact in Spain.',
@@ -64,7 +63,6 @@ export const en = {
 
 export const fr = {
   hero: {
-    eyebrow: "Clientèle Privée",
     title: 'Services aux clients privés',
     subline: 'Votre vie en Espagne, entre de bonnes mains.',
     alt: 'Terrasse avec olivier surplombant la mer',
@@ -116,7 +114,6 @@ export const fr = {
 
 export const es = {
   hero: {
-    eyebrow: "Clientes Privados",
     title: 'Servicios para clientes privados',
     subline: 'Su vida en España, bien atendida.',
     alt: 'Terraza con olivo con vistas al mar',

@@ -42,120 +42,6 @@ EN — About\
 FR — À propos\
 ES — Nosotros
 
-**`nav.label.inquire`**
-
-EN — Inquire\
-FR — Nous contacter\
-ES — Contacto
-
-**`nav.children.buying`**
-
-EN — Buying\
-FR — Achat\
-ES — Compra
-
-**`nav.children.selling`**
-
-EN — Selling\
-FR — Vente\
-ES — Venta
-
-**`nav.children.privateSearch`**
-
-EN — Private Search\
-FR — Recherche privée\
-ES — Búsqueda privada
-
-**`nav.children.selectedResidences`**
-
-EN — Selected Residences\
-FR — Résidences sélectionnées\
-ES — Residencias seleccionadas
-
-**`nav.children.realEstate`**
-
-EN — Real Estate Law\
-FR — Droit immobilier\
-ES — Derecho inmobiliario
-
-**`nav.children.tax`**
-
-EN — Tax & Structuring\
-FR — Fiscalité & structuration\
-ES — Fiscalidad y estructuración
-
-**`nav.children.corporate`**
-
-EN — Corporate & Investment\
-FR — Droit des sociétés & investissement\
-ES — Derecho societario e inversión
-
-**`nav.children.residency`**
-
-EN — Residency & Relocation\
-FR — Résidence & relocalisation\
-ES — Residencia y reubicación
-
-**`nav.children.relocation`**
-
-EN — Relocation to Spain\
-FR — Installation en Espagne\
-ES — Reubicación en España
-
-**`nav.children.architecture`**
-
-EN — Architecture & Renovation\
-FR — Architecture & rénovation\
-ES — Arquitectura y reforma
-
-**`nav.children.homeManagement`**
-
-EN — Private Home Management\
-FR — Gestion privée de résidence\
-ES — Gestión privada del hogar
-
-**`nav.children.concierge`**
-
-EN — Concierge Services\
-FR — Services de conciergerie\
-ES — Servicios de concierge
-
-**`nav.children.golf`**
-
-EN — Golf\
-FR — Golf\
-ES — Golf
-
-**`nav.children.schools`**
-
-EN — Schools\
-FR — Écoles\
-ES — Colegios
-
-**`nav.children.destinations`**
-
-EN — Destinations\
-FR — Destinations\
-ES — Destinos
-
-**`nav.children.culture`**
-
-EN — Culture\
-FR — Culture\
-ES — Cultura
-
-**`nav.children.wellness`**
-
-EN — Wellness\
-FR — Bien-être\
-ES — Bienestar
-
-**`nav.children.about`**
-
-EN — About\
-FR — À propos\
-ES — Nosotros
-
 ## footer
 
 **`footer.tagline`**
@@ -274,23 +160,11 @@ EN — View all properties\
 FR — Voir toutes les propriétés\
 ES — Ver todas las propiedades
 
-**`ui.viewAllResidences`**
-
-EN — View all residences\
-FR — Voir toutes les résidences\
-ES — Ver todas las residencias
-
 **`ui.viewResidence`**
 
 EN — View residence\
 FR — Voir la résidence\
 ES — Ver la residencia
-
-**`ui.learnMore`**
-
-EN — Learn more\
-FR — En savoir plus\
-ES — Saber más
 
 **`ui.explore`**
 
@@ -303,18 +177,6 @@ ES — Explorar
 EN — Meet the team\
 FR — Rencontrer l’équipe\
 ES — Conocer al equipo
-
-**`ui.discuss`**
-
-EN — Discuss your needs\
-FR — Échanger sur vos besoins\
-ES — Háblenos de sus necesidades
-
-**`ui.submit`**
-
-EN — Submit enquiry\
-FR — Envoyer la demande\
-ES — Enviar consulta
 
 **`ui.selectedResidences`**
 
@@ -456,53 +318,11 @@ EN — We need your consent to contact you.\
 FR — Votre consentement est requis pour vous contacter.\
 ES — Necesitamos su consentimiento para contactarle.
 
-**`form.errors.interest`**
-
-EN — Please select an area of interest.\
-FR — Veuillez sélectionner un domaine.\
-ES — Por favor, seleccione un área de interés.
-
-**`form.errors.fullName`**
-
-EN — Please tell us your name.\
-FR — Veuillez nous indiquer votre nom.\
-ES — Por favor, indíquenos su nombre.
-
-**`form.errors.email`**
-
-EN — Please enter a valid email address.\
-FR — Veuillez saisir une adresse e-mail valide.\
-ES — Por favor, introduzca una dirección de correo electrónico válida.
-
-**`form.errors.consent`**
-
-EN — We need your consent to contact you.\
-FR — Votre consentement est requis pour vous contacter.\
-ES — Necesitamos su consentimiento para contactarle.
-
-**`form.hero.eyebrow`**
-
-EN — Enquire\
-FR — Demande\
-ES — Consulta
-
 **`form.hero.title`**
 
 EN — How can we assist you?\
 FR — Comment pouvons-nous vous accompagner ?\
 ES — ¿Cómo podemos ayudarle?
-
-**`form.hero.body`**
-
-EN — We understand that every situation is unique. Please share a few details about your enquiry and a member of our team will be in touch.\
-FR — Nous savons que chaque situation est unique. Merci de nous communiquer quelques informations sur votre demande ; un membre de notre équipe prendra contact avec vous.\
-ES — Entendemos que cada situación es única. Comparta con nosotros algunos detalles sobre su consulta y un miembro de nuestro equipo se pondrá en contacto con usted.
-
-**`form.hero.subline`**
-
-EN — All enquiries are treated with the utmost discretion.\
-FR — Toutes les demandes sont traitées avec la plus grande discrétion.\
-ES — Todas las consultas se tratan con la máxima discreción.
 
 ## options
 
@@ -554,12 +374,6 @@ ES — Su consulta es confidencial y será atendida personalmente por un miembro
 
 # Home page
 
-**`home.hero.eyebrow`**
-
-EN — Home\
-FR — Accueil\
-ES — Inicio
-
 **`home.hero.alt`**
 
 EN — Marbella, Spain\
@@ -607,12 +421,6 @@ ES — La experiencia jurídica, en el centro de nuestro trabajo
 EN — All our services are delivered with a legal foundation, ensuring your interests are protected at every step.\
 FR — Tous nos services reposent sur une solide base juridique, afin de garantir la protection de vos intérêts à chaque étape.\
 ES — Todos nuestros servicios se prestan sobre una sólida base jurídica, garantizando la protección de sus intereses en cada etapa.
-
-**`home.intro.sideLink.label`**
-
-EN — Legal Practice\
-FR — Cabinet juridique\
-ES — Despacho jurídico
 
 ## home.practiceAreas[0] — Property
 
@@ -723,12 +531,6 @@ FR — Parlez-nous de vos projets en Espagne.\
 ES — Cuéntenos de sus proyectos en España.
 
 # About page
-
-**`about.hero.eyebrow`**
-
-EN — About Us\
-FR — À propos\
-ES — Nosotros
 
 **`about.hero.title`**
 
@@ -1062,23 +864,11 @@ ES — Centro de Divulgación Musical del Mediterráneo
 
 # Legal page
 
-**`legal.hero.eyebrow`**
-
-EN — Legal\
-FR — Conseil juridique\
-ES — Asesoramiento jurídico
-
 **`legal.hero.title`**
 
 EN — Legal expertise at our core\
 FR — L’expertise juridique au cœur de notre approche\
 ES — La experiencia jurídica, en el centro de nuestro trabajo
-
-**`legal.hero.subline`**
-
-EN — (empty)\
-FR — (empty)\
-ES — (empty)
 
 **`legal.hero.body`**
 
@@ -1378,12 +1168,6 @@ ES — Estamos aquí para ayudarle.
 
 # Property page
 
-**`property.hero.eyebrow`**
-
-EN — Property\
-FR — Propriété\
-ES — Propiedad
-
 **`property.hero.title`**
 
 EN — Property\
@@ -1474,12 +1258,6 @@ EN — /inquiry\
 FR — /inquiry\
 ES — /inquiry
 
-**`property.crossLink.left.eyebrow`**
-
-EN — Property advice, grounded in legal expertise\
-FR — Le conseil immobilier, fondé sur l’expertise juridique.\
-ES — Asesoramiento inmobiliario respaldado por experiencia jurídica.
-
 **`property.crossLink.left.heading`**
 
 EN — Property, with legal expertise.\
@@ -1527,12 +1305,6 @@ ES — Residencia y reubicación
 EN — Explore legal services\
 FR — Découvrir nos services juridiques\
 ES — Explorar servicios jurídicos
-
-**`property.crossLink.right.eyebrow`**
-
-EN — Beyond the transaction\
-FR — Au-delà de la transaction\
-ES — Más allá de la operación
 
 **`property.crossLink.right.heading`**
 
@@ -1601,12 +1373,6 @@ FR — Nous serions ravis d’échanger avec vous.\
 ES — Estaremos encantados de atenderle.
 
 # Private client page
-
-**`privateClient.hero.eyebrow`**
-
-EN — Private Client Services\
-FR — Clientèle Privée\
-ES — Clientes Privados
 
 **`privateClient.hero.title`**
 
