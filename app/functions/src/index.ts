@@ -12,11 +12,17 @@ import { FieldValue } from 'firebase-admin/firestore'
 // firebase-admin/auth → jwks-rsa → jose (ESM-only), which the Firebase CLI's
 // bundled Node cannot `require()` while analysing the source for deploy.
 import { logger } from 'firebase-functions/logger'
+import { defineSecret } from 'firebase-functions/params'
 import { onDocumentCreated } from 'firebase-functions/v2/firestore'
 import { renderEnquiryEmail, type Enquiry } from './enquiryEmail'
 import { providerFromEnv, sendMail } from './mailer'
 
 initializeApp()
+
+// SMTP password lives in Secret Manager, not in source or .env:
+//   firebase functions:secrets:set SMTP_PASS
+// Binding it here makes it available as an env var in `process.env` at runtime.
+const SMTP_PASS = defineSecret('SMTP_PASS')
 
 // The practice inbox. Override with MAIL_TO for testing.
 const INBOX = (process.env.MAIL_TO || '').trim() || 'info@legalboutiqueadvisers.com'
@@ -32,6 +38,7 @@ export const notifyInquiry = onDocumentCreated(
     timeoutSeconds: 30,
     // Never retry: a retry would email the same enquiry twice.
     retry: false,
+    secrets: [SMTP_PASS],
   },
   async (event) => {
     const snapshot = event.data

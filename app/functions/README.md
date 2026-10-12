@@ -82,13 +82,16 @@ works with a normal npm-installed CLI too. `lib/` **is** uploaded (only
 
 1. `myaccount.google.com` → **Security → 2-Step Verification** (app passwords
    require it).
-2. **Security → App passwords** → create one for "Mail". Paste it into
-   `app/functions/.env` (git-ignored) or set it as a secret.
-3. Recommended: Gmail → **Settings → Accounts → Send mail as** → add
-   `info@legalboutiqueadvisers.com`, then click the confirmation link that
-   arrives in that inbox. `MAIL_FROM=Legal Boutique Advisers <info@legalboutiqueadvisers.com>`
-   (the code default) only works once the alias is verified; until then set it
-   to the gmail address with the firm name as display name.
+2. **Security → App passwords** → create one for "Mail". Store it in Secret
+   Manager (never source, never `.env`):
+   `cd app && firebase functions:secrets:set SMTP_PASS`
+   (`src/index.ts` binds it with `defineSecret('SMTP_PASS')`).
+3. The rest of the connection lives in the git-ignored `app/functions/.env`:
+   `SMTP_HOST`, `SMTP_PORT`, `SMTP_SECURE`, `SMTP_USER`, `MAIL_FROM` — see
+   `.env.example`. `MAIL_FROM` must be the gmail address itself (firm name as
+   display name) unless the optional **Send mail as** alias
+   (`info@legalboutiqueadvisers.com`) has been verified in Gmail — an unverified
+   From address makes Gmail reject the send.
 4. Deploy: `cd app && firebase deploy --only functions`.
 
 ### Current status
