@@ -67,7 +67,7 @@ InquiryPage (src/pages/InquiryPage.jsx)
 │   ├── InquiryForm
 │   │   ├── InterestRadios (radio cards)
 │   │   ├── Field (label + control + error)  ui primitive
-│   │   └── sent panel (reopen / copy / edit)
+│   │   └── submit states
 │   └── DiscretionAside              page (emblem panel)
 └── SiteFooter (expanded dark)       shared, final form
 ```
@@ -79,26 +79,17 @@ src/
 ├── pages/InquiryPage.jsx
 ├── components/inquiry/InquiryForm.jsx, DiscretionAside.jsx
 ├── components/ui/Field.jsx
-└── lib/inquiryMailto.js   ← composes the email, no backend
+└── lib/submitInquiry.js   ← Firestore write, isolated for testing
 ```
 
-## 4. No backend — the form composes an email
+## 4. Firebase mapping (the real one)
 
-- Submitting validates, then builds a `mailto:info@legalboutiqueadvisers.com` URL and
-  opens it: the visitor's own mail client opens with the fields filled in and they
-  press send. Nothing is stored on the site, no enquiry content touches a third
-  party, and no SMTP/DNS/API credentials are needed.
-- `lib/inquiryMailto.js` owns one constant (the inbox) and three pure builders —
-  `buildInquirySubject`, `buildInquiryBody`, `buildInquiryMail` — plus `copyText`
-  for the panel's "copy my enquiry" fallback when no mail client opens.
-- Body: aligned `label: value` block from the form fields (empty optional fields
-  omitted) + a blank line + the visitor's message, all line endings normalised to
-  CRLF; subject is `{prefix} — {area of interest}`, with the prefix from the locale.
-- The sent panel offers re-opening the draft, copying its text and editing the
-  enquiry; `form.mailSubjectPrefix`, `form.compose*`, `form.mailto*`, `form.cop*`,
-  `form.editDraft` in `data/locales/*` hold the copy (all three languages).
-- Server side (Cloud Function that emails Firestore writes) is **not** used here;
-  the `inquiries` collection and its rules are left in place but unused.
+- Collection `inquiries`: `{interest, fullName, email, phone, country, message, consent:true, createdAt: serverTimestamp()}` via `addDoc`.
+- `lib/submitInquiry.js` exports one async fn; form imports it — swap to Cloud Function later without touching UI.
+- Enquiries are emailed to `info@legalboutiqueadvisers.com` by the `notifyInquiry` Cloud Function in `app/functions/` (Firestore trigger on `inquiries/{id}`, Gen 2, `europe-west1`). Transport setup: `app/functions/README.md`. The doc gets `emailNotification: {status, provider, sentAt}` after each attempt.
+- Rules: `allow read: if false; allow create: if request.resource.data.email is string && request.resource.data.consent == true;` (write-only from client).
+- Lazy Firebase init (`getFirestore` on first submit import) so form page is the only chunk pulling Firestore SDK — `React.lazy` the page in router to keep it out of the main bundle.
+- Success/error copy slots; never expose Firestore error strings.
 
 ## 5. Responsive & a11y
 

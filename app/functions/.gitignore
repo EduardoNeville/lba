@@ -1,0 +1,14 @@
+# Compiled output
+lib/
+*.log
+
+# Dependencies
+node_modules/
+
+# Local transport credentials — never commit
+.env
+.env.*
+!.env.example
+
+# Firebase CLI state
+.firebase/

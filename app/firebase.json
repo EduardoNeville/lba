@@ -6,6 +6,14 @@
   "storage": {
     "rules": "storage.rules"
   },
+  "functions": [
+    {
+      "source": "functions",
+      "codebase": "inquiries",
+      "predeploy": ["node ./functions/node_modules/typescript/bin/tsc -p functions"],
+      "ignore": ["node_modules", ".git", ".env", ".env.*", "*.log"]
+    }
+  ],
   "emulators": {
     "firestore": {
       "port": 8080
