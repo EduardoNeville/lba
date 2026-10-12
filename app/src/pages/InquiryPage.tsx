@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { Container } from "../components/ui/Container";
 import { Field } from "../components/ui/Field";
 import { Icon } from "../components/ui/icons";
@@ -43,6 +43,21 @@ const initial: FormState = {
   message: "",
   consent: false,
 };
+
+const INTERESTS = ["property", "legal", "private-client", "other"];
+
+// A residence page hands over its reference and title, so the enquiry arrives with
+// the property already identified — and the visitor can edit the wording.
+function initialFromQuery(params: URLSearchParams, enquiryAbout: string): FormState {
+  const interest = params.get("interest")?.trim() ?? "";
+  const subject = params.get("subject")?.trim() ?? "";
+  const ref = params.get("ref")?.trim() ?? "";
+  return {
+    ...initial,
+    interest: INTERESTS.includes(interest) ? interest : "",
+    message: subject ? `${enquiryAbout} ${subject}${ref ? ` (${ref})` : ""}` : "",
+  };
+}
 
 const COUNTRIES = [
   "United Kingdom",
@@ -138,7 +153,10 @@ function ConsentText({ text }: { text: string }) {
 
 function InquiryForm() {
   const { form, options } = useInquiryDict();
-  const [formState, setFormState] = useState<FormState>(initial);
+  const [params] = useSearchParams();
+  const [formState, setFormState] = useState<FormState>(() => initialFromQuery(params, form.enquiryAbout));
+  const subject = params.get("subject")?.trim() ?? "";
+  const reference = params.get("ref")?.trim() ?? "";
   const [touched, setTouched] = useState<Record<string, boolean>>({});
   const [status, setStatus] = useState<"idle" | "submitting" | "error">("idle");
   const [error, setError] = useState("");
@@ -202,6 +220,12 @@ function InquiryForm() {
 
   return (
     <form onSubmit={onSubmit} noValidate>
+      {(subject || reference) && (
+        <p className="micro mb-6 border border-hairline bg-parchment/40 px-4 py-3 text-[10px] leading-relaxed text-taupe">
+          {form.regarding}: <span className="text-ink">{subject || reference}</span>
+          {subject && reference ? ` · ${reference}` : ""}
+        </p>
+      )}
       <InterestRadios
         value={formState.interest}
         onChange={(v) => set("interest", v)}

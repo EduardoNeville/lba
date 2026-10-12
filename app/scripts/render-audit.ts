@@ -33,6 +33,10 @@ const routes: [string, string][] = [
   ['/legal', '/src/pages/LegalPage.tsx'],
   ['/property', '/src/pages/PropertyPage.tsx'],
   ['/property/residences', '/src/pages/ResidencesPage.tsx'],
+  ['/property/residences/villa-infinity-pool-golden-mile', '/src/pages/ResidencePage.tsx'],
+  // The enquiry carries a residence reference — the "regarding" line and the seeded
+  // message only exist once that is in the URL.
+  ['/inquiry?interest=property&ref=LBA-0421&subject=Villa%20with%20infinity%20pool', '/src/pages/InquiryPage.tsx'],
   ['/private-client', '/src/pages/PrivateClientPage.tsx'],
   ['/inquiry', '/src/pages/InquiryPage.tsx'],
 ]

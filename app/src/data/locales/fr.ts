@@ -59,6 +59,8 @@ export const form = {
   message: "Comment pouvons-nous vous aider ?",
   messagePlaceholder: "Merci de nous en dire plus sur votre demande",
   consent: "Je confirme avoir lu et accepté la Politique de confidentialité.",
+  regarding: "À propos de",
+  enquiryAbout: "Je souhaiterais en savoir plus sur",
   submit: "Envoyer la demande",
   sending: "Envoi en cours…",
   thankYou: "Merci. Nous vous répondrons rapidement.",

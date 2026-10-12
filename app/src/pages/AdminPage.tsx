@@ -420,7 +420,7 @@ export function AdminPage() {
                   <h2 className="font-display mt-2 text-2xl uppercase">{form.title || '(no title)'}</h2>
                   {form.excerpt && <p className="mt-3 font-display italic text-taupe">{form.excerpt}</p>}
                   {form.coverUrl && <img src={form.coverUrl} alt="" className="mt-6 w-full object-cover" />}
-                  <div className="blog-content mt-6" dangerouslySetInnerHTML={{ __html: renderMarkdown(form.body || '*Nothing yet*') }} />
+                  <div className="rich-text mt-6" dangerouslySetInnerHTML={{ __html: renderMarkdown(form.body || '*Nothing yet*') }} />
                 </div>
               )}
             </div>
@@ -432,7 +432,7 @@ export function AdminPage() {
                   <p className="micro text-taupe">Live preview</p>
                   <h3 className="font-display mt-2 uppercase leading-snug">{form.title || '(no title)'}</h3>
                   {form.excerpt && <p className="mt-2 text-[13px] italic text-taupe">{form.excerpt}</p>}
-                  <div className="blog-content mt-4 max-h-[60vh] overflow-auto pr-2 text-sm" dangerouslySetInnerHTML={{ __html: renderMarkdown(form.body || '*Start writing…*') }} />
+                  <div className="rich-text mt-4 max-h-[60vh] overflow-auto pr-2 text-sm" dangerouslySetInnerHTML={{ __html: renderMarkdown(form.body || '*Start writing…*') }} />
                 </div>
               </div>
             )}

@@ -8,7 +8,7 @@
 
 import React from 'react'
 import { renderToStaticMarkup } from 'react-dom/server'
-import { MemoryRouter } from 'react-router-dom'
+import { MemoryRouter, Route, Routes } from 'react-router-dom'
 import { createServer } from 'vite'
 
 const store: Record<string, string> = {}
@@ -40,12 +40,27 @@ const byRef = (ref: string): Property => {
 }
 
 function renderCard(property: Property, lang: 'en' | 'fr' | 'es'): string {
+  return renderPage('/', lang, React.createElement(PropertyCard, { property, showLink: true }))
+}
+
+// Mounts a component at a path. `pattern` matters for anything reading useParams
+// (the residence page): without a matching route the slug is empty.
+function renderPage(
+  path: string,
+  lang: 'en' | 'fr' | 'es',
+  element: React.ReactElement,
+  pattern = '*',
+): string {
   store['lba-lang'] = lang
   return renderToStaticMarkup(
     React.createElement(
       LangProvider,
       null,
-      React.createElement(MemoryRouter, null, React.createElement(PropertyCard, { property, showLink: true })),
+      React.createElement(
+        MemoryRouter,
+        { initialEntries: [path] },
+        React.createElement(Routes, null, React.createElement(Route, { path: pattern, element })),
+      ),
     ),
   )
 }
@@ -140,20 +155,7 @@ has('es: district shown as published', esVilla, 'Golden Mile')
 const { ResidencesPage } = await load('/src/pages/ResidencesPage.tsx')
 
 function pageText(search: string, lang: 'en' | 'fr' | 'es'): string {
-  store['lba-lang'] = lang
-  return stripHtml(
-    renderToStaticMarkup(
-      React.createElement(
-        LangProvider,
-        null,
-        React.createElement(
-          MemoryRouter,
-          { initialEntries: [`/property/residences${search}`] },
-          React.createElement(ResidencesPage),
-        ),
-      ),
-    ),
-  )
+  return stripHtml(renderPage(`/property/residences${search}`, lang, React.createElement(ResidencesPage)))
 }
 
 const page = pageText('', 'en')
@@ -180,14 +182,7 @@ has('fr page: filter count badge', frPage, 'Filtres · 2')
 const { SiteHeader } = await load('/src/components/layout/SiteHeader.tsx')
 
 function activeNavItems(path: string): string[] {
-  store['lba-lang'] = 'en'
-  const html = renderToStaticMarkup(
-    React.createElement(
-      LangProvider,
-      null,
-      React.createElement(MemoryRouter, { initialEntries: [path] }, React.createElement(SiteHeader)),
-    ),
-  )
+  const html = renderPage(path, 'en', React.createElement(SiteHeader))
   const active: string[] = []
   for (const match of html.matchAll(/<a([^>]*)>([^<]*)<\/a>/g)) {
     const [, attrs, label] = match
@@ -208,6 +203,166 @@ equals(
 )
 equals('nav: /legal highlights Legal only', activeNavItems('/legal'), ['Legal'])
 equals('nav: a journal post keeps Journal highlighted', activeNavItems('/blog/any-post'), ['Journal'])
+
+// --- one residence page: gallery, specifications, copy, enquiry link ---------
+const { ResidenceDetail, ResidencePage } = await load('/src/pages/ResidencePage.tsx')
+const { PropertyGallery } = await load('/src/components/residences/PropertyGallery.tsx')
+const { Carousel } = await load('/src/components/ui/Carousel.tsx')
+
+const villaProperty = byRef('LBA-0421')
+
+const galleryHtml = renderPage(
+  '/',
+  'en',
+  React.createElement(PropertyGallery, { images: villaProperty.images, title: villaProperty.title }),
+)
+const gallery = stripHtml(galleryHtml)
+equals('gallery: a slide per photograph, in both carousels', (galleryHtml.match(/aria-roledescription="slide"/g) ?? []).length, 8)
+has('gallery: region label', gallery, 'Residence photographs')
+has('gallery: previous arrow', gallery, 'Previous photograph')
+has('gallery: next arrow', gallery, 'Next photograph')
+has('gallery: counter', gallery, '1 / 4')
+equals('gallery: a labelled thumbnail per photograph', (galleryHtml.match(/aria-label="View photograph \d"/g) ?? []).length, 4)
+equals('gallery: thumbnails are decorative', (galleryHtml.match(/alt=""/g) ?? []).length, 4)
+has('gallery: cover carries the fixture alt text', gallery, 'Infinity pool and stone terrace')
+
+const similar = [byRef('LBA-0424'), byRef('LBA-0426')]
+const detailHtml = renderPage('/', 'en', React.createElement(ResidenceDetail, { property: villaProperty, similar }))
+const detail = stripHtml(detailHtml)
+has('detail: title', detail, 'Villa with infinity pool above the Golden Mile')
+has('detail: reference', detail, 'Reference LBA-0421')
+has('detail: price', detail, '€6,450,000')
+has('detail: back link', detail, '← All residences')
+has('detail: bedroom spec', detail, 'Bedrooms')
+has('detail: bath spec', detail, 'Bathrooms')
+has('detail: built area spec', detail, '620 m²')
+has('detail: terrace spec', detail, '180 m²')
+has('detail: energy rating spec', detail, 'Energy rating')
+has('detail: markdown heading rendered', detail, 'A modern villa on Marbella')
+has('detail: markdown list rendered', detail, 'Five bedrooms, all en suite')
+has('detail: features', detail, 'Gated community')
+has('detail: location note', detail, 'The exact address is shared on request')
+has('detail: legal line', detail, 'not contractually binding')
+has('detail: enquiry call to action', detail, 'Enquire about this residence')
+has('detail: enquiry link carries the reference', detailHtml, 'ref=LBA-0421')
+has('detail: similar residences', detail, 'Front-line golf villa in Nueva Andalucía')
+has('detail: no availability badge when available', detail, 'LBA-0421')
+lacks('detail: available residence has no badge', detail, 'Available')
+
+has(
+  'detail: price on application',
+  stripHtml(renderPage('/', 'en', React.createElement(ResidenceDetail, { property: byRef('LBA-0426'), similar: [] }))),
+  'Price on application',
+)
+has(
+  'detail: sold badge',
+  stripHtml(renderPage('/', 'en', React.createElement(ResidenceDetail, { property: byRef('LBA-0422'), similar: [] }))),
+  'Sold',
+)
+const frDetail = stripHtml(renderPage('/', 'fr', React.createElement(ResidenceDetail, { property: villaProperty, similar: [] })))
+has('fr detail: spec labels', frDetail, 'Salles de bain')
+has('fr detail: legal line', frDetail, "n'ont pas de valeur contractuelle")
+has('fr detail: enquire copy', frDetail, 'Se renseigner sur cette résidence')
+const esDetail = stripHtml(renderPage('/', 'es', React.createElement(ResidenceDetail, { property: villaProperty, similar: [] })))
+has('es detail: spec labels', esDetail, 'Certificado energético')
+has('es detail: legal line', esDetail, 'no tiene carácter contractual')
+has('es detail: translated feature', esDetail, 'Vistas al mar')
+has(
+  'es detail: sold badge',
+  stripHtml(renderPage('/', 'es', React.createElement(ResidenceDetail, { property: byRef('LBA-0422'), similar: [] }))),
+  'Vendida',
+)
+
+// The page finds a cached residence synchronously, so a warm session paints it
+// immediately; an unknown slug stays in the loading state until it 404s.
+// The page paints a cached residence synchronously when the session is warm (from a
+// listing visit); warm the loader the way a real navigation would.
+const loader = (await load('/src/lib/properties.ts')) as typeof import('../src/lib/properties.ts')
+await loader.loadPublishedProperties()
+
+const detailPage = stripHtml(
+  renderPage(
+    '/property/residences/villa-infinity-pool-golden-mile',
+    'en',
+    React.createElement(ResidencePage),
+    '/property/residences/:slug',
+  ),
+)
+has('residence page: renders a cached residence', detailPage, 'Villa with infinity pool above the Golden Mile')
+lacks('residence page: a known slug is not a 404', detailPage, 'no longer available')
+has(
+  'residence page: an unknown slug keeps loading until it resolves',
+  stripHtml(
+    renderPage('/property/residences/not-a-real-slug', 'en', React.createElement(ResidencePage), '/property/residences/:slug'),
+  ),
+  'Loading residences…',
+)
+
+// --- the enquiry a residence hands over -------------------------------------
+// /inquiry?interest=property&ref=…&subject=… must arrive with the property already
+// identified, in the visitor's language, and still editable.
+const { InquiryPage } = await load('/src/pages/InquiryPage.tsx')
+const inquiryPath = `/inquiry?interest=property&ref=LBA-0421&subject=${encodeURIComponent(villaProperty.title)}`
+const inquiryHtml = renderPage(inquiryPath, 'en', React.createElement(InquiryPage))
+const inquiry = stripHtml(inquiryHtml)
+has('enquiry: says what it is about', inquiry, 'Regarding')
+has('enquiry: names the residence from the URL', inquiry, villaProperty.title)
+has('enquiry: quotes the reference from the URL', inquiry, 'LBA-0421')
+has('enquiry: seeds the message', inquiry, 'I would like to know more about')
+equals(
+  'enquiry: preselects the property interest',
+  /checked=""[^>]*value="property"|value="property"[^>]*checked=""/.test(inquiryHtml),
+  true,
+)
+equals('enquiry: exactly one interest selected', (inquiryHtml.match(/checked=""/g) ?? []).length, 1)
+const frInquiry = stripHtml(renderPage(inquiryPath, 'fr', React.createElement(InquiryPage)))
+has('fr enquiry: regarding label', frInquiry, 'À propos de')
+has('fr enquiry: seeded message', frInquiry, 'Je souhaiterais en savoir plus sur')
+const esInquiry = stripHtml(renderPage(inquiryPath, 'es', React.createElement(InquiryPage)))
+has('es enquiry: regarding label', esInquiry, 'Sobre')
+has('es enquiry: seeded message', esInquiry, 'Me gustaría saber más sobre')
+
+// --- carousel props ---------------------------------------------------------
+const labels = { previous: 'Previous photograph', next: 'Next photograph', pause: 'Pause', play: 'Play' }
+const carouselHtml = renderPage(
+  '/',
+  'en',
+  React.createElement(Carousel, {
+    items: ['a', 'b', 'c'],
+    renderItem: (item: string) => React.createElement('span', null, item),
+    ariaLabel: 'Test carousel',
+    labels,
+    dots: true,
+  }),
+)
+equals('carousel: a group per item', (carouselHtml.match(/aria-roledescription="slide"/g) ?? []).length, 3)
+has('carousel: region is labelled', carouselHtml, 'aria-label="Test carousel"')
+has('carousel: previous control', carouselHtml, 'aria-label="Previous photograph"')
+has('carousel: next control', carouselHtml, 'aria-label="Next photograph"')
+equals(
+  'carousel: a dot per item',
+  (carouselHtml.match(/aria-current="(?:true|false)"/g) ?? []).length,
+  3,
+)
+lacks('carousel: no pause control unless autoplay is on', carouselHtml, '>Pause<')
+equals(
+  'carousel: pause control appears with autoplay',
+  (
+    renderPage(
+      '/',
+      'en',
+      React.createElement(Carousel, {
+        items: ['a', 'b'],
+        renderItem: (item: string) => React.createElement('span', null, item),
+        ariaLabel: 'Test carousel',
+        labels,
+        autoplayMs: 7000,
+        pauseControl: true,
+      }),
+    ).match(/>Pause</g) ?? []
+  ).length,
+  1,
+)
 
 console.log(`\n${passed} passed, ${failures.length} failed\n`)
 for (const failure of failures) console.log(`✗ ${failure}\n`)

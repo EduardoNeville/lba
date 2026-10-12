@@ -103,6 +103,11 @@ export const icons: Record<string, ReactElement> = {
       <path d="m15 18-6-6 6-6" />
     </svg>
   ),
+  'chevron-right': (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1} strokeLinecap="round" strokeLinejoin="round">
+      <path d="m9 18 6-6-6-6" />
+    </svg>
+  ),
   bed: (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1} strokeLinecap="round" strokeLinejoin="round">
       <path d="M2 4v16" />

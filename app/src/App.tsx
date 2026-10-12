@@ -7,6 +7,7 @@ import { HomePage } from './pages/HomePage'
 import { AboutPage } from './pages/AboutPage'
 import { PropertyPage } from './pages/PropertyPage'
 import { ResidencesPage } from './pages/ResidencesPage'
+import { ResidencePage } from './pages/ResidencePage'
 import { LegalPage } from './pages/LegalPage'
 import { PrivateClientPage } from './pages/PrivateClientPage'
 import { BlogListPage } from './pages/BlogListPage'
@@ -46,6 +47,12 @@ const ROUTE_META: Record<string, { title: string; description?: string }> = {
     description:
       'Houses, apartments and fincas for sale across Marbella, the Golden Mile, Benahavís, Estepona and Sotogrande — with the legal review that comes with everything we do.',
   },
+  // A residence page sets its own title and description once its data has loaded;
+  // this is what a deep link shows until then.
+  '/property/residences/': {
+    title: 'Residence · Legal Boutique Advisers',
+    description: 'A selected residence marketed by Legal Boutique Advisers.',
+  },
   '/legal': {
     title: 'Legal Advice in Spain · Legal Boutique Advisers',
     description: 'Residency, tax, inheritance, corporate and commercial legal advice for private and international clients in Spain.',
@@ -67,7 +74,12 @@ const ROUTE_META: Record<string, { title: string; description?: string }> = {
 function ApplyMeta() {
   const { pathname } = useLocation()
   useEffect(() => {
-    const m = ROUTE_META[pathname] ?? ROUTE_META['/']
+    // Exact route first, then the longest registered prefix: /property/residences/villa-x
+    // resolves to the residences entry, whose page then sets its own title once loaded.
+    const prefix = Object.keys(ROUTE_META)
+      .filter((route) => route !== '/' && route !== pathname && pathname.startsWith(route))
+      .sort((a, b) => b.length - a.length)[0]
+    const m = ROUTE_META[pathname] ?? (prefix ? ROUTE_META[prefix] : ROUTE_META['/'])
     setPageMeta(m.title, m.description)
   }, [pathname])
   return null
@@ -86,6 +98,7 @@ function App() {
             <Route path="/about" element={<AboutPage />} />
             <Route path="/property" element={<PropertyPage />} />
             <Route path="/property/residences" element={<ResidencesPage />} />
+            <Route path="/property/residences/:slug" element={<ResidencePage />} />
             <Route path="/legal" element={<LegalPage />} />
             <Route path="/private-client" element={<PrivateClientPage />} />
             <Route path="/blog" element={<BlogListPage />} />

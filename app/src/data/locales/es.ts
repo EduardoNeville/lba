@@ -59,6 +59,8 @@ export const form = {
   message: "¿Cómo podemos ayudarle?",
   messagePlaceholder: "Cuéntenos más sobre su consulta",
   consent: "Confirmo que he leído y acepto la Política de Privacidad.",
+  regarding: "Sobre",
+  enquiryAbout: "Me gustaría saber más sobre",
   submit: "Enviar consulta",
   sending: "Enviando…",
   thankYou: "Gracias. Nos pondremos en contacto con usted en breve.",

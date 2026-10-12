@@ -235,6 +235,27 @@ export function formatArea(value: number | undefined, lang: Lang): string | null
   return `${new Intl.NumberFormat(LOCALES[lang], { maximumFractionDigits: 0 }).format(value)} m²`
 }
 
+// Firestore timestamps are stored as { seconds }; the dev fixture uses the same
+// shape. Returns null rather than "Invalid Date" when there is nothing to show.
+export function formatDate(value: unknown, lang: Lang): string | null {
+  const seconds = timestampSeconds(value)
+  if (!seconds) return null
+  return new Intl.DateTimeFormat(LOCALES[lang], { dateStyle: 'long' }).format(new Date(seconds * 1000))
+}
+
+// "Similar residences" for the foot of a residence page: same area first, then the
+// same type, newest first within each group. Never the residence being viewed.
+export function similarResidences(items: Property[], current: Property, limit = 3): Property[] {
+  const score = (p: Property) => (p.area === current.area ? 2 : 0) + (p.type === current.type ? 1 : 0)
+  return items
+    .filter((p) => p.slug !== current.slug && p.status === 'published')
+    .map((p) => ({ p, s: score(p) }))
+    .filter((candidate) => candidate.s > 0)
+    .sort((a, b) => b.s - a.s || publishedSeconds(b.p) - publishedSeconds(a.p))
+    .slice(0, limit)
+    .map((candidate) => candidate.p)
+}
+
 // "LBA-0421" -> 421, so the admin can suggest the next reference number.
 export function refNumber(refCode: string): number {
   const digits = refCode.replace(/\D+/g, '')
