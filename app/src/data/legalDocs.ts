@@ -1,6 +1,6 @@
 // PLACEHOLDER COPY — replace with firm-approved legal text before launch.
-// The enquiry form has no backend: it composes an email in the visitor's own mail
-// client, so the website itself collects and stores nothing. See /inquiry.
+// Enquiries collect: name, email, phone (optional), country (optional),
+// message (optional), interest area, and explicit consent. See /inquiry.
 
 export interface LegalSection {
   heading: string;
@@ -31,8 +31,7 @@ export const privacyDoc: LegalDoc = {
     {
       heading: "Information we collect",
       body: [
-        "The enquiry form does not send or store anything on this website: it opens your own email programme with the details you have entered already filled in, and the message is sent from your mailbox to ours. We receive only the email you choose to send.",
-        "That email will normally contain your name and email address and, if you provide them, your telephone number, country of residence, the area you are interested in and your message. We do not use cookies and we do not sell or rent personal information to anyone.",
+        "When you use the enquiry form we collect the details you submit: your name, email address, phone number (optional), country of residence (optional), the area of interest and your message. We do not use cookies and we do not sell or rent personal information to anyone.",
       ],
     },
     {
@@ -44,7 +43,7 @@ export const privacyDoc: LegalDoc = {
     {
       heading: "Legal basis",
       body: [
-        "We process the enquiry you send us on the basis of the consent you give before sending it, and our legitimate interest in responding to prospective client enquiries.",
+        "We process your enquiry on the basis of the consent you provide when submitting the form, and our legitimate interest in responding to prospective client enquiries.",
       ],
     },
     {

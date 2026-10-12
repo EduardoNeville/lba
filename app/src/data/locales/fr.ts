@@ -58,17 +58,12 @@ export const form = {
   message: "Comment pouvons-nous vous aider ?",
   messagePlaceholder: "Merci de nous en dire plus sur votre demande",
   consent: "Je confirme avoir lu et accepté la Politique de confidentialité.",
-  compose: "Rédiger l'e-mail →",
-  composeNote:
-    "Nous ouvrons votre messagerie avec vos informations déjà remplies — rien n'est envoyé sans vous.",
-  mailSubjectPrefix: "Demande",
-  mailtoHeading: "Votre e-mail est prêt.",
-  mailtoBody:
-    "Nous l'avons ouvert dans votre messagerie, avec vos informations déjà remplies. Appuyez sur envoyer : il nous parvient directement — nous répondons à chaque demande, généralement sous un jour ouvré.",
-  mailtoFallback: "Rien ne s'est ouvert ? Écrivez-nous à",
-  copyDraft: "Copier ma demande",
-  copied: "Copié ✓",
-  editDraft: "Modifier ma demande",
+  submit: "Envoyer la demande",
+  sending: "Envoi en cours…",
+  thankYou: "Merci. Nous vous répondrons rapidement.",
+  replyNote:
+    "Nous répondons à chaque demande, généralement sous un jour ouvré.",
+  errorGeneric: "Une erreur est survenue. Veuillez réessayer.",
   hero: {
     title: "Comment pouvons-nous vous accompagner ?",
   },
@@ -92,5 +87,4 @@ export const options = [
 export const aside = {
   heading: "La discrétion est au cœur de tout ce que nous faisons.",
   body: "Votre demande est confidentielle et sera traitée personnellement par un membre de notre équipe.",
-  note: "Votre message est rédigé et envoyé depuis votre propre messagerie : il ne transite par aucun intermédiaire.",
 };

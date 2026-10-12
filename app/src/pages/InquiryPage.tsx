@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Container } from "../components/ui/Container";
 import { Field } from "../components/ui/Field";
 import { Icon } from "../components/ui/icons";
-import { INQUIRY_INBOX, buildInquiryMail, copyText } from "../lib/inquiryMailto";
+import { submitInquiry, InquiryError } from "../lib/submitInquiry";
 import { useLang } from "../lib/lang";
 import {
   form as formEn,
@@ -136,28 +136,16 @@ function ConsentText({ text }: { text: string }) {
   );
 }
 
-// Opens the composed mailto: through a temporary anchor rather than assigning to
-// location.href, which keeps the SPA from being navigated away by the attempt.
-function openMailClient(url: string) {
-  const link = document.createElement("a");
-  link.href = url;
-  link.rel = "noopener";
-  document.body.appendChild(link);
-  link.click();
-  link.remove();
-}
-
 function InquiryForm() {
   const { form, options } = useInquiryDict();
   const [formState, setFormState] = useState<FormState>(initial);
   const [touched, setTouched] = useState<Record<string, boolean>>({});
-  // The composed email is kept so the visitor can reopen it or copy the text,
-  // whether or not their mail client opened.
-  const [composed, setComposed] = useState<{ url: string; body: string } | null>(null);
-  const [copied, setCopied] = useState(false);
+  const [status, setStatus] = useState<"idle" | "submitting" | "error">("idle");
+  const [error, setError] = useState("");
 
   const set = (k: keyof FormState, v: string | boolean) => {
     setFormState((f) => ({ ...f, [k]: v }));
+    setError("");
   };
 
   const errors = {
@@ -172,81 +160,42 @@ function InquiryForm() {
   const showError = (k: keyof typeof errors) =>
     touched[k] ? errors[k] : undefined;
 
-  // No backend: the enquiry becomes an email in the visitor's own mail client and
-  // travels from their mailbox to the practice inbox. Nothing is stored here.
-  function onSubmit(e: React.FormEvent) {
+  async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
     setTouched({ interest: true, fullName: true, email: true, consent: true });
-    if (Object.values(errors).some(Boolean)) return;
-
-    const mail = buildInquiryMail(
-      {
-        interestLabel:
-          options.find((o) => o.value === formState.interest)?.label ?? "",
+    const hasError = Object.values(errors).some(Boolean);
+    if (hasError) {
+      setStatus("error");
+      return;
+    }
+    setStatus("submitting");
+    try {
+      await submitInquiry({
+        interest: formState.interest,
         fullName: formState.fullName.trim(),
         email: formState.email.trim(),
         phone: formState.phone.trim() || undefined,
         country: formState.country.trim() || undefined,
         message: formState.message.trim() || undefined,
-      },
-      {
-        subjectPrefix: form.mailSubjectPrefix,
-        fullName: form.fullName,
-        email: form.email,
-        phone: form.phone,
-        country: form.country,
-        interest: form.interestLabel,
-      },
-    );
-
-    openMailClient(mail.url);
-    setCopied(false);
-    setComposed({ url: mail.url, body: mail.body });
+      });
+      setFormState(initial);
+      setStatus("idle");
+      setSubmitted(true);
+    } catch (err) {
+      setError(err instanceof InquiryError ? err.message : form.errorGeneric);
+      setStatus("idle");
+    }
   }
 
-  async function onCopy() {
-    if (!composed) return;
-    setCopied(await copyText(composed.body));
-  }
+  const [submitted, setSubmitted] = useState(false);
 
-  if (composed) {
+  if (submitted) {
     return (
-      <div
-        role="status"
-        aria-live="polite"
-        className="border border-hairline bg-parchment/30 p-8 md:p-10"
-      >
+      <div className="text-center">
         <p className="font-display text-2xl leading-snug md:text-3xl">
-          {form.mailtoHeading}
+          {form.thankYou}
         </p>
-        <p className="mt-4 text-[13px] leading-relaxed text-taupe">
-          {form.mailtoBody}
-        </p>
-        <p className="micro mt-6 text-[10px] leading-relaxed text-taupe">
-          {form.mailtoFallback}{" "}
-          <a
-            href={composed.url}
-            className="text-ink underline underline-offset-2 transition-colors hover:text-oxblood"
-          >
-            {INQUIRY_INBOX}
-          </a>
-        </p>
-        <div className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-3">
-          <button
-            type="button"
-            onClick={onCopy}
-            className="micro border border-ink px-5 py-3 transition-colors hover:bg-ink hover:text-cream"
-          >
-            {copied ? form.copied : form.copyDraft}
-          </button>
-          <button
-            type="button"
-            onClick={() => setComposed(null)}
-            className="micro text-taupe underline underline-offset-2 transition-colors hover:text-ink"
-          >
-            {form.editDraft}
-          </button>
-        </div>
+        <p className="micro mt-4 text-taupe">{form.replyNote}</p>
       </div>
     );
   }
@@ -355,13 +304,19 @@ function InquiryForm() {
       </div>
       <button
         type="submit"
-        className="micro mt-8 w-full bg-oxblood py-4 text-cream transition-colors hover:bg-ink"
+        disabled={status === "submitting"}
+        className="micro mt-8 w-full bg-oxblood py-4 text-cream transition-colors hover:bg-ink disabled:pointer-events-none disabled:opacity-60"
       >
-        {form.compose}
+        {status === "submitting" ? form.sending : form.submit}
       </button>
-      <p className="micro mt-4 text-center text-[9px] leading-relaxed text-taupe">
-        {form.composeNote}
-      </p>
+      {error && (
+        <p
+          role="alert"
+          className="micro mt-4 text-center text-[9px] text-oxblood"
+        >
+          {error}
+        </p>
+      )}
     </form>
   );
 }
@@ -377,9 +332,6 @@ function DiscretionAside() {
       <div aria-hidden className="mx-auto mt-6 h-px w-10 bg-ink/50" />
       <p className="mt-6 text-[12px] leading-relaxed text-taupe">
         {aside.body}
-      </p>
-      <p className="mt-4 text-[11px] leading-relaxed text-taupe/80">
-        {aside.note}
       </p>
     </aside>
   );

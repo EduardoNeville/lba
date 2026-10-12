@@ -20,7 +20,7 @@ Pick **one** transport, put it in `app/functions/.env` (git-ignored — start fr
 
 | Transport | When to use | `.env` |
 | --- | --- | --- |
-| **Microsoft 365 SMTP** | Their mail is on M365 (`legalboutiqueadvisers-com.mail.protection.outlook.com`), so this needs no new vendor — just an app password. The mailbox (or tenant) must allow SMTP AUTH. | `SMTP_HOST=smtp.office365.com`, `SMTP_PORT=587`, `SMTP_SECURE=false`, `SMTP_USER=info@legalboutiqueadvisers.com`, `SMTP_PASS=…` |
+| **Your Google account (Gmail SMTP)** · the one used here | No admin, no DNS, no third-party service; the account's own app password. Optionally verify a "Send mail as" alias so enquiries arrive From `info@legalboutiqueadvisers.com`. | `SMTP_HOST=smtp.gmail.com`, `SMTP_PORT=587`, `SMTP_SECURE=false`, `SMTP_USER=<gmail address>`, `SMTP_PASS=<16-char app password>`; `MAIL_FROM` = the alias if verified, else the gmail address |\n| **Not used: Microsoft 365 SMTP** — basic auth for `smtp.office365.com` client submission was fully retired on **2026-04-30** (app passwords included). | Their mail is on M365 (`legalboutiqueadvisers-com.mail.protection.outlook.com`), so this needs no new vendor — just an app password. The mailbox (or tenant) must allow SMTP AUTH. | `SMTP_HOST=smtp.office365.com`, `SMTP_PORT=587`, `SMTP_SECURE=false`, `SMTP_USER=info@legalboutiqueadvisers.com`, `SMTP_PASS=…` |
 | **Resend** | No M365 admin rights; needs the domain verified in Resend (DNS records). | `RESEND_API_KEY=re_…` |
 | **SMTP (generic)** | Any other mailbox/provider. | `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS` (+ `SMTP_SECURE=true` for port 465) |
 | **Dry run** | Emulator / local checks: logs the email instead of sending it. | `EMAIL_DRY_RUN=1` |
@@ -78,13 +78,28 @@ works with a normal npm-installed CLI too. `lib/` **is** uploaded (only
 - After a function update, events can take ~30s to flow again before the new
   revision is serving — an enquiry is never lost, just delayed.
 
+### Gmail app-password checklist
+
+1. `myaccount.google.com` → **Security → 2-Step Verification** (app passwords
+   require it).
+2. **Security → App passwords** → create one for "Mail". Paste it into
+   `app/functions/.env` (git-ignored) or set it as a secret.
+3. Recommended: Gmail → **Settings → Accounts → Send mail as** → add
+   `info@legalboutiqueadvisers.com`, then click the confirmation link that
+   arrives in that inbox. `MAIL_FROM=Legal Boutique Advisers <info@legalboutiqueadvisers.com>`
+   (the code default) only works once the alias is verified; until then set it
+   to the gmail address with the firm name as display name.
+4. Deploy: `cd app && firebase deploy --only functions`.
+
 ### Current status
 
-The function is deployed with `EMAIL_DRY_RUN=1` (see the git-ignored
-`app/functions/.env`): enquiries are stored and the rendered email is written to
-the logs, but **nothing is sent to the inbox yet**. Add a real transport and
-redeploy to go live. Delivery, `Reply-To`, subject and both MIME parts were
-verified end-to-end on the deployed function with a throwaway SMTP account.
+The sender (commits `3506233` + `125297e`, previously deployed and tested) was
+resurrected on top of master together with the restored Firestore write. The
+function is **not deployed right now** — it was removed when the site went
+mailto-only — and will be re-deployed with the Gmail transport from
+`app/functions/.env`. Rendering, SMTP/Resend transports, the deploy manifest and
+the failure paths are covered by suites run locally; after deploy, one real
+enquiry is sent to the practice inbox as a live check.
 
 ### Notes
 
