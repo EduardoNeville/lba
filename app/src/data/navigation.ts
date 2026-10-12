@@ -7,6 +7,7 @@ export interface NavItem {
 
 export const NAV: NavItem[] = [
   { key: 'property', to: '/property' },
+  { key: 'residences', to: '/property/residences' },
   { key: 'legal', to: '/legal' },
   { key: 'privateClient', to: '/private-client' },
   { key: 'journal', to: '/blog' },

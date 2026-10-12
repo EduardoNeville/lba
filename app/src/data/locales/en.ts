@@ -3,6 +3,7 @@
 export const nav = {
   label: {
     property: "Property",
+    residences: "Residences",
     legal: "Legal",
     privateClient: "Private Client Services",
     journal: "Journal",

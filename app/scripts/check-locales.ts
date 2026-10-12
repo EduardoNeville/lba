@@ -7,6 +7,7 @@ import { en as aboutEn, fr as aboutFr, es as aboutEs } from '../src/data/locales
 import { en as legalEn, fr as legalFr, es as legalEs } from '../src/data/locales/legal.ts'
 import { en as propertyEn, fr as propertyFr, es as propertyEs } from '../src/data/locales/property.ts'
 import { en as pcEn, fr as pcFr, es as pcEs } from '../src/data/locales/privateClient.ts'
+import { en as residencesEn, fr as residencesFr, es as residencesEs } from '../src/data/locales/residences.ts'
 import { nav as gNavEn, footer as gFooterEn, ui as gUiEn, form as gFormEn, options as gOptionsEn, aside as gAsideEn } from '../src/data/locales/en.ts'
 import { nav as gNavFr, footer as gFooterFr, ui as gUiFr, form as gFormFr, options as gOptionsFr, aside as gAsideFr } from '../src/data/locales/fr.ts'
 import { nav as gNavEs, footer as gFooterEs, ui as gUiEs, form as gFormEs, options as gOptionsEs, aside as gAsideEs } from '../src/data/locales/es.ts'
@@ -17,6 +18,7 @@ const dicts: [string, Record<string, unknown>, Record<string, unknown>, Record<s
   ['legal', legalEn, legalFr, legalEs],
   ['property', propertyEn, propertyFr, propertyEs],
   ['privateClient', pcEn, pcFr, pcEs],
+  ['residences', residencesEn, residencesFr, residencesEs],
   ['globals/nav', gNavEn, gNavFr, gNavEs],
   ['globals/footer', gFooterEn, gFooterFr, gFooterEs],
   ['globals/ui', gUiEn, gUiFr, gUiEs],

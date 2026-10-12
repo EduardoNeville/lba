@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Container } from "../components/ui/Container";
 import { Icon } from "../components/ui/icons";
 import { ArrowLink } from "../components/ui/ArrowLink";
@@ -7,6 +8,8 @@ import { CrossLinkBand } from "../components/shared/CrossLinkBand";
 import { CtaBand } from "../components/shared/CtaBand";
 import { Checklist } from "../components/ui/Checklist";
 import { useLang } from "../lib/lang";
+import { cachedProperties, loadPublishedProperties, type Property } from "../lib/properties";
+import { featuredResidences } from "../lib/propertyFilters";
 import { hero, cta } from "../data/property";
 import { en, fr, es } from "../data/locales/property";
 import { useUi } from "../lib/nav";
@@ -18,11 +21,30 @@ function usePropertyData() {
   return {
     hero: { ...d.hero, image: hero.image },
     services: d.services,
-    residences: d.residences,
     crossLink: d.crossLink,
     crossLinkAlt: d.crossLinkAlt,
     cta: { ...d.cta, image: cta.image },
   };
+}
+
+// The four-up strip: the residences flagged for display, otherwise the newest
+// (lib/propertyFilters decides). Hidden entirely while empty or on failure.
+function useStripResidences(limit = 4) {
+  const [items, setItems] = useState<Property[]>(() => featuredResidences(cachedProperties(), limit));
+  useEffect(() => {
+    let cancelled = false;
+    loadPublishedProperties()
+      .then((all) => {
+        if (!cancelled) setItems(featuredResidences(all, limit));
+      })
+      .catch(() => {
+        /* no data, no strip */
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [limit]);
+  return items;
 }
 
 function ServicesTrio() {
@@ -50,7 +72,8 @@ function ServicesTrio() {
 }
 
 export function PropertyPage() {
-  const { hero, residences, crossLink, crossLinkAlt, cta } = usePropertyData();
+  const { hero, crossLink, crossLinkAlt, cta } = usePropertyData();
+  const residences = useStripResidences();
   const ui = useUi();
   return (
     <>
@@ -102,7 +125,7 @@ export function PropertyPage() {
           </div>
         }
       />
-      <ResidencesStrip residences={residences} showLink allLink="/property" />
+      <ResidencesStrip properties={residences} showLink allLink="/property/residences" />
       <CtaBand
         heading={cta.heading}
         subline={cta.subline}

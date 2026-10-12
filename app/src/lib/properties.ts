@@ -131,6 +131,21 @@ export function invalidatePropertiesCache(): void {
   }
 }
 
+// Residences that are available *right now*, synchronously: the memory cache when
+// it is still fresh, otherwise the sessionStorage mirror (which hydration also
+// adopts). Pages use this as their initial state, so a client-side navigation —
+// or a reload within the session — renders the real content immediately instead
+// of flashing a skeleton.
+export function cachedProperties(): Property[] {
+  if (cache && Date.now() - cache.at < CACHE_TTL) return cache.items
+  const stored = readSession()
+  if (stored) {
+    cache = stored
+    return stored.items
+  }
+  return []
+}
+
 export async function loadPublishedProperties(): Promise<Property[]> {
   if (cache && Date.now() - cache.at < CACHE_TTL) return cache.items
   if (inflight) return inflight

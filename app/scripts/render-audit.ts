@@ -20,11 +20,19 @@ const { LangProvider } = await load('/src/lib/lang.tsx')
 const { SiteHeader } = await load('/src/components/layout/SiteHeader.tsx')
 const { SiteFooter } = await load('/src/components/layout/SiteFooter.tsx')
 
+// Warm the residences cache before rendering. The pages read it synchronously as
+// their initial state, so the server-rendered markup shows the real content —
+// cards, prices and all — instead of the loading placeholders. Without this the
+// audit reports residences copy as "not rendered anywhere".
+const { loadPublishedProperties } = await load('/src/lib/properties.ts')
+await loadPublishedProperties().catch(() => undefined)
+
 const routes: [string, string][] = [
   ['/', '/src/pages/HomePage.tsx'],
   ['/about', '/src/pages/AboutPage.tsx'],
   ['/legal', '/src/pages/LegalPage.tsx'],
   ['/property', '/src/pages/PropertyPage.tsx'],
+  ['/property/residences', '/src/pages/ResidencesPage.tsx'],
   ['/private-client', '/src/pages/PrivateClientPage.tsx'],
   ['/inquiry', '/src/pages/InquiryPage.tsx'],
 ]

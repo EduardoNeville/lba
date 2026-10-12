@@ -118,6 +118,17 @@ export function applyFilters(items: Property[], f: ResidenceFilters): Property[]
   return items.filter((p) => matchesFilters(p, f)).sort(COMPARATORS[f.sort] ?? COMPARATORS.newest)
 }
 
+// Which residences to surface when space is limited (the property-page strip and
+// the home carousel): the flagged ones in curated order, otherwise the newest.
+// Shared so both surfaces agree on what "featured" means.
+export function featuredResidences(items: Property[], limit = 5): Property[] {
+  const featured = items
+    .filter((p) => p.featured)
+    .sort((a, b) => a.featuredRank - b.featuredRank || publishedSeconds(b) - publishedSeconds(a))
+  if (featured.length > 0) return featured.slice(0, limit)
+  return [...items].sort(COMPARATORS.newest).slice(0, limit)
+}
+
 export function countActiveFilters(f: ResidenceFilters): number {
   let n = 0
   if (f.q.trim()) n++

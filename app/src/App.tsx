@@ -6,6 +6,7 @@ import { LangProvider } from './lib/lang'
 import { HomePage } from './pages/HomePage'
 import { AboutPage } from './pages/AboutPage'
 import { PropertyPage } from './pages/PropertyPage'
+import { ResidencesPage } from './pages/ResidencesPage'
 import { LegalPage } from './pages/LegalPage'
 import { PrivateClientPage } from './pages/PrivateClientPage'
 import { BlogListPage } from './pages/BlogListPage'
@@ -39,6 +40,11 @@ const ROUTE_META: Record<string, { title: string; description?: string }> = {
   '/property': {
     title: 'Property Advisory in Spain · Legal Boutique Advisers',
     description: 'Acquiring, structuring and letting property in Spain with independent, client-side advice.',
+  },
+  '/property/residences': {
+    title: 'Selected residences in Marbella & the Costa del Sol · Legal Boutique Advisers',
+    description:
+      'Houses, apartments and fincas for sale across Marbella, the Golden Mile, Benahavís, Estepona and Sotogrande — with the legal review that comes with everything we do.',
   },
   '/legal': {
     title: 'Legal Advice in Spain · Legal Boutique Advisers',
@@ -79,6 +85,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/property" element={<PropertyPage />} />
+            <Route path="/property/residences" element={<ResidencesPage />} />
             <Route path="/legal" element={<LegalPage />} />
             <Route path="/private-client" element={<PrivateClientPage />} />
             <Route path="/blog" element={<BlogListPage />} />
