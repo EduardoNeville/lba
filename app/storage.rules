@@ -1,7 +1,26 @@
 rules_version = '2';
 service firebase.storage {
   match /b/{bucket}/o {
+    // Journal images (covers and inline images). Every path is built by
+    // lib/media.ts — never inline a path in a component, or it will fall outside
+    // these prefixes and be rejected.
     match /blog/{allPaths=**} {
+      allow read: if true;
+      allow write: if request.auth != null
+                   && request.resource.size < 5*1024*1024
+                   && request.resource.contentType.matches('image/.*');
+    }
+    // Residence galleries.
+    match /properties/{allPaths=**} {
+      allow read: if true;
+      allow write: if request.auth != null
+                   && request.resource.size < 5*1024*1024
+                   && request.resource.contentType.matches('image/.*');
+    }
+    // Development uploads. The Firestore database is separate in dev (lba-dev)
+    // but the bucket is shared, so dev test photos are namespaced here to keep
+    // them away from live listings.
+    match /dev/{allPaths=**} {
       allow read: if true;
       allow write: if request.auth != null
                    && request.resource.size < 5*1024*1024

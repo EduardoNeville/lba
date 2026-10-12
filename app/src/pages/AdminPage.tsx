@@ -1,7 +1,9 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Container } from '../components/ui/Container'
-import { getApp, firestoreDb } from '../lib/firebase'
+import { signIn, signOutAdmin, useAdminUser } from '../lib/adminAuth'
+import { getDb } from '../lib/firestore'
+import { uploadImage } from '../lib/media'
 import { slugify } from '../lib/posts'
 import { renderMarkdown } from '../lib/markdown'
 
@@ -21,8 +23,7 @@ const controlCls =
   'w-full border border-hairline bg-white px-4 py-3 text-sm text-ink placeholder:text-taupe/60 focus:border-oxblood focus:outline-none transition-colors'
 
 export function AdminPage() {
-  const [user, setUser] = useState<unknown | null>(null)
-  const [authLoading, setAuthLoading] = useState(true)
+  const { user, loading: authLoading } = useAdminUser()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [authError, setAuthError] = useState('')
@@ -36,25 +37,9 @@ export function AdminPage() {
   const [uploading, setUploading] = useState(false)
   const bodyRef = useRef<HTMLTextAreaElement>(null)
 
-  // auth state
-  useEffect(() => {
-    let unsub: (() => void) | null = null
-    ;(async () => {
-      const { getAuth, onAuthStateChanged } = await import('firebase/auth')
-      const auth = getAuth(getApp())
-      unsub = onAuthStateChanged(auth, (u) => {
-        setUser(u)
-        setAuthLoading(false)
-      })
-    })()
-    return () => {
-      if (unsub) unsub()
-    }
-  }, [])
-
   async function loadPosts() {
-    const { collection, getDocs, getFirestore } = await import('firebase/firestore')
-    const db = firestoreDb ? getFirestore(getApp(), firestoreDb) : getFirestore(getApp())
+    const { collection, getDocs } = await import('firebase/firestore')
+    const db = await getDb()
     const snap = await getDocs(collection(db, 'posts'))
     const arr = snap.docs.map((d) => ({ slug: d.id, ...(d.data() as Omit<PostRow, 'slug'>) })) as PostRow[]
     arr.sort((a, b) => (b.updatedAt?.seconds ?? 0) - (a.updatedAt?.seconds ?? 0))
@@ -69,17 +54,14 @@ export function AdminPage() {
     e.preventDefault()
     setAuthError('')
     try {
-      const { getAuth, signInWithEmailAndPassword } = await import('firebase/auth')
-      await signInWithEmailAndPassword(getAuth(getApp()), email.trim(), password)
+      await signIn(email, password)
     } catch (err) {
-      const msg = err instanceof Error ? err.message : 'Login failed'
-      setAuthError(msg.includes('auth/') ? 'Invalid email or password.' : msg)
+      setAuthError(err instanceof Error ? err.message : 'Login failed')
     }
   }
 
   async function handleLogout() {
-    const { getAuth, signOut } = await import('firebase/auth')
-    await signOut(getAuth(getApp()))
+    await signOutAdmin()
     setPosts(null)
   }
 
@@ -111,43 +93,12 @@ export function AdminPage() {
     setForm((f) => ({ ...f, title: v, slug: isNew ? slugify(v) : f.slug }))
   }
 
-  // ponytail: resize+compress on the client so stored & egress bytes shrink ~5-10x,
-  // which is the real spend cap (Stored $0.026/GB, download $0.12/GB).
-  async function compressImage(file: File): Promise<{ blob: Blob; type: string }> {
-    const MAX = 1600 // long edge
-    if (file.type === 'image/svg+xml') return { blob: file, type: file.type }
-    const bmp = await createImageBitmap(file).catch(() => null)
-    if (!bmp) return { blob: file, type: file.type } // decode failed, send original
-    try {
-      const scale = Math.min(1, MAX / Math.max(bmp.width, bmp.height))
-      const w = Math.max(1, Math.round(bmp.width * scale))
-      const h = Math.max(1, Math.round(bmp.height * scale))
-      const canvas = document.createElement('canvas')
-      canvas.width = w
-      canvas.height = h
-      canvas.getContext('2d')!.drawImage(bmp, 0, 0, w, h)
-      const isPng = file.type === 'image/png'
-      const blob = await new Promise<Blob>((res) =>
-        canvas.toBlob((b) => res(b || file), isPng ? 'image/png' : 'image/jpeg', 0.82),
-      )
-      // if the smaller one is somehow bigger, just keep the original
-      return blob.size < file.size ? { blob, type: isPng ? 'image/png' : 'image/jpeg' } : { blob: file, type: file.type }
-    } finally {
-      bmp.close()
-    }
-  }
-
-  async function uploadFile(file: File, hint: string) {
-    const { getStorage, ref, uploadBytes, getDownloadURL } = await import('firebase/storage')
-    const storage = getStorage(getApp())
-    const safe = file.name.replace(/[^a-zA-Z0-9._-]/g, '_')
-    const path = `${hint || 'draft'}/${Date.now()}-${safe}`
+  // Paths are built in lib/media.ts so every upload lands under a prefix the
+  // storage rules allow (blog/…, properties/…, dev/… in development).
+  async function uploadTo(file: File, scope: string) {
     setUploading(true)
     try {
-      const { blob, type } = await compressImage(file)
-      if (blob.size > 5 * 1024 * 1024) throw new Error('too-large')
-      const snap = await uploadBytes(ref(storage, path), blob, { contentType: type })
-      return await getDownloadURL(snap.ref)
+      return await uploadImage(file, 'blog', scope)
     } finally {
       setUploading(false)
     }
@@ -159,9 +110,9 @@ export function AdminPage() {
     if (!file.type.startsWith('image/')) return setSaveError('Please choose an image file.')
     if (file.size > 5 * 1024 * 1024) return setSaveError('Image must be under 5MB.')
     try {
-      const url = await uploadFile(file, 'blog/cover')
-      // ponytail: coverPath unused for deletion v1; keep url only
-      setForm((f) => ({ ...f, coverUrl: url }))
+      const { url, path } = await uploadTo(file, 'cover')
+      // path is kept so a future delete can remove the Storage object
+      setForm((f) => ({ ...f, coverUrl: url, coverPath: path }))
       setSaveError('')
     } catch {
       setSaveError('Upload failed. Try again.')
@@ -175,7 +126,7 @@ export function AdminPage() {
     if (!file.type.startsWith('image/')) return setSaveError('Please choose an image file.')
     if (file.size > 5 * 1024 * 1024) return setSaveError('Image must be under 5MB.')
     try {
-      const url = await uploadFile(file, form.slug || slugify(form.title) || 'blog/inline')
+      const { url } = await uploadTo(file, form.slug || slugify(form.title) || 'inline')
       const insert = `![image](${url})`
       const ta = bodyRef.current
       if (ta) {
@@ -213,8 +164,8 @@ export function AdminPage() {
     }
     setSaving(true)
     try {
-      const { doc, getFirestore, serverTimestamp, setDoc } = await import('firebase/firestore')
-      const db = firestoreDb ? getFirestore(getApp(), firestoreDb) : getFirestore(getApp())
+      const { doc, serverTimestamp, setDoc } = await import('firebase/firestore')
+      const db = await getDb()
       const payload: Record<string, unknown> = {
         title,
         excerpt: form.excerpt.trim(),
@@ -252,8 +203,8 @@ export function AdminPage() {
 
   async function handleDelete(slug: string) {
     if (!confirm(`Delete "${slug}"? This cannot be undone.`)) return
-    const { doc, deleteDoc, getFirestore } = await import('firebase/firestore')
-    const db = firestoreDb ? getFirestore(getApp(), firestoreDb) : getFirestore(getApp())
+    const { doc, deleteDoc } = await import('firebase/firestore')
+    const db = await getDb()
     await deleteDoc(doc(db, 'posts', slug))
     await loadPosts()
     if (editing?.slug === slug) {
