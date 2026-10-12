@@ -83,6 +83,11 @@ function lacks(name: string, haystack: string, needle: string) {
   else failures.push(`${name}\n    expected NOT to contain: ${JSON.stringify(needle)}`)
 }
 
+function equals(name: string, actual: unknown, expected: unknown) {
+  if (JSON.stringify(actual) === JSON.stringify(expected)) passed++
+  else failures.push(`${name}\n    expected: ${JSON.stringify(expected)}\n    actual:   ${JSON.stringify(actual)}`)
+}
+
 // --- English: formatting, specs, location line, badges ---------------------
 const villa = cardText(byRef('LBA-0421'), 'en')
 has('en: price', villa, '€6,450,000')
@@ -167,6 +172,42 @@ has('fr page: translated sort options', frPage, 'Plus récentes')
 has('fr page: chip from the URL (beds)', frPage, '4+ Chambres')
 has('fr page: chip from the URL (type)', frPage, 'Villa')
 has('fr page: filter count badge', frPage, 'Filtres · 2')
+
+// --- the nav highlights exactly one section --------------------------------
+// /property/residences sits under /property, so without `end` on the parent both
+// nav items light up (the bug reported on the dev site). Prefix matching must stay
+// for items that have no children: a journal post still highlights "Journal".
+const { SiteHeader } = await load('/src/components/layout/SiteHeader.tsx')
+
+function activeNavItems(path: string): string[] {
+  store['lba-lang'] = 'en'
+  const html = renderToStaticMarkup(
+    React.createElement(
+      LangProvider,
+      null,
+      React.createElement(MemoryRouter, { initialEntries: [path] }, React.createElement(SiteHeader)),
+    ),
+  )
+  const active: string[] = []
+  for (const match of html.matchAll(/<a([^>]*)>([^<]*)<\/a>/g)) {
+    const [, attrs, label] = match
+    // Only the active desktop style carries a permanent underline; inactive links
+    // merely have hover:text-oxblood, so this cannot match them.
+    if (attrs.includes('underline-offset-8')) active.push(label.trim())
+  }
+  return active
+}
+
+equals('nav: home highlights nothing', activeNavItems('/'), [])
+equals('nav: /property highlights Property only', activeNavItems('/property'), ['Property'])
+equals('nav: /property/residences highlights Residences only', activeNavItems('/property/residences'), ['Residences'])
+equals(
+  'nav: a residence keeps Residences highlighted',
+  activeNavItems('/property/residences/villa-infinity-pool-golden-mile'),
+  ['Residences'],
+)
+equals('nav: /legal highlights Legal only', activeNavItems('/legal'), ['Legal'])
+equals('nav: a journal post keeps Journal highlighted', activeNavItems('/blog/any-post'), ['Journal'])
 
 console.log(`\n${passed} passed, ${failures.length} failed\n`)
 for (const failure of failures) console.log(`✗ ${failure}\n`)

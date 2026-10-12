@@ -40,6 +40,7 @@ export function SiteHeader() {
               <li key={item.to}>
                 <NavLink
                   to={item.to}
+                  end={item.end}
                   className={({ isActive }) => `micro text-[10px] xl:text-[11px] pb-1 transition-colors hover:text-oxblood ${isActive ? 'text-oxblood underline underline-offset-8' : 'text-ink'}`}
                 >
                   {item.label}
@@ -85,6 +86,7 @@ export function SiteHeader() {
               <li key={item.to}>
                 <NavLink
                   to={item.to}
+                  end={item.end}
                   className={({ isActive }) => `micro text-sm tracking-[0.25em] ${isActive ? 'text-oxblood' : 'text-ink'}`}
                 >
                   {item.label}
