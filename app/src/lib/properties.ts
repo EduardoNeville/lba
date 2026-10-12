@@ -113,7 +113,11 @@ export interface Property {
 
 const CACHE_TTL = 120_000 // 2 minutes, in memory + sessionStorage (cuts repeat reads)
 const CACHE_KEY = 'lba-properties-v1'
-const DEV_FIXTURES = import.meta.env.DEV && import.meta.env.VITE_SEED !== '0'
+// Fixtures are for non-production environments only: the dev site (built with
+// `--mode development`, which is what CI deploys to the dev target) and the dev
+// server. A production build folds this to false and drops the branch — and the
+// fixture's dynamic import — from the bundle. VITE_SEED=0 switches it off.
+const DEV_FIXTURES = import.meta.env.MODE !== 'production' && import.meta.env.VITE_SEED !== '0'
 
 let cache: { at: number; items: Property[] } | null = null
 let inflight: Promise<Property[]> | null = null
@@ -196,8 +200,8 @@ function readSession(): { at: number; items: Property[] } | null {
   }
 }
 
-// Dev-only. `import.meta.env.DEV` is folded to false in a production build, which
-// removes this branch — and with it the dynamic import — from the bundle.
+// Non-production only (see DEV_FIXTURES). The dynamic import disappears from a
+// production build along with the branch that calls it.
 async function devSeed(): Promise<Property[]> {
   if (!DEV_FIXTURES) return []
   const { devResidences } = await import('../data/seed/residences')
