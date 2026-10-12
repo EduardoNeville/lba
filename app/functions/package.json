@@ -4,7 +4,7 @@
   "description": "Cloud Functions for legalboutiqueadvisers.com",
   "main": "lib/index.js",
   "engines": {
-    "node": "20"
+    "node": "24"
   },
   "scripts": {
     "build": "tsc",
@@ -14,13 +14,12 @@
     "deploy": "npm run build && firebase deploy --only functions"
   },
   "dependencies": {
-    "firebase-admin": "^13.0.2",
-    "firebase-functions": "^6.1.1",
-    "nodemailer": "^6.9.16"
+    "firebase-admin": "^14.5.0",
+    "firebase-functions": "^7.4.0",
+    "nodemailer": "^10.1.0"
   },
   "devDependencies": {
-    "@types/node": "^20.17.10",
-    "@types/nodemailer": "^6.4.17",
-    "typescript": "^5.7.2"
+    "@types/node": "^24.9.0",
+    "typescript": "^5.9.3"
   }
 }

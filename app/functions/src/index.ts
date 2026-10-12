@@ -8,7 +8,10 @@
  */
 import { initializeApp } from 'firebase-admin/app'
 import { FieldValue } from 'firebase-admin/firestore'
-import { logger } from 'firebase-functions'
+// Deep import on purpose: the `firebase-functions` root entry pulls
+// firebase-admin/auth → jwks-rsa → jose (ESM-only), which the Firebase CLI's
+// bundled Node cannot `require()` while analysing the source for deploy.
+import { logger } from 'firebase-functions/logger'
 import { onDocumentCreated } from 'firebase-functions/v2/firestore'
 import { renderEnquiryEmail, type Enquiry } from './enquiryEmail'
 import { providerFromEnv, sendMail } from './mailer'

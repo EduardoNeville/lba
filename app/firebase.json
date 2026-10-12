@@ -10,8 +10,8 @@
     {
       "source": "functions",
       "codebase": "inquiries",
-      "predeploy": ["npm --prefix \"$RESOURCE_DIR\" run build"],
-      "ignore": ["node_modules", "lib", ".git", ".env", ".env.*", "*.log"]
+      "predeploy": ["node ./functions/node_modules/typescript/bin/tsc -p functions"],
+      "ignore": ["node_modules", ".git", ".env", ".env.*", "*.log"]
     }
   ],
   "emulators": {
