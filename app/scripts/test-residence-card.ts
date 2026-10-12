@@ -322,6 +322,42 @@ const esInquiry = stripHtml(renderPage(inquiryPath, 'es', React.createElement(In
 has('es enquiry: regarding label', esInquiry, 'Sobre')
 has('es enquiry: seeded message', esInquiry, 'Me gustaría saber más sobre')
 
+// --- the home band ----------------------------------------------------------
+// Mounted lazily from HomePage, so it is checked here with the cache warm (which is
+// what a visitor sees a moment after the page has painted).
+const { FeaturedResidences } = await load('/src/components/shared/FeaturedResidences.tsx')
+const bandHtml = renderPage('/', 'en', React.createElement(FeaturedResidences))
+const band = stripHtml(bandHtml)
+equals('band: one slide per featured residence', (bandHtml.match(/aria-roledescription="slide"/g) ?? []).length, 4)
+has('band: eyebrow', band, 'Featured residences')
+has('band: names the residence', band, 'Villa with infinity pool above the Golden Mile')
+has('band: shows the price', band, '€6,450,000')
+has('band: shows the place and the figures', band, 'Marbella · Golden Mile · Villa · 5 bed · 6 bath · 620 m²')
+has('band: links to the residence', bandHtml, 'href="/property/residences/villa-infinity-pool-golden-mile"')
+equals(
+  'band: one link per residence (single tab stop)',
+  (bandHtml.match(/href="\/property\/residences\/villa-infinity-pool-golden-mile"/g) ?? []).length,
+  1,
+)
+has('band: offers the listing', band, 'View all properties')
+has('band: counter', band, '1 / 4')
+has('band: previous control', band, 'Previous photograph')
+has('band: next control', band, 'Next photograph')
+has('band: autoplay can be paused', bandHtml, '>Pause<')
+has('band: the active photograph drifts', bandHtml, 'scale-[1.04]')
+has('band: a price-on-application residence still renders', band, 'Price on application')
+equals('band: rank order is honoured', band.indexOf('Villa with infinity pool') < band.indexOf('Front-line golf villa'), true)
+const frBand = stripHtml(renderPage('/', 'fr', React.createElement(FeaturedResidences)))
+has('fr band: eyebrow', frBand, 'Résidences en vedette')
+has('fr band: view copy', frBand, 'Voir la résidence')
+
+// The home page mounts the band lazily: the server-rendered markup must not carry
+// it, or five full-bleed photographs would compete with the hero for first paint.
+const { HomePage } = await load('/src/pages/HomePage.tsx')
+const homeHtml = renderPage('/', 'en', React.createElement(HomePage))
+lacks('home: the band is not in the first paint', homeHtml, 'Featured residences')
+has('home: the hero still renders', stripHtml(homeHtml), 'Lawyers & Property Advisers')
+
 // --- carousel props ---------------------------------------------------------
 const labels = { previous: 'Previous photograph', next: 'Next photograph', pause: 'Pause', play: 'Play' }
 const carouselHtml = renderPage(

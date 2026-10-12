@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState, type ReactNode } from 'react'
 import { Icon } from './icons'
+import { prefersReducedMotion } from '../../lib/motion'
 
 // A dependency-free carousel: native scroll-snap does the moving, the browser does
 // the swiping, and this component only drives the arrows, the dots, the counter and
@@ -39,11 +40,6 @@ interface CarouselProps<T> {
   trackClassName?: string
   itemClassName?: string
 }
-
-const prefersReducedMotion = () =>
-  typeof window !== 'undefined' && typeof window.matchMedia === 'function'
-    ? window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    : false
 
 export function Carousel<T>({
   items,

@@ -6,8 +6,10 @@ import { LangProvider } from './lib/lang'
 import { HomePage } from './pages/HomePage'
 import { AboutPage } from './pages/AboutPage'
 import { PropertyPage } from './pages/PropertyPage'
-import { ResidencesPage } from './pages/ResidencesPage'
-import { ResidencePage } from './pages/ResidencePage'
+
+// Lazy: the residences listing and a residence page pull in the residences model,
+// the filter logic and the Firestore SDK. Keeping them out of the entry chunk means
+// the home page only pays for the featured band, which mounts after paint.
 import { LegalPage } from './pages/LegalPage'
 import { PrivateClientPage } from './pages/PrivateClientPage'
 import { BlogListPage } from './pages/BlogListPage'
@@ -21,6 +23,8 @@ import { privacyDoc, termsDoc } from './data/legalDocs'
 // Lazy: keeps the Firestore SDK out of the main bundle (inquiry.md §4)
 const InquiryPage = lazy(() => import('./pages/InquiryPage').then((m) => ({ default: m.InquiryPage })))
 const AdminPage = lazy(() => import('./pages/AdminPage'))
+const ResidencesPage = lazy(() => import('./pages/ResidencesPage').then((m) => ({ default: m.ResidencesPage })))
+const ResidencePage = lazy(() => import('./pages/ResidencePage').then((m) => ({ default: m.ResidencePage })))
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -97,8 +101,22 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/property" element={<PropertyPage />} />
-            <Route path="/property/residences" element={<ResidencesPage />} />
-            <Route path="/property/residences/:slug" element={<ResidencePage />} />
+            <Route
+              path="/property/residences"
+              element={
+                <Suspense fallback={<div className="min-h-[50vh]" />}>
+                  <ResidencesPage />
+                </Suspense>
+              }
+            />
+            <Route
+              path="/property/residences/:slug"
+              element={
+                <Suspense fallback={<div className="min-h-[50vh]" />}>
+                  <ResidencePage />
+                </Suspense>
+              }
+            />
             <Route path="/legal" element={<LegalPage />} />
             <Route path="/private-client" element={<PrivateClientPage />} />
             <Route path="/blog" element={<BlogListPage />} />

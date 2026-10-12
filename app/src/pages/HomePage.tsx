@@ -1,3 +1,4 @@
+import { lazy, Suspense } from "react";
 import { Link } from "react-router-dom";
 import { Icon } from "../components/ui/icons";
 import { Container } from "../components/ui/Container";
@@ -8,6 +9,13 @@ import { useLang } from "../lib/lang";
 import { useUi } from "../lib/nav";
 import { hero, practiceAreas, cta } from "../data/home";
 import { en, fr, es } from "../data/locales/home";
+
+// Lazy: the band pulls in the residences loader (and through it the Firestore SDK)
+// plus five full-bleed photographs. Mounting it after the page has painted keeps
+// the hero as the only thing competing for the first view.
+const FeaturedResidences = lazy(() =>
+  import("../components/shared/FeaturedResidences").then((m) => ({ default: m.FeaturedResidences })),
+);
 
 function useHomeData() {
   const { lang } = useLang();
@@ -154,6 +162,9 @@ export function HomePage() {
       <HomeHero />
       <IntroSplit />
       <PracticeAreas />
+      <Suspense fallback={null}>
+        <FeaturedResidences />
+      </Suspense>
       <CtaBand
         variant="accent"
         heading={cta.heading}

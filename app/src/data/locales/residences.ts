@@ -66,11 +66,14 @@ export const en = {
   },
   availability: { available: 'Available', reserved: 'Reserved', sold: 'Sold' },
   badge: { new: 'New' },
+  featured: { eyebrow: 'Featured residences' },
   gallery: {
     label: 'Residence photographs',
     thumbnails: 'Photograph thumbnails',
     previous: 'Previous photograph',
     next: 'Next photograph',
+    pause: 'Pause',
+    play: 'Play',
     viewImage: 'View photograph',
   },
   detail: {
@@ -200,11 +203,14 @@ export const fr: typeof en = {
   },
   availability: { available: 'Disponible', reserved: 'Réservée', sold: 'Vendue' },
   badge: { new: 'Nouveau' },
+  featured: { eyebrow: 'Résidences en vedette' },
   gallery: {
     label: 'Photographies de la résidence',
     thumbnails: 'Vignettes des photographies',
     previous: 'Photographie précédente',
     next: 'Photographie suivante',
+    pause: 'Pause',
+    play: 'Lecture',
     viewImage: 'Voir la photographie',
   },
   detail: {
@@ -334,11 +340,14 @@ export const es: typeof en = {
   },
   availability: { available: 'Disponible', reserved: 'Reservada', sold: 'Vendida' },
   badge: { new: 'Nuevo' },
+  featured: { eyebrow: 'Residencias destacadas' },
   gallery: {
     label: 'Fotografías de la residencia',
     thumbnails: 'Miniaturas de las fotografías',
     previous: 'Fotografía anterior',
     next: 'Fotografía siguiente',
+    pause: 'Pausar',
+    play: 'Reproducir',
     viewImage: 'Ver fotografía',
   },
   detail: {

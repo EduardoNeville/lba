@@ -122,6 +122,33 @@ check(
 check('beds descending', F.applyFilters(list, filter({ sort: 'beds-desc' }))[0].refCode, 'LBA-0426')
 check('size descending', F.applyFilters(list, filter({ sort: 'size-desc' }))[0].refCode, 'LBA-0426')
 
+// --- which residences reach the strip and the home band --------------------
+check(
+  'featured run in curated order',
+  F.featuredResidences(list, 5).map((p) => p.refCode),
+  ['LBA-0421', 'LBA-0426', 'LBA-0423', 'LBA-0424'],
+)
+check('featured respects the limit', F.featuredResidences(list, 2).map((p) => p.refCode), ['LBA-0421', 'LBA-0426'])
+check(
+  'without a curated flag the newest are used instead',
+  F.featuredResidences(
+    list.map((p) => ({ ...p, featured: false })),
+    5,
+  ).map((p) => p.refCode),
+  ['LBA-0425', 'LBA-0421', 'LBA-0426', 'LBA-0424', 'LBA-0423'],
+)
+check('an empty inventory yields nothing to show', F.featuredResidences([], 5).length, 0)
+check(
+  'similar residences prefer the same area, then the same type, newest first',
+  F.similarResidences(list, list[0], 3).map((p) => p.refCode),
+  ['LBA-0426', 'LBA-0424'],
+)
+check(
+  'similar residences never include the residence itself',
+  F.similarResidences(list, list[0], 3).some((p) => p.refCode === 'LBA-0421'),
+  false,
+)
+
 // --- URL round trip -------------------------------------------------------
 const complex = filter({
   q: 'sea view',
