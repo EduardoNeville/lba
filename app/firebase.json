@@ -6,6 +6,14 @@
   "storage": {
     "rules": "storage.rules"
   },
+  "functions": [
+    {
+      "source": "functions",
+      "codebase": "inquiries",
+      "predeploy": ["npm --prefix \"$RESOURCE_DIR\" run build"],
+      "ignore": ["node_modules", "lib", ".git", ".env", ".env.*", "*.log"]
+    }
+  ],
   "emulators": {
     "firestore": {
       "port": 8080

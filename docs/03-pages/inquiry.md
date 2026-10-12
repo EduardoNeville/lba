@@ -86,6 +86,7 @@ src/
 
 - Collection `inquiries`: `{interest, fullName, email, phone, country, message, consent:true, createdAt: serverTimestamp()}` via `addDoc`.
 - `lib/submitInquiry.js` exports one async fn; form imports it — swap to Cloud Function later without touching UI.
+- Enquiries are emailed to `info@legalboutiqueadvisers.com` by the `notifyInquiry` Cloud Function in `app/functions/` (Firestore trigger on `inquiries/{id}`, Gen 2, `europe-west1`). Transport setup: `app/functions/README.md`. The doc gets `emailNotification: {status, provider, sentAt}` after each attempt.
 - Rules: `allow read: if false; allow create: if request.resource.data.email is string && request.resource.data.consent == true;` (write-only from client).
 - Lazy Firebase init (`getFirestore` on first submit import) so form page is the only chunk pulling Firestore SDK — `React.lazy` the page in router to keep it out of the main bundle.
 - Success/error copy slots; never expose Firestore error strings.
