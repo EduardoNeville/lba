@@ -4,7 +4,7 @@
 import { createServer } from 'vite'
 import { renderToStaticMarkup } from 'react-dom/server'
 import React from 'react'
-import { MemoryRouter } from 'react-router-dom'
+import { MemoryRouter, Route, Routes } from 'react-router-dom'
 
 const store: Record<string, string> = {}
 ;(globalThis as any).localStorage = {
@@ -27,13 +27,20 @@ const { SiteFooter } = await load('/src/components/layout/SiteFooter.tsx')
 const { loadPublishedProperties } = await load('/src/lib/properties.ts')
 await loadPublishedProperties().catch(() => undefined)
 
-const routes: [string, string][] = [
+// [url, module, route pattern]. The pattern matters for pages that read useParams:
+// without a matching route the parameter is empty, the page finds no data and the
+// audit only ever sees its loading state (and then reports its copy as missing).
+const routes: [string, string, string?][] = [
   ['/', '/src/pages/HomePage.tsx'],
   ['/about', '/src/pages/AboutPage.tsx'],
   ['/legal', '/src/pages/LegalPage.tsx'],
   ['/property', '/src/pages/PropertyPage.tsx'],
   ['/property/residences', '/src/pages/ResidencesPage.tsx'],
-  ['/property/residences/villa-infinity-pool-golden-mile', '/src/pages/ResidencePage.tsx'],
+  [
+    '/property/residences/villa-infinity-pool-golden-mile',
+    '/src/pages/ResidencePage.tsx',
+    '/property/residences/:slug',
+  ],
   // The enquiry carries a residence reference — the "regarding" line and the seeded
   // message only exist once that is in the URL.
   ['/inquiry?interest=property&ref=LBA-0421&subject=Villa%20with%20infinity%20pool', '/src/pages/InquiryPage.tsx'],
@@ -50,14 +57,17 @@ const rendered: Record<string, string> = {}
 for (const lang of ['en', 'fr', 'es']) {
   store['lba-lang'] = lang
   const parts: string[] = []
-  for (const [route, file] of routes) {
+  for (const [route, file, pattern] of routes) {
     const mod = await load(file)
     const Comp = mod[Object.keys(mod).find((k) => k.endsWith('Page')) as string]
+    const page = pattern
+      ? React.createElement(Routes, null, React.createElement(Route, { path: pattern, element: React.createElement(Comp) }))
+      : React.createElement(Comp)
     const html = renderToStaticMarkup(
       React.createElement(LangProvider, null,
         React.createElement(MemoryRouter, { initialEntries: [route] },
           React.createElement(SiteHeader),
-          React.createElement(Comp),
+          page,
           React.createElement(SiteFooter))),
     )
     parts.push(textOf(html))

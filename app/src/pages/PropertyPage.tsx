@@ -1,16 +1,20 @@
-import { useEffect, useState } from "react";
+import { lazy, Suspense } from "react";
 import { Container } from "../components/ui/Container";
 import { Icon } from "../components/ui/icons";
 import { ArrowLink } from "../components/ui/ArrowLink";
 import { PageHero } from "../components/shared/PageHero";
-import { ResidencesStrip } from "../components/shared/ResidencesStrip";
 import { CrossLinkBand } from "../components/shared/CrossLinkBand";
 import { CtaBand } from "../components/shared/CtaBand";
 import { Checklist } from "../components/ui/Checklist";
 import { useLang } from "../lib/lang";
-import { cachedProperties, loadPublishedProperties, type Property } from "../lib/properties";
-import { featuredResidences } from "../lib/propertyFilters";
 import { hero, cta } from "../data/property";
+
+// Lazy for the same reason the home band is: the strip sits below the fold, and it is
+// what would otherwise drag the residences model and three languages of copy into the
+// entry chunk that every route loads.
+const PropertyStrip = lazy(() =>
+  import("../components/shared/PropertyStrip").then((m) => ({ default: m.PropertyStrip })),
+);
 import { en, fr, es } from "../data/locales/property";
 import { useUi } from "../lib/nav";
 import propertyCrosslink from "../assets/property-crosslink.jpg";
@@ -27,25 +31,7 @@ function usePropertyData() {
   };
 }
 
-// The four-up strip: the residences flagged for display, otherwise the newest
-// (lib/propertyFilters decides). Hidden entirely while empty or on failure.
-function useStripResidences(limit = 4) {
-  const [items, setItems] = useState<Property[]>(() => featuredResidences(cachedProperties(), limit));
-  useEffect(() => {
-    let cancelled = false;
-    loadPublishedProperties()
-      .then((all) => {
-        if (!cancelled) setItems(featuredResidences(all, limit));
-      })
-      .catch(() => {
-        /* no data, no strip */
-      });
-    return () => {
-      cancelled = true;
-    };
-  }, [limit]);
-  return items;
-}
+// The residences strip loads after paint — see PropertyStrip.
 
 function ServicesTrio() {
   const { services } = usePropertyData();
@@ -73,7 +59,6 @@ function ServicesTrio() {
 
 export function PropertyPage() {
   const { hero, crossLink, crossLinkAlt, cta } = usePropertyData();
-  const residences = useStripResidences();
   const ui = useUi();
   return (
     <>
@@ -125,7 +110,9 @@ export function PropertyPage() {
           </div>
         }
       />
-      <ResidencesStrip properties={residences} showLink allLink="/property/residences" />
+      <Suspense fallback={null}>
+        <PropertyStrip />
+      </Suspense>
       <CtaBand
         heading={cta.heading}
         subline={cta.subline}

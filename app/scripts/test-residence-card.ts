@@ -346,6 +346,41 @@ has('band: next control', band, 'Next photograph')
 has('band: autoplay can be paused', bandHtml, '>Pause<')
 has('band: the active photograph drifts', bandHtml, 'scale-[1.04]')
 has('band: a price-on-application residence still renders', band, 'Price on application')
+// --- the property page strip -------------------------------------------------
+// Loaded after paint from PropertyPage (it is what would otherwise pull the
+// residences model into the entry chunk), which is also why the dead-copy audit
+// cannot see it: it renders before the lazy component resolves.
+const { PropertyStrip } = await load('/src/components/shared/PropertyStrip.tsx')
+const stripText = stripHtml(renderPage('/property', 'en', React.createElement(PropertyStrip)))
+has('strip: heading', stripText, 'Selected Residences')
+has('strip: link to the listing', stripText, 'View all properties')
+has('strip: shows the featured residences', stripText, 'Villa with infinity pool above the Golden Mile')
+equals(
+  'strip: one link per card',
+  (renderPage('/property', 'en', React.createElement(PropertyStrip)).match(/href="\/property\/residences\//g) ?? []).length,
+  4,
+)
+
+// --- the admin panels -------------------------------------------------------
+// Import-safe and server-safe: the shell must not touch Firebase before it knows
+// who is signed in, and the panels must render their empty state with no database.
+const { AdminPage } = await load('/src/pages/AdminPage.tsx')
+const { JournalAdmin } = await load('/src/components/admin/JournalAdmin.tsx')
+const { ResidencesAdmin } = await load('/src/components/admin/ResidencesAdmin.tsx')
+const adminHtml = renderPage('/admin', 'en', React.createElement(AdminPage))
+has('admin: waits for auth before rendering a panel', stripHtml(adminHtml), 'Loading…')
+lacks('admin: does not render the sign-in gate while still loading', adminHtml, 'Sign in to manage')
+has(
+  'admin: residences panel renders its shell',
+  stripHtml(renderPage('/admin?tab=residences', 'en', React.createElement(ResidencesAdmin))),
+  'New residence',
+)
+has(
+  'admin: journal panel renders its shell',
+  stripHtml(renderPage('/admin', 'en', React.createElement(JournalAdmin))),
+  'New post',
+)
+
 equals('band: rank order is honoured', band.indexOf('Villa with infinity pool') < band.indexOf('Front-line golf villa'), true)
 const frBand = stripHtml(renderPage('/', 'fr', React.createElement(FeaturedResidences)))
 has('fr band: eyebrow', frBand, 'Résidences en vedette')
@@ -399,6 +434,32 @@ equals(
   ).length,
   1,
 )
+
+// --- the admin writes what the public site reads ----------------------------
+// The editor and the public reader are separate modules, so a field renamed on one
+// side would silently publish an empty residence. This is that contract.
+const Admin = (await load('/src/lib/propertyAdmin.ts')) as typeof import('../src/lib/propertyAdmin.ts')
+const Reader = (await load('/src/lib/properties.ts')) as typeof import('../src/lib/properties.ts')
+const adminForm = Admin.toForm(villaProperty)
+const roundTripped = Reader.normaliseProperty(
+  'villa-infinity-pool-golden-mile',
+  Admin.toInput(adminForm) as unknown as Record<string, unknown>,
+)
+equals('admin → public: price', roundTripped.price, villaProperty.price)
+equals('admin → public: figures', [roundTripped.beds, roundTripped.baths, roundTripped.buildArea, roundTripped.plotArea], [5, 6, 620, 1150])
+equals('admin → public: text', [roundTripped.title, roundTripped.excerpt, roundTripped.area, roundTripped.district], [villaProperty.title, villaProperty.excerpt, villaProperty.area, villaProperty.district])
+equals('admin → public: features', roundTripped.features, villaProperty.features)
+equals('admin → public: availability and type', [roundTripped.availability, roundTripped.type], ['available', 'villa'])
+equals('admin → public: photographs keep their order, url, path and alt', roundTripped.images, villaProperty.images)
+equals('admin → public: featured flags', [roundTripped.featured, roundTripped.featuredRank], [true, 1])
+equals('admin: an empty price means price on application', Admin.toInput({ ...adminForm, price: '' }).price, null)
+equals(
+  'admin → public: price on application survives the reader',
+  Reader.normaliseProperty('x', Admin.toInput({ ...adminForm, price: '' }) as unknown as Record<string, unknown>).price,
+  null,
+)
+equals('admin: the next reference follows the highest in use', Admin.nextRefCode(properties), 'LBA-0427')
+equals('admin: loading a residence into the editor is lossless', Admin.toInput(Admin.toForm(byRef('LBA-0426'))).price, null)
 
 console.log(`\n${passed} passed, ${failures.length} failed\n`)
 for (const failure of failures) console.log(`✗ ${failure}\n`)
