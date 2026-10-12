@@ -83,9 +83,15 @@ const dictFiles: Record<string, string> = {
   legal: '/src/data/locales/legal.ts',
   property: '/src/data/locales/property.ts',
   privateClient: '/src/data/locales/privateClient.ts',
+  // Not here: residences.ts. This audit asks "does the string appear in the union of
+  // server-rendered pages?", which cannot be answered for a catalogue whose copy
+  // depends on which residences exist (area, type and feature labels render only for
+  // the residences that are published) and on interaction (the filter panel, the
+  // empty and error states). Registering it produces ~50 false entries and buries
+  // the real ones. That copy is verified by scripts/test-residence-card.ts instead,
+  // which renders every fixture, every label map and the interaction states.
 }
 const SKIP = new Set(['icon', 'to', 'num', 'image', 'imagePos', 'value', 'url', 'link', 'linkHref'])
-
 function leaves(obj: any, prefix = '', out: [string, string][] = []): [string, string][] {
   for (const [k, v] of Object.entries(obj)) {
     if (SKIP.has(k)) continue

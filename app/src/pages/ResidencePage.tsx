@@ -157,7 +157,9 @@ export function ResidenceDetail({ property, similar }: { property: Property; sim
           <Container>
             <div className="mb-8 flex flex-col items-start gap-3 border-t border-hairline pt-10 sm:flex-row sm:items-baseline sm:justify-between">
               <p className="micro text-[11px] text-ink">{copy.detail.similar}</p>
-              <ArrowLink to="/property/residences">{ui.viewAllProperties}</ArrowLink>
+              <ArrowLink to="/property/residences" hitArea>
+                {ui.viewAllProperties}
+              </ArrowLink>
             </div>
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {similar.map((item) => (
@@ -268,7 +270,9 @@ export function ResidencePage() {
             <ButtonLink to="/property/residences" variant="outline">
               {copy.detail.back}
             </ButtonLink>
-            <ArrowLink to="/inquiry">{copy.hero.privateSearch}</ArrowLink>
+            <ArrowLink to="/inquiry" hitArea>
+              {copy.hero.privateSearch}
+            </ArrowLink>
           </div>
         </Container>
       </section>

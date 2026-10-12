@@ -184,7 +184,9 @@ export function toInput(form: ResidenceForm): PropertyInput {
     yearBuilt: numberOrNull(form.yearBuilt),
     energyRating: form.energyRating.trim(),
     features: form.features,
-    images: form.images,
+    // An empty description is stored as "none" rather than as an empty string, so the
+    // public page can fall back to the residence title.
+    images: form.images.map((image) => ({ ...image, alt: image.alt?.trim() ? image.alt.trim() : undefined })),
     featured: form.featured,
     featuredRank: numberOrNull(form.featuredRank) ?? 100,
   }

@@ -12,10 +12,11 @@ import {
 import { labelFor, useResidencesCopy } from '../../lib/residencesCopy'
 
 const controlCls =
-  'w-full border border-hairline bg-white px-3 py-2.5 text-[13px] text-ink focus:border-oxblood focus:outline-none transition-colors'
+  'w-full border border-hairline bg-white px-3 py-3 text-[13px] text-ink focus:border-oxblood focus:outline-none transition-colors'
 const labelCls = 'micro mb-2 block text-[10px] text-taupe'
+// Every control clears the 44px tap-target floor from the design system.
 const chipCls =
-  'inline-flex min-h-9 items-center gap-2 border px-3 text-[10px] uppercase tracking-[0.16em] transition-colors'
+  'inline-flex min-h-11 items-center gap-2 border px-3 text-[10px] uppercase tracking-[0.16em] transition-colors'
 
 // The filter bar. It owns no state beyond the search text and the open/closed
 // panel: every change is applied to the URL by the page, so a filtered view is
@@ -24,18 +25,22 @@ export function ResidenceFilters({
   filters,
   count,
   loading = false,
+  defaultOpen = false,
   onPatch,
   onClear,
 }: {
   filters: Filters
   count: number
   loading?: boolean
+  /** Render with the panel already open: used by the checks, and by any future
+   *  embed that wants the controls visible without a click. */
+  defaultOpen?: boolean
   onPatch: (patch: Partial<Filters>, replace?: boolean) => void
   onClear: () => void
 }) {
   const copy = useResidencesCopy()
   const { lang } = useLang()
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(defaultOpen)
   const [text, setText] = useState(filters.q)
 
   // Keep the input in step with the URL (back button, "clear all").
@@ -135,7 +140,7 @@ export function ResidenceFilters({
             <select
               value={filters.sort}
               onChange={(event) => onPatch({ sort: event.target.value as SortKey })}
-              className="border border-hairline bg-white px-2 py-2 text-[11px] uppercase tracking-[0.16em] text-ink focus:border-oxblood focus:outline-none"
+              className="min-h-11 border border-hairline bg-white px-2 py-2 text-[11px] uppercase tracking-[0.16em] text-ink focus:border-oxblood focus:outline-none"
             >
               {SORT_KEYS.map((key) => (
                 <option key={key} value={key}>
@@ -311,9 +316,7 @@ export function ResidenceFilters({
                       type="button"
                       aria-pressed={on}
                       onClick={() => toggleFeature(feature)}
-                      className={`${chipCls} min-h-10 ${
-                        on ? 'border-oxblood text-oxblood' : 'border-hairline bg-white text-taupe hover:border-taupe hover:text-ink'
-                      }`}
+                      className={`${chipCls} ${on ? 'border-oxblood text-oxblood' : 'border-hairline bg-white text-taupe hover:border-taupe hover:text-ink'}`}
                     >
                       {labelFor(copy.features, feature)}
                     </button>
@@ -343,7 +346,7 @@ export function ResidenceFilters({
                 type="button"
                 onClick={() => onPatch(chip.patch)}
                 aria-label={`${copy.active.remove}: ${chip.label}`}
-                className={`${chipCls} min-h-9 border-hairline bg-white text-ink hover:border-oxblood hover:text-oxblood`}
+                className={`${chipCls} border-hairline bg-white text-ink hover:border-oxblood hover:text-oxblood`}
               >
                 {chip.label}
                 <span aria-hidden>×</span>

@@ -27,7 +27,7 @@ export function PropertyGallery({ images, title }: { images: PropertyImage[]; ti
         renderItem={(image, imageIndex) => (
           <img
             src={image.url}
-            alt={image.alt ?? title}
+            alt={image.alt || title}
             loading={imageIndex === 0 ? 'eager' : 'lazy'}
             decoding="async"
             fetchPriority={imageIndex === 0 ? 'high' : 'auto'}

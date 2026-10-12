@@ -84,7 +84,9 @@ export function ResidencesPage() {
           </h1>
           <p className="mt-6 max-w-prose text-sm leading-relaxed text-taupe md:text-[15px]">{copy.hero.subline}</p>
           <div className="mt-6">
-            <ArrowLink to="/inquiry">{copy.hero.privateSearch}</ArrowLink>
+            <ArrowLink to="/inquiry" hitArea>
+              {copy.hero.privateSearch}
+            </ArrowLink>
           </div>
         </Container>
       </section>
@@ -120,7 +122,9 @@ export function ResidencesPage() {
                 >
                   {copy.results.clear}
                 </button>
-                <ArrowLink to="/inquiry">{copy.hero.privateSearch}</ArrowLink>
+                <ArrowLink to="/inquiry" hitArea>
+                  {copy.hero.privateSearch}
+                </ArrowLink>
               </div>
             </div>
           )}

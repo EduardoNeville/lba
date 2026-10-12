@@ -43,7 +43,7 @@ export function PropertyCard({
         {cover ? (
           <img
             src={cover.url}
-            alt={cover.alt ?? `${property.title}, ${area}`}
+            alt={cover.alt || `${property.title}, ${area}`}
             loading={priority ? 'eager' : 'lazy'}
             decoding="async"
             fetchPriority={priority ? 'high' : 'auto'}

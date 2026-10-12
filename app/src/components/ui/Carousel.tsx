@@ -215,7 +215,7 @@ export function Carousel<T>({
       )}
 
       {dots && many && (
-        <div className="mt-4 flex items-center justify-center gap-3">
+        <div className="mt-4 flex items-center justify-center gap-1">
           {items.map((_, dotIndex) => (
             <button
               key={dotIndex}
@@ -223,10 +223,16 @@ export function Carousel<T>({
               onClick={() => scrollTo(dotIndex)}
               aria-label={`${dotIndex + 1} / ${items.length}`}
               aria-current={dotIndex === index}
-              className={`h-2.5 w-2.5 border transition-colors ${
-                dotIndex === index ? 'border-oxblood bg-oxblood' : 'border-ink/50 bg-transparent hover:border-ink'
-              }`}
-            />
+              className="flex min-h-11 min-w-11 items-center justify-center"
+            >
+              {/* The dot stays small; the button around it is the tap target. */}
+              <span
+                aria-hidden
+                className={`block h-2.5 w-2.5 border transition-colors ${
+                  dotIndex === index ? 'border-oxblood bg-oxblood' : 'border-ink/50 bg-transparent'
+                }`}
+              />
+            </button>
           ))}
         </div>
       )}
@@ -235,7 +241,7 @@ export function Carousel<T>({
         <button
           type="button"
           onClick={() => setUserPaused((value) => !value)}
-          className="micro absolute bottom-4 right-4 border border-hairline bg-cream/90 px-3 py-2 text-[10px] text-ink transition-colors hover:bg-cream md:bottom-6 md:right-6"
+          className="micro absolute bottom-4 right-4 min-h-11 border border-hairline bg-cream/90 px-3 py-2 text-[10px] text-ink transition-colors hover:bg-cream md:bottom-6 md:right-6"
         >
           {userPaused ? labels.play : labels.pause}
         </button>

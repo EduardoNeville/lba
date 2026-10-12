@@ -23,7 +23,11 @@ export function ResidencesStrip({
       <Container>
         <div className="mb-8 flex flex-col items-start gap-3 sm:flex-row sm:items-baseline sm:justify-between">
           <p className="micro text-[11px] text-ink">{ui.selectedResidences}</p>
-          {allLink && <ArrowLink to={allLink}>{ui.viewAllProperties}</ArrowLink>}
+          {allLink && (
+            <ArrowLink to={allLink} hitArea>
+              {ui.viewAllProperties}
+            </ArrowLink>
+          )}
         </div>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {properties.map((property) => (

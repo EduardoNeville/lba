@@ -461,6 +461,106 @@ equals(
 equals('admin: the next reference follows the highest in use', Admin.nextRefCode(properties), 'LBA-0427')
 equals('admin: loading a residence into the editor is lossless', Admin.toInput(Admin.toForm(byRef('LBA-0426'))).price, null)
 
+// --- copy the audit cannot see ---------------------------------------------
+// render-audit.ts deliberately leaves residences.ts unregistered (a catalogue's copy
+// depends on which residences exist and on interaction), so this file carries that
+// verification: the filter panel, the empty state, the "new" badge, and every label
+// in the area/type/feature maps in all three languages.
+const Filters = (await load('/src/lib/propertyFilters.ts')) as typeof import('../src/lib/propertyFilters.ts')
+const Dicts = (await load('/src/data/locales/residences.ts')) as typeof import('../src/data/locales/residences.ts')
+const { PROPERTY_AREAS, PROPERTY_FEATURES, PROPERTY_TYPES } = Reader
+const noop = () => {}
+
+// A residence that uses whatever label is under test, with a neutral title so the
+// assertion cannot pass on the title by accident.
+function synthetic(overrides: Partial<Property>): Property {
+  return {
+    ...villaProperty,
+    slug: 'synthetic',
+    refCode: 'LBA-9999',
+    title: 'Test residence',
+    excerpt: '',
+    district: undefined,
+    ...overrides,
+  }
+}
+
+const { ResidenceFilters } = await load('/src/components/residences/ResidenceFilters.tsx')
+const panelText = (lang: 'en' | 'fr' | 'es') =>
+  stripHtml(
+    renderPage(
+      '/property/residences',
+      lang,
+      React.createElement(ResidenceFilters, {
+        // Something applied, so the panel's "clear" affordance is rendered too.
+        filters: { ...Filters.emptyFilters(), beds: 3 },
+        count: 0,
+        defaultOpen: true,
+        onPatch: noop,
+        onClear: noop,
+      }),
+    ),
+  )
+
+const enPanel = panelText('en')
+for (const label of ['Operation', 'Property type', 'Area', 'Bedrooms', 'Bathrooms', 'Status', 'Price from', 'Price to', 'Built area from', 'Features', 'Clear all']) {
+  has(`panel[en]: ${label}`, enPanel, label)
+}
+for (const label of ['Chambres', 'Salles de bain', "Prix jusqu'à", 'Caractéristiques']) {
+  has(`panel[fr]: ${label}`, panelText('fr'), label)
+}
+for (const label of ['Dormitorios', 'Baños', 'Precio desde', 'Características']) {
+  has(`panel[es]: ${label}`, panelText('es'), label)
+}
+
+// The empty state: a warm session, and a filter nothing matches.
+const emptyText = stripHtml(renderPage('/property/residences?type=plot', 'en', React.createElement(ResidencesPage)))
+has('listing: empty state', emptyText, 'No residences match your search.')
+has('listing: empty state explains', emptyText, 'or tell us what you are looking for')
+has('listing: empty state can be cleared', emptyText, 'Clear all filters')
+has('listing: empty state offers the private search', emptyText, 'Ask about our private search')
+
+// The "new" badge only appears for a residence published in the last 30 days.
+const justPublished = synthetic({ publishedAt: { seconds: Math.floor(Date.now() / 1000) } })
+has('card: a fresh residence is flagged [en]', cardText(justPublished, 'en'), Dicts.en.badge.new)
+has('card: a fresh residence is flagged [fr]', cardText(justPublished, 'fr'), Dicts.fr.badge.new)
+has('card: a fresh residence is flagged [es]', cardText(justPublished, 'es'), Dicts.es.badge.new)
+
+// Every label map, every language: the fixtures only use some of them, so each value
+// gets its own render.
+for (const lang of ['en', 'fr', 'es'] as const) {
+  const dict = Dicts[lang]
+  for (const type of PROPERTY_TYPES) {
+    has(`types[${lang}].${type}`, cardText(synthetic({ type }), lang), dict.types[type])
+  }
+  for (const area of PROPERTY_AREAS) {
+    has(`areas[${lang}].${area}`, cardText(synthetic({ area }), lang), dict.areas[area])
+  }
+  const allFeatures = stripHtml(
+    renderPage(
+      '/',
+      lang,
+      React.createElement(ResidenceDetail, { property: synthetic({ features: [...PROPERTY_FEATURES] }), similar: [] }),
+    ),
+  )
+  for (const feature of PROPERTY_FEATURES) {
+    has(`features[${lang}].${feature}`, allFeatures, dict.features[feature])
+  }
+  for (const availability of ['reserved', 'sold'] as const) {
+    has(
+      `availability[${lang}].${availability}`,
+      cardText(synthetic({ availability }), lang),
+      dict.availability[availability],
+    )
+  }
+}
+
+// A photograph with no description must fall back to the residence title, never to
+// an empty alt attribute.
+const noAlt = synthetic({ images: [{ url: 'test.jpg' }] })
+has('card: an undescribed photograph falls back to the title', cardHtml(noAlt, 'en'), 'alt="Test residence, Marbella"')
+lacks('card: never an empty alt', cardHtml(noAlt, 'en'), 'alt=""')
+
 console.log(`\n${passed} passed, ${failures.length} failed\n`)
 for (const failure of failures) console.log(`✗ ${failure}\n`)
 await server.close()

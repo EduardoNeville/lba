@@ -87,7 +87,7 @@ export function FeaturedResidences() {
               {cover ? (
                 <img
                   src={cover.url}
-                  alt={cover.alt ?? property.title}
+                  alt={cover.alt || property.title}
                   loading="lazy"
                   decoding="async"
                   className={`h-full w-full object-cover transition-transform ease-out ${
