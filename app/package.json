@@ -10,6 +10,7 @@
     "lint": "oxlint",
     "preview": "vite preview",
     "check:locales": "node scripts/check-locales.ts",
+    "test:inquiry": "node scripts/test-inquiry-mailto.ts",
     "export:copy": "node scripts/export-copy.ts"
   },
   "dependencies": {

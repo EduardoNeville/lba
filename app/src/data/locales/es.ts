@@ -58,11 +58,17 @@ export const form = {
   message: "¿Cómo podemos ayudarle?",
   messagePlaceholder: "Cuéntenos más sobre su consulta",
   consent: "Confirmo que he leído y acepto la Política de Privacidad.",
-  submit: "Enviar consulta",
-  sending: "Enviando…",
-  thankYou: "Gracias. Nos pondremos en contacto con usted en breve.",
-  replyNote: "Respondemos a cada consulta, normalmente en un día laborable.",
-  errorGeneric: "Algo ha fallado. Por favor, inténtelo de nuevo.",
+  compose: "Redactar el correo →",
+  composeNote:
+    "Abrimos su programa de correo con todo rellenado: no se envía nada sin usted.",
+  mailSubjectPrefix: "Consulta",
+  mailtoHeading: "Su correo está listo.",
+  mailtoBody:
+    "Lo hemos abierto en su programa de correo con sus datos ya rellenados. Pulse enviar y nos llega directamente: respondemos a cada consulta, normalmente en un día laborable.",
+  mailtoFallback: "¿No se ha abierto nada? Escríbanos a",
+  copyDraft: "Copiar mi consulta",
+  copied: "Copiado ✓",
+  editDraft: "Editar mi consulta",
   hero: {
     title: "¿Cómo podemos ayudarle?",
   },
@@ -87,4 +93,5 @@ export const options = [
 export const aside = {
   heading: "La discreción está en el centro de todo lo que hacemos.",
   body: "Su consulta es confidencial y será atendida personalmente por un miembro de nuestro equipo.",
+  note: "Su mensaje se redacta y se envía desde su propio correo: no pasa por ningún tercero.",
 };

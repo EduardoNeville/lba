@@ -20,14 +20,13 @@
 ## Firebase reuse
 
 - Same project `legal-boutique-advisers-bf25a`. Keep `.env` pattern: `VITE_FIREBASE_API_KEY` (never commit).
-- Move config to `src/lib/firebase.ts` with **lazy init**: `initializeApp` on module load is fine for hosting/analytics, but `getFirestore` only inside `lib/submitInquiry.ts` so Firestore SDK lands in the lazy `/inquiry` chunk.
+- Move config to `src/lib/firebase.ts` with **lazy init**: `initializeApp` on module load is fine for hosting/analytics, and `getFirestore` is imported only where content is read/written (posts, admin) so the Firestore SDK stays out of the main bundle.
 - Drop `getAnalytics` or gate behind `isSupported()` (SSR/preview safety).
 
 ### Firestore schema (v1)
 
-- `inquiries` (write-only from client):
-  `{interest, fullName, email, phone, country, message, consent, createdAt}`.
-  Rules: `allow create: if request.resource.data.email is string && request.resource.data.consent == true; allow read,update,delete: if false;`
+- **`inquiries` is not used.** The enquiry form has no backend: it composes an email in the visitor's own mail client (see `03-pages/inquiry.md` §4). The collection and its `allow create` rule are left in place but nothing writes to them.
+- `posts` (journal) — read when published, written from `/admin`.
 - Later (optional, client-editable): `team`, `residences`, `partners` collections with `order` field; static `data/*.js` remains the loading fallback.
 
 ### Hosting

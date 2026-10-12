@@ -55,11 +55,17 @@ export const form = {
   message: "How can we assist you?",
   messagePlaceholder: "Please tell us more about your enquiry",
   consent: "I confirm that I have read and accept the Privacy Policy.",
-  submit: "Submit enquiry →",
-  sending: "Sending…",
-  thankYou: "Thank you. We will be in touch shortly.",
-  replyNote: "We reply to every enquiry, usually within one working day.",
-  errorGeneric: "Something went wrong. Please try again.",
+  compose: "Write the email →",
+  composeNote:
+    "We open your email programme with everything filled in — nothing is sent without you.",
+  mailSubjectPrefix: "Enquiry",
+  mailtoHeading: "Your email is ready.",
+  mailtoBody:
+    "We have opened it in your email programme with your details filled in. Press send and it comes straight to us — we reply to every enquiry, usually within one working day.",
+  mailtoFallback: "Nothing opened? Write to us at",
+  copyDraft: "Copy my enquiry",
+  copied: "Copied ✓",
+  editDraft: "Edit my enquiry",
   errorInterest: "Please select an area of interest.",
   errorName: "Please tell us your name.",
   errorEmail: "Please enter a valid email address.",
@@ -79,4 +85,5 @@ export const options = [
 export const aside = {
   heading: "Discretion is at the heart of everything we do.",
   body: "Your enquiry is confidential and will be read only by a partner.",
+  note: "Your message is written and sent from your own email programme, so it never passes through a third party.",
 };
