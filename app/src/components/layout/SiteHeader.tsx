@@ -35,12 +35,13 @@ export function SiteHeader() {
       <div className="flex h-14 items-center justify-between px-6 md:px-10 lg:h-20">
         <Logo />
         <nav aria-label="Main" className="hidden lg:block">
-          <ul className="flex items-center gap-6">
+          <ul className="flex items-center gap-4 xl:gap-6">
             {nav.map((item) => (
               <li key={item.to}>
                 <NavLink
                   to={item.to}
-                  className={({ isActive }) => `micro pb-1 transition-colors hover:text-oxblood ${isActive ? 'text-oxblood underline underline-offset-8' : 'text-ink'}`}
+                  end={item.end}
+                  className={({ isActive }) => `micro text-[10px] xl:text-[11px] pb-1 transition-colors hover:text-oxblood ${isActive ? 'text-oxblood underline underline-offset-8' : 'text-ink'}`}
                 >
                   {item.label}
                 </NavLink>
@@ -62,7 +63,7 @@ export function SiteHeader() {
               </button>
             ))}
           </div>
-          <Link to="/inquiry" className="micro hidden min-h-11 items-center border border-ink px-5 py-2 transition-colors hover:bg-ink hover:text-cream lg:flex">
+          <Link to="/inquiry" className="micro hidden min-h-11 items-center border border-ink px-5 py-2 transition-colors hover:bg-ink hover:text-cream xl:flex">
             {ui.inquire}
           </Link>
           <button
@@ -85,6 +86,7 @@ export function SiteHeader() {
               <li key={item.to}>
                 <NavLink
                   to={item.to}
+                  end={item.end}
                   className={({ isActive }) => `micro text-sm tracking-[0.25em] ${isActive ? 'text-oxblood' : 'text-ink'}`}
                 >
                   {item.label}

@@ -10,6 +10,12 @@ service cloud.firestore {
       allow read: if resource != null && resource.data.status == "published";
       allow read, create, update, delete: if request.auth != null;
     }
+    // Same contract as posts: the public only ever sees published residences,
+    // drafts stay visible to signed-in admins only.
+    match /properties/{slug} {
+      allow read: if resource != null && resource.data.status == "published";
+      allow read, create, update, delete: if request.auth != null;
+    }
     match /{document=**} {
       allow read, write: if false;
     }

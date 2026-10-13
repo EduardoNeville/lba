@@ -13,7 +13,6 @@ export const en = {
     { icon: 'key', title: 'Buying', body: 'From our first conversation to the moment you receive the keys. We help you find the right property and guide you through every step of the acquisition.', link: '/inquiry' },
     { icon: 'building', title: 'Selling', body: 'A discreet and strategic approach to selling your property, from positioning and presentation to identifying qualified buyers and managing the transaction.', link: '/inquiry' },
   ],
-  residences: [],
   crossLink: {
     left: {
       heading: 'Property, with legal expertise.',
@@ -45,7 +44,6 @@ export const fr = {
     { icon: 'building', title: "Achat", body: "De notre premier échange jusqu’à la remise des clés, nous vous aidons à trouver le bien qui vous correspond et vous accompagnons à chaque étape de l’acquisition.", link: '/inquiry' },
     { icon: 'figure', title: "Vente", body: "Une approche discrète et stratégique de la vente de votre propriété, depuis son positionnement et sa présentation jusqu’à l’identification d’acquéreurs qualifiés et la gestion de la transaction.", link: '/inquiry' },
   ],
-  residences: [],
   crossLink: {
     left: {
       heading: 'L’immobilier, avec une expertise juridique.',
@@ -77,7 +75,6 @@ export const es = {
     { icon: 'building', title: "Compra", body: "Desde nuestra primera conversación hasta el momento en que recibe las llaves. Le ayudamos a encontrar la propiedad adecuada y le acompañamos en cada etapa de la adquisición.", link: '/inquiry' },
     { icon: 'figure', title: "Venta", body: "Un enfoque discreto y estratégico para la venta de su propiedad, desde el posicionamiento y la presentación hasta la identificación de compradores cualificados y la gestión de la operación.", link: '/inquiry' },
   ],
-  residences: [],
   crossLink: {
     left: {
       heading: 'Propiedad, con experiencia jurídica.',

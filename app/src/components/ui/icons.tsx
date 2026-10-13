@@ -98,6 +98,54 @@ export const icons: Record<string, ReactElement> = {
       <path d="m6 9 6 6 6-6" />
     </svg>
   ),
+  'chevron-left': (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1} strokeLinecap="round" strokeLinejoin="round">
+      <path d="m15 18-6-6 6-6" />
+    </svg>
+  ),
+  'chevron-right': (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1} strokeLinecap="round" strokeLinejoin="round">
+      <path d="m9 18 6-6-6-6" />
+    </svg>
+  ),
+  bed: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M2 4v16" />
+      <path d="M2 9h18a2 2 0 0 1 2 2v9" />
+      <path d="M2 17h20" />
+      <path d="M6 9V7a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2" />
+    </svg>
+  ),
+  bath: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M3 12h18v2a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4z" />
+      <path d="M6 12V5a2 2 0 0 1 3.4-1.4" />
+      <path d="M8 20l-1 2" />
+      <path d="M16 20l1 2" />
+    </svg>
+  ),
+  area: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M3 8V5a2 2 0 0 1 2-2h3" />
+      <path d="M16 3h3a2 2 0 0 1 2 2v3" />
+      <path d="M21 16v3a2 2 0 0 1-2 2h-3" />
+      <path d="M8 21H5a2 2 0 0 1-2-2v-3" />
+      <path d="M8 12h8" />
+    </svg>
+  ),
+  sliders: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M21 5h-7" />
+      <path d="M10 5H3" />
+      <path d="M21 12h-9" />
+      <path d="M8 12H3" />
+      <path d="M21 19h-5" />
+      <path d="M12 19H3" />
+      <path d="M14 3v4" />
+      <path d="M8 10v4" />
+      <path d="M16 17v4" />
+    </svg>
+  ),
   instagram: (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1} strokeLinecap="round" strokeLinejoin="round">
       <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />

@@ -109,7 +109,7 @@ export function BlogPostPage() {
         <section className="py-12 md:py-16">
           <Container>
             <div>
-              <div className="blog-content" dangerouslySetInnerHTML={{ __html: html }} />
+              <div className="rich-text" dangerouslySetInnerHTML={{ __html: html }} />
             </div>
             <div className="mt-12 border-t border-hairline pt-8">
               <Link to="/blog" className="micro text-ink hover:text-oxblood">

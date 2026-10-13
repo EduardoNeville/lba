@@ -3,6 +3,7 @@
 export const nav = {
   label: {
     property: "Property",
+    residences: "Residences",
     legal: "Legal",
     privateClient: "Private Client Services",
     journal: "Journal",
@@ -55,6 +56,8 @@ export const form = {
   message: "How can we assist you?",
   messagePlaceholder: "Please tell us more about your enquiry",
   consent: "I confirm that I have read and accept the Privacy Policy.",
+  regarding: "Regarding",
+  enquiryAbout: "I would like to know more about",
   submit: "Submit enquiry →",
   sending: "Sending…",
   thankYou: "Thank you. We will be in touch shortly.",

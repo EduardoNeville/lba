@@ -1,13 +1,20 @@
+import { lazy, Suspense } from "react";
 import { Container } from "../components/ui/Container";
 import { Icon } from "../components/ui/icons";
 import { ArrowLink } from "../components/ui/ArrowLink";
 import { PageHero } from "../components/shared/PageHero";
-import { ResidencesStrip } from "../components/shared/ResidencesStrip";
 import { CrossLinkBand } from "../components/shared/CrossLinkBand";
 import { CtaBand } from "../components/shared/CtaBand";
 import { Checklist } from "../components/ui/Checklist";
 import { useLang } from "../lib/lang";
 import { hero, cta } from "../data/property";
+
+// Lazy for the same reason the home band is: the strip sits below the fold, and it is
+// what would otherwise drag the residences model and three languages of copy into the
+// entry chunk that every route loads.
+const PropertyStrip = lazy(() =>
+  import("../components/shared/PropertyStrip").then((m) => ({ default: m.PropertyStrip })),
+);
 import { en, fr, es } from "../data/locales/property";
 import { useUi } from "../lib/nav";
 import propertyCrosslink from "../assets/property-crosslink.jpg";
@@ -18,12 +25,13 @@ function usePropertyData() {
   return {
     hero: { ...d.hero, image: hero.image },
     services: d.services,
-    residences: d.residences,
     crossLink: d.crossLink,
     crossLinkAlt: d.crossLinkAlt,
     cta: { ...d.cta, image: cta.image },
   };
 }
+
+// The residences strip loads after paint — see PropertyStrip.
 
 function ServicesTrio() {
   const { services } = usePropertyData();
@@ -50,7 +58,7 @@ function ServicesTrio() {
 }
 
 export function PropertyPage() {
-  const { hero, residences, crossLink, crossLinkAlt, cta } = usePropertyData();
+  const { hero, crossLink, crossLinkAlt, cta } = usePropertyData();
   const ui = useUi();
   return (
     <>
@@ -102,7 +110,9 @@ export function PropertyPage() {
           </div>
         }
       />
-      <ResidencesStrip residences={residences} showLink allLink="/property" />
+      <Suspense fallback={null}>
+        <PropertyStrip />
+      </Suspense>
       <CtaBand
         heading={cta.heading}
         subline={cta.subline}

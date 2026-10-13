@@ -4,7 +4,11 @@
 import { createServer } from 'vite'
 import { renderToStaticMarkup } from 'react-dom/server'
 import React from 'react'
-import { MemoryRouter } from 'react-router-dom'
+import { MemoryRouter, Route, Routes } from 'react-router-dom'
+
+// Same reason as the checks: the audit's routes name fixture residences, so it asks
+// for the fixture explicitly instead of whatever is in the development database.
+process.env.VITE_SEED = 'force'
 
 const store: Record<string, string> = {}
 ;(globalThis as any).localStorage = {
@@ -20,11 +24,30 @@ const { LangProvider } = await load('/src/lib/lang.tsx')
 const { SiteHeader } = await load('/src/components/layout/SiteHeader.tsx')
 const { SiteFooter } = await load('/src/components/layout/SiteFooter.tsx')
 
-const routes: [string, string][] = [
+// Warm the residences cache before rendering. The pages read it synchronously as
+// their initial state, so the server-rendered markup shows the real content —
+// cards, prices and all — instead of the loading placeholders. Without this the
+// audit reports residences copy as "not rendered anywhere".
+const { loadPublishedProperties } = await load('/src/lib/properties.ts')
+await loadPublishedProperties().catch(() => undefined)
+
+// [url, module, route pattern]. The pattern matters for pages that read useParams:
+// without a matching route the parameter is empty, the page finds no data and the
+// audit only ever sees its loading state (and then reports its copy as missing).
+const routes: [string, string, string?][] = [
   ['/', '/src/pages/HomePage.tsx'],
   ['/about', '/src/pages/AboutPage.tsx'],
   ['/legal', '/src/pages/LegalPage.tsx'],
   ['/property', '/src/pages/PropertyPage.tsx'],
+  ['/property/residences', '/src/pages/ResidencesPage.tsx'],
+  [
+    '/property/residences/villa-infinity-pool-golden-mile',
+    '/src/pages/ResidencePage.tsx',
+    '/property/residences/:slug',
+  ],
+  // The enquiry carries a residence reference — the "regarding" line and the seeded
+  // message only exist once that is in the URL.
+  ['/inquiry?interest=property&ref=LBA-0421&subject=Villa%20with%20infinity%20pool', '/src/pages/InquiryPage.tsx'],
   ['/private-client', '/src/pages/PrivateClientPage.tsx'],
   ['/inquiry', '/src/pages/InquiryPage.tsx'],
 ]
@@ -38,14 +61,17 @@ const rendered: Record<string, string> = {}
 for (const lang of ['en', 'fr', 'es']) {
   store['lba-lang'] = lang
   const parts: string[] = []
-  for (const [route, file] of routes) {
+  for (const [route, file, pattern] of routes) {
     const mod = await load(file)
     const Comp = mod[Object.keys(mod).find((k) => k.endsWith('Page')) as string]
+    const page = pattern
+      ? React.createElement(Routes, null, React.createElement(Route, { path: pattern, element: React.createElement(Comp) }))
+      : React.createElement(Comp)
     const html = renderToStaticMarkup(
       React.createElement(LangProvider, null,
         React.createElement(MemoryRouter, { initialEntries: [route] },
           React.createElement(SiteHeader),
-          React.createElement(Comp),
+          page,
           React.createElement(SiteFooter))),
     )
     parts.push(textOf(html))
@@ -61,9 +87,15 @@ const dictFiles: Record<string, string> = {
   legal: '/src/data/locales/legal.ts',
   property: '/src/data/locales/property.ts',
   privateClient: '/src/data/locales/privateClient.ts',
+  // Not here: residences.ts. This audit asks "does the string appear in the union of
+  // server-rendered pages?", which cannot be answered for a catalogue whose copy
+  // depends on which residences exist (area, type and feature labels render only for
+  // the residences that are published) and on interaction (the filter panel, the
+  // empty and error states). Registering it produces ~50 false entries and buries
+  // the real ones. That copy is verified by scripts/test-residence-card.ts instead,
+  // which renders every fixture, every label map and the interaction states.
 }
 const SKIP = new Set(['icon', 'to', 'num', 'image', 'imagePos', 'value', 'url', 'link', 'linkHref'])
-
 function leaves(obj: any, prefix = '', out: [string, string][] = []): [string, string][] {
   for (const [k, v] of Object.entries(obj)) {
     if (SKIP.has(k)) continue

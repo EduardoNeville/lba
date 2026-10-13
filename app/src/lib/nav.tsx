@@ -27,6 +27,7 @@ export function useNav() {
   return NAV.map((item) => ({
     key: item.key,
     to: item.to,
+    end: item.end,
     label: labels[item.key] ?? item.key,
   }));
 }

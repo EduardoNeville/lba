@@ -1,10 +1,35 @@
 rules_version = '2';
 service firebase.storage {
   match /b/{bucket}/o {
+    // Journal images (covers and inline images). Every path is built by
+    // lib/media.ts — never inline a path in a component, or it will fall outside
+    // these prefixes and be rejected.
+    //
+    // The size cap is a backstop, not the real limit: the admin accepts files up to
+    // 60MB and reduces them in the browser before upload (1600px for the journal,
+    // 1800px + 900px for a residence photograph), so what arrives here is normally
+    // a few hundred KB. The cap is set to MAX_STORED_BYTES in lib/media.ts, which is
+    // generous enough for a PNG floor plan and tight enough to catch a mistake.
     match /blog/{allPaths=**} {
       allow read: if true;
       allow write: if request.auth != null
-                   && request.resource.size < 5*1024*1024
+                   && request.resource.size < 12*1024*1024
+                   && request.resource.contentType.matches('image/.*');
+    }
+    // Residence galleries: the large rendition and the small one.
+    match /properties/{allPaths=**} {
+      allow read: if true;
+      allow write: if request.auth != null
+                   && request.resource.size < 12*1024*1024
+                   && request.resource.contentType.matches('image/.*');
+    }
+    // Development uploads. The Firestore database is separate in dev (lba-dev)
+    // but the bucket is shared, so dev test photos are namespaced here to keep
+    // them away from live listings.
+    match /dev/{allPaths=**} {
+      allow read: if true;
+      allow write: if request.auth != null
+                   && request.resource.size < 12*1024*1024
                    && request.resource.contentType.matches('image/.*');
     }
   }
