@@ -11,6 +11,10 @@ import { renderToStaticMarkup } from 'react-dom/server'
 import { MemoryRouter, Route, Routes } from 'react-router-dom'
 import { createServer } from 'vite'
 
+// The checks run against the fixtures rather than whatever the development database
+// happens to hold, so their expectations are the same on every machine.
+process.env.VITE_SEED = 'force'
+
 const store: Record<string, string> = {}
 ;(globalThis as unknown as { localStorage: unknown }).localStorage = {
   getItem: (k: string) => (k in store ? store[k] : null),

@@ -5,6 +5,10 @@
 
 import { createServer } from 'vite'
 
+// The checks run against the fixtures rather than whatever the development database
+// happens to hold, so their expectations are the same on every machine.
+process.env.VITE_SEED = 'force'
+
 const server = await createServer({ server: { middlewareMode: true }, appType: 'custom', logLevel: 'error' })
 const load = (path: string) => server.ssrLoadModule(path)
 
@@ -186,6 +190,13 @@ check('publishedSeconds reads Firestore-style timestamps', F.publishedSeconds(li
 // published residences and never drafts. Exercises the cache too.
 const P = (await load('/src/lib/properties.ts')) as typeof import('../src/lib/properties.ts')
 const loaded = await P.loadPublishedProperties()
+
+// A denied public read is a deployment state (the rules for `properties` are not
+// deployed yet), not a failure a visitor can act on: the section shows its empty state
+// instead of an error. Anything else — offline, quota — stays an error.
+check('loader: a permission error is recognised', P.isPermissionDenied({ code: 'permission-denied' }), true)
+check('loader: a network error is not', P.isPermissionDenied({ code: 'unavailable' }), false)
+check('loader: something else entirely is not', P.isPermissionDenied(new Error('boom')), false)
 checkThat('loader returns residences', loaded.length >= 6, `got ${loaded.length}`)
 checkThat('loader never returns drafts', loaded.every((p) => p.status === 'published'))
 const cached = await P.loadPublishedProperties()

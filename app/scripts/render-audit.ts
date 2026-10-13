@@ -6,6 +6,10 @@ import { renderToStaticMarkup } from 'react-dom/server'
 import React from 'react'
 import { MemoryRouter, Route, Routes } from 'react-router-dom'
 
+// Same reason as the checks: the audit's routes name fixture residences, so it asks
+// for the fixture explicitly instead of whatever is in the development database.
+process.env.VITE_SEED = 'force'
+
 const store: Record<string, string> = {}
 ;(globalThis as any).localStorage = {
   getItem: (k: string) => (k in store ? store[k] : null),

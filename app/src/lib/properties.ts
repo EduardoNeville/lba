@@ -119,11 +119,17 @@ export interface Property {
 
 const CACHE_TTL = 120_000 // 2 minutes, in memory + sessionStorage (cuts repeat reads)
 const CACHE_KEY = 'lba-properties-v1'
+const SEED = import.meta.env.VITE_SEED as string | undefined
 // Fixtures are for non-production environments only: the dev site (built with
-// `--mode development`, which is what CI deploys to the dev target) and the dev
-// server. A production build folds this to false and drops the branch — and the
-// fixture's dynamic import — from the bundle. VITE_SEED=0 switches it off.
-const DEV_FIXTURES = import.meta.env.MODE !== 'production' && import.meta.env.VITE_SEED !== '0'
+// `--mode development`, which is what CI deploys to the dev target), the dev server
+// and the checks. A production build folds this to false and drops the branch — and
+// the fixture's dynamic import — from the bundle.
+//   VITE_SEED=0      switch the fixture off completely
+//   VITE_SEED=force  use it whenever there is no real data — which is what the checks
+//                    and the copy audit set, so their expectations do not depend on
+//                    whatever happens to be in the development database today
+const DEV_FIXTURES = import.meta.env.MODE !== 'production' && SEED !== '0'
+const FORCE_FIXTURES = SEED === 'force'
 
 let cache: { at: number; items: Property[] } | null = null
 let inflight: Promise<Property[]> | null = null
@@ -172,6 +178,9 @@ export async function loadPublishedProperties(): Promise<Property[]> {
 }
 
 async function fetchPublished(): Promise<Property[]> {
+  // The checks ask for the fixture explicitly; nothing else does.
+  if (FORCE_FIXTURES) return devSeed()
+
   const stored = readSession()
   if (stored) {
     cache = stored
@@ -189,6 +198,13 @@ async function fetchPublished(): Promise<Property[]> {
   } catch (err) {
     const seed = await devSeed()
     if (seed.length > 0) return seed
+    if (isPermissionDenied(err)) {
+      console.warn(
+        '[residences] The public read of the properties collection was denied. ' +
+          'Until `firebase deploy --only firestore:rules,storage` is run, no residence can be shown.',
+      )
+      return []
+    }
     throw err
   }
 }
@@ -236,6 +252,14 @@ const num = (v: unknown): number | undefined => {
 }
 const oneOf = <T extends string>(v: unknown, allowed: readonly T[], fallback: T): T =>
   typeof v === 'string' && (allowed as readonly string[]).includes(v) ? (v as T) : fallback
+
+/** Firestore denies the public read until the rules for `properties` are deployed.
+ *  That is a deployment state, not a failure the visitor can act on, so the section
+ *  shows its empty state rather than an error — and says so in the console, where the
+ *  person who can fix it will look. */
+export function isPermissionDenied(error: unknown): boolean {
+  return (error as { code?: unknown } | null)?.code === 'permission-denied'
+}
 
 // Documents are written by hand in the admin, so a partial or malformed one must
 // never crash a public page.
