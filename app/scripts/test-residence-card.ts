@@ -103,6 +103,8 @@ function equals(name: string, actual: unknown, expected: unknown) {
   else failures.push(`${name}\n    expected: ${JSON.stringify(expected)}\n    actual:   ${JSON.stringify(actual)}`)
 }
 
+const noop = () => {}
+
 // --- English: formatting, specs, location line, badges ---------------------
 const villa = cardText(byRef('LBA-0421'), 'en')
 has('en: price', villa, '€6,450,000')
@@ -217,14 +219,68 @@ const galleryHtml = renderPage(
   React.createElement(PropertyGallery, { images: villaProperty.images, title: villaProperty.title }),
 )
 const gallery = stripHtml(galleryHtml)
-equals('gallery: a slide per photograph, in both carousels', (galleryHtml.match(/aria-roledescription="slide"/g) ?? []).length, 8)
+equals('gallery: a slide per photograph', (galleryHtml.match(/aria-roledescription="slide"/g) ?? []).length, 4)
 has('gallery: region label', gallery, 'Residence photographs')
 has('gallery: previous arrow', gallery, 'Previous photograph')
 has('gallery: next arrow', gallery, 'Next photograph')
 has('gallery: counter', gallery, '1 / 4')
-equals('gallery: a labelled thumbnail per photograph', (galleryHtml.match(/aria-label="View photograph \d"/g) ?? []).length, 4)
-equals('gallery: thumbnails are decorative', (galleryHtml.match(/alt=""/g) ?? []).length, 4)
+has('gallery: offers a full-screen view', gallery, 'View full screen')
 has('gallery: cover carries the fixture alt text', gallery, 'Infinity pool and stone terrace')
+lacks('gallery: thumbnails wait for the full-screen view', galleryHtml, 'View photograph 1')
+
+// The full-screen view is its own dialog, so it is checked directly.
+const { GalleryLightbox } = await load('/src/components/residences/GalleryLightbox.tsx')
+const boxHtml = renderPage(
+  '/',
+  'en',
+  React.createElement(GalleryLightbox, {
+    images: villaProperty.images,
+    title: villaProperty.title,
+    index: 0,
+    onIndexChange: noop,
+    onClose: noop,
+  }),
+)
+const box = stripHtml(boxHtml)
+has('full screen: is a modal dialog', boxHtml, 'aria-modal="true"')
+has('full screen: counter', box, '1 / 4')
+has('full screen: can be left', box, 'Close')
+equals('full screen: a thumbnail per photograph', (boxHtml.match(/aria-label="View photograph \d"/g) ?? []).length, 4)
+equals('full screen: thumbnails are decorative', (boxHtml.match(/alt=""/g) ?? []).length, 4)
+has('full screen: the untruncated rendition is shown', boxHtml, 'object-contain')
+
+// --- two renditions per photograph -----------------------------------------
+// The large one is for the gallery and the viewer, the small one for anything that
+// shows several photographs at once. Records predating the split only have the large
+// one, and must keep working.
+const twoRenditions = {
+  ...villaProperty,
+  images: [{ url: 'https://example.test/full.jpg', cardUrl: 'https://example.test/card.jpg', alt: 'Alt text' }],
+}
+const legacyImage = { ...villaProperty, images: [{ url: 'https://example.test/legacy.jpg', alt: 'Alt text' }] }
+has('card: downloads the small rendition', cardHtml(twoRenditions, 'en'), 'src="https://example.test/card.jpg"')
+lacks('card: never the large one', cardHtml(twoRenditions, 'en'), 'src="https://example.test/full.jpg"')
+has(
+  'gallery: shows the large rendition',
+  renderPage('/', 'en', React.createElement(PropertyGallery, { images: twoRenditions.images, title: 'x' })),
+  'src="https://example.test/full.jpg"',
+)
+has(
+  'full screen: thumbnails use the small rendition',
+  renderPage(
+    '/',
+    'en',
+    React.createElement(GalleryLightbox, {
+      images: twoRenditions.images,
+      title: 'x',
+      index: 0,
+      onIndexChange: noop,
+      onClose: noop,
+    }),
+  ),
+  'src="https://example.test/card.jpg"',
+)
+has('card: falls back on a record with only one rendition', cardHtml(legacyImage, 'en'), 'src="https://example.test/legacy.jpg"')
 
 const similar = [byRef('LBA-0424'), byRef('LBA-0426')]
 const detailHtml = renderPage('/', 'en', React.createElement(ResidenceDetail, { property: villaProperty, similar }))
@@ -233,6 +289,17 @@ has('detail: title', detail, 'Villa with infinity pool above the Golden Mile')
 has('detail: reference', detail, 'Reference LBA-0421')
 has('detail: price', detail, '€6,450,000')
 has('detail: back link', detail, '← All residences')
+// The order the reader meets them in: the photographs and their floating panel,
+// then the figures, then the description. ('View full screen' is body text inside
+// the gallery, unlike the gallery's aria-label, which the text strip appends at the
+// end.)
+equals(
+  'detail: gallery, then identity, then specifications, then description',
+  detail.indexOf('View full screen') < detail.indexOf('Villa with infinity pool above the Golden Mile') &&
+    detail.indexOf('Villa with infinity pool above the Golden Mile') < detail.indexOf('Bedrooms') &&
+    detail.indexOf('Bedrooms') < detail.indexOf('A modern villa on Marbella'),
+  true,
+)
 has('detail: bedroom spec', detail, 'Bedrooms')
 has('detail: bath spec', detail, 'Bathrooms')
 has('detail: built area spec', detail, '620 m²')
@@ -345,6 +412,7 @@ has('band: previous control', band, 'Previous photograph')
 has('band: next control', band, 'Next photograph')
 has('band: autoplay can be paused', bandHtml, '>Pause<')
 has('band: the active photograph drifts', bandHtml, 'scale-[1.04]')
+has('band: renders the full-bleed photograph', bandHtml, villaProperty.images[0].url)
 has('band: a price-on-application residence still renders', band, 'Price on application')
 // --- the property page strip -------------------------------------------------
 // Loaded after paint from PropertyPage (it is what would otherwise pull the
@@ -469,7 +537,6 @@ equals('admin: loading a residence into the editor is lossless', Admin.toInput(A
 const Filters = (await load('/src/lib/propertyFilters.ts')) as typeof import('../src/lib/propertyFilters.ts')
 const Dicts = (await load('/src/data/locales/residences.ts')) as typeof import('../src/data/locales/residences.ts')
 const { PROPERTY_AREAS, PROPERTY_FEATURES, PROPERTY_TYPES } = Reader
-const noop = () => {}
 
 // A residence that uses whatever label is under test, with a neutral title so the
 // assertion cannot pass on the title by accident.

@@ -42,7 +42,10 @@ export function PropertyCard({
       <div className="relative overflow-hidden bg-parchment">
         {cover ? (
           <img
-            src={cover.url}
+            /* The small rendition: a grid of six cards should not download six
+               full-screen photographs. Falls back for photographs uploaded before
+               the two-rendition pipeline. */
+            src={cover.cardUrl || cover.url}
             alt={cover.alt || `${property.title}, ${area}`}
             loading={priority ? 'eager' : 'lazy'}
             decoding="async"

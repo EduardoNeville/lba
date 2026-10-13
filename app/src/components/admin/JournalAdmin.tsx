@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { getDb } from '../../lib/firestore'
-import { uploadImage } from '../../lib/media'
+import { MAX_INPUT_BYTES, uploadImage } from '../../lib/media'
 import { slugify } from '../../lib/posts'
 import { renderMarkdown } from '../../lib/markdown'
 import { btnCls, controlCls, ghostBtnCls, hintCls, labelCls, panelCls, primaryBtnCls, rowCls } from './styles'
@@ -95,7 +95,7 @@ export function JournalAdmin() {
     const file = e.target.files?.[0]
     if (!file) return
     if (!file.type.startsWith('image/')) return setSaveError('Please choose an image file.')
-    if (file.size > 5 * 1024 * 1024) return setSaveError('Image must be under 5MB.')
+    if (file.size > MAX_INPUT_BYTES) return setSaveError(`Image must be under ${Math.round(MAX_INPUT_BYTES / 1024 / 1024)}MB.`)
     try {
       const { url, path } = await uploadTo(file, 'cover')
       // path is kept so a future delete can remove the Storage object
@@ -111,7 +111,7 @@ export function JournalAdmin() {
     const file = e.target.files?.[0]
     if (!file) return
     if (!file.type.startsWith('image/')) return setSaveError('Please choose an image file.')
-    if (file.size > 5 * 1024 * 1024) return setSaveError('Image must be under 5MB.')
+    if (file.size > MAX_INPUT_BYTES) return setSaveError(`Image must be under ${Math.round(MAX_INPUT_BYTES / 1024 / 1024)}MB.`)
     try {
       const { url } = await uploadTo(file, form.slug || slugify(form.title) || 'inline')
       const insert = `![image](${url})`
@@ -334,7 +334,7 @@ export function JournalAdmin() {
                   </button>
                 )}
               </div>
-              <p className={hintCls}>JPG or PNG, under 5MB. ~1600px wide recommended.</p>
+              <p className={hintCls}>JPG or PNG up to {Math.round(MAX_INPUT_BYTES / 1024 / 1024)}MB — reduced to 1600px on the way up.</p>
             </div>
 
             <div>

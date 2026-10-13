@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { uploadImage } from '../../lib/media'
+import { MAX_INPUT_BYTES, uploadImageSet } from '../../lib/media'
 import type { PropertyImage } from '../../lib/properties'
 import { btnCls, hintCls } from './styles'
 
@@ -39,10 +39,23 @@ export function ImageManager({
     const added: PropertyImage[] = []
     for (const [index, file] of queue.entries()) {
       try {
-        const uploaded = await uploadImage(file, 'properties', scope)
-        added.push({ url: uploaded.url, path: uploaded.path, alt: '' })
+        // Two renditions per photograph: full size for the viewer, reduced for the
+        // grids. Both are produced in the browser from the original file.
+        const uploaded = await uploadImageSet(file, 'properties', scope)
+        added.push({
+          url: uploaded.url,
+          path: uploaded.path,
+          cardUrl: uploaded.cardUrl,
+          cardPath: uploaded.cardPath,
+          alt: '',
+        })
       } catch (err) {
-        const reason = err instanceof Error && err.message === 'too-large' ? 'is larger than 5MB' : 'could not be uploaded'
+        const reason =
+          err instanceof Error && err.message === 'too-large-input'
+            ? `is larger than ${Math.round(MAX_INPUT_BYTES / 1024 / 1024)}MB`
+            : err instanceof Error && err.message === 'undecodable'
+              ? 'could not be read as an image'
+              : 'could not be uploaded'
         onError(`${file.name} ${reason}.`)
       }
       setUploading({ done: index + 1, total: queue.length })
@@ -77,8 +90,9 @@ export function ImageManager({
           <input type="file" accept="image/*" multiple onChange={onFiles} className="hidden" disabled={uploading !== null} />
         </label>
         <p className={hintCls}>
-          {images.length}/{MAX_IMAGES} · JPG or PNG, under 5MB each. Resized to 1600px on the way up. The first
-          photograph is the cover.
+          {images.length}/{MAX_IMAGES} · JPG, PNG or a camera file up to{' '}
+          {Math.round(MAX_INPUT_BYTES / 1024 / 1024)}MB. Each one is reduced to 1800px for the
+          full-screen view and 900px for the grids, on the way up. The first photograph is the cover.
         </p>
       </div>
 

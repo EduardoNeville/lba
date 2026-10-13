@@ -69,8 +69,14 @@ export const AVAILABILITY_LABELS: Record<Availability, string> = {
 }
 
 export interface PropertyImage {
+  /** The large rendition: what the full-screen viewer shows. */
   url: string
   path?: string // Storage path, kept so an admin delete can clean up the object
+  /** The small rendition: what grids, strips and thumbnails download. Absent on
+   *  photographs uploaded before the two-rendition pipeline, in which case the
+   *  large one is used. */
+  cardUrl?: string
+  cardPath?: string
   alt?: string
 }
 
@@ -237,7 +243,13 @@ export function normaliseProperty(slug: string, raw: Record<string, unknown>): P
   const images: PropertyImage[] = Array.isArray(raw.images)
     ? (raw.images as unknown[])
         .filter((i): i is Record<string, unknown> => typeof i === 'object' && i !== null)
-        .map((i) => ({ url: str(i.url) ?? '', path: str(i.path), alt: str(i.alt) }))
+        .map((i) => ({
+          url: str(i.url) ?? '',
+          path: str(i.path),
+          cardUrl: str(i.cardUrl),
+          cardPath: str(i.cardPath),
+          alt: str(i.alt),
+        }))
         .filter((i) => i.url !== '')
     : []
   const price = num(raw.price)

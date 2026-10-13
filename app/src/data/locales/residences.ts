@@ -75,6 +75,8 @@ export const en = {
     pause: 'Pause',
     play: 'Play',
     viewImage: 'View photograph',
+    fullScreen: 'View full screen',
+    close: 'Close',
   },
   detail: {
     back: 'All residences',
@@ -212,6 +214,8 @@ export const fr: typeof en = {
     pause: 'Pause',
     play: 'Lecture',
     viewImage: 'Voir la photographie',
+    fullScreen: 'Voir en plein écran',
+    close: 'Fermer',
   },
   detail: {
     back: 'Toutes les résidences',
@@ -349,6 +353,8 @@ export const es: typeof en = {
     pause: 'Pausar',
     play: 'Reproducir',
     viewImage: 'Ver fotografía',
+    fullScreen: 'Ver a pantalla completa',
+    close: 'Cerrar',
   },
   detail: {
     back: 'Todas las residencias',

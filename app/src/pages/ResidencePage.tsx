@@ -46,70 +46,60 @@ export function ResidenceDetail({ property, similar }: { property: Property; sim
 
   return (
     <>
-      <section className="pt-6 md:pt-8">
+      <div className="border-b border-hairline">
         <Container>
-          <Link to="/property/residences" className="micro text-[10px] text-taupe transition-colors hover:text-oxblood">
-            ← {copy.detail.back}
-          </Link>
+          <div className="py-3">
+            <Link to="/property/residences" className="micro text-[10px] text-taupe transition-colors hover:text-oxblood">
+              ← {copy.detail.back}
+            </Link>
+          </div>
         </Container>
-      </section>
+      </div>
 
-      <section className="mt-4 md:mt-6">
-        <Container wide>
-          <PropertyGallery images={property.images} title={property.title} />
+      {/* One screen of photographs, with the identity of the residence floating over
+          the bottom of them on a diffused panel: the brief, the price and the way in. */}
+      <PropertyGallery images={property.images} title={property.title}>
+        <Container>
+          <div className="max-w-[760px] border border-cream/20 bg-ink/35 p-5 backdrop-blur-md md:p-7">
+            <div className="flex flex-wrap items-center gap-3">
+              {property.availability !== 'available' && (
+                <Badge tone={property.availability === 'sold' ? 'muted' : 'accent'}>
+                  {copy.availability[property.availability]}
+                </Badge>
+              )}
+              <span className="micro text-[10px] text-cream/80">
+                {type} · {copy.detail.reference} {property.refCode}
+              </span>
+              {place && <span className="micro text-[10px] text-cream/70">{place}</span>}
+            </div>
+
+            <h1 className="font-display mt-3 text-3xl uppercase leading-[1.08] tracking-wide text-cream md:text-5xl">
+              {property.title}
+            </h1>
+
+            {property.excerpt && (
+              <p className="font-display mt-3 line-clamp-2 text-[15px] italic leading-relaxed text-cream/85 md:line-clamp-none md:text-[17px]">
+                {property.excerpt}
+              </p>
+            )}
+
+            <div className="mt-5 flex flex-wrap items-end justify-between gap-x-8 gap-y-4">
+              <div>
+                <p className="micro text-[10px] text-cream/70">{copy.detail.price}</p>
+                <p className="font-display mt-1 text-2xl leading-tight text-cream md:text-3xl">
+                  {qualifier && <span className="text-cream/70">{qualifier} </span>}
+                  {price ?? copy.card.priceOnApplication}
+                </p>
+              </div>
+              <ButtonLink to={enquiry}>{copy.detail.enquire}</ButtonLink>
+            </div>
+          </div>
         </Container>
-      </section>
+      </PropertyGallery>
 
       <section className="py-10 md:py-14">
         <Container>
-          <div className="grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-14">
-            <div>
-              <div className="flex flex-wrap items-center gap-3">
-                {property.availability !== 'available' && (
-                  <Badge tone={property.availability === 'sold' ? 'muted' : 'accent'}>
-                    {copy.availability[property.availability]}
-                  </Badge>
-                )}
-                <span className="micro text-[10px] text-taupe">
-                  {type} · {copy.detail.reference} {property.refCode}
-                </span>
-              </div>
-              <h1 className="font-display mt-4 text-3xl uppercase leading-[1.08] tracking-wide md:text-4xl lg:text-5xl">
-                {property.title}
-              </h1>
-              {place && <p className="micro mt-3 text-[11px] text-taupe">{place}</p>}
-              {property.excerpt && (
-                <p className="font-display mt-6 max-w-prose text-[17px] italic leading-relaxed text-taupe">
-                  {property.excerpt}
-                </p>
-              )}
-              {published && (
-                <p className="micro mt-6 text-[10px] text-taupe">
-                  {copy.detail.published} {published}
-                </p>
-              )}
-            </div>
-
-            <aside className="lg:sticky lg:top-32 lg:self-start">
-              <div className="border border-hairline bg-parchment/40 p-6 md:p-7">
-                <p className="micro text-[10px] text-taupe">{copy.detail.price}</p>
-                <p className="font-display mt-2 text-3xl leading-tight text-ink">
-                  {qualifier && <span className="text-taupe">{qualifier} </span>}
-                  {price ?? copy.card.priceOnApplication}
-                </p>
-                <div className="mt-6">
-                  <ButtonLink to={enquiry} className="w-full justify-center">
-                    {copy.detail.enquire}
-                  </ButtonLink>
-                </div>
-                <p className="mt-4 text-[11px] leading-relaxed text-taupe">{copy.detail.viewingNote}</p>
-              </div>
-            </aside>
-          </div>
-
-          <div className="mt-10">
-            <SpecRow property={property} />
-          </div>
+          <SpecRow property={property} />
         </Container>
       </section>
 
@@ -119,6 +109,11 @@ export function ResidenceDetail({ property, similar }: { property: Property; sim
             {property.descriptionMarkdown && (
               <div>
                 <h2 className="micro text-[10px] text-ink">{copy.detail.about}</h2>
+                {published && (
+                  <p className="micro mt-2 text-[10px] text-taupe">
+                    {copy.detail.published} {published}
+                  </p>
+                )}
                 <div
                   className="rich-text mt-2"
                   dangerouslySetInnerHTML={{ __html: renderMarkdown(property.descriptionMarkdown) }}
