@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState, type ReactNode } from 'react'
 import { Icon } from './icons'
 import { prefersReducedMotion } from '../../lib/motion'
+import { nextIndex, readCarouselScroll } from '../../lib/carousel'
 
 // A dependency-free carousel: native scroll-snap does the moving, the browser does
 // the swiping, and this component only drives the arrows, the dots, the counter and
@@ -60,6 +61,9 @@ export function Carousel<T>({
   itemClassName = '',
 }: CarouselProps<T>) {
   const trackRef = useRef<HTMLUListElement | null>(null)
+  // Where a scroll this component started is heading, so its own animation is not
+  // mistaken for the visitor scrolling (see lib/carousel.ts).
+  const animatingTo = useRef<number | null>(null)
   const [internalIndex, setInternalIndex] = useState(0)
   const index = controlledIndex ?? internalIndex
   const last = Math.max(0, items.length - 1)
@@ -94,30 +98,27 @@ export function Carousel<T>({
       const track = trackRef.current
       if (!track) return
       const size = stepSize() || track.clientWidth
+      // The index is set here rather than read back from the animation, because the
+      // scroll listener deliberately ignores positions we are animating through.
+      setIndex(target)
+      animatingTo.current = target
       track.scrollTo({
         left: target * size,
         behavior: immediate || prefersReducedMotion() ? 'auto' : 'smooth',
       })
     },
-    [stepSize],
+    [setIndex, stepSize],
   )
 
   const move = useCallback(
     (delta: number) => {
-      const track = trackRef.current
-      if (!track) return
-      const size = stepSize() || track.clientWidth
-      const perView = Math.max(1, slidesPerView)
-      const current = Math.round(track.scrollLeft / size)
-      let next = current + delta * perView
-      if (next > last) next = loop ? 0 : last
-      if (next < 0) next = loop ? last : 0
-      track.scrollTo({ left: next * size, behavior: prefersReducedMotion() ? 'auto' : 'smooth' })
+      scrollTo(nextIndex({ index, delta, perView: slidesPerView, last, loop }))
     },
-    [last, loop, slidesPerView, stepSize],
+    [index, last, loop, scrollTo, slidesPerView],
   )
 
-  // Follow the visitor's own scrolling (swipe, trackpad, keyboard) back into state.
+  // Follow the visitor's own scrolling (swipe, trackpad, keyboard) back into state,
+  // while ignoring the animation a programmatic move started.
   useEffect(() => {
     const track = trackRef.current
     if (!track) return
@@ -127,9 +128,14 @@ export function Carousel<T>({
       frame = requestAnimationFrame(() => {
         frame = 0
         const size = stepSize() || track.clientWidth
-        if (!size) return
-        const next = Math.round(track.scrollLeft / size)
-        if (next !== index) setIndex(next)
+        const decision = readCarouselScroll({
+          scrollLeft: track.scrollLeft,
+          slideWidth: size,
+          index,
+          animatingTo: animatingTo.current,
+        })
+        animatingTo.current = decision.animatingTo
+        if (decision.index !== null) setIndex(decision.index)
       })
     }
     track.addEventListener('scroll', onScroll, { passive: true })
@@ -138,6 +144,12 @@ export function Carousel<T>({
       if (frame) cancelAnimationFrame(frame)
     }
   }, [index, setIndex, stepSize])
+
+  // Taking hold of the carousel cancels any animation we started, so the index starts
+  // following the visitor again immediately.
+  const releaseAnimation = () => {
+    animatingTo.current = null
+  }
 
   // When the owner changes the index (a thumbnail click, a "next" on another
   // carousel), move the track — unless it is already there, so this never fights a
@@ -182,6 +194,9 @@ export function Carousel<T>({
         ref={trackRef}
         tabIndex={0}
         aria-label={ariaLabel}
+        onPointerDown={releaseAnimation}
+        onWheel={releaseAnimation}
+        onKeyDown={releaseAnimation}
         className={`no-scrollbar flex snap-x snap-mandatory overflow-x-auto ${trackClassName}`}
       >
         {items.map((item, itemIndex) => (

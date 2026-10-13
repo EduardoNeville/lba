@@ -462,6 +462,53 @@ lacks('home: the band is not in the first paint', homeHtml, 'Featured residences
 has('home: the hero still renders', stripHtml(homeHtml), 'Lawyers & Property Advisers')
 
 // --- carousel props ---------------------------------------------------------
+const { readCarouselScroll } = (await load('/src/lib/carousel.ts')) as typeof import('../src/lib/carousel.ts')
+
+// The reported bug: the full-screen viewer advanced from photograph to photograph on
+// its own. A smooth scroll passes positions that round to the slide it is leaving, so
+// reading those as the index sent it backwards, which asked for another scroll — and
+// the gallery behind the viewer shares the same index, so the two kept pushing each
+// other. While an animation is in flight the position is not read at all.
+equals(
+  'carousel: a position mid-animation is ignored',
+  readCarouselScroll({ scrollLeft: 40, slideWidth: 100, index: 1, animatingTo: 1 }),
+  { index: null, animatingTo: 1 },
+)
+equals(
+  'carousel: arriving clears the animation',
+  readCarouselScroll({ scrollLeft: 100, slideWidth: 100, index: 1, animatingTo: 1 }),
+  { index: null, animatingTo: null },
+)
+equals(
+  'carousel: scrolling after that moves the index',
+  readCarouselScroll({ scrollLeft: 160, slideWidth: 100, index: 1, animatingTo: null }),
+  { index: 2, animatingTo: null },
+)
+equals(
+  'carousel: a position at the current slide changes nothing',
+  readCarouselScroll({ scrollLeft: 104, slideWidth: 100, index: 1, animatingTo: null }),
+  { index: null, animatingTo: null },
+)
+equals(
+  'carousel: a sample with no width changes nothing',
+  readCarouselScroll({ scrollLeft: 40, slideWidth: 0, index: 1, animatingTo: null }),
+  { index: null, animatingTo: null },
+)
+equals(
+  'carousel: the animation tolerates a pixel of rounding',
+  readCarouselScroll({ scrollLeft: 99, slideWidth: 100, index: 1, animatingTo: 1 }),
+  { index: null, animatingTo: null },
+)
+
+const { nextIndex } = (await load('/src/lib/carousel.ts')) as typeof import('../src/lib/carousel.ts')
+const arrow = (over: Partial<Parameters<typeof nextIndex>[0]>) =>
+  nextIndex({ index: 0, delta: 1, perView: 1, last: 3, loop: false, ...over })
+equals('arrows: forward', arrow({}), 1)
+equals('arrows: forward stops at the end', arrow({ index: 3 }), 3)
+equals('arrows: forward wraps when looping', arrow({ index: 3, loop: true }), 0)
+equals('arrows: back stops at the start', arrow({ delta: -1 }), 0)
+equals('arrows: back wraps when looping', arrow({ index: 0, delta: -1, loop: true }), 3)
+equals('arrows: a cards carousel pages by a screen', arrow({ perView: 3 }), 3)
 const labels = { previous: 'Previous photograph', next: 'Next photograph', pause: 'Pause', play: 'Play' }
 const carouselHtml = renderPage(
   '/',
