@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Carousel } from '../ui/Carousel'
+import { ScrollCue } from '../ui/ScrollCue'
 import { GalleryLightbox } from './GalleryLightbox'
 import type { PropertyImage } from '../../lib/properties'
 import { useResidencesCopy } from '../../lib/residencesCopy'
@@ -7,15 +8,17 @@ import { useResidencesCopy } from '../../lib/residencesCopy'
 // The photographs of a residence, one screen tall.
 //
 // The page floats its own panel over the bottom of this (title, summary, price and
-// enquiry) by passing children, so the gallery stays a gallery; the count and the
-// full-screen button sit out of the way in the top corner.
+// enquiry) by passing children, and its own top-left control — the way back to the
+// listing — through topLeft, so the gallery itself stays a gallery.
 export function PropertyGallery({
   images,
   title,
+  topLeft,
   children,
 }: {
   images: PropertyImage[]
   title: string
+  topLeft?: React.ReactNode
   children?: React.ReactNode
 }) {
   const copy = useResidencesCopy()
@@ -50,6 +53,8 @@ export function PropertyGallery({
         )}
       />
 
+      {topLeft && <div className="absolute left-3 top-3 z-20 md:left-4 md:top-4">{topLeft}</div>}
+
       <div className="absolute right-3 top-3 z-20 flex items-center gap-2 md:right-4 md:top-4">
         <p className="micro border border-cream/30 bg-ink/40 px-3 py-2 text-[10px] text-cream/90 backdrop-blur-sm">
           {index + 1} / {images.length}
@@ -63,7 +68,14 @@ export function PropertyGallery({
         </button>
       </div>
 
-      {children && <div className="absolute inset-x-0 bottom-0 z-20 pb-10 md:pb-14">{children}</div>}
+      {children && <div className="absolute inset-x-0 bottom-0 z-20 pb-16 md:pb-20">{children}</div>}
+
+      {/* The same cue the heros use, kept clear of the panel above it. */}
+      <div className="pointer-events-none absolute inset-x-0 bottom-3 z-20 flex justify-center">
+        <div className="pointer-events-auto">
+          <ScrollCue tone="light" />
+        </div>
+      </div>
 
       {fullScreen && (
         <GalleryLightbox

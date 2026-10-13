@@ -46,19 +46,20 @@ export function ResidenceDetail({ property, similar }: { property: Property; sim
 
   return (
     <>
-      <div className="border-b border-hairline">
-        <Container>
-          <div className="py-3">
-            <Link to="/property/residences" className="micro text-[10px] text-taupe transition-colors hover:text-oxblood">
-              ← {copy.detail.back}
-            </Link>
-          </div>
-        </Container>
-      </div>
-
-      {/* One screen of photographs, with the identity of the residence floating over
-          the bottom of them on a diffused panel: the brief, the price and the way in. */}
-      <PropertyGallery images={property.images} title={property.title}>
+      {/* The way back to the listing floats over the photographs, opposite the count
+          and the full-screen control, so the gallery starts directly under the header. */}
+      <PropertyGallery
+        images={property.images}
+        title={property.title}
+        topLeft={
+          <Link
+            to="/property/residences"
+            className="micro inline-flex min-h-11 items-center border border-cream/40 bg-ink/40 px-4 py-2 text-[10px] text-cream backdrop-blur-sm transition-colors hover:bg-cream hover:text-ink"
+          >
+            ← {copy.detail.back}
+          </Link>
+        }
+      >
         <Container>
           <div className="max-w-[760px] border border-cream/20 bg-ink/35 p-5 backdrop-blur-md md:p-7">
             <div className="flex flex-wrap items-center gap-3">

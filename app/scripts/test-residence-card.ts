@@ -225,6 +225,21 @@ has('gallery: previous arrow', gallery, 'Previous photograph')
 has('gallery: next arrow', gallery, 'Next photograph')
 has('gallery: counter', gallery, '1 / 4')
 has('gallery: offers a full-screen view', gallery, 'View full screen')
+has('gallery: carries the same scroll cue as the heros', galleryHtml, 'aria-label="Scroll down"')
+equals('gallery: the cue is legible over a photograph', /class="scroll-bob[^"]*text-cream/.test(galleryHtml), true)
+has(
+  'gallery: renders the page-supplied control in the top corner',
+  renderPage(
+    '/',
+    'en',
+    React.createElement(PropertyGallery, {
+      images: villaProperty.images,
+      title: 'x',
+      topLeft: React.createElement('span', null, 'BACK-SLOT'),
+    }),
+  ),
+  'BACK-SLOT',
+)
 has('gallery: cover carries the fixture alt text', gallery, 'Infinity pool and stone terrace')
 lacks('gallery: thumbnails wait for the full-screen view', galleryHtml, 'View photograph 1')
 
@@ -289,6 +304,11 @@ has('detail: title', detail, 'Villa with infinity pool above the Golden Mile')
 has('detail: reference', detail, 'Reference LBA-0421')
 has('detail: price', detail, '€6,450,000')
 has('detail: back link', detail, '← All residences')
+equals(
+  'detail: the way back floats over the photographs',
+  detailHtml.indexOf('← All residences') > detailHtml.indexOf('<img'),
+  true,
+)
 // The order the reader meets them in: the photographs and their floating panel,
 // then the figures, then the description. ('View full screen' is body text inside
 // the gallery, unlike the gallery's aria-label, which the text strip appends at the
