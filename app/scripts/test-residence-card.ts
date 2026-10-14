@@ -229,6 +229,11 @@ equals(
 )
 has('nav: the submenu is announced as a disclosure', header, 'aria-expanded=')
 has('nav: the disclosure is named for assistive tech', header, 'aria-label="Show submenu for Real Estate"')
+// The panel is revealed only by the disclosure button. A CSS hover reveal used to sit
+// beside it, and once the pointer and focus had opened it the button could no longer
+// close it — so this asserts the closed state, hover reveal included.
+has('nav: the submenu is hidden until it is asked for', header, 'invisible opacity-0')
+lacks('nav: nothing reveals the submenu behind the visitor’s back', header, 'group-hover:')
 equals(
   'nav: the listing marks itself as the current page',
   (header.match(/aria-current="page"/g) ?? []).length,

@@ -89,8 +89,13 @@ Checks: `tsc` clean · `oxlint` clean (1 pre-existing warning) · `check:locales
 **Navbar** *(done)* — Legal now comes first; Real Estate follows it and owns **Residences** in a
 dropdown (`NAV` in `src/data/navigation.ts` gained `children`, so the mobile menu nests the sub-page
 and the desktop header renders a disclosure). The section — not the listing — carries the active
-underline on `/property/residences`, and the submenu is reachable by hover, by the chevron button and
-by keyboard (its links stay focusable while faded out, so tabbing reveals it).
+underline on `/property/residences`.
+
+The disclosure is **click-only**: the chevron opens it, and the same chevron, Escape, a click
+elsewhere or navigating closes it. An earlier version also opened on hover, which made the button
+unreliable — the pointer (and the focus a click leaves behind) had already opened the panel, so the
+click read as "close". Closed, the panel is `invisible`, so its links leave the tab order; keyboard
+visitors open it with the button and tab in from there.
 
 **Still open:** the footer's bottom row (`FOOTER_NAV_KEYS`) still lists Real Estate before Legal — say
 the word and it matches the header.

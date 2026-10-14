@@ -22,7 +22,11 @@ function Logo() {
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false)
-  /** The section whose submenu is open — only one at a time. */
+  /* The one section whose submenu is open. The disclosure button is the only thing
+     that opens it: opening on hover as well meant the button's click landed on a panel
+     the pointer had already opened, so it looked like the button did the opposite of
+     what was asked. Closing is deliberate — the button again, Escape, a click
+     elsewhere, or navigating. */
   const [submenu, setSubmenu] = useState<string | null>(null)
   const location = useLocation()
   const { lang, setLang } = useLang()
@@ -34,9 +38,8 @@ export function SiteHeader() {
     setSubmenu(null)
   }, [location.pathname])
 
-  // A pinned submenu closes on Escape and on a click anywhere outside its group. The
-  // hover/focus reveal in the markup keeps working without this; it exists so the
-  // disclosure button leaves the menu in a state the visitor can get out of.
+  // Escape and a click anywhere outside the section close it, so the menu is never
+  // stuck open behind the visitor.
   useEffect(() => {
     if (!submenu) return
     const onKey = (e: KeyboardEvent) => {
@@ -75,7 +78,7 @@ export function SiteHeader() {
                 (child) => location.pathname === child.to || location.pathname.startsWith(`${child.to}/`),
               )
               return (
-                <li key={item.key} data-nav-group className="group relative flex h-20 items-center">
+                <li key={item.key} data-nav-group className="relative flex h-20 items-center">
                   <div className="flex items-center gap-0.5">
                     <NavLink
                       to={item.to}
@@ -98,12 +101,13 @@ export function SiteHeader() {
                     )}
                   </div>
                   {item.children.length > 0 && (
-                    /* Hover and keyboard focus reveal the submenu; the button pins it. The
-                       links stay focusable while it is faded out, so tabbing into them
-                       brings them into view rather than skipping the section. */
+                    /* Click-only, so the button is always truthful. Closed it is
+                       `invisible`, which keeps its links out of the tab order — keyboard
+                       visitors open it with the button, as the disclosure pattern
+                       intends. */
                     <ul
                       id={`submenu-${item.key}`}
-                      className={`absolute left-0 top-full z-20 min-w-44 border border-hairline bg-cream py-1 shadow-[0_12px_32px_rgba(36,30,24,0.10)] transition-opacity duration-150 group-hover:pointer-events-auto group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:opacity-100 ${expanded ? 'pointer-events-auto opacity-100' : 'pointer-events-none opacity-0'}`}
+                      className={`absolute left-0 top-full z-20 min-w-44 border border-hairline bg-cream py-1 shadow-[0_12px_32px_rgba(36,30,24,0.10)] transition-opacity duration-150 ${expanded ? 'visible opacity-100' : 'invisible opacity-0'}`}
                     >
                       {item.children.map((child) => (
                         <li key={child.key}>
