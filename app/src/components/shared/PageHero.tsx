@@ -29,8 +29,10 @@ export function PageHero({
         <div className="max-w-[560px] py-16 md:py-20">
           <div>
             <h1
-              className={`font-display mt-6 max-w-[14ch] leading-[1.08] tracking-wide ${
-                titleCase === 'upper' ? 'text-4xl uppercase md:text-5xl lg:text-6xl' : 'text-4xl leading-tight md:text-5xl'
+              className={`font-display mt-6 leading-[1.08] tracking-wide ${
+                titleCase === 'upper'
+                  ? 'max-w-[14ch] text-4xl uppercase md:text-5xl lg:text-6xl'
+                  : 'max-w-[26ch] text-4xl leading-tight md:text-5xl'
               }`}
             >
               {title}

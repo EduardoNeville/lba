@@ -1,8 +1,6 @@
 import { lazy, Suspense } from "react";
 import { Link } from "react-router-dom";
-import { Icon } from "../components/ui/icons";
 import { Container } from "../components/ui/Container";
-import { ButtonLink } from "../components/ui/ButtonLink";
 import { ScrollCue } from "../components/ui/ScrollCue";
 import { CtaBand } from "../components/shared/CtaBand";
 import { useLang } from "../lib/lang";
@@ -25,39 +23,39 @@ function useHomeData() {
     hero: { ...d.hero, image: hero.image },
     intro: d.intro,
     practiceAreas: d.practiceAreas.map((p, i) => ({ ...p, ...practiceAreas[i] })),
+    why: d.why,
     cta: { ...d.cta, image: cta.image, ctaLabel: ui.privateEnquiry },
   };
 }
 
 function HomeHero() {
   const { hero } = useHomeData();
-  const ui = useUi();
   return (
-    <section className="relative isolate flex hero-screen items-center justify-center overflow-hidden bg-cream">
+    <section className="relative isolate flex hero-screen items-center overflow-hidden bg-cream">
       <img
         src={hero.image}
         alt={hero.alt}
         className="absolute inset-0 -z-20 h-full w-full object-cover object-center"
       />
       <div className="absolute inset-0 -z-10 bg-cream/60" />
-      <div className="px-6 text-center">
-        <h1 className="font-display text-4xl uppercase leading-[1.1] tracking-wide text-ink md:text-6xl">
-          {hero.heading}
-        </h1>
-        {hero.sub && (
-          <p className="micro mt-4 text-[11px] text-ink/70">{hero.sub}</p>
-        )}
-        {hero.body && (
-          <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-ink/75 md:text-[15px]">
-            {hero.body}
-          </p>
-        )}
-        <div className="mt-8">
-          <ButtonLink to="/about">{ui.discoverMore} →</ButtonLink>
+      {/* Right-aligned block: the heading answers the logo and nav on the left. */}
+      <Container>
+        <div className="ml-auto max-w-2xl text-right">
+          <h1 className="font-display whitespace-pre-line text-4xl uppercase leading-[1.1] tracking-wide text-ink md:text-6xl">
+            {hero.heading}
+          </h1>
+          {hero.sub && (
+            <p className="micro mt-4 text-[11px] text-ink/70">{hero.sub}</p>
+          )}
+          {hero.body && (
+            <p className="mt-4 text-sm leading-relaxed text-ink/75 md:text-[15px]">
+              {hero.body}
+            </p>
+          )}
         </div>
-        <div className="absolute inset-x-0 bottom-6 flex justify-center">
-          <ScrollCue />
-        </div>
+      </Container>
+      <div className="absolute inset-x-0 bottom-6 flex justify-center">
+        <ScrollCue />
       </div>
     </section>
   );
@@ -68,26 +66,13 @@ function IntroSplit() {
   return (
     <section className="py-20 md:py-28">
       <Container>
-        <div className="grid gap-8 lg:grid-cols-12">
-          <div className="lg:col-span-7">
-            <h2 className="font-display text-3xl uppercase md:text-4xl">
-              {intro.heading}
-            </h2>
-            <div className="mt-6 max-w-prose space-y-4 text-sm leading-relaxed text-taupe">
-              {intro.body.map((p) => (
-                <p key={p}>{p}</p>
-              ))}
-            </div>
-          </div>
-          <div className="lg:col-span-5 lg:border-l lg:border-hairline lg:pl-10">
-            <Icon name="columns" />
-            <p className="micro mt-4 text-[11px] tracking-[0.25em] text-ink">
-              {intro.sideTitle}
-            </p>
-            <p className="mt-3 text-[13px] leading-relaxed text-taupe">
-              {intro.sideBody}
-            </p>
-          </div>
+        <h2 className="font-display text-3xl uppercase md:text-4xl">
+          {intro.heading}
+        </h2>
+        <div className="mt-6 max-w-prose space-y-4 text-sm leading-relaxed text-taupe">
+          {intro.body.map((p) => (
+            <p key={p}>{p}</p>
+          ))}
         </div>
       </Container>
     </section>
@@ -115,16 +100,9 @@ function PracticeAreas() {
               <h2 className="font-display px-5 pt-3 text-lg uppercase tracking-[0.12em]">
                 {p.title}
               </h2>
-              <ul className="mt-4 px-5">
-                {p.items.map((item) => (
-                  <li
-                    key={item}
-                    className="border-t border-hairline py-2 text-[10px] uppercase tracking-[0.18em] text-taupe transition-colors group-hover:text-oxblood"
-                  >
-                    {item}
-                  </li>
-                ))}
-              </ul>
+              <p className="mt-3 px-5 text-[13px] leading-relaxed text-taupe">
+                {p.body}
+              </p>
               <div className="mt-4" />
               <div className="mt-auto">
                 {p.image ? (
@@ -133,11 +111,11 @@ function PracticeAreas() {
                     alt=""
                     aria-hidden
                     loading="lazy"
-                    className={`aspect-[3/4] w-full object-cover ${p.imagePos ?? "object-center"}`}
+                    className={`aspect-square w-full object-cover ${p.imagePos ?? "object-center"}`}
                   />
                 ) : (
                   <div
-                    className="aspect-[3/4] w-full bg-parchment"
+                    className="aspect-square w-full bg-parchment"
                     aria-hidden
                   />
                 )}
@@ -155,6 +133,34 @@ function PracticeAreas() {
   );
 }
 
+function WhyOneFirm() {
+  const { why } = useHomeData();
+  return (
+    <section className="bg-parchment py-20 md:py-28">
+      <Container>
+        <h2 className="font-display max-w-3xl text-3xl leading-tight md:text-4xl">
+          {why.heading}
+        </h2>
+        <ul className="mt-10 border-t border-hairline">
+          {why.rows.map((row) => (
+            <li
+              key={row.title}
+              className="grid gap-2 border-b border-hairline py-6 md:grid-cols-2 md:gap-10 md:py-8"
+            >
+              <p className="font-display text-xl leading-snug text-ink md:text-2xl">
+                {row.title}
+              </p>
+              <p className="text-sm leading-relaxed text-taupe md:pt-1">
+                {row.body}
+              </p>
+            </li>
+          ))}
+        </ul>
+      </Container>
+    </section>
+  );
+}
+
 export function HomePage() {
   const { cta } = useHomeData();
   return (
@@ -162,6 +168,7 @@ export function HomePage() {
       <HomeHero />
       <IntroSplit />
       <PracticeAreas />
+      <WhyOneFirm />
       <Suspense fallback={null}>
         <FeaturedResidences />
       </Suspense>

@@ -4,7 +4,6 @@ export const en = {
   hero: {
     title: 'Legal expertise at our core',
     body: "We advise international clients with clarity, discretion and a deep understanding of the local legal landscape.",
-    cta: { to: 'https://mariselacastro.com', label: 'Visit our legal practice' },
     alt: 'Walnut desk with brass lamp and law books in an arched niche',
   },
   statement: 'We provide independent legal advice to private and international clients, their businesses and their families.',
@@ -31,7 +30,6 @@ export const en = {
       { icon: 'shield', title: 'Compliance', body: 'Compliance, risk management and corporate governance.' },
     ],
   },
-  cta: { heading: 'Need legal advice?', subline: 'We are here to help.' },
 }
 
 export const fr = {
@@ -40,7 +38,6 @@ export const fr = {
   hero: {
     title: 'L’expertise juridique au cœur de notre approche',
     body: "Nous conseillons une clientèle internationale sur le droit espagnol avec clarté, discrétion et une connaissance approfondie du paysage juridique local.",
-    cta: { to: 'https://mariselacastro.com', label: 'Visiter notre cabinet juridique' },
     alt: 'Bureau en noyer avec lampe en laiton et livres de droit dans une niche voûtée',  },
   pillars: [
     { icon: 'scales', title: 'Conseil indépendant', body: 'Des recommandations objectives centrées sur vos intérêts.' },
@@ -63,7 +60,6 @@ export const fr = {
       { icon: 'globe', title: "Compliance", body: "Compliance, gestion des risques et gouvernance d’entreprise." },
     ],
   },
-  cta: { heading: 'Besoin d’un conseil juridique ?', subline: 'Nous sommes à votre disposition.' },
 }
 
 export const es = {
@@ -72,7 +68,6 @@ export const es = {
   hero: {
     title: 'La experiencia jurídica, en el centro de nuestro trabajo',
     body: "Asesoramos a clientes internacionales en derecho español con claridad, discreción y un profundo conocimiento del marco jurídico local.",
-    cta: { to: 'https://mariselacastro.com', label: 'Visite nuestro despacho jurídico' },
     alt: 'Escritorio de nogal con lámpara de latón y libros de derecho en un nicho arqueado',
   },
   pillars: [
@@ -97,5 +92,4 @@ export const es = {
       { icon: 'globe', title: "Compliance", body: "Cumplimiento normativo, gestión de riesgos y gobierno corporativo." },
     ],
   },
-  cta: { heading: '¿Necesita asesoramiento jurídico?', subline: 'Estamos aquí para ayudarle.' },
 }

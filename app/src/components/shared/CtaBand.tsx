@@ -9,7 +9,7 @@ export function CtaBand({
   tone = "light",
   image,
 }: {
-  heading: string;
+  heading?: string;
   subline?: string;
   cta: { to: string; label: string };
   variant?: "image" | "accent";
@@ -17,19 +17,14 @@ export function CtaBand({
   image?: string;
 }) {
   const dark = tone === "dark";
+  // Without a heading the band is the enquiry box alone — the treatment every page
+  // except the home page uses.
+  const ctaOnly = !heading && !subline;
   return (
     <section
-      className={`relative isolate overflow-hidden py-20 md:py-28 ${variant === "accent" ? "bg-parchment" : ""}`}
+      className={`relative isolate overflow-hidden ${ctaOnly ? "py-14 md:py-16" : "py-20 md:py-28"} ${variant === "accent" ? "bg-parchment" : ""}`}
     >
-      {variant === "accent" && image && (
-        <img
-          src={image}
-          alt=""
-          aria-hidden
-          className="absolute inset-0 -z-10 h-full w-full object-cover"
-        />
-      )}
-      {variant === "image" && image && (
+      {image && (
         <img
           src={image}
           alt=""
@@ -43,15 +38,17 @@ export function CtaBand({
         />
       )}
       <Container>
-        <h2 className="font-display text-center text-3xl uppercase md:text-4xl text-ink">
-          {heading}
-        </h2>
+        {heading && (
+          <h2 className="font-display text-center text-3xl uppercase md:text-4xl text-ink">
+            {heading}
+          </h2>
+        )}
         {subline && (
           <p className="font-display mt-3 text-center text-4xl italic md:text-5xl text-ink">
             {subline}
           </p>
         )}
-        <div className="mt-8 flex justify-center">
+        <div className={`flex justify-center ${ctaOnly ? "" : "mt-8"}`}>
           <ButtonLink to={cta.to} tone={dark ? "dark" : undefined}>
             {cta.label}
           </ButtonLink>

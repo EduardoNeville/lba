@@ -22,7 +22,7 @@ function useLegalData() {
     pillars: d.pillars,
     areas: d.areas,
     practice: { ...d.practice, image: practice.image },
-    cta: { ...d.cta, image: cta.image },
+    cta: { image: cta.image },
   };
 }
 
@@ -126,8 +126,6 @@ export function LegalPage() {
         }
       />
       <CtaBand
-        heading={cta.heading}
-        subline={cta.subline}
         image={cta.image}
         cta={{ to: "/inquiry", label: ui.privateEnquiry }}
       />

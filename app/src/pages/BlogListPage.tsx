@@ -94,7 +94,7 @@ export function BlogListPage() {
         </Container>
       </section>
 
-      <CtaBand heading="Every client is different." subline="Tell us what brings you to Spain." image={ctaCoast} cta={{ to: '/inquiry', label: 'Make a private enquiry' }} />
+      <CtaBand image={ctaCoast} cta={{ to: '/inquiry', label: 'Make a private enquiry' }} />
     </>
   )
 }

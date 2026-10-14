@@ -1,5 +1,4 @@
 import { Container } from "../components/ui/Container";
-import { Icon } from "../components/ui/icons";
 import { PageHero } from "../components/shared/PageHero";
 import { CtaBand } from "../components/shared/CtaBand";
 import { ServiceCard } from "../components/ui/ServiceCard";
@@ -15,44 +14,12 @@ function usePCData() {
   const d = lang === "fr" ? { ...en, ...fr } : lang === "es" ? { ...en, ...es } : en;
   return {
     hero: { ...d.hero, image: hero.image },
-    contactPoints: d.contactPoints,
     servicesHeading: d.servicesHeading,
     services: d.services.map((s, i) => ({ ...s, ...services[i] })),
     featureSplit: { ...d.featureSplit, image: featureSplit.image },
     partners: d.partners,
-    cta: { ...d.cta, image: cta.image },
+    cta: { image: cta.image },
   };
-}
-
-function ContactPoints() {
-  const { contactPoints } = usePCData();
-  return (
-    <section className="py-20 md:py-28">
-      <Container>
-        <p className="micro mb-3 text-center text-ink">
-          {contactPoints.heading}
-        </p>
-        <p className="font-display mb-12 text-center text-sm italic text-taupe md:text-base">
-          {contactPoints.subline}
-        </p>
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {contactPoints.items.map((c) => (
-            <div key={c.title} className="flex items-start gap-4">
-              <Icon name={c.icon} />
-              <div>
-                <h2 className="text-[11px] uppercase tracking-[0.2em] text-ink">
-                  {c.title}
-                </h2>
-                <p className="mt-1 text-[10px] uppercase tracking-[0.15em] text-taupe">
-                  {c.sub}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </Container>
-    </section>
-  );
 }
 
 function ServicesGrid() {
@@ -148,13 +115,10 @@ export function PrivateClientPage() {
   return (
     <>
       <PageHero {...hero} />
-      <ContactPoints />
       <ServicesGrid />
       <FeatureSplit />
       <TrustedNetwork />
       <CtaBand
-        heading={cta.heading}
-        subline={cta.subline}
         image={cta.image}
         cta={{ to: "/inquiry", label: ui.privateEnquiry }}
       />

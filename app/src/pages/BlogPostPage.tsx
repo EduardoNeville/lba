@@ -120,7 +120,7 @@ export function BlogPostPage() {
         </section>
       </article>
 
-      <CtaBand heading="Questions about Spain?" subline="We’re here to help." image={ctaCoast} cta={{ to: '/inquiry', label: 'Make a private enquiry' }} />
+      <CtaBand image={ctaCoast} cta={{ to: '/inquiry', label: 'Make a private enquiry' }} />
     </>
   )
 }

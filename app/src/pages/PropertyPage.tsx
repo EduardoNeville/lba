@@ -1,13 +1,13 @@
 import { lazy, Suspense } from "react";
 import { Container } from "../components/ui/Container";
-import { Icon } from "../components/ui/icons";
 import { ArrowLink } from "../components/ui/ArrowLink";
+import { Eyebrow } from "../components/ui/Eyebrow";
 import { PageHero } from "../components/shared/PageHero";
 import { CrossLinkBand } from "../components/shared/CrossLinkBand";
 import { CtaBand } from "../components/shared/CtaBand";
 import { Checklist } from "../components/ui/Checklist";
 import { useLang } from "../lib/lang";
-import { hero, cta } from "../data/property";
+import { hero, approach as approachMedia, band as bandMedia, cta } from "../data/property";
 
 // Lazy for the same reason the home band is: the strip sits below the fold, and it is
 // what would otherwise drag the residences model and three languages of copy into the
@@ -24,33 +24,103 @@ function usePropertyData() {
   const d = lang === "fr" ? { ...en, ...fr } : lang === "es" ? { ...en, ...es } : en;
   return {
     hero: { ...d.hero, image: hero.image },
+    approach: d.approach,
+    featured: d.featured,
+    band: d.band,
+    servicesHeading: d.servicesHeading,
     services: d.services,
     crossLink: d.crossLink,
     crossLinkAlt: d.crossLinkAlt,
-    cta: { ...d.cta, image: cta.image },
   };
 }
 
 // The residences strip loads after paint — see PropertyStrip.
 
-function ServicesTrio() {
-  const { services } = usePropertyData();
+/** Full-bleed photo left / copy right, as in the client's reference. */
+function ApproachSplit() {
+  const { approach } = usePropertyData();
+  return (
+    <section className="grid items-stretch lg:grid-cols-2">
+      <div className="min-h-72 lg:min-h-full">
+        <img
+          src={approachMedia.image}
+          alt=""
+          aria-hidden
+          loading="lazy"
+          className="h-full w-full object-cover"
+        />
+      </div>
+      <div className="flex flex-col justify-center px-6 py-14 md:px-16 lg:py-20">
+        <Eyebrow>{approach.eyebrow}</Eyebrow>
+        <h2 className="font-display mt-4 max-w-lg text-3xl leading-snug md:text-4xl">
+          {approach.heading}
+        </h2>
+        <p className="mt-5 max-w-md text-[13px] leading-relaxed text-taupe">
+          {approach.body}
+        </p>
+        <div className="mt-7">
+          <ArrowLink to={approach.link.to} hitArea>
+            {approach.link.label}
+          </ArrowLink>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/** Buying in Spain — dark panel beside the photograph. */
+function BuyingInSpain() {
+  const { band } = usePropertyData();
+  return (
+    <section className="grid items-stretch lg:grid-cols-2">
+      <div className="min-h-72 lg:min-h-full">
+        <img
+          src={bandMedia.image}
+          alt=""
+          aria-hidden
+          loading="lazy"
+          className="h-full w-full object-cover"
+        />
+      </div>
+      <div className="flex flex-col justify-center bg-ink px-6 py-14 md:px-16 lg:py-20">
+        <p className="micro text-[11px] text-cream/70">{band.eyebrow}</p>
+        <h2 className="font-display mt-4 max-w-lg text-3xl leading-snug text-cream md:text-4xl">
+          {band.heading}
+        </h2>
+        <p className="mt-5 max-w-md text-[13px] leading-relaxed text-cream/75">
+          {band.body}
+        </p>
+        <div className="mt-7">
+          <ArrowLink to={band.link.to} tone="dark" hitArea>
+            {band.link.label}
+          </ArrowLink>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function ServicesGrid() {
+  const { services, servicesHeading } = usePropertyData();
   return (
     <section className="py-20 md:py-28">
       <Container>
-        <div className="grid gap-8 border-t border-hairline pt-12 md:grid-cols-3">
-          {services.map((s) => (
-            <div key={s.title}>
-              <Icon name={s.icon} />
-              <h2 className="font-display mt-4 text-sm uppercase tracking-[0.2em]">
-                {s.title}
-              </h2>
-              <p className="mt-3 text-[13px] leading-relaxed text-taupe">
-                {s.body}
-              </p>
-              {/* ponytail: spec p5 — Enquire ×3 deleted */}
-            </div>
-          ))}
+        <div className="border-t border-hairline pt-12">
+          <h2 className="font-display text-2xl uppercase tracking-[0.12em]">
+            {servicesHeading}
+          </h2>
+          <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            {services.map((s) => (
+              <div key={s.title}>
+                <h3 className="font-display text-sm uppercase tracking-[0.2em]">
+                  {s.title}
+                </h3>
+                <p className="mt-3 text-[13px] leading-relaxed text-taupe">
+                  {s.body}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </Container>
     </section>
@@ -58,12 +128,17 @@ function ServicesTrio() {
 }
 
 export function PropertyPage() {
-  const { hero, crossLink, crossLinkAlt, cta } = usePropertyData();
+  const { hero, featured, crossLink, crossLinkAlt } = usePropertyData();
   const ui = useUi();
   return (
     <>
-      <PageHero {...hero} />
-      <ServicesTrio />
+      <PageHero {...hero} titleCase="sentence" />
+      <ApproachSplit />
+      <Suspense fallback={null}>
+        <PropertyStrip title={featured.title} />
+      </Suspense>
+      <BuyingInSpain />
+      <ServicesGrid />
       <CrossLinkBand
         size="sm"
         left={
@@ -110,12 +185,7 @@ export function PropertyPage() {
           </div>
         }
       />
-      <Suspense fallback={null}>
-        <PropertyStrip />
-      </Suspense>
       <CtaBand
-        heading={cta.heading}
-        subline={cta.subline}
         image={cta.image}
         cta={{ to: "/inquiry", label: ui.privateEnquiry }}
         tone="light"

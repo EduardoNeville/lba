@@ -186,7 +186,6 @@ function ApproachSection() {
 }
 
 export function AboutPage() {
-  const { cta } = useAboutData();
   const ui = useUi();
   return (
     <>
@@ -196,8 +195,6 @@ export function AboutPage() {
       <TeamSection />
       <ApproachSection />
       <CtaBand
-        heading={cta.heading}
-        subline={cta.subline}
         image={ctaCoast}
         cta={{ to: "/inquiry", label: ui.privateEnquiry }}
       />

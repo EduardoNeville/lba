@@ -140,8 +140,6 @@ export function ResidencesPage() {
       </section>
 
       <CtaBand
-        heading={propertyCopy.cta.heading}
-        subline={propertyCopy.cta.subline}
         image={propertyCta.image}
         cta={{ to: '/inquiry', label: propertyCopy.hero.cta.label }}
       />

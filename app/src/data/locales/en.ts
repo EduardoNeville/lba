@@ -2,7 +2,7 @@
 // fr.ts / es.ts mirror these shapes; any key they omit falls back to the English here.
 export const nav = {
   label: {
-    property: "Property",
+    property: "Real Estate",
     residences: "Residences",
     legal: "Legal",
     privateClient: "Private Client Services",
@@ -15,7 +15,7 @@ export const footer = {
   tagline: "Lawyers & Private Advisors",
   services: "Our Services",
   servicesLinks: [
-    "Property Advisory",
+    "Real Estate Advisory",
     "Legal Advisory",
     "Private Client Advisory",
   ],
@@ -44,7 +44,6 @@ export const ui = {
 };
 
 export const form = {
-  interestLabel: "I am interested in",
   fullName: "Full name",
   fullNamePlaceholder: "Your full name",
   email: "Email",
@@ -63,7 +62,6 @@ export const form = {
   thankYou: "Thank you. We will be in touch shortly.",
   replyNote: "We reply to every enquiry, usually within one working day.",
   errorGeneric: "Something went wrong. Please try again.",
-  errorInterest: "Please select an area of interest.",
   errorName: "Please tell us your name.",
   errorEmail: "Please enter a valid email address.",
   errorConsent: "We need your consent to contact you.",

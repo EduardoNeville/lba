@@ -2,16 +2,30 @@
 // images and links live in src/data/property.ts.
 export const en = {
   hero: {
-    title: 'Property',
-    subline: 'A considered approach to property in Spain.',
-    body: 'Buying or selling property involves more than finding the right home. We advise our clients throughout the process, bringing together property expertise, legal insight and a trusted professional network.',
+    title: 'One Firm. We guide you through every aspect of your property journey.',
+    body: 'From identifying the right property to negotiating its acquisition, managing the legal process and overseeing your home after completion, we provide a seamless service through one dedicated team.',
     cta: { to: '/inquiry', label: 'Discuss your requirements' },
     alt: 'Golf fairway with bunkers at dusk',
   },
+  approach: {
+    eyebrow: 'A curated approach',
+    heading: 'More Than Properties. A Partner at Every Step.',
+    body: 'We provide a tailored and discreet service for clients buying, selling or investing in Spain, with a focus on quality, value and long-term relationships.',
+    link: { to: '/about', label: 'Our approach' },
+  },
+  featured: { title: 'Featured Properties' },
+  band: {
+    eyebrow: 'Buying in Spain',
+    heading: 'Access to the Finest Opportunities.',
+    body: 'From contemporary villas to historic townhouses, we offer exclusive access to exceptional properties across the most sought-after locations in Spain.',
+    link: { to: '/property/residences', label: 'Our properties' },
+  },
+  servicesHeading: 'Our Services',
   services: [
-    { icon: 'figure', title: 'Private Search', body: 'Some of the most desirable properties are never publicly marketed. We conduct a tailored search through our network to find opportunities that meet your needs.', link: '/inquiry' },
-    { icon: 'key', title: 'Buying', body: 'From our first conversation to the moment you receive the keys. We help you find the right property and guide you through every step of the acquisition.', link: '/inquiry' },
-    { icon: 'building', title: 'Selling', body: 'A discreet and strategic approach to selling your property, from positioning and presentation to identifying qualified buyers and managing the transaction.', link: '/inquiry' },
+    { title: 'Property Search', body: 'Some of the most desirable properties are never publicly marketed. We conduct a tailored search through our network to find opportunities that meet your needs.' },
+    { title: 'Acquisition Advisory', body: 'From our first conversation to the moment you receive the keys. We help you find the right property and guide you through every step of the acquisition.' },
+    { title: 'Sale Advisory', body: 'A discreet and strategic approach to selling your property, from positioning and presentation to identifying qualified buyers and managing the transaction.' },
+    { title: 'Investment Advisory', body: 'Independent advice for property investment across Spain’s key markets.' },
   ],
   crossLink: {
     left: {
@@ -28,21 +42,34 @@ export const en = {
     },
   },
   crossLinkAlt: 'Limestone hallway with law books opening to sea terrace',
-  cta: { heading: "Considering a property project in Spain?", subline: 'We would be delighted to hear from you.' },
 }
 
 export const fr = {
   hero: {
-    title: 'Propriété',
-    subline: 'Une approche réfléchie de l’immobilier en Espagne.',
-    body: 'Acheter ou vendre un bien immobilier ne se résume pas à trouver la bonne propriété. Nous accompagnons nos clients tout au long du processus en réunissant expertise immobilière, savoir-faire juridique et réseau de professionnels de confiance.',
+    title: 'Une seule firme. Nous vous accompagnons à chaque étape de votre projet immobilier.',
+    body: "De l’identification du bon bien à la négociation de son acquisition, en passant par la gestion du processus juridique et le suivi de votre résidence après la signature, nous offrons un service fluide porté par une équipe dédiée.",
     cta: { to: '/inquiry', label: 'Échanger sur vos critères' },
-    alt: 'Terrasse de villa moderne avec garde-corps en verre donnant sur la mer au crépuscule',
+    alt: 'Parcours de golf avec bunkers au crépuscule',
   },
+  approach: {
+    eyebrow: 'Une approche sur mesure',
+    heading: 'Plus que des biens. Un partenaire à chaque étape.',
+    body: "Nous offrons un service sur mesure et discret aux clients qui achètent, vendent ou investissent en Espagne, avec une attention particulière à la qualité, à la valeur et à la relation de long terme.",
+    link: { to: '/about', label: 'Notre approche' },
+  },
+  featured: { title: 'Propriétés en vedette' },
+  band: {
+    eyebrow: 'Acheter en Espagne',
+    heading: 'Accès aux plus belles opportunités.',
+    body: "Des villas contemporaines aux maisons de ville historiques, nous offrons un accès exclusif à des biens d’exception dans les adresses les plus recherchées d’Espagne.",
+    link: { to: '/property/residences', label: 'Nos propriétés' },
+  },
+  servicesHeading: 'Nos services',
   services: [
-    { icon: 'key', title: "Recherche privée", body: "Certaines des propriétés les plus recherchées ne sont jamais proposées publiquement. Nous menons une recherche sur mesure au sein de notre réseau afin d’identifier les opportunités correspondant à vos critères.", link: '/inquiry' },
-    { icon: 'building', title: "Achat", body: "De notre premier échange jusqu’à la remise des clés, nous vous aidons à trouver le bien qui vous correspond et vous accompagnons à chaque étape de l’acquisition.", link: '/inquiry' },
-    { icon: 'figure', title: "Vente", body: "Une approche discrète et stratégique de la vente de votre propriété, depuis son positionnement et sa présentation jusqu’à l’identification d’acquéreurs qualifiés et la gestion de la transaction.", link: '/inquiry' },
+    { title: 'Recherche de biens', body: "Certains des biens les plus recherchés ne sont jamais proposés publiquement. Nous menons une recherche sur mesure au sein de notre réseau afin d’identifier les opportunités correspondant à vos critères." },
+    { title: 'Conseil à l’acquisition', body: "De notre premier échange jusqu’à la remise des clés, nous vous aidons à trouver le bien qui vous correspond et vous accompagnons à chaque étape de l’acquisition." },
+    { title: 'Conseil à la vente', body: "Une approche discrète et stratégique de la vente de votre bien, du positionnement et de la présentation à l’identification d’acquéreurs qualifiés et à la gestion de la transaction." },
+    { title: 'Conseil en investissement', body: "Un conseil indépendant pour vos investissements immobiliers sur les principaux marchés espagnols." },
   ],
   crossLink: {
     left: {
@@ -59,21 +86,34 @@ export const fr = {
     },
   },
   crossLinkAlt: 'Couloir en pierre calcaire avec livres de droit ouvrant sur une terrasse face à la mer',
-  cta: { heading: "Vous envisagez un projet immobilier en Espagne?", subline: 'Nous serions ravis d’échanger avec vous.' },
 }
 
 export const es = {
   hero: {
-    title: 'Propiedad',
-    subline: 'Una forma cuidada de entender la propiedad en España.',
-    body: 'Comprar o vender una propiedad implica mucho más que encontrar la vivienda adecuada. Asesoramos a nuestros clientes durante todo el proceso, aunando experiencia inmobiliaria, conocimiento jurídico y una red de profesionales de confianza.',
+    title: 'Una sola firma. Le acompañamos en cada aspecto de su proyecto inmobiliario.',
+    body: 'Desde la identificación de la propiedad adecuada hasta la negociación de su adquisición, la gestión del proceso jurídico y el cuidado de su vivienda una vez finalizada la compra, ofrecemos un servicio ágil a través de un único equipo.',
     cta: { to: '/inquiry', label: 'Háblenos de sus necesidades' },
-    alt: 'Terraza de villa moderna con barandilla de cristal sobre el mar al atardecer',
+    alt: 'Campo de golf con bunkers al atardecer',
   },
+  approach: {
+    eyebrow: 'Un enfoque cuidado',
+    heading: 'Más que propiedades. Un socio en cada paso.',
+    body: 'Ofrecemos un servicio personalizado y discreto a clientes que compran, venden o invierten en España, con especial atención a la calidad, el valor y las relaciones a largo plazo.',
+    link: { to: '/about', label: 'Nuestro enfoque' },
+  },
+  featured: { title: 'Propiedades destacadas' },
+  band: {
+    eyebrow: 'Comprar en España',
+    heading: 'Acceso a las mejores oportunidades.',
+    body: 'Desde villas contemporáneas hasta casas señoriales, ofrecemos acceso exclusivo a propiedades excepcionales en las ubicaciones más demandadas de España.',
+    link: { to: '/property/residences', label: 'Nuestras propiedades' },
+  },
+  servicesHeading: 'Nuestros servicios',
   services: [
-    { icon: 'key', title: "Búsqueda privada", body: "Algunas de las propiedades más exclusivas nunca llegan al mercado público. Realizamos una búsqueda a medida a través de nuestra red para encontrar oportunidades que se ajusten a sus necesidades.", link: '/inquiry' },
-    { icon: 'building', title: "Compra", body: "Desde nuestra primera conversación hasta el momento en que recibe las llaves. Le ayudamos a encontrar la propiedad adecuada y le acompañamos en cada etapa de la adquisición.", link: '/inquiry' },
-    { icon: 'figure', title: "Venta", body: "Un enfoque discreto y estratégico para la venta de su propiedad, desde el posicionamiento y la presentación hasta la identificación de compradores cualificados y la gestión de la operación.", link: '/inquiry' },
+    { title: 'Búsqueda de propiedades', body: 'Algunas de las propiedades más exclusivas nunca llegan al mercado público. Realizamos una búsqueda a medida a través de nuestra red para encontrar oportunidades que se ajusten a sus necesidades.' },
+    { title: 'Asesoramiento en la adquisición', body: 'Desde nuestra primera conversación hasta el momento en que recibe las llaves. Le ayudamos a encontrar la propiedad adecuada y le acompañamos en cada etapa de la adquisición.' },
+    { title: 'Asesoramiento en la venta', body: 'Un enfoque discreto y estratégico para la venta de su propiedad, desde el posicionamiento y la presentación hasta la identificación de compradores cualificados y la gestión de la operación.' },
+    { title: 'Asesoramiento en inversión', body: 'Asesoramiento independiente para la inversión inmobiliaria en los principales mercados de España.' },
   ],
   crossLink: {
     left: {
@@ -90,5 +130,4 @@ export const es = {
     },
   },
   crossLinkAlt: 'Pasillo de piedra caliza con libros de derecho que se abre a una terraza frente al mar',
-  cta: { heading: "¿Tiene un proyecto inmobiliario en España?", subline: 'Estaremos encantados de atenderle.' },
 }

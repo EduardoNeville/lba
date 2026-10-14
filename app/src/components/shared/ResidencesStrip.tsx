@@ -10,10 +10,14 @@ export function ResidencesStrip({
   properties,
   showLink = false,
   allLink,
+  title,
 }: {
   properties: Property[]
   showLink?: boolean
   allLink?: string
+  /** Overrides the shared "Selected Residences" label — the property page calls the
+   *  same strip "Featured Properties". */
+  title?: string
 }) {
   const ui = useUi()
   if (properties.length === 0) return null
@@ -22,7 +26,7 @@ export function ResidencesStrip({
     <section className="py-20 md:py-28">
       <Container>
         <div className="mb-8 flex flex-col items-start gap-3 sm:flex-row sm:items-baseline sm:justify-between">
-          <p className="micro text-[11px] text-ink">{ui.selectedResidences}</p>
+          <p className="micro text-[11px] text-ink">{title ?? ui.selectedResidences}</p>
           {allLink && (
             <ArrowLink to={allLink} hitArea>
               {ui.viewAllProperties}

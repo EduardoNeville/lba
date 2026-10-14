@@ -1,7 +1,7 @@
 // Spanish copy — mirrors the EN shapes in src/data/*.ts. Only strings differ; icons/values/links unchanged.
 export const nav = {
   label: {
-    property: "Propiedad",
+    property: "Inmobiliaria",
     residences: "Residencias",
     legal: "Legal",
     privateClient: "Servicios para clientes privados",
@@ -47,7 +47,6 @@ export const ui = {
 };
 
 export const form = {
-  interestLabel: "Estoy interesado/a en:",
   fullName: "Nombre completo",
   fullNamePlaceholder: "Su nombre completo",
   email: "Correo electrónico",
@@ -69,7 +68,6 @@ export const form = {
   hero: {
     title: "¿Cómo podemos ayudarle?",
   },
-  errorInterest: "Por favor, seleccione un área de interés.",
   errorName: "Por favor, indíquenos su nombre.",
   errorEmail:
     "Por favor, introduzca una dirección de correo electrónico válida.",

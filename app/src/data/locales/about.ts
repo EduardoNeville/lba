@@ -36,10 +36,6 @@ export const en = {
     { icon: 'globe', title: 'Connected', body: 'A trusted network of specialists to guide you at every step.' },
   ],
   approach: { heading: 'Our Approach' },
-  cta: {
-    heading: 'Let’s talk.',
-    subline: 'We would be delighted to learn more about your plans in Spain.',
-  },
   culture: {
     eyebrow: 'Cultural Commitment',
     title: 'Supporting Culture.\nInvesting in the Future.',
@@ -98,7 +94,6 @@ export const fr = {
     { icon: 'globe', title: 'Connectée', body: 'Un réseau de spécialistes de confiance pour vous accompagner à chaque étape.' },
   ],
   approach: { heading: 'Notre approche' },
-  cta: { heading: 'Parlons de vos projets', subline: 'Nous serions ravis d’en savoir plus sur vos projets en Espagne.' },
   culture: {
     eyebrow: 'Engagement culturel',
     title: 'Soutenir la culture.\nInvestir dans l’avenir.',
@@ -157,7 +152,6 @@ export const es = {
     { icon: 'globe', title: 'Conectado', body: 'Una red de especialistas de confianza para acompañarle en cada etapa.' },
   ],
   approach: { heading: 'Nuestro enfoque' },
-  cta: { heading: 'Hablemos', subline: 'Estaremos encantados de conocer mejor sus planes en España.' },
   culture: {
     eyebrow: 'Compromiso cultural',
     title: 'Apoyando la cultura.\nInvirtiendo en el futuro.',
