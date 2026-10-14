@@ -200,7 +200,7 @@ function activeNavItems(path: string): string[] {
 }
 
 equals('nav: home highlights nothing', activeNavItems('/'), [])
-equals('nav: /property highlights Property only', activeNavItems('/property'), ['Property'])
+equals('nav: /property highlights Real Estate only', activeNavItems('/property'), ['Real Estate'])
 equals('nav: /property/residences highlights Residences only', activeNavItems('/property/residences'), ['Residences'])
 equals(
   'nav: a residence keeps Residences highlighted',
@@ -401,11 +401,12 @@ has('enquiry: names the residence from the URL', inquiry, villaProperty.title)
 has('enquiry: quotes the reference from the URL', inquiry, 'LBA-0421')
 has('enquiry: seeds the message', inquiry, 'I would like to know more about')
 equals(
-  'enquiry: preselects the property interest',
-  /checked=""[^>]*value="property"|value="property"[^>]*checked=""/.test(inquiryHtml),
+  'enquiry: carries the property interest from the URL',
+  /name="interest"[^>]*value="property"/.test(inquiryHtml),
   true,
 )
-equals('enquiry: exactly one interest selected', (inquiryHtml.match(/checked=""/g) ?? []).length, 1)
+// The tiles went away with the October edits: nothing to tick, nothing to get wrong.
+equals('enquiry: no interest tiles to answer', (inquiryHtml.match(/type="radio"/g) ?? []).length, 0)
 const frInquiry = stripHtml(renderPage(inquiryPath, 'fr', React.createElement(InquiryPage)))
 has('fr enquiry: regarding label', frInquiry, 'À propos de')
 has('fr enquiry: seeded message', frInquiry, 'Je souhaiterais en savoir plus sur')
@@ -483,7 +484,10 @@ has('fr band: view copy', frBand, 'Voir la résidence')
 const { HomePage } = await load('/src/pages/HomePage.tsx')
 const homeHtml = renderPage('/', 'en', React.createElement(HomePage))
 lacks('home: the band is not in the first paint', homeHtml, 'Featured residences')
-has('home: the hero still renders', stripHtml(homeHtml), 'Lawyers & Property Advisers')
+has('home: the hero still renders', stripHtml(homeHtml), 'Law. Real Estate.')
+has('home: the hero names the third service', stripHtml(homeHtml), 'Private Client Services.')
+has('home: the one-firm band renders', stripHtml(homeHtml), 'Why one firm makes a difference')
+lacks('home: the hero is copy-only, no button', stripHtml(homeHtml), 'Discover more')
 
 // --- carousel props ---------------------------------------------------------
 const { readCarouselScroll } = (await load('/src/lib/carousel.ts')) as typeof import('../src/lib/carousel.ts')
