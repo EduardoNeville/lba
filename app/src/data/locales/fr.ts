@@ -36,6 +36,7 @@ export const footer = {
 };
 
 export const ui = {
+  showSubmenu: "Afficher le sous-menu de",
   inquire: "Nous contacter",
   discoverMore: "Découvrir",
   viewAllProperties: "Voir toutes les propriétés",

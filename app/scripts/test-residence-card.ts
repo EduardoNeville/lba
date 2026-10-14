@@ -182,13 +182,18 @@ has('fr page: chip from the URL (type)', frPage, 'Villa')
 has('fr page: filter count badge', frPage, 'Filtres · 2')
 
 // --- the nav highlights exactly one section --------------------------------
-// /property/residences sits under /property, so without `end` on the parent both
-// nav items light up (the bug reported on the dev site). Prefix matching must stay
-// for items that have no children: a journal post still highlights "Journal".
+// Residences lives in the Real Estate dropdown, so the *section* carries the
+// permanent underline on /property/residences rather than the listing. Prefix
+// matching must stay for items that have no children: a journal post still
+// highlights "Journal".
 const { SiteHeader } = await load('/src/components/layout/SiteHeader.tsx')
 
+function navHtml(path: string): string {
+  return renderPage(path, 'en', React.createElement(SiteHeader))
+}
+
 function activeNavItems(path: string): string[] {
-  const html = renderPage(path, 'en', React.createElement(SiteHeader))
+  const html = navHtml(path)
   const active: string[] = []
   for (const match of html.matchAll(/<a([^>]*)>([^<]*)<\/a>/g)) {
     const [, attrs, label] = match
@@ -201,14 +206,34 @@ function activeNavItems(path: string): string[] {
 
 equals('nav: home highlights nothing', activeNavItems('/'), [])
 equals('nav: /property highlights Real Estate only', activeNavItems('/property'), ['Real Estate'])
-equals('nav: /property/residences highlights Residences only', activeNavItems('/property/residences'), ['Residences'])
+equals('nav: the listing keeps the Real Estate section lit', activeNavItems('/property/residences'), ['Real Estate'])
 equals(
-  'nav: a residence keeps Residences highlighted',
+  'nav: a residence keeps the Real Estate section lit',
   activeNavItems('/property/residences/villa-infinity-pool-golden-mile'),
-  ['Residences'],
+  ['Real Estate'],
 )
 equals('nav: /legal highlights Legal only', activeNavItems('/legal'), ['Legal'])
 equals('nav: a journal post keeps Journal highlighted', activeNavItems('/blog/any-post'), ['Journal'])
+
+// --- section order, and Residences moved into a dropdown --------------------
+const header = navHtml('/property/residences')
+equals(
+  'nav: Legal comes before Real Estate',
+  header.indexOf('>Legal<') > 0 && header.indexOf('>Legal<') < header.indexOf('>Real Estate<'),
+  true,
+)
+equals(
+  'nav: Residences appears once, inside the dropdown',
+  (header.match(/href="\/property\/residences"/g) ?? []).length,
+  1,
+)
+has('nav: the submenu is announced as a disclosure', header, 'aria-expanded=')
+has('nav: the disclosure is named for assistive tech', header, 'aria-label="Show submenu for Real Estate"')
+equals(
+  'nav: the listing marks itself as the current page',
+  (header.match(/aria-current="page"/g) ?? []).length,
+  1,
+)
 
 // --- one residence page: gallery, specifications, copy, enquiry link ---------
 const { ResidenceDetail, ResidencePage } = await load('/src/pages/ResidencePage.tsx')

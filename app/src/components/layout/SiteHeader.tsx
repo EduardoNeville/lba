@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { useLang } from '../../lib/lang'
 import { useNav, useUi } from '../../lib/nav'
+import { Icon } from '../ui/icons'
 import logo from '../../assets/logo-lba-ink.png'
 
 function Logo() {
@@ -21,6 +22,8 @@ function Logo() {
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false)
+  /** The section whose submenu is open — only one at a time. */
+  const [submenu, setSubmenu] = useState<string | null>(null)
   const location = useLocation()
   const { lang, setLang } = useLang()
   const nav = useNav()
@@ -28,7 +31,28 @@ export function SiteHeader() {
 
   useEffect(() => {
     setOpen(false)
+    setSubmenu(null)
   }, [location.pathname])
+
+  // A pinned submenu closes on Escape and on a click anywhere outside its group. The
+  // hover/focus reveal in the markup keeps working without this; it exists so the
+  // disclosure button leaves the menu in a state the visitor can get out of.
+  useEffect(() => {
+    if (!submenu) return
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setSubmenu(null)
+    }
+    const onClick = (e: MouseEvent) => {
+      const target = e.target as Element | null
+      if (!target?.closest?.('[data-nav-group]')) setSubmenu(null)
+    }
+    document.addEventListener('keydown', onKey)
+    document.addEventListener('click', onClick)
+    return () => {
+      document.removeEventListener('keydown', onKey)
+      document.removeEventListener('click', onClick)
+    }
+  }, [submenu])
 
   useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : ''
@@ -43,17 +67,59 @@ export function SiteHeader() {
         <Logo />
         <nav aria-label="Main" className="hidden lg:block">
           <ul className="flex items-center gap-4 xl:gap-6">
-            {nav.map((item) => (
-              <li key={item.to}>
-                <NavLink
-                  to={item.to}
-                  end={item.end}
-                  className={({ isActive }) => `micro text-[10px] xl:text-[11px] pb-1 transition-colors hover:text-oxblood ${isActive ? 'text-oxblood underline underline-offset-8' : 'text-ink'}`}
-                >
-                  {item.label}
-                </NavLink>
-              </li>
-            ))}
+            {nav.map((item) => {
+              const expanded = submenu === item.key
+              // /property and its sub-pages: the parent link does not match them (it
+              // carries `end`), so the section lights up from the child instead.
+              const inSection = item.children.some(
+                (child) => location.pathname === child.to || location.pathname.startsWith(`${child.to}/`),
+              )
+              return (
+                <li key={item.key} data-nav-group className="group relative flex h-20 items-center">
+                  <div className="flex items-center gap-0.5">
+                    <NavLink
+                      to={item.to}
+                      end={item.end}
+                      className={({ isActive }) => `micro text-[10px] xl:text-[11px] pb-1 transition-colors hover:text-oxblood ${isActive || inSection ? 'text-oxblood underline underline-offset-8' : 'text-ink'}`}
+                    >
+                      {item.label}
+                    </NavLink>
+                    {item.children.length > 0 && (
+                      <button
+                        type="button"
+                        aria-expanded={expanded}
+                        aria-controls={`submenu-${item.key}`}
+                        aria-label={`${ui.showSubmenu} ${item.label}`}
+                        onClick={() => setSubmenu(expanded ? null : item.key)}
+                        className={`flex h-11 w-6 items-center justify-center transition-colors hover:text-oxblood ${expanded || inSection ? 'text-oxblood' : 'text-ink'}`}
+                      >
+                        <Icon name="chevron-down" className={`h-3 w-3 transition-transform ${expanded ? 'rotate-180' : ''}`} />
+                      </button>
+                    )}
+                  </div>
+                  {item.children.length > 0 && (
+                    /* Hover and keyboard focus reveal the submenu; the button pins it. The
+                       links stay focusable while it is faded out, so tabbing into them
+                       brings them into view rather than skipping the section. */
+                    <ul
+                      id={`submenu-${item.key}`}
+                      className={`absolute left-0 top-full z-20 min-w-44 border border-hairline bg-cream py-1 shadow-[0_12px_32px_rgba(36,30,24,0.10)] transition-opacity duration-150 group-hover:pointer-events-auto group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:opacity-100 ${expanded ? 'pointer-events-auto opacity-100' : 'pointer-events-none opacity-0'}`}
+                    >
+                      {item.children.map((child) => (
+                        <li key={child.key}>
+                          <NavLink
+                            to={child.to}
+                            className={({ isActive }) => `micro block whitespace-nowrap px-4 py-2.5 text-[10px] transition-colors hover:text-oxblood ${isActive ? 'text-oxblood' : 'text-ink'}`}
+                          >
+                            {child.label}
+                          </NavLink>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </li>
+              )
+            })}
           </ul>
         </nav>
         <div className="flex items-center gap-4">
@@ -90,14 +156,45 @@ export function SiteHeader() {
         <div className="fixed inset-0 top-14 z-40 overflow-y-auto bg-cream px-6 py-8 pb-[max(2rem,env(safe-area-inset-bottom))] lg:hidden lg:top-20">
           <ul className="space-y-6">
             {nav.map((item) => (
-              <li key={item.to}>
-                <NavLink
-                  to={item.to}
-                  end={item.end}
-                  className={({ isActive }) => `micro text-sm tracking-[0.25em] ${isActive ? 'text-oxblood' : 'text-ink'}`}
-                >
-                  {item.label}
-                </NavLink>
+              <li key={item.key} data-nav-group>
+                <div className="flex items-center justify-between gap-3">
+                  <NavLink
+                    to={item.to}
+                    end={item.end}
+                    className={({ isActive }) => `micro text-sm tracking-[0.25em] ${isActive ? 'text-oxblood' : 'text-ink'}`}
+                  >
+                    {item.label}
+                  </NavLink>
+                  {item.children.length > 0 && (
+                    <button
+                      type="button"
+                      aria-expanded={submenu === item.key}
+                      aria-controls={`submenu-mobile-${item.key}`}
+                      aria-label={`${ui.showSubmenu} ${item.label}`}
+                      onClick={() => setSubmenu(submenu === item.key ? null : item.key)}
+                      className="-mr-3 flex h-11 w-11 items-center justify-center text-ink transition-colors hover:text-oxblood"
+                    >
+                      <Icon
+                        name="chevron-down"
+                        className={`h-4 w-4 transition-transform ${submenu === item.key ? 'rotate-180' : ''}`}
+                      />
+                    </button>
+                  )}
+                </div>
+                {item.children.length > 0 && submenu === item.key && (
+                  <ul id={`submenu-mobile-${item.key}`} className="mt-4 space-y-4 border-l border-hairline pl-4">
+                    {item.children.map((child) => (
+                      <li key={child.key}>
+                        <NavLink
+                          to={child.to}
+                          className={({ isActive }) => `micro text-[13px] tracking-[0.25em] ${isActive ? 'text-oxblood' : 'text-taupe'}`}
+                        >
+                          {child.label}
+                        </NavLink>
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </li>
             ))}
           </ul>

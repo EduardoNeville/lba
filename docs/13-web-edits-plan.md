@@ -84,6 +84,17 @@ Checks: `tsc` clean · `oxlint` clean (1 pre-existing warning) · `check:locales
 
 ---
 
+## Follow-ups requested after the October edits
+
+**Navbar** *(done)* — Legal now comes first; Real Estate follows it and owns **Residences** in a
+dropdown (`NAV` in `src/data/navigation.ts` gained `children`, so the mobile menu nests the sub-page
+and the desktop header renders a disclosure). The section — not the listing — carries the active
+underline on `/property/residences`, and the submenu is reachable by hover, by the chevron button and
+by keyboard (its links stay focusable while faded out, so tabbing reveals it).
+
+**Still open:** the footer's bottom row (`FOOTER_NAV_KEYS`) still lists Real Estate before Legal — say
+the word and it matches the header.
+
 ## Open questions
 
 1. **Footer tagline** still reads "Lawyers & Private Advisors" (FR "Juristes & Conseillers Privés" / ES "Abogados y Asesores Privados") — now inconsistent with the new "Law. Real Estate. Private Client Services." descriptor. Change it too? (one line in each locale file)

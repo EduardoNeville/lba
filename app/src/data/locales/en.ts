@@ -33,6 +33,7 @@ export const footer = {
 };
 
 export const ui = {
+  showSubmenu: "Show submenu for",
   inquire: "Inquire",
   discoverMore: "Discover more",
   viewAllProperties: "View all properties",
