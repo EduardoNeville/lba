@@ -2,12 +2,19 @@ import { useEffect, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { useLang } from '../../lib/lang'
 import { useNav, useUi } from '../../lib/nav'
-import logoBrush from '../../assets/logo-lba-brush.svg'
+import logo from '../../assets/logo-lba-ink.png'
 
 function Logo() {
   return (
     <Link to="/" className="flex items-center -my-1" aria-label="Legal Boutique Advisers home page">
-      <img src={logoBrush} alt="Legal Boutique Advisers" className="h-12 w-auto object-contain md:h-[52px] lg:h-14" />
+      {/* The lockup is a wide one (1474×472 against the old brush mark's square), so it
+          is sized by height with a viewport guard: at 320px the mark, the language
+          switcher and the menu button otherwise compete for the same row. */}
+      <img
+        src={logo}
+        alt="Legal Boutique Advisers"
+        className="h-9 w-auto max-w-[52vw] object-contain sm:h-12 md:h-[52px] lg:h-14"
+      />
     </Link>
   )
 }
