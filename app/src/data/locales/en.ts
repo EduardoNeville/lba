@@ -29,6 +29,8 @@ export const footer = {
     "info@legalboutiqueadvisers.com",
   ],
   enquire: "Make a private enquiry",
+  whatsapp: "WhatsApp",
+  whatsappMessage: "Hello, I would like to make an enquiry about your services in Spain.",
   rights: "© 2021 Legal Boutique Advisers. All rights reserved.",
 };
 

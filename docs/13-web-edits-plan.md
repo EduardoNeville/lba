@@ -97,6 +97,11 @@ unreliable — the pointer (and the focus a click leaves behind) had already ope
 click read as "close". Closed, the panel is `invisible`, so its links leave the tab order; keyboard
 visitors open it with the button and tab in from there.
 
+**WhatsApp in the footer** *(done)* — the contact row gained the WhatsApp mark beside Instagram and
+LinkedIn, pointing at the business line (+34 663 109 014 → `wa.me/34663109014`) with the message the
+visitor finds already written in the chat, in the language they are reading. The number as a visitor
+reads it is unchanged in the address block.
+
 **Still open:** the footer's bottom row (`FOOTER_NAV_KEYS`) still lists Real Estate before Legal — say
 the word and it matches the header.
 

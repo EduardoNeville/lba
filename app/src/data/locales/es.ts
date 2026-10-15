@@ -32,6 +32,8 @@ export const footer = {
     "info@legalboutiqueadvisers.com",
   ],
   enquire: "Realizar una consulta privada",
+  whatsapp: "WhatsApp",
+  whatsappMessage: "Hola, me gustaría hacer una consulta sobre sus servicios en España.",
   rights: "© 2021 Legal Boutique Advisers. Todos los derechos reservados.",
 };
 
