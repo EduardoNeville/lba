@@ -102,6 +102,11 @@ LinkedIn, pointing at the business line (+34 663 109 014 → `wa.me/34663109014`
 visitor finds already written in the chat, in the language they are reading. The number as a visitor
 reads it is unchanged in the address block.
 
+**Copy and languages** *(done)* — the deck had a gap (it never carried the residences
+dictionary) and nothing stopped a translation going missing. Both scripts now discover the
+dictionaries from the folder, `check:locales` fails on a gap or a short list, fr/es are
+type-checked against `en`, and the build runs the check — see `docs/14-copy-and-languages.md`.
+
 **Still open:** the footer's bottom row (`FOOTER_NAV_KEYS`) still lists Real Estate before Legal — say
 the word and it matches the header.
 

@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom'
 import { Container } from '../components/ui/Container'
 import { CtaBand } from '../components/shared/CtaBand'
 import { getApp, firestoreDb } from '../lib/firebase'
+import { localeDict } from '../lib/i18n'
+import { useLang } from '../lib/lang'
+import { useUi } from '../lib/nav'
+import { en as journalEn, fr as journalFr, es as journalEs } from '../data/locales/journal'
 import type { Post } from '../lib/posts'
 import ctaCoast from '../assets/cta-coast.jpg'
 
@@ -17,8 +21,11 @@ function formatDate(v: unknown): string {
 }
 
 export function BlogListPage() {
+  const { lang } = useLang()
+  const ui = useUi()
+  const t = localeDict(journalEn, lang === 'fr' ? journalFr : lang === 'es' ? journalEs : undefined)
   const [posts, setPosts] = useState<Post[] | null>(null)
-  const [error, setError] = useState('')
+  const [failed, setFailed] = useState(false)
 
   useEffect(() => {
     let cancelled = false
@@ -35,7 +42,7 @@ export function BlogListPage() {
         })
         if (!cancelled) setPosts(arr)
       } catch {
-        if (!cancelled) setError('We could not load the journal right now.')
+        if (!cancelled) setFailed(true)
       }
     }
     load()
@@ -50,23 +57,23 @@ export function BlogListPage() {
         <Container>
           <p className="micro flex items-center gap-3 text-ink">
             <span aria-hidden className="h-px w-8 bg-ink/60" />
-            Journal
+            {t.eyebrow}
           </p>
           <h1 className="font-display mt-4 max-w-[20ch] text-4xl uppercase leading-[1.08] tracking-wide md:text-5xl">
-            Insights &amp; updates
+            {t.title}
           </h1>
           <p className="mt-6 max-w-prose text-sm leading-relaxed text-taupe md:text-[15px]">
-            Notes on property, law and life in Spain, from our team in Marbella.
+            {t.intro}
           </p>
         </Container>
       </section>
 
       <section className="pb-20 md:pb-28">
         <Container>
-          {error && <p className="micro text-oxblood">{error}</p>}
-          {posts === null && !error && <p className="text-sm text-taupe">Loading…</p>}
-          {posts !== null && posts.length === 0 && !error && (
-            <p className="text-sm leading-relaxed text-taupe">No posts yet. Check back soon.</p>
+          {failed && <p className="micro text-oxblood">{t.error}</p>}
+          {posts === null && !failed && <p className="text-sm text-taupe">{t.loading}</p>}
+          {posts !== null && posts.length === 0 && !failed && (
+            <p className="text-sm leading-relaxed text-taupe">{t.empty}</p>
           )}
           {posts && posts.length > 0 && (
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -85,7 +92,7 @@ export function BlogListPage() {
                     <p className="micro text-[10px] tracking-[0.18em] text-taupe">{formatDate(p.publishedAt ?? p.updatedAt)}</p>
                     <h2 className="font-display mt-2 text-lg uppercase leading-snug tracking-wide group-hover:text-oxblood">{p.title}</h2>
                     {p.excerpt && <p className="mt-3 line-clamp-3 text-[13px] leading-relaxed text-taupe">{p.excerpt}</p>}
-                    <span className="micro mt-4 inline-flex text-[10px] text-ink group-hover:text-oxblood">Read →</span>
+                    <span className="micro mt-4 inline-flex text-[10px] text-ink group-hover:text-oxblood">{t.read} →</span>
                   </div>
                 </Link>
               ))}
@@ -94,7 +101,7 @@ export function BlogListPage() {
         </Container>
       </section>
 
-      <CtaBand image={ctaCoast} cta={{ to: '/inquiry', label: 'Make a private enquiry' }} />
+      <CtaBand image={ctaCoast} cta={{ to: '/inquiry', label: ui.privateEnquiry }} />
     </>
   )
 }

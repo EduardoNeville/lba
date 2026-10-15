@@ -1,4 +1,5 @@
 import { Icon } from './icons'
+import { useUi } from '../../lib/nav'
 
 const tones = {
   dark: 'text-ink hover:text-oxblood',
@@ -8,10 +9,11 @@ const tones = {
 } as const
 
 export function ScrollCue({ tone = 'dark' }: { tone?: keyof typeof tones }) {
+  const ui = useUi()
   return (
     <button
       type="button"
-      aria-label="Scroll down"
+      aria-label={ui.scrollDown}
       onClick={() => window.scrollBy({ top: window.innerHeight * 0.9, behavior: 'smooth' })}
       className={`scroll-bob cursor-pointer rounded-full transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-oxblood/40 ${tones[tone]}`}
     >

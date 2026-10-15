@@ -6,8 +6,9 @@ import { Icon } from '../ui/icons'
 import logo from '../../assets/logo-lba-ink.png'
 
 function Logo() {
+  const ui = useUi()
   return (
-    <Link to="/" className="flex items-center -my-1" aria-label="Legal Boutique Advisers home page">
+    <Link to="/" className="flex items-center -my-1" aria-label={ui.logoLabel}>
       {/* The lockup is a wide one (1474×472 against the old brush mark's square), so it
           is sized by height with a viewport guard: at 320px the mark, the language
           switcher and the menu button otherwise compete for the same row. */}
@@ -68,7 +69,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 border-b border-hairline bg-cream">
       <div className="flex h-14 items-center justify-between px-6 md:px-10 lg:h-20">
         <Logo />
-        <nav aria-label="Main" className="hidden lg:block">
+        <nav aria-label={ui.mainNav} className="hidden lg:block">
           <ul className="flex items-center gap-4 xl:gap-6">
             {nav.map((item) => {
               const expanded = submenu === item.key
@@ -133,7 +134,7 @@ export function SiteHeader() {
                 key={l}
                 type="button"
                 onClick={() => setLang(l)}
-                aria-label={`Switch to ${l.toUpperCase()}`}
+                aria-label={`${ui.switchLanguage} ${l.toUpperCase()}`}
                 className={`px-1.5 py-1 transition-colors ${lang === l ? 'text-oxblood underline underline-offset-4' : 'text-taupe hover:text-oxblood'}`}
               >
                 {l.toUpperCase()}
@@ -145,7 +146,7 @@ export function SiteHeader() {
           </Link>
           <button
             type="button"
-            aria-label={open ? 'Close menu' : 'Open menu'}
+            aria-label={open ? ui.closeMenu : ui.openMenu}
             aria-expanded={open}
             onClick={() => setOpen((o) => !o)}
             className="flex h-11 w-11 flex-col items-center justify-center gap-1.5 lg:hidden"

@@ -32,7 +32,7 @@ export const en = {
   },
 }
 
-export const fr = {
+export const fr: typeof en = {
   statement: 'Nous offrons un conseil juridique indépendant à une clientèle privée et internationale, ainsi qu’à leurs familles et leurs entreprises.',
   areasHeading: 'Nos domaines d’expertise juridique',
   hero: {
@@ -62,7 +62,7 @@ export const fr = {
   },
 }
 
-export const es = {
+export const es: typeof en = {
   statement: 'Prestamos asesoramiento jurídico independiente a clientes privados e internacionales, así como a sus familias y empresas.',
   areasHeading: 'Nuestras áreas de asesoramiento jurídico',
   hero: {

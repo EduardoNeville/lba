@@ -36,6 +36,12 @@ export const footer = {
 
 export const ui = {
   showSubmenu: "Show submenu for",
+  mainNav: "Main navigation",
+  logoLabel: "Legal Boutique Advisers — home page",
+  openMenu: "Open menu",
+  closeMenu: "Close menu",
+  switchLanguage: "Switch language to",
+  scrollDown: "Scroll down",
   inquire: "Inquire",
   discoverMore: "Discover more",
   viewAllProperties: "View all properties",

@@ -44,7 +44,7 @@ export const en = {
   crossLinkAlt: 'Limestone hallway with law books opening to sea terrace',
 }
 
-export const fr = {
+export const fr: typeof en = {
   hero: {
     title: 'Une seule firme. Nous vous accompagnons à chaque étape de votre projet immobilier.',
     body: "De l’identification du bon bien à la négociation de son acquisition, en passant par la gestion du processus juridique et le suivi de votre résidence après la signature, nous offrons un service fluide porté par une équipe dédiée.",
@@ -88,7 +88,7 @@ export const fr = {
   crossLinkAlt: 'Couloir en pierre calcaire avec livres de droit ouvrant sur une terrasse face à la mer',
 }
 
-export const es = {
+export const es: typeof en = {
   hero: {
     title: 'Una sola firma. Le acompañamos en cada aspecto de su proyecto inmobiliario.',
     body: 'Desde la identificación de la propiedad adecuada hasta la negociación de su adquisición, la gestión del proceso jurídico y el cuidado de su vivienda una vez finalizada la compra, ofrecemos un servicio ágil a través de un único equipo.',

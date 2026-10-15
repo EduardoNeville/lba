@@ -46,7 +46,7 @@ export const en = {
   },
 }
 
-export const fr = {
+export const fr: typeof en = {
   hero: {
     title: 'Services aux clients privés',
     subline: 'Votre vie en Espagne, entre de bonnes mains.',
@@ -85,7 +85,7 @@ export const fr = {
   },
 }
 
-export const es = {
+export const es: typeof en = {
   hero: {
     title: 'Servicios para clientes privados',
     subline: 'Su vida en España, bien atendida.',
