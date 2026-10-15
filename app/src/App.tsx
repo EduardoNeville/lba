@@ -2,6 +2,8 @@ import { lazy, Suspense, useEffect } from 'react'
 import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom'
 import { SiteHeader } from './components/layout/SiteHeader'
 import { SiteFooter } from './components/layout/SiteFooter'
+import { RouteFallback, RoutePendingProvider } from './components/layout/RoutePending'
+import { RouteVeil } from './components/layout/RouteVeil'
 import { LangProvider } from './lib/lang'
 import { HomePage } from './pages/HomePage'
 import { AboutPage } from './pages/AboutPage'
@@ -93,56 +95,35 @@ function App() {
   return (
     <LangProvider>
       <BrowserRouter>
-        <ScrollToTop />
-        <ApplyMeta />
-        <SiteHeader />
-        <main>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/property" element={<PropertyPage />} />
-            <Route
-              path="/property/residences"
-              element={
-                <Suspense fallback={<div className="min-h-[50vh]" />}>
-                  <ResidencesPage />
-                </Suspense>
-              }
-            />
-            <Route
-              path="/property/residences/:slug"
-              element={
-                <Suspense fallback={<div className="min-h-[50vh]" />}>
-                  <ResidencePage />
-                </Suspense>
-              }
-            />
-            <Route path="/legal" element={<LegalPage />} />
-            <Route path="/private-client" element={<PrivateClientPage />} />
-            <Route path="/blog" element={<BlogListPage />} />
-            <Route path="/blog/:slug" element={<BlogPostPage />} />
-            <Route path="/privacy" element={<LegalDocPage doc={privacyDoc} />} />
-            <Route path="/terms" element={<LegalDocPage doc={termsDoc} />} />
-            <Route
-              path="/admin"
-              element={
-                <Suspense fallback={<div className="min-h-[50vh]" />}>
-                  <AdminPage />
-                </Suspense>
-              }
-            />
-            <Route
-              path="/inquiry"
-              element={
-                <Suspense fallback={<div className="min-h-[50vh]" />}>
-                  <InquiryPage />
-                </Suspense>
-              }
-            />
-            <Route path="*" element={<NotFoundPage />} />
-          </Routes>
-        </main>
-        <SiteFooter />
+        <RoutePendingProvider>
+          <ScrollToTop />
+          <ApplyMeta />
+          <SiteHeader />
+          <main>
+            {/* One boundary for every route: it is what tells the veil that a page is
+                still on its way, and it keeps the lazy imports out of the entry chunk. */}
+            <Suspense fallback={<RouteFallback />}>
+              <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/about" element={<AboutPage />} />
+                <Route path="/property" element={<PropertyPage />} />
+                <Route path="/property/residences" element={<ResidencesPage />} />
+                <Route path="/property/residences/:slug" element={<ResidencePage />} />
+                <Route path="/legal" element={<LegalPage />} />
+                <Route path="/private-client" element={<PrivateClientPage />} />
+                <Route path="/blog" element={<BlogListPage />} />
+                <Route path="/blog/:slug" element={<BlogPostPage />} />
+                <Route path="/privacy" element={<LegalDocPage doc={privacyDoc} />} />
+                <Route path="/terms" element={<LegalDocPage doc={termsDoc} />} />
+                <Route path="/admin" element={<AdminPage />} />
+                <Route path="/inquiry" element={<InquiryPage />} />
+                <Route path="*" element={<NotFoundPage />} />
+              </Routes>
+            </Suspense>
+          </main>
+          <SiteFooter />
+          <RouteVeil />
+        </RoutePendingProvider>
       </BrowserRouter>
     </LangProvider>
   )

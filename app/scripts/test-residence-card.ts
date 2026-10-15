@@ -519,6 +519,20 @@ has('home: the hero names the third service', stripHtml(homeHtml), 'Private Clie
 has('home: the one-firm band renders', stripHtml(homeHtml), 'Why one firm makes a difference')
 lacks('home: the hero is copy-only, no button', stripHtml(homeHtml), 'Discover more')
 
+// --- the loading veil -------------------------------------------------------
+// The veil must render nothing on the server. A splash that shipped as server markup
+// would hide the page from crawlers and from anyone without JavaScript, and it would
+// be the first thing painted on a slow connection — the opposite of its purpose, which
+// is to cover a wait the browser has already noticed.
+const { RouteVeil } = await load('/src/components/layout/RouteVeil.tsx')
+const { RouteFallback } = await load('/src/components/layout/RoutePending.tsx')
+equals('veil: renders nothing on the server', renderPage('/', 'en', React.createElement(RouteVeil)), '')
+has(
+  'veil: the route fallback announces the wait it reports',
+  renderPage('/', 'en', React.createElement(RouteFallback)),
+  'aria-busy="true"',
+)
+
 // --- carousel props ---------------------------------------------------------
 const { readCarouselScroll } = (await load('/src/lib/carousel.ts')) as typeof import('../src/lib/carousel.ts')
 
