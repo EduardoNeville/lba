@@ -61,7 +61,6 @@ export const ui: typeof UiEn = {
   viewAllProperties: "Ver todas las propiedades",
   viewResidence: "Ver la residencia",
   explore: "Explorar",
-  selectedResidences: "Residencias seleccionadas",
   privateEnquiry: "Realizar una consulta privada",
 };
 

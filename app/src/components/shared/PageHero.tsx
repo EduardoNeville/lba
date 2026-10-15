@@ -3,7 +3,7 @@ import { Container } from '../ui/Container'
 import { ScrollCue } from '../ui/ScrollCue'
 
 export function PageHero({
-  eyebrow: _eyebrow,
+  eyebrow,
   title,
   subline,
   body,
@@ -28,6 +28,14 @@ export function PageHero({
       <Container>
         <div className="max-w-[560px] py-16 md:py-20">
           <div>
+            {eyebrow && (
+              /* Section tag over the title, with its rule — the private-client
+                 mockup (part 2) shows it; no earlier page passed the prop. */
+              <p className="micro text-ink">
+                {eyebrow}
+                <span aria-hidden className="mt-2 block h-px w-10 bg-ink/40" />
+              </p>
+            )}
             <h1
               className={`font-display mt-6 leading-[1.08] tracking-wide ${
                 titleCase === 'upper'

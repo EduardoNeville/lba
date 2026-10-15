@@ -7,7 +7,6 @@ import { useLang } from "../lib/lang";
 import { team } from "../data/team";
 import { en, fr, es } from "../data/locales/about";
 import { useUi } from "../lib/nav";
-import ctaCoast from "../assets/cta-coast.jpg";
 import aboutHero from "../assets/about-hero.jpg";
 import aboutLegacy from "../assets/about-legacy.jpg";
 import musicaImage from "../assets/musica-cultural.png";
@@ -194,10 +193,8 @@ export function AboutPage() {
       <CultureSplit />
       <TeamSection />
       <ApproachSection />
-      <CtaBand
-        image={ctaCoast}
-        cta={{ to: "/inquiry", label: ui.privateEnquiry }}
-      />
+      {/* Image gone (client, part 2): the button alone. */}
+      <CtaBand cta={{ to: "/inquiry", label: ui.privateEnquiry }} />
     </>
   );
 }

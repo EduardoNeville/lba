@@ -13,10 +13,7 @@ import {
   type ResidenceFilters as Filters,
 } from '../lib/propertyFilters'
 import { useResidencesCopy } from '../lib/residencesCopy'
-import { localeDict } from '../lib/i18n'
-import { useLang } from '../lib/lang'
-import { en as propertyEn, es as propertyEs, fr as propertyFr } from '../data/locales/property'
-import { cta as propertyCta } from '../data/property'
+import { useUi } from '../lib/nav'
 
 const GRID = 'grid gap-6 sm:grid-cols-2 lg:grid-cols-3'
 
@@ -25,7 +22,6 @@ const GRID = 'grid gap-6 sm:grid-cols-2 lg:grid-cols-3'
 // back button. Filtering itself happens in memory over one query (lib/properties).
 export function ResidencesPage() {
   const copy = useResidencesCopy()
-  const { lang } = useLang()
   const [params, setParams] = useSearchParams()
   const filters = useMemo(() => parseFilters(params), [params])
 
@@ -64,10 +60,7 @@ export function ResidencesPage() {
 
   const results = useMemo(() => (items ? applyFilters(items, filters) : []), [items, filters])
 
-  const propertyCopy = useMemo(
-    () => localeDict(propertyEn, lang === 'fr' ? propertyFr : lang === 'es' ? propertyEs : undefined),
-    [lang],
-  )
+  const ui = useUi()
 
   const loading = items === null && !failed
 
@@ -134,8 +127,7 @@ export function ResidencesPage() {
       </section>
 
       <CtaBand
-        image={propertyCta.image}
-        cta={{ to: '/inquiry', label: propertyCopy.hero.cta.label }}
+        cta={{ to: '/inquiry', label: ui.privateEnquiry }}
       />
     </>
   )

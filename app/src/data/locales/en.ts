@@ -47,7 +47,6 @@ export const ui = {
   viewAllProperties: "View all properties",
   viewResidence: "View residence",
   explore: "Explore",
-  selectedResidences: "Selected Residences",
   privateEnquiry: "Make a private enquiry",
 };
 
