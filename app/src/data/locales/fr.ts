@@ -13,9 +13,9 @@ import type {
 export const nav: typeof NavEn = {
   label: {
     property: "Immobilier",
-    residences: "Résidences",
-    legal: "Juridique",
-    privateClient: "Services aux clients privés",
+    residences: "Propriétés",
+    legal: "Droit",
+    privateClient: "Gestion de biens",
     journal: "Blog",
     about: "À propos",
   },
@@ -25,8 +25,8 @@ export const footer: typeof FooterEn = {
   tagline: "Juristes & Conseillers Privés",
   services: "Nos Services",
   servicesLinks: [
-    "Conseil immobilier",
-    "Conseil juridique",
+    "Cabinet d’avocats",
+    "Immobilier",
     "Conseil aux clients privés",
   ],
   information: "Informations",
@@ -61,8 +61,6 @@ export const ui: typeof UiEn = {
   viewAllProperties: "Voir toutes les propriétés",
   viewResidence: "Voir la résidence",
   explore: "Explorer",
-  meetTheTeam: "Rencontrer l’équipe",
-  selectedResidences: "Résidences sélectionnées",
   privateEnquiry: "Faire une demande privée",
 };
 

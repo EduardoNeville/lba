@@ -5,7 +5,7 @@ import { ServiceCard } from "../components/ui/ServiceCard";
 import { Checklist } from "../components/ui/Checklist";
 import { ButtonLink } from "../components/ui/ButtonLink";
 import { useLang } from "../lib/lang";
-import { hero, services, featureSplit, cta } from "../data/privateClient";
+import { hero, services, featureSplit } from "../data/privateClient";
 import { en, fr, es } from "../data/locales/privateClient";
 import { useUi } from "../lib/nav";
 
@@ -17,8 +17,6 @@ function usePCData() {
     servicesHeading: d.servicesHeading,
     services: d.services.map((s, i) => ({ ...s, ...services[i] })),
     featureSplit: { ...d.featureSplit, image: featureSplit.image },
-    partners: d.partners,
-    cta: { image: cta.image },
   };
 }
 
@@ -80,48 +78,18 @@ function FeatureSplit() {
   );
 }
 
-function TrustedNetwork() {
-  const { partners } = usePCData();
-  return (
-    <section className="bg-parchment py-20 md:py-28">
-      <Container>
-        <div className="grid items-center gap-8 lg:grid-cols-[1fr_2fr]">
-          <div>
-            <p className="micro text-oxblood">{partners.heading}</p>
-            <div className="mt-3 h-px w-8 bg-oxblood" />
-            <p className="mt-4 text-[13px] leading-relaxed text-taupe">
-              {partners.body}
-            </p>
-          </div>
-          <div className="grid grid-cols-2 gap-x-6 gap-y-6 sm:grid-cols-3 lg:grid-cols-6">
-            {partners.list.map((p) => (
-              <span
-                key={p}
-                className="text-center text-[10px] uppercase leading-snug tracking-[0.18em] text-ink/70 transition-colors hover:text-oxblood"
-              >
-                {p}
-              </span>
-            ))}
-          </div>
-        </div>
-      </Container>
-    </section>
-  );
-}
+/* "A Trusted Network" removed in full (client, part 2) — the page now goes
+   services → membership → the enquiry button. */
 
 export function PrivateClientPage() {
-  const { hero, cta } = usePCData();
+  const { hero } = usePCData();
   const ui = useUi();
   return (
     <>
-      <PageHero {...hero} />
+      <PageHero {...hero} titleCase="sentence" />
       <ServicesGrid />
       <FeatureSplit />
-      <TrustedNetwork />
-      <CtaBand
-        image={cta.image}
-        cta={{ to: "/inquiry", label: ui.privateEnquiry }}
-      />
+      <CtaBand cta={{ to: "/inquiry", label: ui.privateEnquiry }} />
     </>
   );
 }

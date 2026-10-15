@@ -1,61 +1,49 @@
-import { lazy, Suspense } from "react";
 import { Link } from "react-router-dom";
 import { Container } from "../components/ui/Container";
 import { ScrollCue } from "../components/ui/ScrollCue";
 import { CtaBand } from "../components/shared/CtaBand";
 import { useLang } from "../lib/lang";
 import { useUi } from "../lib/nav";
-import { hero, practiceAreas, cta } from "../data/home";
+import { hero, practiceAreas } from "../data/home";
 import { en, fr, es } from "../data/locales/home";
-
-// Lazy: the band pulls in the residences loader (and through it the Firestore SDK)
-// plus five full-bleed photographs. Mounting it after the page has painted keeps
-// the hero as the only thing competing for the first view.
-const FeaturedResidences = lazy(() =>
-  import("../components/shared/FeaturedResidences").then((m) => ({ default: m.FeaturedResidences })),
-);
 
 function useHomeData() {
   const { lang } = useLang();
-  const ui = useUi();
   const d = lang === "fr" ? { ...en, ...fr } : lang === "es" ? { ...en, ...es } : en;
   return {
     hero: { ...d.hero, image: hero.image },
     intro: d.intro,
     practiceAreas: d.practiceAreas.map((p, i) => ({ ...p, ...practiceAreas[i] })),
     why: d.why,
-    cta: { ...d.cta, image: cta.image, ctaLabel: ui.privateEnquiry },
   };
 }
 
 function HomeHero() {
   const { hero } = useHomeData();
   return (
-    <section className="relative isolate flex hero-screen items-center overflow-hidden bg-cream">
+    <section className="relative isolate flex hero-screen items-center justify-center overflow-hidden bg-cream">
       <img
         src={hero.image}
         alt={hero.alt}
         className="absolute inset-0 -z-20 h-full w-full object-cover object-center"
       />
-      <div className="absolute inset-0 -z-10 bg-cream/60" />
-      {/* Right-aligned block: the heading answers the logo and nav on the left. */}
+      {/* The type sits directly on the photograph as in the mock; a veil rising from
+          the foot keeps it legible over the pool line without grey-washing the room. */}
+      <div className="absolute inset-0 -z-10 bg-gradient-to-t from-ink/40 via-ink/10 to-ink/5" />
       <Container>
-        <div className="ml-auto max-w-2xl text-right">
-          <h1 className="font-display whitespace-pre-line text-4xl uppercase leading-[1.1] tracking-wide text-ink md:text-6xl">
+        <div className="text-center">
+          <h1 className="font-display text-5xl uppercase leading-[1.05] tracking-wide text-cream md:text-7xl">
             {hero.heading}
           </h1>
           {hero.sub && (
-            <p className="micro mt-4 text-[11px] text-ink/70">{hero.sub}</p>
-          )}
-          {hero.body && (
-            <p className="mt-4 text-sm leading-relaxed text-ink/75 md:text-[15px]">
-              {hero.body}
+            <p className="micro mt-5 text-[11px] tracking-[0.35em] text-cream/90 md:text-xs">
+              {hero.sub}
             </p>
           )}
         </div>
       </Container>
       <div className="absolute inset-x-0 bottom-6 flex justify-center">
-        <ScrollCue />
+        <ScrollCue tone="light" />
       </div>
     </section>
   );
@@ -162,23 +150,16 @@ function WhyOneFirm() {
 }
 
 export function HomePage() {
-  const { cta } = useHomeData();
+  const ui = useUi();
   return (
     <>
       <HomeHero />
       <IntroSplit />
       <PracticeAreas />
       <WhyOneFirm />
-      <Suspense fallback={null}>
-        <FeaturedResidences />
-      </Suspense>
-      <CtaBand
-        variant="accent"
-        heading={cta.heading}
-        subline={cta.subline}
-        image={cta.image}
-        cta={{ to: "/inquiry", label: cta.ctaLabel }}
-      />
+      {/* The enquiry button alone — the image and the "Every client is unique." lines
+          are gone (client, part 1). */}
+      <CtaBand cta={{ to: "/inquiry", label: ui.privateEnquiry }} />
     </>
   );
 }

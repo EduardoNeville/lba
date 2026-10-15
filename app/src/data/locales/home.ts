@@ -1,11 +1,13 @@
 // Copy for the Home page. `en` is the source of truth; fr/es replace text only —
 // images, links and positions live in src/data/home.ts.
+// Part-1 edits: the hero is the brand lockup over the terrace photograph — the
+// descriptor line carries the middle dots the client asked for; the CTA band is the
+// bare enquiry button, so the cta copy is gone.
 export const en = {
   hero: {
-    alt: 'Marbella, Spain',
-    heading: 'Law. Real Estate.\nPrivate Client Services.',
-    sub: 'Based in Marbella',
-    body: "Legal expertise and tailored property advice for international clients.",
+    alt: 'Mediterranean terrace of a modern villa with an infinity pool over the sea',
+    heading: 'Legal Boutique Advisers',
+    sub: 'Law · Real Estate · Property Management',
   },
   intro: {
     heading: "Three Services. One Firm.",
@@ -16,13 +18,13 @@ export const en = {
   practiceAreas: [
     {
       num: '01',
-      title: 'Real Estate',
-      body: 'Acquisition, sale and investment advisory across Spain.',
+      title: 'Legal',
+      body: 'Legal and tax advice for property, business and family matters, including inheritance and donations.',
     },
     {
       num: '02',
-      title: 'Legal',
-      body: 'Legal and tax advice for property, business and family matters, including inheritance and donations.',
+      title: 'Real Estate',
+      body: 'Acquisition, sale and investment advisory across Spain.',
     },
     {
       num: '03',
@@ -44,15 +46,13 @@ export const en = {
       },
     ],
   },
-  cta: { heading: "Every client is unique.", subline: "Tell us about your plans in Spain." },
 }
 
 export const fr: typeof en = {
   hero: {
-    alt: 'Marbella, Espagne',
-    heading: 'Droit. Immobilier.\nClientèle privée.',
-    sub: 'Basés à Marbella',
-    body: 'Expertise juridique et conseil immobilier personnalisé pour une clientèle internationale.',
+    alt: 'Terrasse méditerranéenne d’une villa moderne avec piscine à débordement sur la mer',
+    heading: 'Legal Boutique Advisers',
+    sub: 'Droit · Immobilier · Gestion de biens',
   },
   intro: {
     heading: 'Trois métiers. Une seule équipe.',
@@ -63,13 +63,13 @@ export const fr: typeof en = {
   practiceAreas: [
     {
       num: '01',
-      title: 'Immobilier',
-      body: 'Conseil à l’acquisition, à la vente et à l’investissement partout en Espagne.',
+      title: 'Juridique',
+      body: 'Conseil juridique et fiscal en matière immobilière, professionnelle et familiale, y compris successions et donations.',
     },
     {
       num: '02',
-      title: 'Juridique',
-      body: 'Conseil juridique et fiscal en matière immobilière, professionnelle et familiale, y compris successions et donations.',
+      title: 'Immobilier',
+      body: 'Conseil à l’acquisition, à la vente et à l’investissement partout en Espagne.',
     },
     {
       num: '03',
@@ -91,15 +91,13 @@ export const fr: typeof en = {
       },
     ],
   },
-  cta: { heading: 'Chaque client est unique.', subline: "Parlez-nous de vos projets en Espagne." },
 }
 
 export const es: typeof en = {
   hero: {
-    alt: 'Marbella, España',
-    heading: 'Derecho. Inmobiliaria.\nClientes privados.',
-    sub: 'Con base en Marbella',
-    body: 'Experiencia jurídica y asesoramiento inmobiliario personalizado para clientes internacionales.',
+    alt: 'Terraza mediterránea de una villa moderna con piscina infinita frente al mar',
+    heading: 'Legal Boutique Advisers',
+    sub: 'Derecho · Inmobiliaria · Gestión de propiedades',
   },
   intro: {
     heading: 'Tres servicios. Una sola firma.',
@@ -110,13 +108,13 @@ export const es: typeof en = {
   practiceAreas: [
     {
       num: '01',
-      title: 'Inmobiliaria',
-      body: 'Asesoramiento en compra, venta e inversión en toda España.',
+      title: 'Legal',
+      body: 'Asesoramiento jurídico y fiscal en asuntos inmobiliarios, empresariales y familiares, incluidas herencias y donaciones.',
     },
     {
       num: '02',
-      title: 'Legal',
-      body: 'Asesoramiento jurídico y fiscal en asuntos inmobiliarios, empresariales y familiares, incluidas herencias y donaciones.',
+      title: 'Inmobiliaria',
+      body: 'Asesoramiento en compra, venta e inversión en toda España.',
     },
     {
       num: '03',
@@ -138,5 +136,4 @@ export const es: typeof en = {
       },
     ],
   },
-  cta: { heading: "Cada cliente es único.", subline: "Cuéntenos de sus proyectos en España." },
 }

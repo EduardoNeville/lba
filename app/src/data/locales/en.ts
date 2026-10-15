@@ -3,9 +3,9 @@
 export const nav = {
   label: {
     property: "Real Estate",
-    residences: "Residences",
-    legal: "Legal",
-    privateClient: "Private Client Services",
+    residences: "Properties",
+    legal: "Law",
+    privateClient: "Property Management",
     journal: "Journal",
     about: "About",
   },
@@ -15,8 +15,8 @@ export const footer = {
   tagline: "Lawyers & Private Advisors",
   services: "Our Services",
   servicesLinks: [
-    "Real Estate Advisory",
-    "Legal Advisory",
+    "Law Firm",
+    "Real Estate",
     "Private Client Advisory",
   ],
   information: "Information",
@@ -47,8 +47,6 @@ export const ui = {
   viewAllProperties: "View all properties",
   viewResidence: "View residence",
   explore: "Explore",
-  meetTheTeam: "Meet the team",
-  selectedResidences: "Selected Residences",
   privateEnquiry: "Make a private enquiry",
 };
 

@@ -3,7 +3,7 @@ import { Link, NavLink, useLocation } from 'react-router-dom'
 import { useLang } from '../../lib/lang'
 import { useNav, useUi } from '../../lib/nav'
 import { Icon } from '../ui/icons'
-import logo from '../../assets/logo-lba-ink.png'
+import logo from '../../assets/logo-lba-black.png'
 
 function Logo() {
   const ui = useUi()

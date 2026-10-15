@@ -7,10 +7,12 @@
 // fall back to the raw value if a key is ever missing.
 export const en = {
   hero: {
-    eyebrow: 'Residences',
-    title: 'Selected residences',
+    eyebrow: 'Properties',
+    title: 'Properties',
     subline:
-      'Houses, apartments and fincas we are marketing across the Costa del Sol — with the legal review that comes with everything we do.',
+      'A curated selection of properties across Marbella, Sotogrande and Spain.',
+    body:
+      'In addition to the properties shown here, we have access to a wider portfolio and also carry out a private search tailored to your needs.',
     privateSearch: 'Dream home not here? Contact us for our off-market pocket listings',
   },
   search: { label: 'Search residences', placeholder: 'Name, area or reference' },
@@ -66,7 +68,6 @@ export const en = {
   },
   availability: { available: 'Available', reserved: 'Reserved', sold: 'Sold' },
   badge: { new: 'New' },
-  featured: { eyebrow: 'Featured residences' },
   gallery: {
     label: 'Residence photographs',
     thumbnails: 'Photograph thumbnails',
@@ -146,10 +147,12 @@ export const en = {
 
 export const fr: typeof en = {
   hero: {
-    eyebrow: 'Résidences',
-    title: 'Résidences sélectionnées',
+    eyebrow: 'Propriétés',
+    title: 'Propriétés',
     subline:
-      'Maisons, appartements et fincas que nous commercialisons sur la Costa del Sol — avec la revue juridique qui accompagne chacun de nos mandats.',
+      'Une sélection de biens à Marbella, Sotogrande et dans le reste de l’Espagne.',
+    body:
+      'En plus des biens présentés ici, nous avons accès à un portefeuille plus large et réalisons également une recherche privée adaptée à vos besoins.',
     privateSearch: 'Votre maison de rêve n\'est pas ici ? Contactez-nous pour découvrir nos propriétés hors marché.',
   },
   search: { label: 'Rechercher une résidence', placeholder: 'Nom, secteur ou référence' },
@@ -205,7 +208,6 @@ export const fr: typeof en = {
   },
   availability: { available: 'Disponible', reserved: 'Réservée', sold: 'Vendue' },
   badge: { new: 'Nouveau' },
-  featured: { eyebrow: 'Résidences en vedette' },
   gallery: {
     label: 'Photographies de la résidence',
     thumbnails: 'Vignettes des photographies',
@@ -285,10 +287,12 @@ export const fr: typeof en = {
 
 export const es: typeof en = {
   hero: {
-    eyebrow: 'Residencias',
-    title: 'Residencias seleccionadas',
+    eyebrow: 'Propiedades',
+    title: 'Propiedades',
     subline:
-      'Casas, apartamentos y fincas que comercializamos en la Costa del Sol — con la revisión jurídica que acompaña a cada mandato.',
+      'Una selección de propiedades en Marbella, Sotogrande y España.',
+    body:
+      'Además de las propiedades mostradas aquí, tenemos acceso a una cartera más amplia y realizamos también una búsqueda privada adaptada a sus necesidades.',
     privateSearch: '¿Su casa de ensueño no está aquí? Contáctenos para conocer nuestras propiedades fuera del mercado.',
   },
   search: { label: 'Buscar residencias', placeholder: 'Nombre, zona o referencia' },
@@ -344,7 +348,6 @@ export const es: typeof en = {
   },
   availability: { available: 'Disponible', reserved: 'Reservada', sold: 'Vendida' },
   badge: { new: 'Nuevo' },
-  featured: { eyebrow: 'Residencias destacadas' },
   gallery: {
     label: 'Fotografías de la residencia',
     thumbnails: 'Miniaturas de las fotografías',
