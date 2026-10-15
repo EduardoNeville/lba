@@ -47,7 +47,7 @@ export const en = {
   cta: { heading: "Every client is unique.", subline: "Tell us about your plans in Spain." },
 }
 
-export const fr = {
+export const fr: typeof en = {
   hero: {
     alt: 'Marbella, Espagne',
     heading: 'Droit. Immobilier.\nClientèle privée.',
@@ -94,7 +94,7 @@ export const fr = {
   cta: { heading: 'Chaque client est unique.', subline: "Parlez-nous de vos projets en Espagne." },
 }
 
-export const es = {
+export const es: typeof en = {
   hero: {
     alt: 'Marbella, España',
     heading: 'Derecho. Inmobiliaria.\nClientes privados.',

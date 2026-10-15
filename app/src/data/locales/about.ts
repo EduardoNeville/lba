@@ -58,7 +58,7 @@ export const en = {
   },
 }
 
-export const fr = {
+export const fr: typeof en = {
   hero: {
     title: "Fondé sur la confiance. Façonné autour de nos clients.",
     body: [
@@ -116,7 +116,7 @@ export const fr = {
   },
 }
 
-export const es = {
+export const es: typeof en = {
   hero: {
     title: "Basado en la confianza. Creciendo junto a nuestros clientes.",
     body: [
