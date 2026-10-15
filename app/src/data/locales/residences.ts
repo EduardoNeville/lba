@@ -11,7 +11,7 @@ export const en = {
     title: 'Selected residences',
     subline:
       'Houses, apartments and fincas we are marketing across the Costa del Sol — with the legal review that comes with everything we do.',
-    privateSearch: 'Cannot find it? Ask about our private search',
+    privateSearch: 'Dream home not here? Contact us for our off-market pocket listings',
   },
   search: { label: 'Search residences', placeholder: 'Name, area or reference' },
   filters: {
@@ -150,7 +150,7 @@ export const fr: typeof en = {
     title: 'Résidences sélectionnées',
     subline:
       'Maisons, appartements et fincas que nous commercialisons sur la Costa del Sol — avec la revue juridique qui accompagne chacun de nos mandats.',
-    privateSearch: 'Vous ne trouvez pas ? Découvrez notre recherche privée',
+    privateSearch: 'Votre maison de rêve n\'est pas ici ? Contactez-nous pour découvrir nos propriétés hors marché.',
   },
   search: { label: 'Rechercher une résidence', placeholder: 'Nom, secteur ou référence' },
   filters: {
@@ -289,7 +289,7 @@ export const es: typeof en = {
     title: 'Residencias seleccionadas',
     subline:
       'Casas, apartamentos y fincas que comercializamos en la Costa del Sol — con la revisión jurídica que acompaña a cada mandato.',
-    privateSearch: '¿No lo encuentra? Consulte nuestra búsqueda privada',
+    privateSearch: '¿Su casa de ensueño no está aquí? Contáctenos para conocer nuestras propiedades fuera del mercado.',
   },
   search: { label: 'Buscar residencias', placeholder: 'Nombre, zona o referencia' },
   filters: {
