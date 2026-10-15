@@ -14,6 +14,8 @@ The client's raw drops stay out of git in the main working copy, referenced here
 
 **Run:** `cd app && npm run dev` · **build + preview:** `npm run review` (:4173) · **checks:** `npm run check:locales`, `npm run lint`, `npm run build`
 
+**Checks:** `tsc` clean · `oxlint` clean (1 pre-existing warning) · `check:locales` 0 gaps / 0 errors · build OK · SSR dumps verified in EN/FR/ES
+
 ---
 
 ## Status
@@ -21,32 +23,34 @@ The client's raw drops stay out of git in the main working copy, referenced here
 | § | Change | Status |
 | --- | --- | --- |
 | **Part 1** | | |
-| 1 | Header lockup in black (not brown) | [todo] |
-| 2 | Home: new centred hero (brand title + descriptor line, terrace image) | [todo] |
-| 3 | Home: service cards reordered — 01 Legal, 02 Real Estate | [todo] |
-| 4 | Home: featured-residences band removed | [todo] |
-| 5 | Home: CTA band reduced to the enquiry button only | [todo] |
-| 6 | Footer services links → Law Firm / Real Estate / Private Client Advisory | [todo] |
-| 7 | Nav labels per the mockup — Law / Real Estate / Property Management | [todo] |
-| 8 | Legal: value-pillar tiles removed (statement stays) | [todo] |
-| 9 | Legal: areas grid + "Business vision" band replaced by "Our Law Firm" (text + Marisela portrait) | [todo] |
-| 10 | Legal: CTA band reduced to the button only, tighter spacing | [todo] |
-| 11 | Real Estate: dropdown + page title "Properties" (was Residences) | [todo] |
-| 12 | Real Estate: new hero copy (Sotogrande + wider-portfolio paragraph) | [todo] |
-| 13 | FR + ES translations for every changed string | [todo] |
+| 1 | Header lockup in black (not brown) | **[done]** |
+| 2 | Home: new centred hero (brand title + descriptor line, terrace image) | **[done]** |
+| 3 | Home: service cards reordered — 01 Legal, 02 Real Estate | **[done]** |
+| 4 | Home: featured-residences band removed | **[done]** |
+| 5 | Home: CTA band reduced to the enquiry button only | **[done]** |
+| 6 | Footer services links → Law Firm / Real Estate / Private Client Advisory | **[done]** |
+| 7 | Nav labels per the mockup — Law / Real Estate / Property Management | **[done]** |
+| 8 | Legal: value-pillar tiles removed (statement stays) | **[done]** |
+| 9 | Legal: areas grid + "Business vision" band replaced by "Our Law Firm" (text + Marisela portrait) | **[done]** |
+| 10 | Legal: CTA band reduced to the button only, tighter spacing | **[done]** |
+| 11 | Real Estate: dropdown + page title "Properties" (was Residences) | **[done]** |
+| 12 | Real Estate: new hero copy (Sotogrande + wider-portfolio paragraph) | **[done]** |
+| 13 | FR + ES translations for every changed string | **[done]** |
 | **Part 2** | | |
-| 14 | Property: split hero rebuilt (eyebrow + "Real Estate" + two-column intro, golf photo right) | [todo] |
-| 15 | Property: "A Curated Approach" split removed | [todo] |
-| 16 | Property: featured-properties strip removed | [todo] |
-| 17 | Property: brown box restyled (villa photo, bigger letters, lighter brown) | [todo] |
-| 18 | Property: services renamed — Buying / Selling | [todo] |
-| 19 | Property: cross-link band restyled (new eyebrows/headings/bodies, checklists out, photo kept) | [todo] |
-| 20 | Property: CTA band reduced to the button only | [todo] |
-| 21 | Private Client: hero rebuilt ("Your Home, Our Priority.", salon image, no discover link) | [todo] |
-| 22 | Private Client: "A Trusted Network" band removed | [todo] |
-| 23 | Private Client: CTA band reduced to the button only | [todo] |
-| 24 | About: CTA band reduced to the button only | [todo] |
-| 25 | FR + ES for all Part-2 strings | [todo] |
+| 14 | Property: split hero rebuilt (eyebrow + "Real Estate" + two-column intro, golf photo right) | **[done]** — golf photo placeholder |
+| 15 | Property: "A Curated Approach" split removed | **[done]** |
+| 16 | Property: featured-properties strip removed | **[done]** |
+| 17 | Property: brown box restyled (villa photo, bigger letters, lighter brown) | **[done]** |
+| 18 | Property: services renamed — Buying / Selling | **[done]** |
+| 19 | Property: cross-link band restyled (new eyebrows/headings/bodies, checklists out, photo kept) | **[done]** |
+| 20 | Property: CTA band reduced to the button only | **[done]** |
+| 21 | Private Client: hero rebuilt ("Your Home, Our Priority.", salon image, no discover link) | **[done]** |
+| 22 | Private Client: "A Trusted Network" band removed | **[done]** |
+| 23 | Private Client: CTA band reduced to the button only | **[done]** |
+| 24 | About: CTA band reduced to the button only | **[done]** |
+| 25 | FR + ES for all Part-2 strings | **[done]** |
+
+Commits: part-1 `438d421` · part-2 `4f25ccf`. The residences **listing and detail** CTA bands also went button-only (the restructure retired the `property.cta` image/label they consumed; aligned with the client's direction — see Open questions 5).
 
 ---
 
@@ -312,8 +316,9 @@ All new/changed strings authored in EN, FR, ES inline above; `check:locales` 0 e
 2. **Footer tagline** "Lawyers & Private Advisors" — carried over from the October round, still inconsistent with the new descriptor. Change to "Law · Real Estate · Property Management"?
 3. **"Residences" wording elsewhere** — filters, result counts ("12 residences"), "View residence", empty states stay this round; say the word and they become "properties" across the board.
 4. **Legal statement** — kept above Our Law Firm; confirm (one-line removal otherwise).
-5. **Remaining image CTA bands** — the residences listing and the residence detail + journal pages still carry the coast-photo CTA; the client has now asked for button-only on every page she reviewed. Align them too?
+5. **Remaining image CTA bands** — after this round the journal list + post pages are the only ones still carrying the coast-photo CTA; every page the client reviewed is button-only. Align the journal too?
 6. **Brown-box order** — after Our Services (implemented) vs right after the hero (her earlier sentence). Confirm.
+7. **Lighter brown** — `#3E3227` (new `umber` token); confirm the tone.
 
 ## Waiting on the client
 
