@@ -14,9 +14,15 @@ Every text on the website, grouped by page and section, shown in the three langu
 
 **`nav.label.property`**
 
-EN — Property\
-FR — Propriété\
-ES — Propiedad
+EN — Real Estate\
+FR — Immobilier\
+ES — Inmobiliaria
+
+**`nav.label.residences`**
+
+EN — Residences\
+FR — Résidences\
+ES — Residencias
 
 **`nav.label.legal`**
 
@@ -58,7 +64,7 @@ ES — Nuestros Servicios
 
 **`footer.servicesLinks[0]`**
 
-EN — Property Advisory\
+EN — Real Estate Advisory\
 FR — Conseil immobilier\
 ES — Asesoramiento inmobiliario
 
@@ -134,6 +140,18 @@ EN — Make a private enquiry\
 FR — Faire une demande privée\
 ES — Realizar una consulta privada
 
+**`footer.whatsapp`**
+
+EN — WhatsApp\
+FR — WhatsApp\
+ES — WhatsApp
+
+**`footer.whatsappMessage`**
+
+EN — Hello, I would like to make an enquiry about your services in Spain.\
+FR — Bonjour, je souhaiterais faire une demande concernant vos services en Espagne.\
+ES — Hola, me gustaría hacer una consulta sobre sus servicios en España.
+
 **`footer.rights`**
 
 EN — © 2021 Legal Boutique Advisers. All rights reserved.\
@@ -141,6 +159,12 @@ FR — © 2021 Legal Boutique Advisers. Tous droits réservés.\
 ES — © 2021 Legal Boutique Advisers. Todos los derechos reservados.
 
 ## ui
+
+**`ui.showSubmenu`**
+
+EN — Show submenu for\
+FR — Afficher le sous-menu de\
+ES — Mostrar el submenú de
 
 **`ui.inquire`**
 
@@ -191,12 +215,6 @@ FR — Faire une demande privée\
 ES — Realizar una consulta privada
 
 ## form
-
-**`form.interestLabel`**
-
-EN — I am interested in\
-FR — Je suis intéressé(e) par :\
-ES — Estoy interesado/a en:
 
 **`form.fullName`**
 
@@ -264,6 +282,18 @@ EN — I confirm that I have read and accept the Privacy Policy.\
 FR — Je confirme avoir lu et accepté la Politique de confidentialité.\
 ES — Confirmo que he leído y acepto la Política de Privacidad.
 
+**`form.regarding`**
+
+EN — Regarding\
+FR — À propos de\
+ES — Sobre
+
+**`form.enquiryAbout`**
+
+EN — I would like to know more about\
+FR — Je souhaiterais en savoir plus sur\
+ES — Me gustaría saber más sobre
+
 **`form.submit`**
 
 EN — Submit enquiry →\
@@ -293,12 +323,6 @@ ES — Respondemos a cada consulta, normalmente en un día laborable.
 EN — Something went wrong. Please try again.\
 FR — Une erreur est survenue. Veuillez réessayer.\
 ES — Algo ha fallado. Por favor, inténtelo de nuevo.
-
-**`form.errorInterest`**
-
-EN — Please select an area of interest.\
-FR — Veuillez sélectionner un domaine.\
-ES — Por favor, seleccione un área de interés.
 
 **`form.errorName`**
 
@@ -382,9 +406,12 @@ ES — Marbella, España
 
 **`home.hero.heading`**
 
-EN — Lawyers & Property Advisers\
-FR — Avocats & Conseillers Immobiliers\
-ES — Abogados & Asesores Inmobiliarios
+EN — Law. Real Estate.\
+Private Client Services.\
+FR — Droit. Immobilier.\
+Clientèle privée.\
+ES — Derecho. Inmobiliaria.\
+Clientes privados.
 
 **`home.hero.sub`**
 
@@ -394,65 +421,35 @@ ES — Con base en Marbella
 
 **`home.hero.body`**
 
-EN — Legal expertise and tailored property advice for international clients. We help you buy, sell, and invest in Spain, while advising on your wider legal, business, and family matters.\
-FR — Expertise juridique et conseil immobilier personnalisé pour une clientèle internationale. Nous vous accompagnons dans l’achat, la vente et l’investissement en Espagne, tout en vous conseillant sur vos questions juridiques, professionnelles et familiales.\
-ES — Experiencia jurídica y asesoramiento inmobiliario personalizado para clientes internacionales. Le ayudamos a comprar, vender e invertir en España, además de asesorarle en sus asuntos jurídicos, empresariales y familiares.
+EN — Legal expertise and tailored property advice for international clients.\
+FR — Expertise juridique et conseil immobilier personnalisé pour une clientèle internationale.\
+ES — Experiencia jurídica y asesoramiento inmobiliario personalizado para clientes internacionales.
 
 **`home.intro.heading`**
 
-EN — Beyond Property.\
-FR — Au-delà de l’immobilier.\
-ES — Más allá del inmobiliario.
+EN — Three Services. One Firm.\
+FR — Trois métiers. Une seule équipe.\
+ES — Tres servicios. Una sola firma.
 
 **`home.intro.body[0]`**
 
-EN — With extensive experience in Spanish law, we bring together legal, property and private client advisory under one roof. From an initial investment or property acquisition to the ongoing management of your interests in Spain, we provide a single, trusted point of contact.\
-FR — Forts d’une solide expérience en droit espagnol, nous réunissons conseil juridique, immobilier et accompagnement de clientèle privée au sein d’une même structure. D’un premier investissement ou d’une acquisition immobilière à la gestion continue de vos intérêts en Espagne, nous vous offrons un interlocuteur de confiance unique.\
-ES — Con una amplia experiencia en derecho español, reunimos asesoramiento jurídico, inmobiliario y de clientes privados en una misma firma. Desde una primera inversión o adquisición inmobiliaria hasta la gestión continuada de sus intereses en España, le ofrecemos un único interlocutor de confianza.
+EN — We combine a law firm, real estate agency and a property management company working as one team. Offering personalized and secure services for our international clients in Spain.\
+FR — Nous réunissons un cabinet d’avocats, une agence immobilière et une société de gestion de biens immobiliers qui travaillent main dans la main. Des services personnalisés et sécurisés pour notre clientèle internationale en Espagne.\
+ES — Reunimos un despacho de abogados, una agencia inmobiliaria y una empresa de gestión de propiedades que trabajan como un solo equipo. Servicios personalizados y seguros para nuestros clientes internacionales en España.
 
-**`home.intro.sideTitle`**
-
-EN — Legal expertise at our core\
-FR — L’expertise juridique au cœur de notre approche\
-ES — La experiencia jurídica, en el centro de nuestro trabajo
-
-**`home.intro.sideBody`**
-
-EN — All our services are delivered with a legal foundation, ensuring your interests are protected at every step.\
-FR — Tous nos services reposent sur une solide base juridique, afin de garantir la protection de vos intérêts à chaque étape.\
-ES — Todos nuestros servicios se prestan sobre una sólida base jurídica, garantizando la protección de sus intereses en cada etapa.
-
-## home.practiceAreas[0] — Property
+## home.practiceAreas[0] — Real Estate
 
 **`home.practiceAreas[0].title`**
 
-EN — Property\
-FR — Propriété\
-ES — Propiedad
+EN — Real Estate\
+FR — Immobilier\
+ES — Inmobiliaria
 
-**`home.practiceAreas[0].items[0]`**
+**`home.practiceAreas[0].body`**
 
-EN — Buy\
-FR — Achat\
-ES — Compra
-
-**`home.practiceAreas[0].items[1]`**
-
-EN — Sell\
-FR — Vente\
-ES — Venta
-
-**`home.practiceAreas[0].items[2]`**
-
-EN — Private Search\
-FR — Recherche privée\
-ES — Búsqueda privada
-
-**`home.practiceAreas[0].items[3]`**
-
-EN — Selected Residences\
-FR — Résidences sélectionnées\
-ES — Residencias seleccionadas
+EN — Acquisition, sale and investment advisory across Spain.\
+FR — Conseil à l’acquisition, à la vente et à l’investissement partout en Espagne.\
+ES — Asesoramiento en compra, venta e inversión en toda España.
 
 ## home.practiceAreas[1] — Legal
 
@@ -462,29 +459,11 @@ EN — Legal\
 FR — Juridique\
 ES — Legal
 
-**`home.practiceAreas[1].items[0]`**
+**`home.practiceAreas[1].body`**
 
-EN — Real Estate Law\
-FR — Droit immobilier\
-ES — Derecho inmobiliario
-
-**`home.practiceAreas[1].items[1]`**
-
-EN — Tax & Structuring\
-FR — Fiscalité & structuration\
-ES — Fiscalidad y estructuración
-
-**`home.practiceAreas[1].items[2]`**
-
-EN — Corporate & Investment\
-FR — Droit des sociétés & investissement\
-ES — Derecho societario e inversión
-
-**`home.practiceAreas[1].items[3]`**
-
-EN — Residency & Relocation\
-FR — Résidence & relocalisation\
-ES — Residencia y reubicación
+EN — Legal and tax advice for property, business and family matters, including inheritance and donations.\
+FR — Conseil juridique et fiscal en matière immobilière, professionnelle et familiale, y compris successions et donations.\
+ES — Asesoramiento jurídico y fiscal en asuntos inmobiliarios, empresariales y familiares, incluidas herencias y donaciones.
 
 ## home.practiceAreas[2] — Private Client Services
 
@@ -494,29 +473,59 @@ EN — Private Client Services\
 FR — Clientèle privée\
 ES — Cliente privado
 
-**`home.practiceAreas[2].items[0]`**
+**`home.practiceAreas[2].body`**
 
-EN — Relocation to Spain\
-FR — Installation en Espagne\
-ES — Reubicación en España
+EN — Property management, relocation and ongoing support.\
+FR — Gestion de résidence, installation et accompagnement dans la durée.\
+ES — Gestión de la vivienda, reubicación y acompañamiento continuo.
 
-**`home.practiceAreas[2].items[1]`**
+**`home.why.heading`**
 
-EN — Architecture & Renovation\
-FR — Architecture & rénovation\
-ES — Arquitectura y reforma
+EN — Why one firm makes a difference\
+FR — Pourquoi tout réunir fait la différence\
+ES — Por qué una sola firma marca la diferencia
 
-**`home.practiceAreas[2].items[2]`**
+## home.why.rows[0] — One person to call.
 
-EN — Private Home Management\
-FR — Gestion privée de résidence\
-ES — Gestión privada del hogar
+**`home.why.rows[0].title`**
 
-**`home.practiceAreas[2].items[3]`**
+EN — One person to call.\
+FR — Un seul interlocuteur.\
+ES — Un solo interlocutor.
 
-EN — Concierge Services\
-FR — Services de conciergerie\
-ES — Servicios de concierge
+**`home.why.rows[0].body`**
+
+EN — You always know who to ask.\
+FR — Vous savez toujours à qui vous adresser.\
+ES — Siempre sabrá a quién preguntar.
+
+## home.why.rows[1] — Legal and tax advice from day one.
+
+**`home.why.rows[1].title`**
+
+EN — Legal and tax advice from day one.\
+FR — Conseil juridique et fiscal dès le premier jour.\
+ES — Asesoramiento jurídico y fiscal desde el primer día.
+
+**`home.why.rows[1].body`**
+
+EN — Our lawyers are involved before you make an offer, not after.\
+FR — Nos avocats interviennent avant votre offre, pas après.\
+ES — Nuestros abogados intervienen antes de que haga una oferta, no después.
+
+## home.why.rows[2] — We don’t disappear after completion.
+
+**`home.why.rows[2].title`**
+
+EN — We don’t disappear after completion.\
+FR — Nous ne disparaissons pas après la vente.\
+ES — No desaparecemos tras la compra.
+
+**`home.why.rows[2].body`**
+
+EN — When you get the keys, we’re still here.\
+FR — Une fois les clés remises, nous restons à vos côtés.\
+ES — Cuando reciba las llaves, seguiremos aquí.
 
 **`home.cta.heading`**
 
@@ -760,18 +769,6 @@ EN — Our Approach\
 FR — Notre approche\
 ES — Nuestro enfoque
 
-**`about.cta.heading`**
-
-EN — Let’s talk.\
-FR — Parlons de vos projets\
-ES — Hablemos
-
-**`about.cta.subline`**
-
-EN — We would be delighted to learn more about your plans in Spain.\
-FR — Nous serions ravis d’en savoir plus sur vos projets en Espagne.\
-ES — Estaremos encantados de conocer mejor sus planes en España.
-
 **`about.culture.eyebrow`**
 
 EN — Cultural Commitment\
@@ -875,12 +872,6 @@ ES — La experiencia jurídica, en el centro de nuestro trabajo
 EN — We advise international clients with clarity, discretion and a deep understanding of the local legal landscape.\
 FR — Nous conseillons une clientèle internationale sur le droit espagnol avec clarté, discrétion et une connaissance approfondie du paysage juridique local.\
 ES — Asesoramos a clientes internacionales en derecho español con claridad, discreción y un profundo conocimiento del marco jurídico local.
-
-**`legal.hero.cta.label`**
-
-EN — Visit our legal practice\
-FR — Visiter notre cabinet juridique\
-ES — Visite nuestro despacho jurídico
 
 **`legal.hero.alt`**
 
@@ -1154,37 +1145,19 @@ EN — Compliance, risk management and corporate governance.\
 FR — Compliance, gestion des risques et gouvernance d’entreprise.\
 ES — Cumplimiento normativo, gestión de riesgos y gobierno corporativo.
 
-**`legal.cta.heading`**
-
-EN — Need legal advice?\
-FR — Besoin d’un conseil juridique ?\
-ES — ¿Necesita asesoramiento jurídico?
-
-**`legal.cta.subline`**
-
-EN — We are here to help.\
-FR — Nous sommes à votre disposition.\
-ES — Estamos aquí para ayudarle.
-
 # Property page
 
 **`property.hero.title`**
 
-EN — Property\
-FR — Propriété\
-ES — Propiedad
-
-**`property.hero.subline`**
-
-EN — A considered approach to property in Spain.\
-FR — Une approche réfléchie de l’immobilier en Espagne.\
-ES — Una forma cuidada de entender la propiedad en España.
+EN — One Firm. We guide you through every aspect of your property journey.\
+FR — Une seule firme. Nous vous accompagnons à chaque étape de votre projet immobilier.\
+ES — Una sola firma. Le acompañamos en cada aspecto de su proyecto inmobiliario.
 
 **`property.hero.body`**
 
-EN — Buying or selling property involves more than finding the right home. We advise our clients throughout the process, bringing together property expertise, legal insight and a trusted professional network.\
-FR — Acheter ou vendre un bien immobilier ne se résume pas à trouver la bonne propriété. Nous accompagnons nos clients tout au long du processus en réunissant expertise immobilière, savoir-faire juridique et réseau de professionnels de confiance.\
-ES — Comprar o vender una propiedad implica mucho más que encontrar la vivienda adecuada. Asesoramos a nuestros clientes durante todo el proceso, aunando experiencia inmobiliaria, conocimiento jurídico y una red de profesionales de confianza.
+EN — From identifying the right property to negotiating its acquisition, managing the legal process and overseeing your home after completion, we provide a seamless service through one dedicated team.\
+FR — De l’identification du bon bien à la négociation de son acquisition, en passant par la gestion du processus juridique et le suivi de votre résidence après la signature, nous offrons un service fluide porté par une équipe dédiée.\
+ES — Desde la identificación de la propiedad adecuada hasta la negociación de su adquisición, la gestión del proceso jurídico y el cuidado de su vivienda una vez finalizada la compra, ofrecemos un servicio ágil a través de un único equipo.
 
 **`property.hero.cta.label`**
 
@@ -1195,36 +1168,90 @@ ES — Háblenos de sus necesidades
 **`property.hero.alt`**
 
 EN — Golf fairway with bunkers at dusk\
-FR — Terrasse de villa moderne avec garde-corps en verre donnant sur la mer au crépuscule\
-ES — Terraza de villa moderna con barandilla de cristal sobre el mar al atardecer
+FR — Parcours de golf avec bunkers au crépuscule\
+ES — Campo de golf con bunkers al atardecer
 
-## property.services[0] — Private Search
+**`property.approach.eyebrow`**
+
+EN — A curated approach\
+FR — Une approche sur mesure\
+ES — Un enfoque cuidado
+
+**`property.approach.heading`**
+
+EN — More Than Properties. A Partner at Every Step.\
+FR — Plus que des biens. Un partenaire à chaque étape.\
+ES — Más que propiedades. Un socio en cada paso.
+
+**`property.approach.body`**
+
+EN — We provide a tailored and discreet service for clients buying, selling or investing in Spain, with a focus on quality, value and long-term relationships.\
+FR — Nous offrons un service sur mesure et discret aux clients qui achètent, vendent ou investissent en Espagne, avec une attention particulière à la qualité, à la valeur et à la relation de long terme.\
+ES — Ofrecemos un servicio personalizado y discreto a clientes que compran, venden o invierten en España, con especial atención a la calidad, el valor y las relaciones a largo plazo.
+
+**`property.approach.link.label`**
+
+EN — Our approach\
+FR — Notre approche\
+ES — Nuestro enfoque
+
+**`property.featured.title`**
+
+EN — Featured Properties\
+FR — Propriétés en vedette\
+ES — Propiedades destacadas
+
+**`property.band.eyebrow`**
+
+EN — Buying in Spain\
+FR — Acheter en Espagne\
+ES — Comprar en España
+
+**`property.band.heading`**
+
+EN — Access to the Finest Opportunities.\
+FR — Accès aux plus belles opportunités.\
+ES — Acceso a las mejores oportunidades.
+
+**`property.band.body`**
+
+EN — From contemporary villas to historic townhouses, we offer exclusive access to exceptional properties across the most sought-after locations in Spain.\
+FR — Des villas contemporaines aux maisons de ville historiques, nous offrons un accès exclusif à des biens d’exception dans les adresses les plus recherchées d’Espagne.\
+ES — Desde villas contemporáneas hasta casas señoriales, ofrecemos acceso exclusivo a propiedades excepcionales en las ubicaciones más demandadas de España.
+
+**`property.band.link.label`**
+
+EN — Our properties\
+FR — Nos propriétés\
+ES — Nuestras propiedades
+
+**`property.servicesHeading`**
+
+EN — Our Services\
+FR — Nos services\
+ES — Nuestros servicios
+
+## property.services[0] — Property Search
 
 **`property.services[0].title`**
 
-EN — Private Search\
-FR — Recherche privée\
-ES — Búsqueda privada
+EN — Property Search\
+FR — Recherche de biens\
+ES — Búsqueda de propiedades
 
 **`property.services[0].body`**
 
 EN — Some of the most desirable properties are never publicly marketed. We conduct a tailored search through our network to find opportunities that meet your needs.\
-FR — Certaines des propriétés les plus recherchées ne sont jamais proposées publiquement. Nous menons une recherche sur mesure au sein de notre réseau afin d’identifier les opportunités correspondant à vos critères.\
+FR — Certains des biens les plus recherchés ne sont jamais proposés publiquement. Nous menons une recherche sur mesure au sein de notre réseau afin d’identifier les opportunités correspondant à vos critères.\
 ES — Algunas de las propiedades más exclusivas nunca llegan al mercado público. Realizamos una búsqueda a medida a través de nuestra red para encontrar oportunidades que se ajusten a sus necesidades.
 
-**`property.services[0].link`**
-
-EN — /inquiry\
-FR — /inquiry\
-ES — /inquiry
-
-## property.services[1] — Buying
+## property.services[1] — Acquisition Advisory
 
 **`property.services[1].title`**
 
-EN — Buying\
-FR — Achat\
-ES — Compra
+EN — Acquisition Advisory\
+FR — Conseil à l’acquisition\
+ES — Asesoramiento en la adquisición
 
 **`property.services[1].body`**
 
@@ -1232,31 +1259,33 @@ EN — From our first conversation to the moment you receive the keys. We help y
 FR — De notre premier échange jusqu’à la remise des clés, nous vous aidons à trouver le bien qui vous correspond et vous accompagnons à chaque étape de l’acquisition.\
 ES — Desde nuestra primera conversación hasta el momento en que recibe las llaves. Le ayudamos a encontrar la propiedad adecuada y le acompañamos en cada etapa de la adquisición.
 
-**`property.services[1].link`**
-
-EN — /inquiry\
-FR — /inquiry\
-ES — /inquiry
-
-## property.services[2] — Selling
+## property.services[2] — Sale Advisory
 
 **`property.services[2].title`**
 
-EN — Selling\
-FR — Vente\
-ES — Venta
+EN — Sale Advisory\
+FR — Conseil à la vente\
+ES — Asesoramiento en la venta
 
 **`property.services[2].body`**
 
 EN — A discreet and strategic approach to selling your property, from positioning and presentation to identifying qualified buyers and managing the transaction.\
-FR — Une approche discrète et stratégique de la vente de votre propriété, depuis son positionnement et sa présentation jusqu’à l’identification d’acquéreurs qualifiés et la gestion de la transaction.\
+FR — Une approche discrète et stratégique de la vente de votre bien, du positionnement et de la présentation à l’identification d’acquéreurs qualifiés et à la gestion de la transaction.\
 ES — Un enfoque discreto y estratégico para la venta de su propiedad, desde el posicionamiento y la presentación hasta la identificación de compradores cualificados y la gestión de la operación.
 
-**`property.services[2].link`**
+## property.services[3] — Investment Advisory
 
-EN — /inquiry\
-FR — /inquiry\
-ES — /inquiry
+**`property.services[3].title`**
+
+EN — Investment Advisory\
+FR — Conseil en investissement\
+ES — Asesoramiento en inversión
+
+**`property.services[3].body`**
+
+EN — Independent advice for property investment across Spain’s key markets.\
+FR — Un conseil indépendant pour vos investissements immobiliers sur les principaux marchés espagnols.\
+ES — Asesoramiento independiente para la inversión inmobiliaria en los principales mercados de España.
 
 **`property.crossLink.left.heading`**
 
@@ -1360,18 +1389,6 @@ EN — Limestone hallway with law books opening to sea terrace\
 FR — Couloir en pierre calcaire avec livres de droit ouvrant sur une terrasse face à la mer\
 ES — Pasillo de piedra caliza con libros de derecho que se abre a una terraza frente al mar
 
-**`property.cta.heading`**
-
-EN — Considering a property project in Spain?\
-FR — Vous envisagez un projet immobilier en Espagne?\
-ES — ¿Tiene un proyecto inmobiliario en España?
-
-**`property.cta.subline`**
-
-EN — We would be delighted to hear from you.\
-FR — Nous serions ravis d’échanger avec vous.\
-ES — Estaremos encantados de atenderle.
-
 # Private client page
 
 **`privateClient.hero.title`**
@@ -1392,85 +1409,11 @@ EN — We provide ongoing support that extends far beyond the transaction. From 
 FR — Nous vous offrons un accompagnement continu qui va bien au-delà de la transaction. De votre installation à la gestion de votre résidence et à vos besoins quotidiens, nous sommes votre interlocuteur de confiance en Espagne.\
 ES — Ofrecemos un acompañamiento continuo que va mucho más allá de la operación. Desde la reubicación hasta la gestión del hogar y las necesidades del día a día, somos su punto de contacto de confianza en España.
 
-**`privateClient.hero.cta.label`**
-
-EN — Discuss your needs\
-FR — Échanger sur vos besoins\
-ES — Háblenos de sus necesidades
-
 **`privateClient.hero.alt`**
 
 EN — Terrace with olive tree overlooking the sea\
 FR — Terrasse avec olivier surplombant la mer\
 ES — Terraza con olivo con vistas al mar
-
-**`privateClient.contactPoints.heading`**
-
-EN — One point of contact in Spain\
-FR — Un interlocuteur unique en Espagne\
-ES — Un único punto de contacto en España
-
-**`privateClient.contactPoints.subline`**
-
-EN — We simplify what can be a complex process. Tell us what you need ; we’ll coordinate the rest.\
-FR — Nous simplifions ce qui peut être un processus complexe. Faites-nous part de vos besoins ; nous coordonnons le reste.\
-ES — Simplificamos lo que puede ser un proceso complejo. Cuéntenos qué necesita; nosotros coordinamos el resto.
-
-## privateClient.contactPoints.items[0] — Personal service
-
-**`privateClient.contactPoints.items[0].title`**
-
-EN — Personal service\
-FR — Service personnalisé\
-ES — Servicio personal
-
-**`privateClient.contactPoints.items[0].sub`**
-
-EN — Tailored to you\
-FR — Adapté à vos besoins\
-ES — Adaptado a usted
-
-## privateClient.contactPoints.items[1] — Trusted network
-
-**`privateClient.contactPoints.items[1].title`**
-
-EN — Trusted network\
-FR — Réseau de confiance\
-ES — Red de confianza
-
-**`privateClient.contactPoints.items[1].sub`**
-
-EN — Carefully selected\
-FR — Rigoureusement sélectionné\
-ES — Cuidadosamente seleccionada
-
-## privateClient.contactPoints.items[2] — Discretion
-
-**`privateClient.contactPoints.items[2].title`**
-
-EN — Discretion\
-FR — Discrétion\
-ES — Discreción
-
-**`privateClient.contactPoints.items[2].sub`**
-
-EN — Always\
-FR — Toujours\
-ES — Siempre
-
-## privateClient.contactPoints.items[3] — Trilingual team
-
-**`privateClient.contactPoints.items[3].title`**
-
-EN — Trilingual team\
-FR — Équipe trilingue\
-ES — Equipo trilingüe
-
-**`privateClient.contactPoints.items[3].sub`**
-
-EN — English · Spanish · French\
-FR — Anglais · Espagnol · Français\
-ES — Inglés · Español · Francés
 
 **`privateClient.servicesHeading`**
 
@@ -1713,18 +1656,6 @@ ES — Servicios náuticos
 EN — Lifestyle Partners\
 FR — Partenaires lifestyle\
 ES — Colaboradores de estilo de vida
-
-**`privateClient.cta.heading`**
-
-EN — How can we assist you?\
-FR — Comment pouvons-nous vous accompagner ?\
-ES — ¿Cómo podemos ayudarle?
-
-**`privateClient.cta.subline`**
-
-EN — Tell us what brings you to Spain.\
-FR — Parlez-nous de ce qui vous amène en Espagne.\
-ES — Cuéntenos qué le trae a España.
 
 # Still to translate
 

@@ -32,6 +32,8 @@ export const footer = {
     "info@legalboutiqueadvisers.com",
   ],
   enquire: "Faire une demande privée",
+  whatsapp: "WhatsApp",
+  whatsappMessage: "Bonjour, je souhaiterais faire une demande concernant vos services en Espagne.",
   rights: "© 2021 Legal Boutique Advisers. Tous droits réservés.",
 };
 

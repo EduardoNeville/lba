@@ -215,6 +215,25 @@ equals(
 equals('nav: /legal highlights Legal only', activeNavItems('/legal'), ['Legal'])
 equals('nav: a journal post keeps Journal highlighted', activeNavItems('/blog/any-post'), ['Journal'])
 
+// --- the footer's WhatsApp channel ------------------------------------------
+// The link has to reach the business line with the visitor's message already written,
+// in the language they are reading.
+const { SiteFooter } = await load('/src/components/layout/SiteFooter.tsx')
+const footerEn = renderPage('/', 'en', React.createElement(SiteFooter))
+has('footer: WhatsApp is offered', footerEn, 'href="https://wa.me/34663109014?text=')
+has('footer: WhatsApp is named for assistive tech', footerEn, 'aria-label="WhatsApp"')
+has('footer: the chat opens with the message written', footerEn, 'I%20would%20like%20to%20make%20an%20enquiry')
+has(
+  'footer: the message follows the language [fr]',
+  renderPage('/', 'fr', React.createElement(SiteFooter)),
+  'je%20souhaiterais%20faire%20une%20demande',
+)
+has(
+  'footer: the message follows the language [es]',
+  renderPage('/', 'es', React.createElement(SiteFooter)),
+  'consulta%20sobre%20sus%20servicios',
+)
+
 // --- section order, and Residences moved into a dropdown --------------------
 const header = navHtml('/property/residences')
 equals(
