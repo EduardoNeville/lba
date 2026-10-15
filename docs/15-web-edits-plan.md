@@ -2,8 +2,8 @@
 
 **Branch:** `feat/web-edits-part1` · **worktree:** `/home/eduardoneville/websites/lba-web-edits-part1` (based on `develop` @ `d6a0cae`)
 **Sources:**
-- **Part 1** committed as `docs/14-web-edits-part1-source.docx`; thirteen annotated screenshots in `assets/edits-part1/01…13-*.png|jpg`.
-- **Part 2** ("CONTINUACION DESDE REAL ESTATE PAGE") committed as `docs/14-web-edits-part2-source.docx`; ten annotated screenshots in `assets/edits-part2/01…10-*.png|jpg`.
+- **Part 1** committed as `docs/15-web-edits-part1-source.docx`; thirteen annotated screenshots in `assets/edits-part1/01…13-*.png|jpg`.
+- **Part 2** ("CONTINUACION DESDE REAL ESTATE PAGE") committed as `docs/15-web-edits-part2-source.docx`; ten annotated screenshots in `assets/edits-part2/01…10-*.png|jpg`.
 
 The client's raw drops stay out of git in the main working copy, referenced here by path:
 - `assets/Terraza Mediterránea con Piscina Infinita.png` — the "IMAGENNUEVA1" home hero (delivered ✓)

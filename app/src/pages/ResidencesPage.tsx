@@ -75,19 +75,13 @@ export function ResidencesPage() {
     <>
       <section className="py-14 md:py-20">
         <Container>
-          <p className="micro flex items-center gap-3 text-ink">
-            <span aria-hidden className="h-px w-8 bg-ink/60" />
-            {copy.hero.eyebrow}
-          </p>
+          {/* The rule alone — the mockup drops the word above the title. */}
+          <span aria-hidden className="block h-px w-8 bg-ink/60" />
           <h1 className="font-display mt-4 max-w-[22ch] text-4xl uppercase leading-[1.08] tracking-wide md:text-5xl">
             {copy.hero.title}
           </h1>
           <p className="mt-6 max-w-prose text-sm leading-relaxed text-taupe md:text-[15px]">{copy.hero.subline}</p>
-          <div className="mt-6">
-            <ArrowLink to="/inquiry" hitArea>
-              {copy.hero.privateSearch}
-            </ArrowLink>
-          </div>
+          <p className="mt-4 max-w-prose text-sm leading-relaxed text-taupe md:text-[15px]">{copy.hero.body}</p>
         </Container>
       </section>
 

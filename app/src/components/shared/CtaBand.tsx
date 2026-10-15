@@ -22,7 +22,7 @@ export function CtaBand({
   const ctaOnly = !heading && !subline;
   return (
     <section
-      className={`relative isolate overflow-hidden ${ctaOnly ? "py-14 md:py-16" : "py-20 md:py-28"} ${variant === "accent" ? "bg-parchment" : ""}`}
+      className={`relative isolate overflow-hidden ${ctaOnly ? "py-10 md:py-12" : "py-20 md:py-28"} ${variant === "accent" ? "bg-parchment" : ""}`}
     >
       {image && (
         <img
