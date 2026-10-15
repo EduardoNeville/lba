@@ -4,25 +4,32 @@ import logo from '../../assets/logo-lba-ink.png'
 import { prefersReducedMotion } from '../../lib/motion'
 import { useRoutePending } from '../../lib/routePending'
 
-// A navigation that resolves within this shows nothing at all: a veil that flashes on
-// every click is worse than no veil. It is the length of a real wait that earns one.
-const ARM_MS = 100
-// Once it is up, it stays long enough to read as an animation rather than a flicker.
-const MIN_VISIBLE_MS = 220
-const OUT_MS = 380
+// A hair after the click, so the veil covers the page being arrived at rather than the
+// one being left. The veil is opaque, so this is about which content sits behind it.
+const ARM_MS = 60
+// How long it stays once it is up. This is a brand moment, not a spinner, and it was
+// asked to read as one — it is also the cost of it, on every single page change.
+const MIN_VISIBLE_MS = 1300
+// Blur in, and blur out. The entrance is the slower of the two: arriving is the
+// deliberate part, leaving should feel like it is getting out of the way.
+const IN_MS = 600
+const OUT_MS = 500
 // If something never resolves — a chunk that fails, a dead network — the page is let
 // through anyway rather than sitting behind a logo for ever.
-const MAX_HOLD_MS = 2500
+const MAX_HOLD_MS = 4000
 
 /**
- * The opening animation: the lockup blurs in over the cream canvas while a page is on
- * its way, then blurs out as it arrives.
+ * The page-change animation: the lockup blurs in over the cream canvas as a page is
+ * opened, and blurs out as it arrives.
  *
- * Two deliberate choices. It appears only when there is something to wait for (a
- * lazily-loaded route, or the first paint of the site) — never on an instant
- * navigation. And it renders nothing on the server, so crawlers and no-JS readers get
- * the page content immediately instead of a splash screen; there is no hidden content
+ * It covers the first paint of the site and every page change after it, holds for a
+ * moment of its own, and stays up for as long as a lazily-loaded route is genuinely
+ * still on its way. It renders nothing on the server, so crawlers and no-JS readers get
+ * the page content immediately instead of a splash screen — there is no hidden content
  * to un-hide.
+ *
+ * The timings below are the whole cost of it: roughly 1.9s from click to page, on every
+ * page change.
  */
 export function RouteVeil() {
   const { pending } = useRoutePending()
@@ -33,16 +40,24 @@ export function RouteVeil() {
   const [entered, setEntered] = useState(false)
   const [leaving, setLeaving] = useState(false)
   const shownAt = useRef(0)
-  const lastPath = useRef<string | null>(null)
+  // The pathname the veil has already been armed for, so that finishing one animation
+  // does not arm the next one (the effect depends on `visible`, which flips when the
+  // veil unmounts — without this it would show itself for ever).
+  const armedFor = useRef<string | null>(null)
 
-  // Arm the veil: on the first paint of the site, and whenever a route reports that it
-  // is still loading. A wait shorter than ARM_MS never shows anything.
+  // The veil covers the first paint of the site and every page change after it. Covering
+  // only the slow routes was too subtle: the chunks are cached after the first visit, so
+  // a navigation that is waiting on nothing looked like no navigation at all.
   useEffect(() => {
-    if (lastPath.current === pathname && !pending) return
-    const firstPaint = lastPath.current === null
-    lastPath.current = pathname
-    if (visible) return
-    if (!firstPaint && !pending) return
+    if (armedFor.current === pathname) return
+    if (visible) {
+      // A change while it is up: leave it up. The animation keeps its own timeline
+      // rather than restarting, so clicking through several pages quickly does not
+      // stack up a queue of veils.
+      armedFor.current = pathname
+      return
+    }
+    armedFor.current = pathname
     const timer = setTimeout(() => {
       shownAt.current = Date.now()
       setEntered(false)
@@ -50,7 +65,7 @@ export function RouteVeil() {
       setVisible(true)
     }, ARM_MS)
     return () => clearTimeout(timer)
-  }, [pathname, pending, visible])
+  }, [pathname, visible])
 
   // Blur in: mount blurred, then sharpen on the next frame so the transition has two
   // states to move between.
@@ -87,19 +102,24 @@ export function RouteVeil() {
   const mark = leaving
     ? reduceMotion
       ? 'opacity-0'
-      : 'opacity-0 blur-md scale-[1.02]'
+      : 'opacity-0 blur-[10px] scale-[1.02]'
     : entered || reduceMotion
       ? 'opacity-100 blur-0 scale-100'
-      : 'opacity-0 blur-lg scale-[0.97]'
+      : 'opacity-0 blur-[14px] scale-[0.96]'
 
   return (
     <div
       aria-hidden="true"
       className={`fixed inset-0 z-[70] flex items-center justify-center bg-cream transition-opacity ease-out ${
-        leaving ? 'opacity-0 duration-[380ms]' : 'opacity-100 duration-[280ms]'
+        leaving ? 'opacity-0 duration-[500ms]' : 'opacity-100 duration-[280ms]'
       }`}
     >
-      <img src={logo} alt="" className={`h-12 w-auto object-contain transition-all ease-out duration-[380ms] md:h-16 ${mark}`} />
+      <img
+        src={logo}
+        alt=""
+        className={`h-12 w-auto object-contain transition-all ease-out md:h-16 ${mark}`}
+        style={{ transitionDuration: `${leaving ? OUT_MS : IN_MS}ms` }}
+      />
     </div>
   )
 }

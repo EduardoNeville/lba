@@ -37,6 +37,10 @@ const { devResidences } = (await load('/src/data/seed/residences.ts')) as {
 type Property = import('../src/lib/properties.ts').Property
 
 const properties = devResidences()
+// The copy is asserted through the dictionaries rather than as string literals: the
+// client edits this text, and a test that breaks on every copy change teaches nobody
+// anything.
+const Dicts = (await load('/src/data/locales/residences.ts')) as typeof import('../src/data/locales/residences.ts')
 const byRef = (ref: string): Property => {
   const found = properties.find((p) => p.refCode === ref)
   if (!found) throw new Error(`No fixture residence with reference ${ref}`)
@@ -673,7 +677,6 @@ equals('admin: loading a residence into the editor is lossless', Admin.toInput(A
 // verification: the filter panel, the empty state, the "new" badge, and every label
 // in the area/type/feature maps in all three languages.
 const Filters = (await load('/src/lib/propertyFilters.ts')) as typeof import('../src/lib/propertyFilters.ts')
-const Dicts = (await load('/src/data/locales/residences.ts')) as typeof import('../src/data/locales/residences.ts')
 const { PROPERTY_AREAS, PROPERTY_FEATURES, PROPERTY_TYPES } = Reader
 
 // A residence that uses whatever label is under test, with a neutral title so the
@@ -723,7 +726,7 @@ const emptyText = stripHtml(renderPage('/property/residences?type=plot', 'en', R
 has('listing: empty state', emptyText, 'No residences match your search.')
 has('listing: empty state explains', emptyText, 'or tell us what you are looking for')
 has('listing: empty state can be cleared', emptyText, 'Clear all filters')
-has('listing: empty state offers the private search', emptyText, 'Ask about our private search')
+has('listing: empty state offers the private search', emptyText, Dicts.en.hero.privateSearch)
 
 // The "new" badge only appears for a residence published in the last 30 days.
 const justPublished = synthetic({ publishedAt: { seconds: Math.floor(Date.now() / 1000) } })
