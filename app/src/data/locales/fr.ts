@@ -1,21 +1,32 @@
 // French copy — mirrors the EN shapes in src/data/*.ts. Only strings differ; icons/values/links unchanged.
-export const nav = {
+// Type-only import of the master copy: a key en has and this file lacks is a
+// compile error, before any check runs.
+import type {
+  nav as NavEn,
+  footer as FooterEn,
+  ui as UiEn,
+  form as FormEn,
+  options as OptionsEn,
+  aside as AsideEn,
+} from './en.ts'
+
+export const nav: typeof NavEn = {
   label: {
-    property: "Propriété",
-    residences: "Résidences",
-    legal: "Juridique",
-    privateClient: "Services aux clients privés",
+    property: "Immobilier",
+    residences: "Propriétés",
+    legal: "Droit",
+    privateClient: "Gestion de biens",
     journal: "Blog",
     about: "À propos",
   },
 };
 
-export const footer = {
+export const footer: typeof FooterEn = {
   tagline: "Juristes & Conseillers Privés",
   services: "Nos Services",
   servicesLinks: [
-    "Conseil immobilier",
-    "Conseil juridique",
+    "Cabinet d’avocats",
+    "Immobilier",
     "Conseil aux clients privés",
   ],
   information: "Informations",
@@ -32,22 +43,28 @@ export const footer = {
     "info@legalboutiqueadvisers.com",
   ],
   enquire: "Faire une demande privée",
+  whatsapp: "WhatsApp",
+  whatsappMessage: "Bonjour, je souhaiterais faire une demande concernant vos services en Espagne.",
   rights: "© 2021 Legal Boutique Advisers. Tous droits réservés.",
 };
 
-export const ui = {
+export const ui: typeof UiEn = {
+  showSubmenu: "Afficher le sous-menu de",
+  mainNav: "Navigation principale",
+  logoLabel: "Legal Boutique Advisers — page d’accueil",
+  openMenu: "Ouvrir le menu",
+  closeMenu: "Fermer le menu",
+  switchLanguage: "Changer la langue :",
+  scrollDown: "Faire défiler",
   inquire: "Nous contacter",
   discoverMore: "Découvrir",
   viewAllProperties: "Voir toutes les propriétés",
   viewResidence: "Voir la résidence",
   explore: "Explorer",
-  meetTheTeam: "Rencontrer l’équipe",
-  selectedResidences: "Résidences sélectionnées",
   privateEnquiry: "Faire une demande privée",
 };
 
-export const form = {
-  interestLabel: "Je suis intéressé(e) par :",
+export const form: typeof FormEn = {
   fullName: "Nom complet",
   fullNamePlaceholder: "Votre nom complet",
   email: "E-mail",
@@ -70,13 +87,12 @@ export const form = {
   hero: {
     title: "Comment pouvons-nous vous accompagner ?",
   },
-  errorInterest: "Veuillez sélectionner un domaine.",
   errorName: "Veuillez nous indiquer votre nom.",
   errorEmail: "Veuillez saisir une adresse e-mail valide.",
   errorConsent: "Votre consentement est requis pour vous contacter.",
 };
 
-export const options = [
+export const options: typeof OptionsEn = [
   { icon: "key", label: "Conseil immobilier", value: "property" },
   { icon: "scales", label: "Conseil juridique", value: "legal" },
   {
@@ -87,7 +103,7 @@ export const options = [
   { icon: "globe", label: "Autre demande", value: "other" },
 ];
 
-export const aside = {
+export const aside: typeof AsideEn = {
   heading: "La discrétion est au cœur de tout ce que nous faisons.",
   body: "Votre demande est confidentielle et sera traitée personnellement par un membre de notre équipe.",
 };

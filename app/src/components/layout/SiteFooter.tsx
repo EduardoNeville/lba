@@ -9,10 +9,24 @@ const SOCIALS = [
   { name: 'linkedin', label: 'LinkedIn', href: 'https://www.linkedin.com/company/legal-boutique-advisers/' },
 ]
 
+// The business line, in the international form wa.me wants — no punctuation, no plus.
+// The number as a visitor reads it lives with the address below.
+const WHATSAPP_NUMBER = '34663109014'
+
 export function SiteFooter() {
   const { lang, setLang } = useLang()
   const footer = useFooter()
   const nav = useNav()
+  // WhatsApp opens with the enquirer's message already written, in the language they
+  // are reading, so the first thing the office sees is what they want.
+  const socials = [
+    ...SOCIALS,
+    {
+      name: 'whatsapp',
+      label: footer.whatsapp,
+      href: `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(footer.whatsappMessage)}`,
+    },
+  ]
 
   return (
     <footer className="bg-maroon text-cream">
@@ -90,7 +104,7 @@ export function SiteFooter() {
             </p>
           </address>
           <div className="mt-5 flex items-center gap-4">
-            {SOCIALS.map((s) => (
+            {socials.map((s) => (
               <a key={s.name} href={s.href} target="_blank" rel="noreferrer" aria-label={s.label} className="text-cream transition-colors hover:text-cream">
                 <Icon name={s.name} className="h-4 w-4 !text-cream" />
               </a>

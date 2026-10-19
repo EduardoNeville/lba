@@ -29,6 +29,11 @@ export function useNav() {
     to: item.to,
     end: item.end,
     label: labels[item.key] ?? item.key,
+    children: (item.children ?? []).map((child) => ({
+      key: child.key,
+      to: child.to,
+      label: labels[child.key] ?? child.key,
+    })),
   }));
 }
 

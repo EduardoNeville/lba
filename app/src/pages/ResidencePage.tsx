@@ -13,13 +13,10 @@ import { cachedProperties, getProperty, type Property } from '../lib/properties'
 import { formatDate, formatPrice, similarResidences } from '../lib/propertyFilters'
 import { labelFor, useResidencesCopy } from '../lib/residencesCopy'
 import { useJsonLd } from '../lib/jsonLd'
-import { localeDict } from '../lib/i18n'
 import { useLang } from '../lib/lang'
 import { useUi } from '../lib/nav'
 import { renderMarkdown } from '../lib/markdown'
 import { setPageMeta } from '../lib/seo'
-import { cta as propertyCta } from '../data/property'
-import { en as propertyEn, es as propertyEs, fr as propertyFr } from '../data/locales/property'
 
 // The residence itself, split from the data/404 handling below so it can be
 // rendered directly (by the dead-copy audit and by scripts/test-residence-card).
@@ -27,11 +24,6 @@ export function ResidenceDetail({ property, similar }: { property: Property; sim
   const copy = useResidencesCopy()
   const { lang } = useLang()
   const ui = useUi()
-  // The section CTA is the property page's, so both residences pages end the same way.
-  const sectionCopy = useMemo(
-    () => localeDict(propertyEn, lang === 'fr' ? propertyFr : lang === 'es' ? propertyEs : undefined),
-    [lang],
-  )
 
   const price = formatPrice(property, lang)
   const area = labelFor(copy.areas, property.area)
@@ -166,10 +158,8 @@ export function ResidenceDetail({ property, similar }: { property: Property; sim
         </section>
       )}
 
+      {/* Image gone (client, part 2): the button alone. */}
       <CtaBand
-        heading={sectionCopy.cta.heading}
-        subline={sectionCopy.cta.subline}
-        image={propertyCta.image}
         cta={{ to: enquiry, label: ui.privateEnquiry }}
       />
     </>

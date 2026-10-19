@@ -13,10 +13,7 @@ import {
   type ResidenceFilters as Filters,
 } from '../lib/propertyFilters'
 import { useResidencesCopy } from '../lib/residencesCopy'
-import { localeDict } from '../lib/i18n'
-import { useLang } from '../lib/lang'
-import { en as propertyEn, es as propertyEs, fr as propertyFr } from '../data/locales/property'
-import { cta as propertyCta } from '../data/property'
+import { useUi } from '../lib/nav'
 
 const GRID = 'grid gap-6 sm:grid-cols-2 lg:grid-cols-3'
 
@@ -25,7 +22,6 @@ const GRID = 'grid gap-6 sm:grid-cols-2 lg:grid-cols-3'
 // back button. Filtering itself happens in memory over one query (lib/properties).
 export function ResidencesPage() {
   const copy = useResidencesCopy()
-  const { lang } = useLang()
   const [params, setParams] = useSearchParams()
   const filters = useMemo(() => parseFilters(params), [params])
 
@@ -64,10 +60,7 @@ export function ResidencesPage() {
 
   const results = useMemo(() => (items ? applyFilters(items, filters) : []), [items, filters])
 
-  const propertyCopy = useMemo(
-    () => localeDict(propertyEn, lang === 'fr' ? propertyFr : lang === 'es' ? propertyEs : undefined),
-    [lang],
-  )
+  const ui = useUi()
 
   const loading = items === null && !failed
 
@@ -75,19 +68,13 @@ export function ResidencesPage() {
     <>
       <section className="py-14 md:py-20">
         <Container>
-          <p className="micro flex items-center gap-3 text-ink">
-            <span aria-hidden className="h-px w-8 bg-ink/60" />
-            {copy.hero.eyebrow}
-          </p>
+          {/* The rule alone — the mockup drops the word above the title. */}
+          <span aria-hidden className="block h-px w-8 bg-ink/60" />
           <h1 className="font-display mt-4 max-w-[22ch] text-4xl uppercase leading-[1.08] tracking-wide md:text-5xl">
             {copy.hero.title}
           </h1>
           <p className="mt-6 max-w-prose text-sm leading-relaxed text-taupe md:text-[15px]">{copy.hero.subline}</p>
-          <div className="mt-6">
-            <ArrowLink to="/inquiry" hitArea>
-              {copy.hero.privateSearch}
-            </ArrowLink>
-          </div>
+          <p className="mt-4 max-w-prose text-sm leading-relaxed text-taupe md:text-[15px]">{copy.hero.body}</p>
         </Container>
       </section>
 
@@ -140,10 +127,7 @@ export function ResidencesPage() {
       </section>
 
       <CtaBand
-        heading={propertyCopy.cta.heading}
-        subline={propertyCopy.cta.subline}
-        image={propertyCta.image}
-        cta={{ to: '/inquiry', label: propertyCopy.hero.cta.label }}
+        cta={{ to: '/inquiry', label: ui.privateEnquiry }}
       />
     </>
   )

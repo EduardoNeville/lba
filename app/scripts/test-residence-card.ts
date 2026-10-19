@@ -37,6 +37,10 @@ const { devResidences } = (await load('/src/data/seed/residences.ts')) as {
 type Property = import('../src/lib/properties.ts').Property
 
 const properties = devResidences()
+// The copy is asserted through the dictionaries rather than as string literals: the
+// client edits this text, and a test that breaks on every copy change teaches nobody
+// anything.
+const Dicts = (await load('/src/data/locales/residences.ts')) as typeof import('../src/data/locales/residences.ts')
 const byRef = (ref: string): Property => {
   const found = properties.find((p) => p.refCode === ref)
   if (!found) throw new Error(`No fixture residence with reference ${ref}`)
@@ -182,13 +186,18 @@ has('fr page: chip from the URL (type)', frPage, 'Villa')
 has('fr page: filter count badge', frPage, 'Filtres · 2')
 
 // --- the nav highlights exactly one section --------------------------------
-// /property/residences sits under /property, so without `end` on the parent both
-// nav items light up (the bug reported on the dev site). Prefix matching must stay
-// for items that have no children: a journal post still highlights "Journal".
+// Residences lives in the Real Estate dropdown, so the *section* carries the
+// permanent underline on /property/residences rather than the listing. Prefix
+// matching must stay for items that have no children: a journal post still
+// highlights "Journal".
 const { SiteHeader } = await load('/src/components/layout/SiteHeader.tsx')
 
+function navHtml(path: string): string {
+  return renderPage(path, 'en', React.createElement(SiteHeader))
+}
+
 function activeNavItems(path: string): string[] {
-  const html = renderPage(path, 'en', React.createElement(SiteHeader))
+  const html = navHtml(path)
   const active: string[] = []
   for (const match of html.matchAll(/<a([^>]*)>([^<]*)<\/a>/g)) {
     const [, attrs, label] = match
@@ -200,15 +209,59 @@ function activeNavItems(path: string): string[] {
 }
 
 equals('nav: home highlights nothing', activeNavItems('/'), [])
-equals('nav: /property highlights Property only', activeNavItems('/property'), ['Property'])
-equals('nav: /property/residences highlights Residences only', activeNavItems('/property/residences'), ['Residences'])
+equals('nav: /property highlights Real Estate only', activeNavItems('/property'), ['Real Estate'])
+equals('nav: the listing keeps the Real Estate section lit', activeNavItems('/property/residences'), ['Real Estate'])
 equals(
-  'nav: a residence keeps Residences highlighted',
+  'nav: a residence keeps the Real Estate section lit',
   activeNavItems('/property/residences/villa-infinity-pool-golden-mile'),
-  ['Residences'],
+  ['Real Estate'],
 )
 equals('nav: /legal highlights Legal only', activeNavItems('/legal'), ['Legal'])
 equals('nav: a journal post keeps Journal highlighted', activeNavItems('/blog/any-post'), ['Journal'])
+
+// --- the footer's WhatsApp channel ------------------------------------------
+// The link has to reach the business line with the visitor's message already written,
+// in the language they are reading.
+const { SiteFooter } = await load('/src/components/layout/SiteFooter.tsx')
+const footerEn = renderPage('/', 'en', React.createElement(SiteFooter))
+has('footer: WhatsApp is offered', footerEn, 'href="https://wa.me/34663109014?text=')
+has('footer: WhatsApp is named for assistive tech', footerEn, 'aria-label="WhatsApp"')
+has('footer: the chat opens with the message written', footerEn, 'I%20would%20like%20to%20make%20an%20enquiry')
+has(
+  'footer: the message follows the language [fr]',
+  renderPage('/', 'fr', React.createElement(SiteFooter)),
+  'je%20souhaiterais%20faire%20une%20demande',
+)
+has(
+  'footer: the message follows the language [es]',
+  renderPage('/', 'es', React.createElement(SiteFooter)),
+  'consulta%20sobre%20sus%20servicios',
+)
+
+// --- section order, and Residences moved into a dropdown --------------------
+const header = navHtml('/property/residences')
+equals(
+  'nav: Legal comes before Real Estate',
+  header.indexOf('>Legal<') > 0 && header.indexOf('>Legal<') < header.indexOf('>Real Estate<'),
+  true,
+)
+equals(
+  'nav: Residences appears once, inside the dropdown',
+  (header.match(/href="\/property\/residences"/g) ?? []).length,
+  1,
+)
+has('nav: the submenu is announced as a disclosure', header, 'aria-expanded=')
+has('nav: the disclosure is named for assistive tech', header, 'aria-label="Show submenu for Real Estate"')
+// The panel is revealed only by the disclosure button. A CSS hover reveal used to sit
+// beside it, and once the pointer and focus had opened it the button could no longer
+// close it — so this asserts the closed state, hover reveal included.
+has('nav: the submenu is hidden until it is asked for', header, 'invisible opacity-0')
+lacks('nav: nothing reveals the submenu behind the visitor’s back', header, 'group-hover:')
+equals(
+  'nav: the listing marks itself as the current page',
+  (header.match(/aria-current="page"/g) ?? []).length,
+  1,
+)
 
 // --- one residence page: gallery, specifications, copy, enquiry link ---------
 const { ResidenceDetail, ResidencePage } = await load('/src/pages/ResidencePage.tsx')
@@ -401,11 +454,12 @@ has('enquiry: names the residence from the URL', inquiry, villaProperty.title)
 has('enquiry: quotes the reference from the URL', inquiry, 'LBA-0421')
 has('enquiry: seeds the message', inquiry, 'I would like to know more about')
 equals(
-  'enquiry: preselects the property interest',
-  /checked=""[^>]*value="property"|value="property"[^>]*checked=""/.test(inquiryHtml),
+  'enquiry: carries the property interest from the URL',
+  /name="interest"[^>]*value="property"/.test(inquiryHtml),
   true,
 )
-equals('enquiry: exactly one interest selected', (inquiryHtml.match(/checked=""/g) ?? []).length, 1)
+// The tiles went away with the October edits: nothing to tick, nothing to get wrong.
+equals('enquiry: no interest tiles to answer', (inquiryHtml.match(/type="radio"/g) ?? []).length, 0)
 const frInquiry = stripHtml(renderPage(inquiryPath, 'fr', React.createElement(InquiryPage)))
 has('fr enquiry: regarding label', frInquiry, 'À propos de')
 has('fr enquiry: seeded message', frInquiry, 'Je souhaiterais en savoir plus sur')
@@ -483,7 +537,24 @@ has('fr band: view copy', frBand, 'Voir la résidence')
 const { HomePage } = await load('/src/pages/HomePage.tsx')
 const homeHtml = renderPage('/', 'en', React.createElement(HomePage))
 lacks('home: the band is not in the first paint', homeHtml, 'Featured residences')
-has('home: the hero still renders', stripHtml(homeHtml), 'Lawyers & Property Advisers')
+has('home: the hero still renders', stripHtml(homeHtml), 'Law. Real Estate.')
+has('home: the hero names the third service', stripHtml(homeHtml), 'Private Client Services.')
+has('home: the one-firm band renders', stripHtml(homeHtml), 'Why one firm makes a difference')
+lacks('home: the hero is copy-only, no button', stripHtml(homeHtml), 'Discover more')
+
+// --- the loading veil -------------------------------------------------------
+// The veil must render nothing on the server. A splash that shipped as server markup
+// would hide the page from crawlers and from anyone without JavaScript, and it would
+// be the first thing painted on a slow connection — the opposite of its purpose, which
+// is to cover a wait the browser has already noticed.
+const { RouteVeil } = await load('/src/components/layout/RouteVeil.tsx')
+const { RouteFallback } = await load('/src/components/layout/RoutePending.tsx')
+equals('veil: renders nothing on the server', renderPage('/', 'en', React.createElement(RouteVeil)), '')
+has(
+  'veil: the route fallback announces the wait it reports',
+  renderPage('/', 'en', React.createElement(RouteFallback)),
+  'aria-busy="true"',
+)
 
 // --- carousel props ---------------------------------------------------------
 const { readCarouselScroll } = (await load('/src/lib/carousel.ts')) as typeof import('../src/lib/carousel.ts')
@@ -606,7 +677,6 @@ equals('admin: loading a residence into the editor is lossless', Admin.toInput(A
 // verification: the filter panel, the empty state, the "new" badge, and every label
 // in the area/type/feature maps in all three languages.
 const Filters = (await load('/src/lib/propertyFilters.ts')) as typeof import('../src/lib/propertyFilters.ts')
-const Dicts = (await load('/src/data/locales/residences.ts')) as typeof import('../src/data/locales/residences.ts')
 const { PROPERTY_AREAS, PROPERTY_FEATURES, PROPERTY_TYPES } = Reader
 
 // A residence that uses whatever label is under test, with a neutral title so the
@@ -656,7 +726,7 @@ const emptyText = stripHtml(renderPage('/property/residences?type=plot', 'en', R
 has('listing: empty state', emptyText, 'No residences match your search.')
 has('listing: empty state explains', emptyText, 'or tell us what you are looking for')
 has('listing: empty state can be cleared', emptyText, 'Clear all filters')
-has('listing: empty state offers the private search', emptyText, 'Ask about our private search')
+has('listing: empty state offers the private search', emptyText, Dicts.en.hero.privateSearch)
 
 // The "new" badge only appears for a residence published in the last 30 days.
 const justPublished = synthetic({ publishedAt: { seconds: Math.floor(Date.now() / 1000) } })

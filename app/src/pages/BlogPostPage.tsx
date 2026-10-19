@@ -3,6 +3,10 @@ import { Link, useParams } from 'react-router-dom'
 import { Container } from '../components/ui/Container'
 import { CtaBand } from '../components/shared/CtaBand'
 import { getApp, firestoreDb } from '../lib/firebase'
+import { localeDict } from '../lib/i18n'
+import { useLang } from '../lib/lang'
+import { useUi } from '../lib/nav'
+import { en as journalEn, fr as journalFr, es as journalEs } from '../data/locales/journal'
 import { renderMarkdown } from '../lib/markdown'
 import { setPageMeta } from '../lib/seo'
 import type { Post } from '../lib/posts'
@@ -20,6 +24,9 @@ function formatDate(v: unknown): string {
 
 export function BlogPostPage() {
   const { slug } = useParams()
+  const { lang } = useLang()
+  const ui = useUi()
+  const t = localeDict(journalEn, lang === 'fr' ? journalFr : lang === 'es' ? journalEs : undefined)
   const [post, setPost] = useState<Post | null>(null)
   const [notFound, setNotFound] = useState(false)
   const [html, setHtml] = useState('')
@@ -66,10 +73,10 @@ export function BlogPostPage() {
     return (
       <section className="py-20 md:py-28">
         <Container>
-          <p className="micro text-taupe">Not found</p>
-          <h1 className="font-display mt-4 text-3xl uppercase">This post does not exist.</h1>
+          <p className="micro text-taupe">{t.postNotFoundEyebrow}</p>
+          <h1 className="font-display mt-4 text-3xl uppercase">{t.postNotFound}</h1>
           <Link to="/blog" className="micro mt-8 inline-block border border-ink px-6 py-3 hover:bg-ink hover:text-cream transition-colors">
-            Back to journal
+            {t.back}
           </Link>
         </Container>
       </section>
@@ -80,7 +87,7 @@ export function BlogPostPage() {
     return (
       <section className="py-20">
         <Container>
-          <p className="text-sm text-taupe">Loading…</p>
+          <p className="text-sm text-taupe">{t.loading}</p>
         </Container>
       </section>
     )
@@ -92,7 +99,7 @@ export function BlogPostPage() {
         <section className="py-16 md:py-20">
           <Container>
             <Link to="/blog" className="micro text-taupe hover:text-oxblood">
-              ← Journal
+              ← {t.eyebrow}
             </Link>
             <h1 className="font-display mt-6 text-3xl uppercase leading-[1.08] tracking-wide md:text-5xl">{post.title}</h1>
             <p className="micro mt-4 text-taupe">{formatDate(post.publishedAt ?? post.updatedAt)}</p>
@@ -113,14 +120,14 @@ export function BlogPostPage() {
             </div>
             <div className="mt-12 border-t border-hairline pt-8">
               <Link to="/blog" className="micro text-ink hover:text-oxblood">
-                ← Back to journal
+                ← {t.back}
               </Link>
             </div>
           </Container>
         </section>
       </article>
 
-      <CtaBand heading="Questions about Spain?" subline="We’re here to help." image={ctaCoast} cta={{ to: '/inquiry', label: 'Make a private enquiry' }} />
+      <CtaBand image={ctaCoast} cta={{ to: '/inquiry', label: ui.privateEnquiry }} />
     </>
   )
 }

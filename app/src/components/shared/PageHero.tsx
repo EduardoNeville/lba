@@ -3,7 +3,7 @@ import { Container } from '../ui/Container'
 import { ScrollCue } from '../ui/ScrollCue'
 
 export function PageHero({
-  eyebrow: _eyebrow,
+  eyebrow,
   title,
   subline,
   body,
@@ -15,7 +15,7 @@ export function PageHero({
   eyebrow?: string
   title: string
   subline?: string
-  body?: string
+  body?: string | string[]
   cta?: { to: string; label: string }
   image?: string
   alt?: string
@@ -28,15 +28,27 @@ export function PageHero({
       <Container>
         <div className="max-w-[560px] py-16 md:py-20">
           <div>
+            {eyebrow && (
+              /* Section tag over the title, with its rule — the private-client
+                 mockup (part 2) shows it; no earlier page passed the prop. */
+              <p className="micro text-ink">
+                {eyebrow}
+                <span aria-hidden className="mt-2 block h-px w-10 bg-ink/40" />
+              </p>
+            )}
             <h1
-              className={`font-display mt-6 max-w-[14ch] leading-[1.08] tracking-wide ${
-                titleCase === 'upper' ? 'text-4xl uppercase md:text-5xl lg:text-6xl' : 'text-4xl leading-tight md:text-5xl'
+              className={`font-display mt-6 leading-[1.08] tracking-wide ${
+                titleCase === 'upper'
+                  ? 'max-w-[14ch] text-4xl uppercase md:text-5xl lg:text-6xl'
+                  : 'max-w-[26ch] text-4xl leading-tight md:text-5xl'
               }`}
             >
               {title}
             </h1>
             {subline && <p className="micro mt-3 text-[11px] text-taupe">{subline}</p>}
-            {body && <p className="mt-6 max-w-prose text-sm leading-relaxed text-taupe">{body}</p>}
+            {body && (Array.isArray(body) ? body : [body]).map((p) => (
+              <p key={p.slice(0, 32)} className="mt-6 max-w-prose text-sm leading-relaxed text-taupe">{p}</p>
+            ))}
             {cta && (
               <div className="mt-8">
                 <ButtonLink to={cta.to}>{cta.label} →</ButtonLink>

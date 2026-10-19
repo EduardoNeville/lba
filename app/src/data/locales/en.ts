@@ -2,10 +2,10 @@
 // fr.ts / es.ts mirror these shapes; any key they omit falls back to the English here.
 export const nav = {
   label: {
-    property: "Property",
-    residences: "Residences",
-    legal: "Legal",
-    privateClient: "Private Client Services",
+    property: "Real Estate",
+    residences: "Properties",
+    legal: "Law",
+    privateClient: "Property Management",
     journal: "Journal",
     about: "About",
   },
@@ -15,8 +15,8 @@ export const footer = {
   tagline: "Lawyers & Private Advisors",
   services: "Our Services",
   servicesLinks: [
-    "Property Advisory",
-    "Legal Advisory",
+    "Law Firm",
+    "Real Estate",
     "Private Client Advisory",
   ],
   information: "Information",
@@ -29,22 +29,28 @@ export const footer = {
     "info@legalboutiqueadvisers.com",
   ],
   enquire: "Make a private enquiry",
+  whatsapp: "WhatsApp",
+  whatsappMessage: "Hello, I would like to make an enquiry about your services in Spain.",
   rights: "© 2021 Legal Boutique Advisers. All rights reserved.",
 };
 
 export const ui = {
+  showSubmenu: "Show submenu for",
+  mainNav: "Main navigation",
+  logoLabel: "Legal Boutique Advisers — home page",
+  openMenu: "Open menu",
+  closeMenu: "Close menu",
+  switchLanguage: "Switch language to",
+  scrollDown: "Scroll down",
   inquire: "Inquire",
   discoverMore: "Discover more",
   viewAllProperties: "View all properties",
   viewResidence: "View residence",
   explore: "Explore",
-  meetTheTeam: "Meet the team",
-  selectedResidences: "Selected Residences",
   privateEnquiry: "Make a private enquiry",
 };
 
 export const form = {
-  interestLabel: "I am interested in",
   fullName: "Full name",
   fullNamePlaceholder: "Your full name",
   email: "Email",
@@ -63,7 +69,6 @@ export const form = {
   thankYou: "Thank you. We will be in touch shortly.",
   replyNote: "We reply to every enquiry, usually within one working day.",
   errorGeneric: "Something went wrong. Please try again.",
-  errorInterest: "Please select an area of interest.",
   errorName: "Please tell us your name.",
   errorEmail: "Please enter a valid email address.",
   errorConsent: "We need your consent to contact you.",

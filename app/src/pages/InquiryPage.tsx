@@ -5,21 +5,9 @@ import { Field } from "../components/ui/Field";
 import { Icon } from "../components/ui/icons";
 import { submitInquiry, InquiryError } from "../lib/submitInquiry";
 import { useLang } from "../lib/lang";
-import {
-  form as formEn,
-  options as optionsEn,
-  aside as asideEn,
-} from "../data/locales/en";
-import {
-  form as formFr,
-  options as optionsFr,
-  aside as asideFr,
-} from "../data/locales/fr";
-import {
-  form as formEs,
-  options as optionsEs,
-  aside as asideEs,
-} from "../data/locales/es";
+import { form as formEn, aside as asideEn } from "../data/locales/en";
+import { form as formFr, aside as asideFr } from "../data/locales/fr";
+import { form as formEs, aside as asideEs } from "../data/locales/es";
 
 const controlCls =
   "w-full border border-hairline bg-transparent px-4 py-3 text-sm text-ink placeholder:text-taupe/60 focus:border-oxblood focus:outline-none transition-colors";
@@ -72,67 +60,13 @@ function useInquiryDict() {
   const { lang } = useLang();
   if (lang === "fr") {
     const form = { ...formEn, ...formFr };
-    return { form, options: optionsFr, aside: { ...asideEn, ...asideFr }, hero: form.hero };
+    return { form, aside: { ...asideEn, ...asideFr }, hero: form.hero };
   }
   if (lang === "es") {
     const form = { ...formEn, ...formEs };
-    return { form, options: optionsEs, aside: { ...asideEn, ...asideEs }, hero: form.hero };
+    return { form, aside: { ...asideEn, ...asideEs }, hero: form.hero };
   }
-  return { form: formEn, options: optionsEn, aside: asideEn, hero: formEn.hero };
-}
-
-function InterestRadios({
-  value,
-  onChange,
-  error,
-  label,
-  options,
-}: {
-  value: string;
-  onChange: (v: string) => void;
-  error?: string;
-  label: string;
-  options: { icon: string; label: string; value: string }[];
-}) {
-  return (
-    <div>
-      <p className="micro mb-2 text-ink">{label}</p>
-      <div
-        className="grid grid-cols-2 gap-3 md:grid-cols-4"
-        role="radiogroup"
-        aria-label="Area of interest"
-      >
-        {options.map((o) => (
-          <label
-            key={o.value}
-            className={`cursor-pointer border px-4 py-5 text-center transition-colors ${
-              value === o.value
-                ? "border-oxblood bg-parchment"
-                : "border-hairline hover:border-taupe"
-            }`}
-          >
-            <input
-              type="radio"
-              name="interest"
-              value={o.value}
-              checked={value === o.value}
-              onChange={() => onChange(o.value)}
-              className="sr-only"
-            />
-            <Icon name={o.icon} className="h-5 w-5" />
-            <span className="micro mt-3 block text-[9px] tracking-[0.18em]">
-              {o.label}
-            </span>
-          </label>
-        ))}
-      </div>
-      {error && (
-        <p role="alert" className="micro mt-2 text-[9px] text-oxblood">
-          {error}
-        </p>
-      )}
-    </div>
-  );
+  return { form: formEn, aside: asideEn, hero: formEn.hero };
 }
 
 const POLICY_RE = /Privacy Policy|Politique de confidentialité|Política de Privacidad/;
@@ -152,7 +86,7 @@ function ConsentText({ text }: { text: string }) {
 }
 
 function InquiryForm() {
-  const { form, options } = useInquiryDict();
+  const { form } = useInquiryDict();
   const [params] = useSearchParams();
   const [formState, setFormState] = useState<FormState>(() => initialFromQuery(params, form.enquiryAbout));
   const subject = params.get("subject")?.trim() ?? "";
@@ -167,7 +101,6 @@ function InquiryForm() {
   };
 
   const errors = {
-    interest: !formState.interest ? form.errorInterest : "",
     fullName: !formState.fullName.trim() ? form.errorName : "",
     email: !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formState.email)
       ? form.errorEmail
@@ -180,7 +113,7 @@ function InquiryForm() {
 
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
-    setTouched({ interest: true, fullName: true, email: true, consent: true });
+    setTouched({ fullName: true, email: true, consent: true });
     const hasError = Object.values(errors).some(Boolean);
     if (hasError) {
       setStatus("error");
@@ -189,7 +122,7 @@ function InquiryForm() {
     setStatus("submitting");
     try {
       await submitInquiry({
-        interest: formState.interest,
+        interest: formState.interest || "other",
         fullName: formState.fullName.trim(),
         email: formState.email.trim(),
         phone: formState.phone.trim() || undefined,
@@ -220,20 +153,16 @@ function InquiryForm() {
 
   return (
     <form onSubmit={onSubmit} noValidate>
+      {/* The visitor's area of interest is no longer asked for: it arrives with the
+          link that got them here. Kept in the form so it travels with the enquiry. */}
+      <input type="hidden" name="interest" value={formState.interest || "other"} />
       {(subject || reference) && (
         <p className="micro mb-6 border border-hairline bg-parchment/40 px-4 py-3 text-[10px] leading-relaxed text-taupe">
           {form.regarding}: <span className="text-ink">{subject || reference}</span>
           {subject && reference ? ` · ${reference}` : ""}
         </p>
       )}
-      <InterestRadios
-        value={formState.interest}
-        onChange={(v) => set("interest", v)}
-        error={showError("interest")}
-        label={form.interestLabel}
-        options={options}
-      />
-      <div className="mt-8 space-y-6">
+      <div className="space-y-6">
         <Field label={form.fullName} error={showError("fullName")}>
           {(id) => (
             <input
