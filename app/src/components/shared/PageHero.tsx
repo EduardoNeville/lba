@@ -15,7 +15,7 @@ export function PageHero({
   eyebrow?: string
   title: string
   subline?: string
-  body?: string
+  body?: string | string[]
   cta?: { to: string; label: string }
   image?: string
   alt?: string
@@ -46,7 +46,9 @@ export function PageHero({
               {title}
             </h1>
             {subline && <p className="micro mt-3 text-[11px] text-taupe">{subline}</p>}
-            {body && <p className="mt-6 max-w-prose text-sm leading-relaxed text-taupe">{body}</p>}
+            {body && (Array.isArray(body) ? body : [body]).map((p) => (
+              <p key={p.slice(0, 32)} className="mt-6 max-w-prose text-sm leading-relaxed text-taupe">{p}</p>
+            ))}
             {cta && (
               <div className="mt-8">
                 <ButtonLink to={cta.to}>{cta.label} →</ButtonLink>

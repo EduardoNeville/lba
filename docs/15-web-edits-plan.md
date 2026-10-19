@@ -37,10 +37,10 @@ The client's raw drops stay out of git in the main working copy, referenced here
 | 12 | Real Estate: new hero copy (Sotogrande + wider-portfolio paragraph) | **[done]** |
 | 13 | FR + ES translations for every changed string | **[done]** |
 | **Part 2** | | |
-| 14 | Property: split hero rebuilt (eyebrow + "Real Estate" + two-column intro, golf photo right) | **[done]** — golf photo placeholder |
+| 14 | Property: hero — standard overlay treatment (eyebrow + "Real Estate" + dictated intro); split style moved to the opportunities band on round-trip feedback | **[done]** — golf photo placeholder |
 | 15 | Property: "A Curated Approach" split removed | **[done]** |
 | 16 | Property: featured-properties strip removed | **[done]** |
-| 17 | Property: brown box restyled (villa photo, bigger letters, lighter brown) | **[done]** |
+| 17 | Property: opportunities box — the split style (umber panel left / villa photo right) inside the page Container; bigger letters, lighter brown | **[done]** |
 | 18 | Property: services renamed — Buying / Selling | **[done]** |
 | 19 | Property: cross-link band restyled (new eyebrows/headings/bodies, checklists out, photo kept) | **[done]** |
 | 20 | Property: CTA band reduced to the button only | **[done]** |
@@ -201,13 +201,13 @@ Every new/changed string authored in EN, FR and ES as above; `npm run check:loca
 
 # Part 2
 
-## 14. Property — split hero rebuilt
+## 14. Property — hero
 
-The mockup (`assets/edits-part2/01-property-hero-mockup.jpg`) turns the overlay hero into a **split hero**: cream text panel left, golf photograph right (full height). `PageHero` stays overlay-style for the other pages, so `PropertyPage` grows its own split hero:
+**Round-trip feedback after the first pass:** the hero reverts to how every other page's hero looks — the overlay `PageHero` (full-bleed photograph under the cream veil, copy left in the Container). The split style the part-2 mockup gave the hero moved down into the opportunities band (§17). The dictated copy is unchanged:
 
-- **Eyebrow:** `REAL ESTATE` with the short rule, as in the mock ("portada").
-- **Title:** `Real Estate` — huge serif, sentence case (the mock is explicit).
-- **Intro, exactly as dictated, as two columns split by a vertical hairline:**
+- **Eyebrow:** `REAL ESTATE` — `PageHero` renders it with its rule (as on the private-client hero).
+- **Title:** `Real Estate` — sentence case, matching the private-client hero's treatment.
+- **Intro, exactly as dictated — `PageHero.body` now takes an array and renders both paragraphs:**
   1. "We provide tailored real estate advisory services to international clients looking to buy, sell or invest in property across Spain. From luxury residences and second homes to investment opportunities, we guide our clients through every stage of the process."
   2. "Based in Marbella, with a strong focus on the Costa del Sol, we offer access to a carefully selected portfolio of properties, including exclusive off-market opportunities. We also provide a personalised property search service tailored to each client's individual requirements."
 - **Photo:** "Y te enviare la foto de golf a la derecha" — keep `lifestyle-golf.jpg` as the placeholder until her golf photo arrives (see Waiting on the client).
@@ -225,9 +225,9 @@ The mockup (`assets/edits-part2/01-property-hero-mockup.jpg`) turns the overlay 
 - Remove the lazy `PropertyStrip` import + `<Suspense>` block and the `featured` key from `locales/property.ts` (en/fr/es).
 - Delete `components/shared/PropertyStrip.tsx` — /property is its only user (git history keeps it).
 
-## 17. Property — brown opportunities box restyled
+## 17. Property — opportunities box carries the split style
 
-The "Buying in Spain" band stays, with three changes ("Poner esta foto…, y poner las letras mas grande, y si es posible un marron menos oscuro"):
+The "Buying in Spain" band becomes the section that wears the split style the part-2 mockup gave the hero (moved here on round-trip feedback): **umber panel left / villa photograph right**, wrapped in the `Container` so its edges meet the page's x-axis margin (`px-6 md:px-10` inside `max-w-[1200px]`) — matching the contained splits elsewhere (e.g. the private-client membership block). Its own changes stand:
 
 - **Photo:** the potted-plant terrace shot → the client's villa (`assets/real estate.png` → `app/src/assets/band-villa.jpg`, ~1600 px).
 - **Letters bigger:** `text-3xl md:text-4xl` → `text-4xl md:text-5xl` for the heading.
@@ -308,7 +308,7 @@ All new/changed strings authored in EN, FR, ES inline above; `check:locales` 0 e
 | 6 | Plan + sources committed on the branch, not develop | **Branch** — develop currently carries another session's uncommitted locale work (`locale-registry.ts`, `check-locales.ts`, `journal/notFound` locales); committing there risks sweeping that in. Merge up with it later. |
 | 7 | Brown-box position | **Order summary wins** (hero → Our Services → box → cross-link) over "justo debajo del primero real estate text" — one-line move if she corrects. |
 | 8 | Lighter brown value | **`#3E3227` proposed** (between `ink` #241E18 and `taupe` #7D7266) — confirm with client. |
-| 9 | Property split hero | **Bespoke section in `PropertyPage`** rather than a `PageHero` variant — only this page uses it; `PageHero` stays untouched except for the eyebrow fix PC needs. |
+| 9 | Property split hero | **Reverted on round-trip feedback** — the bespoke split came off the hero (back to the overlay `PageHero`, like every other page); the split style lives in the opportunities band instead. `PageHero` keeps the eyebrow render and gained an array `body` for the dictated two-paragraph intro. |
 | 10 | "Our Areas of Legal Advice" | **Restored** after round-trip feedback — the first pass read the part-1 docx's "quitarlo y poner this instead" as covering the areas grid; it meant the business-vision band only. The grid sits straight after the hero (statement kept above it), and "Our Law Firm" follows it where the band used to be. |
 
 ## Open questions (client)
