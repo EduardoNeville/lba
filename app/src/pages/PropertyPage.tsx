@@ -1,6 +1,6 @@
 import { Container } from "../components/ui/Container";
 import { ArrowLink } from "../components/ui/ArrowLink";
-import { ScrollCue } from "../components/ui/ScrollCue";
+import { PageHero } from "../components/shared/PageHero";
 import { CrossLinkBand } from "../components/shared/CrossLinkBand";
 import { CtaBand } from "../components/shared/CtaBand";
 import { useLang } from "../lib/lang";
@@ -22,73 +22,42 @@ function usePropertyData() {
   };
 }
 
-/* The split lockup hero: cream text panel left — eyebrow, huge sentence-case
-   "Real Estate", the dictated intro as two columns on a vertical hairline — and
-   the photograph right. PageHero keeps its overlay style for the other pages.
-   Placeholder photograph until the client's golf picture arrives. */
-function SplitHero() {
-  const { hero: h } = usePropertyData();
-  return (
-    <section className="grid items-stretch lg:grid-cols-2">
-      <div className="flex flex-col justify-center px-6 py-14 md:px-16 lg:py-20">
-        <p className="micro flex items-center gap-3 text-ink">
-          <span aria-hidden className="h-px w-8 bg-oxblood" />
-          {h.eyebrow}
-        </p>
-        <h1 className="font-display mt-6 text-6xl leading-[1.02] md:text-8xl">
-          {h.title}
-        </h1>
-        <div className="mt-10 grid max-w-xl gap-6 text-sm leading-relaxed text-taupe sm:grid-cols-2 sm:gap-0 sm:divide-x sm:divide-hairline">
-          {h.body.map((p, i) => (
-            <p key={p.slice(0, 32)} className={i === 0 ? "sm:pr-8" : "sm:pl-8"}>
-              {p}
-            </p>
-          ))}
-        </div>
-      </div>
-      <div className="relative isolate min-h-72 lg:min-h-full">
-        <img
-          src={h.image}
-          alt={h.alt}
-          className="absolute inset-0 -z-10 h-full w-full object-cover object-center"
-        />
-        <div className="absolute inset-x-0 bottom-6 flex justify-center">
-          <ScrollCue tone="light" />
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* Buying in Spain — the brown panel keeps its copy and gains the client's villa
-   photograph, larger type and a step lighter brown ("un marron menos oscuro"). */
+/* Access to the Finest Opportunities — the split the part-2 mockup gave the
+   hero, moved here on the client's round-trip feedback: umber panel left (the
+   band's copy, larger type) with the villa photograph right, wrapped in the
+   Container so the band's edges meet the same x-axis margin as the rest of the
+   page (px-6 md:px-10 inside max-w-[1200px]). */
 function OpportunitiesBand() {
   const { band } = usePropertyData();
   return (
-    <section className="grid items-stretch lg:grid-cols-2">
-      <div className="min-h-72 lg:min-h-full">
-        <img
-          src={bandMedia.image}
-          alt=""
-          aria-hidden
-          loading="lazy"
-          className="h-full w-full object-cover"
-        />
-      </div>
-      <div className="flex flex-col justify-center bg-umber px-6 py-14 md:px-16 lg:py-20">
-        <p className="micro text-[11px] text-cream/70">{band.eyebrow}</p>
-        <h2 className="font-display mt-4 max-w-lg text-4xl leading-snug text-cream md:text-5xl">
-          {band.heading}
-        </h2>
-        <p className="mt-5 max-w-md text-sm leading-relaxed text-cream/75">
-          {band.body}
-        </p>
-        <div className="mt-7">
-          <ArrowLink to={band.link.to} tone="dark" hitArea>
-            {band.link.label}
-          </ArrowLink>
+    <section>
+      <Container>
+        <div className="grid items-stretch lg:grid-cols-2">
+          <div className="flex flex-col justify-center bg-umber px-8 py-14 md:px-14 lg:py-20">
+            <p className="micro text-[11px] text-cream/70">{band.eyebrow}</p>
+            <h2 className="font-display mt-4 max-w-lg text-4xl leading-snug text-cream md:text-5xl">
+              {band.heading}
+            </h2>
+            <p className="mt-5 max-w-md text-sm leading-relaxed text-cream/75">
+              {band.body}
+            </p>
+            <div className="mt-7">
+              <ArrowLink to={band.link.to} tone="dark" hitArea>
+                {band.link.label}
+              </ArrowLink>
+            </div>
+          </div>
+          <div className="min-h-72 lg:min-h-full">
+            <img
+              src={bandMedia.image}
+              alt=""
+              aria-hidden
+              loading="lazy"
+              className="h-full w-full object-cover"
+            />
+          </div>
         </div>
-    </div>
+      </Container>
     </section>
   );
 }
@@ -121,11 +90,11 @@ function ServicesGrid() {
 }
 
 export function PropertyPage() {
-  const { crossLink, crossLinkAlt } = usePropertyData();
+  const { hero, crossLink, crossLinkAlt } = usePropertyData();
   const ui = useUi();
   return (
     <>
-      <SplitHero />
+      <PageHero {...hero} titleCase="sentence" />
       <ServicesGrid />
       <OpportunitiesBand />
       {/* Order per the client's part-2 note: hero, our services, the brown box,
