@@ -40,7 +40,7 @@ The client's raw drops stay out of git in the main working copy, referenced here
 | 14 | Property: hero — standard overlay treatment (eyebrow + "Real Estate" + dictated intro); split style moved to the opportunities band on round-trip feedback | **[done]** — golf photo placeholder |
 | 15 | Property: "A Curated Approach" split removed | **[done]** |
 | 16 | Property: featured-properties strip removed | **[done]** |
-| 17 | Property: opportunities box — the split style (umber panel left / villa photo right) inside the page Container; bigger letters, lighter brown | **[done]** |
+| 17 | Property: opportunities section — copy on the page itself (umber panel removed), villa photo right, inside the page Container; regenerated high-res image | **[done]** |
 | 18 | Property: services renamed — Buying / Selling | **[done]** |
 | 19 | Property: cross-link band restyled (new eyebrows/headings/bodies, checklists out, photo kept) | **[done]** |
 | 20 | Property: CTA band reduced to the button only | **[done]** |
@@ -225,14 +225,13 @@ Every new/changed string authored in EN, FR and ES as above; `npm run check:loca
 - Remove the lazy `PropertyStrip` import + `<Suspense>` block and the `featured` key from `locales/property.ts` (en/fr/es).
 - Delete `components/shared/PropertyStrip.tsx` — /property is its only user (git history keeps it).
 
-## 17. Property — opportunities box carries the split style
+## 17. Property — opportunities section
 
-The "Buying in Spain" band becomes the section that wears the split style the part-2 mockup gave the hero (moved here on round-trip feedback): **umber panel left / villa photograph right**, wrapped in the `Container` so its edges meet the page's x-axis margin (`px-6 md:px-10` inside `max-w-[1200px]`) — matching the contained splits elsewhere (e.g. the private-client membership block). Its own changes stand:
+The "Access to the Finest Opportunities" section keeps its split arrangement — copy left, villa photograph right — inside the `Container` (the page's x-axis margin, `px-6 md:px-10` inside `max-w-[1200px]`). Two round-trip refinements on top of the docx:
 
-- **Photo:** the potted-plant terrace shot → the client's villa (`assets/real estate.png` → `app/src/assets/band-villa.jpg`, ~1600 px).
-- **Letters bigger:** `text-3xl md:text-4xl` → `text-4xl md:text-5xl` for the heading.
-- **Less-dark brown:** the panel is `bg-ink` (#241E18) — lift it to a lighter warm brown (proposed: `#3E3227`; keep cream text). A one-value tweak to revisit with her.
-- **Position:** "Ponerlo mas arriba justo debajo del primero real estate text y foto de golf" and her explicit order summary ("Orden es: portada, our services, caja marron de opportunities y luego esto") disagree about whether the box sits right after the hero or after Our Services — the explicit order summary wins: **hero → Our Services → box → cross-link**. A one-line move if she corrects it.
+- **The umber panel came off** (client note: "remove the background") — the copy stands directly on the page in the page's own colours (oxblood eyebrow, ink heading at the enlarged `text-4xl md:text-5xl`, taupe body).
+- **The photograph was regenerated** — the client's source (`assets/real estate.png`) is only 472×587 px, too small for the half-container slot. An AI recreation of the identical scene (same framing, same elements) at 1126×1397 → `app/src/assets/band-villa.jpg` (488 KB, q2).
+- **Position:** "Ponerlo mas arriba justo debajo del primero real estate text y foto de golf" and her explicit order summary ("Orden es: portada, our services, caja marron de opportunities y luego esto") disagree about whether the box sits right after the hero or after Our Services — the explicit order summary wins: **hero → Our Services → this section → cross-link**. A one-line move if she corrects it.
 
 ## 18. Property — services renamed
 
@@ -307,7 +306,7 @@ All new/changed strings authored in EN, FR, ES inline above; `check:locales` 0 e
 | 5 | "Enquiry" spelling | **Site convention wins** ("enquiry" everywhere; the docx's "inquiry" read as loose typing). |
 | 6 | Plan + sources committed on the branch, not develop | **Branch** — develop currently carries another session's uncommitted locale work (`locale-registry.ts`, `check-locales.ts`, `journal/notFound` locales); committing there risks sweeping that in. Merge up with it later. |
 | 7 | Brown-box position | **Order summary wins** (hero → Our Services → box → cross-link) over "justo debajo del primero real estate text" — one-line move if she corrects. |
-| 8 | Lighter brown value | **`#3E3227` proposed** (between `ink` #241E18 and `taupe` #7D7266) — confirm with client. |
+| 8 | Brown panel | **Removed entirely** on round-trip feedback ("remove the background") — the copy stands on the page. The `umber` token stays in the palette, currently unused; drop it if the brown never returns. The section's photograph was regenerated at high resolution because the client's source file is only 472×587 px. |
 | 9 | Property split hero | **Reverted on round-trip feedback** — the bespoke split came off the hero (back to the overlay `PageHero`, like every other page); the split style lives in the opportunities band instead. `PageHero` keeps the eyebrow render and gained an array `body` for the dictated two-paragraph intro. |
 | 10 | "Our Areas of Legal Advice" | **Restored** after round-trip feedback — the first pass read the part-1 docx's "quitarlo y poner this instead" as covering the areas grid; it meant the business-vision band only. The grid sits straight after the hero (statement kept above it), and "Our Law Firm" follows it where the band used to be. |
 

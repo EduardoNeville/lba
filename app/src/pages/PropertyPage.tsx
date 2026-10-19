@@ -23,37 +23,38 @@ function usePropertyData() {
 }
 
 /* Access to the Finest Opportunities — the split the part-2 mockup gave the
-   hero, moved here on the client's round-trip feedback: umber panel left (the
-   band's copy, larger type) with the villa photograph right, wrapped in the
-   Container so the band's edges meet the same x-axis margin as the rest of the
-   page (px-6 md:px-10 inside max-w-[1200px]). */
+   hero, now living here on the client's round-trip feedback: the copy stands on
+   the page itself (the umber panel came off on a later note) with the villa
+   photograph right, all wrapped in the Container so the band's edges meet the
+   same x-axis margin as the rest of the page (px-6 md:px-10 inside
+   max-w-[1200px]). */
 function OpportunitiesBand() {
   const { band } = usePropertyData();
   return (
     <section>
       <Container>
-        <div className="grid items-stretch lg:grid-cols-2">
-          <div className="flex flex-col justify-center bg-umber px-8 py-14 md:px-14 lg:py-20">
-            <p className="micro text-[11px] text-cream/70">{band.eyebrow}</p>
-            <h2 className="font-display mt-4 max-w-lg text-4xl leading-snug text-cream md:text-5xl">
+        <div className="grid items-center gap-10 lg:grid-cols-2">
+          <div>
+            <p className="micro text-oxblood">{band.eyebrow}</p>
+            <h2 className="font-display mt-4 max-w-lg text-4xl leading-snug text-ink md:text-5xl">
               {band.heading}
             </h2>
-            <p className="mt-5 max-w-md text-sm leading-relaxed text-cream/75">
+            <p className="mt-5 max-w-md text-sm leading-relaxed text-taupe">
               {band.body}
             </p>
             <div className="mt-7">
-              <ArrowLink to={band.link.to} tone="dark" hitArea>
+              <ArrowLink to={band.link.to} hitArea>
                 {band.link.label}
               </ArrowLink>
             </div>
           </div>
-          <div className="min-h-72 lg:min-h-full">
+          <div>
             <img
               src={bandMedia.image}
               alt=""
               aria-hidden
               loading="lazy"
-              className="h-full w-full object-cover"
+              className="aspect-[4/5] w-full object-cover"
             />
           </div>
         </div>
