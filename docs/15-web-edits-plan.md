@@ -31,7 +31,7 @@ The client's raw drops stay out of git in the main working copy, referenced here
 | 6 | Footer services links → Law Firm / Real Estate / Private Client Advisory | **[done]** |
 | 7 | Nav labels per the mockup — Law / Real Estate / Property Management | **[done]** |
 | 8 | Legal: value-pillar tiles removed (statement stays) | **[done]** |
-| 9 | Legal: areas grid + "Business vision" band replaced by "Our Law Firm" (text + Marisela portrait) | **[done]** |
+| 9 | Legal: "Business vision" band replaced by "Our Law Firm" (text + Marisela portrait); Areas of Legal Advice kept — restored after round-trip feedback | **[done]** |
 | 10 | Legal: CTA band reduced to the button only, tighter spacing | **[done]** |
 | 11 | Real Estate: dropdown + page title "Properties" (was Residences) | **[done]** |
 | 12 | Real Estate: new hero copy (Sotogrande + wider-portfolio paragraph) | **[done]** |
@@ -151,9 +151,9 @@ One-line reverts per language if she only meant the hero. Flagged in Open questi
 - Remove the `Pillars` grid from `LegalPage.tsx`; keep the centred statement paragraph above it (the crop excludes it; flagged in Open questions).
 - Drop `pillars` from `data/locales/legal.ts` (en/fr/es) and the `ValueItem` import if now unused.
 
-## 9. Legal — "Our Law Firm" replaces the areas grid + business-vision band
+## 9. Legal — "Our Law Firm" replaces the business-vision band
 
-`Eso quitarlo y poner this instead` — the Advice grid and the "Business vision. Legal excellence." band go, replaced by the mockup's two-column section (text left, portrait right):
+`Eso quitarlo y poner this instead` — the "Business vision. Legal excellence." band goes, replaced by the mockup's two-column section (text left, portrait right). **The "Our Areas of Legal Advice" grid stays** — round-trip feedback after the first pass: the docx's "quitarlo" read as covering the grid too, which it did not mean; the grid is back straight after the hero, ahead of this section:
 
 - **Eyebrow:** `OUR LAW FIRM` with the short oxblood rule, as in the mock.
 - **Headline (serif, sentence case, large — not uppercase):** "Our law firm was founded by Marisela Castro, a Spanish lawyer with over 25 years of experience advising international clients in Spain."
@@ -161,7 +161,7 @@ One-line reverts per language if she only meant the hero. Flagged in Open questi
   1. "Under her leadership, our firm combines a deep legal expertise with a personal, pragmatic and solutions-oriented approach, offering tailored advice to individuals, families, investors and businesses on all aspects of their legal and property matters in Spain."
   2. "From real estate transactions to tax and corporate matters, we provide clear, strategic and discreet legal support, always with a focus on our client's long-term interests."
 - **Portrait:** `assets/Foto Marisela.jpg` → `app/src/assets/marisela-portrait.jpg` (ffmpeg resize to 820 px ≈ 134 KB). "no pongas la foto super grande" — a restrained column (~4/5 aspect, `max-w-md/lg`), not a full-bleed.
-- **Copy data:** new `firm` block in `data/locales/legal.ts` (en/fr/es) replacing `areas`, `areasHeading` and `practice`; `data/legal.ts` swaps `practice`/`cta` exports for `firm = { image: mariselaPortrait }`.
+- **Copy data:** new `firm` block in `data/locales/legal.ts` (en/fr/es) replacing `practice` (`areasHeading`/`areas` restored after round-trip feedback); `data/legal.ts` swaps `practice`/`cta` exports for `firm = { image: mariselaPortrait }`.
 
 FR / ES (authored here, matching the existing tone):
 
@@ -309,6 +309,7 @@ All new/changed strings authored in EN, FR, ES inline above; `check:locales` 0 e
 | 7 | Brown-box position | **Order summary wins** (hero → Our Services → box → cross-link) over "justo debajo del primero real estate text" — one-line move if she corrects. |
 | 8 | Lighter brown value | **`#3E3227` proposed** (between `ink` #241E18 and `taupe` #7D7266) — confirm with client. |
 | 9 | Property split hero | **Bespoke section in `PropertyPage`** rather than a `PageHero` variant — only this page uses it; `PageHero` stays untouched except for the eyebrow fix PC needs. |
+| 10 | "Our Areas of Legal Advice" | **Restored** after round-trip feedback — the first pass read the part-1 docx's "quitarlo y poner this instead" as covering the areas grid; it meant the business-vision band only. The grid sits straight after the hero (statement kept above it), and "Our Law Firm" follows it where the band used to be. |
 
 ## Open questions (client)
 

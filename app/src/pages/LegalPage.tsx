@@ -1,6 +1,7 @@
 import { Container } from "../components/ui/Container";
 import { PageHero } from "../components/shared/PageHero";
 import { CtaBand } from "../components/shared/CtaBand";
+import { ServiceCard } from "../components/ui/ServiceCard";
 import { useLang } from "../lib/lang";
 import { useUi } from "../lib/nav";
 import { hero, firm } from "../data/legal";
@@ -12,6 +13,8 @@ function useLegalData() {
   return {
     hero: { ...d.hero, image: hero.image },
     statement: d.statement,
+    areasHeading: d.areasHeading,
+    areas: d.areas,
     firm: { ...d.firm, image: firm.image },
   };
 }
@@ -27,6 +30,28 @@ function Statement() {
           {statement}
         </p>
         <div className="mx-auto mt-4 h-px w-8 bg-oxblood" />
+      </Container>
+    </section>
+  );
+}
+
+/* "Our Areas of Legal Advice" — the three columns with their checklists. Removed
+   in the first pass by misreading the part-1 docx; restored on round-trip
+   feedback, straight after the hero. */
+function AdviceGrid() {
+  const { areas, areasHeading } = useLegalData();
+  return (
+    <section className="pb-20 md:pb-28">
+      <Container>
+        <p className="micro mb-2 text-center text-oxblood">
+          {areasHeading}
+        </p>
+        <div className="mx-auto mb-10 h-px w-8 bg-oxblood" />
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {areas.map((a) => (
+            <ServiceCard key={a.title} {...a} link="/inquiry" />
+          ))}
+        </div>
       </Container>
     </section>
   );
@@ -73,6 +98,7 @@ export function LegalPage() {
     <>
       <PageHero {...hero} />
       <Statement />
+      <AdviceGrid />
       <LawFirm />
       {/* Image and spacing gone (client, part 1): the button alone, sitting higher. */}
       <CtaBand cta={{ to: "/inquiry", label: ui.privateEnquiry }} />
