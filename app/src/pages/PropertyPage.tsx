@@ -7,7 +7,6 @@ import { useLang } from "../lib/lang";
 import { band as bandMedia, hero } from "../data/property";
 import { en, fr, es } from "../data/locales/property";
 import { useUi } from "../lib/nav";
-import propertyCrosslink from "../assets/property-crosslink.jpg";
 
 function usePropertyData() {
   const { lang } = useLang();
@@ -18,7 +17,6 @@ function usePropertyData() {
     servicesHeading: d.servicesHeading,
     services: d.services,
     crossLink: d.crossLink,
-    crossLinkAlt: d.crossLinkAlt,
   };
 }
 
@@ -91,7 +89,7 @@ function ServicesGrid() {
 }
 
 export function PropertyPage() {
-  const { hero, crossLink, crossLinkAlt } = usePropertyData();
+  const { hero, crossLink } = usePropertyData();
   const ui = useUi();
   return (
     <>
@@ -99,10 +97,9 @@ export function PropertyPage() {
       <ServicesGrid />
       <OpportunitiesBand />
       {/* Order per the client's part-2 note: hero, our services, the brown box,
-          then this cross-link band. The centre photograph is unchanged; the side
-          columns are eyebrow + sentence heading + one line + arrow link. */}
+          then this cross-link band. The centre photograph was removed on a later
+          note; the columns are eyebrow + sentence heading + one line + arrow link. */}
       <CrossLinkBand
-        size="sm"
         left={
           <div>
             <p className="micro border-b border-hairline pb-3 text-oxblood">
@@ -120,13 +117,6 @@ export function PropertyPage() {
               </ArrowLink>
             </div>
           </div>
-        }
-        center={
-          <img
-            src={propertyCrosslink}
-            alt={crossLinkAlt}
-            className="hidden h-full w-full object-cover lg:block"
-          />
         }
         right={
           <div>
