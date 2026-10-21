@@ -1,7 +1,6 @@
 import { Container } from "../components/ui/Container";
-import { ArrowLink } from "../components/ui/ArrowLink";
+import { ButtonLink } from "../components/ui/ButtonLink";
 import { PageHero } from "../components/shared/PageHero";
-import { CrossLinkBand } from "../components/shared/CrossLinkBand";
 import { CtaBand } from "../components/shared/CtaBand";
 import { useLang } from "../lib/lang";
 import { band as bandMedia, hero } from "../data/property";
@@ -16,7 +15,6 @@ function usePropertyData() {
     band: d.band,
     servicesHeading: d.servicesHeading,
     services: d.services,
-    crossLink: d.crossLink,
   };
 }
 
@@ -41,9 +39,9 @@ function OpportunitiesBand() {
               {band.body}
             </p>
             <div className="mt-7">
-              <ArrowLink to={band.link.to} hitArea>
+              <ButtonLink to={band.link.to} className="px-10 py-4 text-[13px]">
                 {band.link.label}
-              </ArrowLink>
+              </ButtonLink>
             </div>
           </div>
           <div>
@@ -89,54 +87,15 @@ function ServicesGrid() {
 }
 
 export function PropertyPage() {
-  const { hero, crossLink } = usePropertyData();
+  const { hero } = usePropertyData();
   const ui = useUi();
   return (
     <>
       <PageHero {...hero} titleCase="sentence" />
       <ServicesGrid />
       <OpportunitiesBand />
-      {/* Order per the client's part-2 note: hero, our services, the brown box,
-          then this cross-link band. The centre photograph was removed on a later
-          note; the columns are eyebrow + sentence heading + one line + arrow link. */}
-      <CrossLinkBand
-        left={
-          <div>
-            <p className="micro border-b border-hairline pb-3 text-oxblood">
-              {crossLink.left.eyebrow}
-            </p>
-            <h2 className="font-display mt-5 max-w-[22ch] text-3xl leading-tight md:text-4xl">
-              {crossLink.left.heading}
-            </h2>
-            <p className="mt-4 text-sm leading-relaxed text-taupe">
-              {crossLink.left.body}
-            </p>
-            <div className="mt-6">
-              <ArrowLink to={crossLink.left.link.to}>
-                {crossLink.left.link.label}
-              </ArrowLink>
-            </div>
-          </div>
-        }
-        right={
-          <div>
-            <p className="micro border-b border-hairline pb-3 text-oxblood">
-              {crossLink.right.eyebrow}
-            </p>
-            <h2 className="font-display mt-5 max-w-[22ch] text-3xl leading-tight md:text-4xl">
-              {crossLink.right.heading}
-            </h2>
-            <p className="mt-4 text-sm leading-relaxed text-taupe">
-              {crossLink.right.body}
-            </p>
-            <div className="mt-6">
-              <ArrowLink to={crossLink.right.link.to}>
-                {crossLink.right.link.label}
-              </ArrowLink>
-            </div>
-          </div>
-        }
-      />
+      {/* The Expertise at Every Step / Your Home, Our Priority cross-link band came
+          off on the client's latest note. */}
       <CtaBand cta={{ to: "/inquiry", label: ui.privateEnquiry }} />
     </>
   );

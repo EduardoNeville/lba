@@ -27,21 +27,6 @@ export const en = {
     { title: 'Selling', body: 'A discreet and strategic approach to selling your property, from positioning and presentation to identifying qualified buyers and managing the transaction.' },
     { title: 'Investment Advisory', body: 'Independent advice for property investment across Spain’s key markets.' },
   ],
-  crossLink: {
-    left: {
-      eyebrow: 'Legal Expertise',
-      heading: 'Expertise at Every Step.',
-      body: 'Our legal background ensures every property transaction is approached with care, precision and attention to detail.',
-      link: { to: '/legal', label: 'Explore Legal Services' },
-    },
-    right: {
-      eyebrow: 'Private Client Services',
-      heading: 'Your Home, Our Priority.',
-      body: 'Our relationship extends beyond the transaction, with tailored services to help you settle in and enjoy your property in Spain.',
-      link: { to: '/private-client', label: 'Explore Private Client Services' },
-    },
-  },
-  crossLinkAlt: 'Limestone hallway with law books opening to sea terrace',
 }
 
 export const fr: typeof en = {
@@ -67,21 +52,6 @@ export const fr: typeof en = {
     { title: 'Vente', body: "Une approche discrète et stratégique de la vente de votre bien, du positionnement et de la présentation à l’identification d’acquéreurs qualifiés et à la gestion de la transaction." },
     { title: 'Conseil en investissement', body: 'Un conseil indépendant pour vos investissements immobiliers sur les principaux marchés espagnols.' },
   ],
-  crossLink: {
-    left: {
-      eyebrow: 'Expertise juridique',
-      heading: 'L’expertise, à chaque étape.',
-      body: 'Notre formation juridique garantit que chaque transaction immobilière est abordée avec soin, précision et attention aux détails.',
-      link: { to: '/legal', label: 'Explorer nos services juridiques' },
-    },
-    right: {
-      eyebrow: 'Services aux clients privés',
-      heading: 'Votre maison, notre priorité.',
-      body: 'Notre relation ne s’arrête pas à la signature : des services sur mesure pour vous installer et profiter de votre résidence en Espagne.',
-      link: { to: '/private-client', label: 'Explorer la clientèle privée' },
-    },
-  },
-  crossLinkAlt: 'Couloir en pierre calcaire avec livres de droit ouvrant sur une terrasse face à la mer',
 }
 
 export const es: typeof en = {
@@ -107,19 +77,4 @@ export const es: typeof en = {
     { title: 'Venta', body: 'Un enfoque discreto y estratégico para la venta de su propiedad, desde el posicionamiento y la presentación hasta la identificación de compradores cualificados y la gestión de la operación.' },
     { title: 'Asesoramiento en inversión', body: 'Asesoramiento independiente para la inversión inmobiliaria en los principales mercados de España.' },
   ],
-  crossLink: {
-    left: {
-      eyebrow: 'Experiencia jurídica',
-      heading: 'Experiencia en cada paso.',
-      body: 'Nuestra formación jurídica garantiza que cada operación inmobiliaria se aborde con cuidado, precisión y atención al detalle.',
-      link: { to: '/legal', label: 'Explorar servicios jurídicos' },
-    },
-    right: {
-      eyebrow: 'Servicios a clientes privados',
-      heading: 'Su hogar, nuestra prioridad.',
-      body: 'Nuestra relación va más allá de la operación, con servicios a medida para ayudarle a instalarse y disfrutar de su propiedad en España.',
-      link: { to: '/private-client', label: 'Explorar cliente privado' },
-    },
-  },
-  crossLinkAlt: 'Pasillo de piedra caliza con libros de derecho que se abre a una terraza frente al mar',
 }
