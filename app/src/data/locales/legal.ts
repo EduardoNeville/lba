@@ -23,7 +23,6 @@ export const en = {
       'Under her leadership, our firm combines a deep legal expertise with a personal, pragmatic and solutions-oriented approach, offering tailored advice to individuals, families, investors and businesses on all aspects of their legal and property matters in Spain.',
       'From real estate transactions to tax and corporate matters, we provide clear, strategic and discreet legal support, always with a focus on our client’s long-term interests.',
     ],
-    alt: 'Walnut desk with notebooks and olive branches by a sunlit window',
   },
 }
 
@@ -47,7 +46,6 @@ export const fr: typeof en = {
       'Sous sa direction, notre cabinet allie une expertise juridique approfondie à une approche personnelle, pragmatique et orientée vers les solutions, en conseillant particuliers, familles, investisseurs et entreprises sur tous les aspects de leurs questions juridiques et immobilières en Espagne.',
       'Des transactions immobilières aux questions fiscales et sociétaires, nous offrons un accompagnement juridique clair, stratégique et discret, toujours attentif aux intérêts à long terme de nos clients.',
     ],
-    alt: 'Bureau en noyer avec carnets et branches d’olivier près d’une fenêtre ensoleillée',
   },
 }
 
@@ -71,6 +69,5 @@ export const es: typeof en = {
       'Bajo su dirección, nuestro despacho combina una profunda experiencia jurídica con un enfoque personal, pragmático y orientado a soluciones, ofreciendo asesoramiento a medida a particulares, familias, inversores y empresas en todos los aspectos de sus asuntos jurídicos y patrimoniales en España.',
       'Desde transacciones inmobiliarias hasta asuntos fiscales y societarios, ofrecemos un acompañamiento jurídico claro, estratégico y discreto, siempre con la mirada puesta en los intereses a largo plazo de nuestros clientes.',
     ],
-    alt: 'Escritorio de nogal con cuadernos y ramas de olivo junto a una ventana soleada',
   },
 }
