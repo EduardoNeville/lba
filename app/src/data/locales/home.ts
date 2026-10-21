@@ -18,7 +18,7 @@ export const en = {
   practiceAreas: [
     {
       num: '01',
-      title: 'Legal',
+      title: 'Legal & Tax',
       body: 'Legal and tax advice for property, business and family matters, including inheritance and donations.',
     },
     {
@@ -63,7 +63,7 @@ export const fr: typeof en = {
   practiceAreas: [
     {
       num: '01',
-      title: 'Juridique',
+      title: 'Juridique & Taxes',
       body: 'Conseil juridique et fiscal en matière immobilière, professionnelle et familiale, y compris successions et donations.',
     },
     {
@@ -108,7 +108,7 @@ export const es: typeof en = {
   practiceAreas: [
     {
       num: '01',
-      title: 'Legal',
+      title: 'Legal & Impuestos',
       body: 'Asesoramiento jurídico y fiscal en asuntos inmobiliarios, empresariales y familiares, incluidas herencias y donaciones.',
     },
     {

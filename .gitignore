@@ -8,15 +8,6 @@ Thumbs.db
 .pi/
 /tmp
 
-# Client drops not used by the site (reference material in assets/ is committed)
-/assets/Foto Marisela.jpg
-/assets/NEW EDITS PART1 WEBSITE.docx
-/assets/NEW EDITS PART2 WEBSITE.docx
-/assets/Salón mediterráneo abierto al jardín.png
-/assets/Terraza Mediterránea con Piscina Infinita.png
-/assets/WhatsApp Image 2026-10-15 at 19.52.59(1).jpeg
-/assets/real estate.png
-
 # Generated previews of source images
 .thumbs/
 .thumbs-img/
