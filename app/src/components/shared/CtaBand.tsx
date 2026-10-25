@@ -1,5 +1,6 @@
 import { ButtonLink } from "../ui/ButtonLink";
 import { Container } from "../ui/Container";
+import ctaLifestyle from "../../assets/cta-lifestyle.jpg";
 
 export function CtaBand({
   heading,
@@ -16,17 +17,19 @@ export function CtaBand({
   tone?: "light" | "dark";
   image?: string;
 }) {
-  const dark = tone === "dark";
   // Without a heading the band is the enquiry box alone — the treatment every page
-  // except the home page uses.
+  // except the home page uses. Give it a photographic background so it feels like
+  // a proper closing section rather than a floating button.
   const ctaOnly = !heading && !subline;
+  const bgImage = image || (ctaOnly ? ctaLifestyle : undefined);
+  const dark = tone === "dark" || (!!bgImage && !image);
   return (
     <section
       className={`relative isolate overflow-hidden ${ctaOnly ? "py-10 md:py-12" : "py-20 md:py-28"} ${variant === "accent" ? "bg-parchment" : ""}`}
     >
-      {image && (
+      {bgImage && (
         <img
-          src={image}
+          src={bgImage}
           alt=""
           aria-hidden
           className="absolute inset-0 -z-10 h-full w-full object-cover"
